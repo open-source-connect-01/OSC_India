@@ -18,7 +18,7 @@ export default function CommunityOverlay({ isOpen, onClose }: CommunityOverlayPr
       {/* Dimmed backdrop — covers the page content below the header */}
       <div
         className="fixed inset-x-0 z-40 bg-navy/30 backdrop-blur-[2px]"
-        style={{ top: "110px" }}
+        style={{ top: "110px", bottom: 0 }}
         onClick={onClose}
       />
 
@@ -204,10 +204,10 @@ export default function CommunityOverlay({ isOpen, onClose }: CommunityOverlayPr
         </div>
       </div>
 
-      {/* Close button — positioned relative to the header area */}
+      {/* Close button — positioned in the nav bar area */}
       <button
         onClick={onClose}
-        className="fixed top-[76px] right-6 z-50 w-8 h-8 flex items-center justify-center rounded-full bg-white/80 hover:bg-white shadow-md text-navy transition-all duration-200"
+        className="fixed top-[76px] right-6 z-[60] w-8 h-8 flex items-center justify-center rounded-full bg-white/80 hover:bg-white shadow-md text-navy transition-all duration-200"
         aria-label="Close menu"
       >
         <svg

@@ -9,7 +9,7 @@ interface NavbarProps {
 
 export default function Navbar({ onCommunityClick, communityActive }: NavbarProps) {
   return (
-    <nav className="w-full bg-white">
+    <nav className="w-full bg-white border-b border-gray-200/70">
       <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14">
         <div className="flex items-center justify-between h-[72px]">
           {/* Desktop layout */}

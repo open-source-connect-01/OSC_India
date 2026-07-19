@@ -22,7 +22,8 @@ export default function Home() {
   return (
     <div className="flex flex-col min-h-full">
       {/* Permanent header: utility bar + nav bar always visible */}
-      <header className="relative z-50">
+      {/* Use z-30 so the overlay (z-40/z-50) stacks above it */}
+      <header className="relative z-30">
         <TopUtilityBar />
         <Navbar
           onCommunityClick={handleCommunityClick}
