@@ -1,7 +1,7 @@
 "use client";
 
 import Link from "next/link";
-import { useState, useEffect } from "react";
+import { useEffect } from "react";
 
 export type ActiveOverlay = "about" | "whatwedo" | "community" | "events" | null;
 
@@ -45,42 +45,42 @@ export default function Navbar({
         <div className="flex items-center justify-between h-[72px]">
           {/* Desktop layout */}
           <div className="hidden md:flex items-center w-full">
-            {/* OSC Foundation Logo - left */}
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="w-[38px] h-[38px] rounded-lg bg-navy flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
-                <span className="text-white text-lg font-bold leading-none">O</span>
+            {/* Logo: abstract circular/pinwheel + OPEN/SOURCE/CONNECT stacked */}
+            <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+              <div className="w-[34px] h-[34px] rounded-full bg-navy flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-[17px] h-[17px]"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+                </svg>
               </div>
-              <div className="flex flex-col leading-[1.1]">
-                <span className="text-[10px] font-bold tracking-[0.18em] text-navy uppercase">
-                  OSC Foundation
-                </span>
-                <span className="text-[7px] font-semibold tracking-[0.22em] text-gray-400 uppercase">
-                  Global Standards Entity
-                </span>
+              <div className="flex flex-col leading-[1.15]">
+                <span className="text-[9px] font-bold tracking-[0.2em] text-navy uppercase">Open</span>
+                <span className="text-[9px] font-bold tracking-[0.2em] text-navy uppercase">Source</span>
+                <span className="text-[9px] font-bold tracking-[0.2em] text-navy uppercase">Connect</span>
               </div>
             </Link>
 
-            {/* Nav links - centered */}
+            {/* Nav links - centered - all neutral gray, no active state */}
             <div className="flex items-center gap-10 lg:gap-14 mx-auto">
-              {navItems.map((item) => {
-                const isActive = activeOverlay === item.key;
-                return (
-                  <button
-                    key={item.key}
-                    onClick={() => onNavClick?.(item.key)}
-                    className={`relative text-[10px] font-bold tracking-[0.16em] uppercase transition-colors duration-200 cursor-pointer ${
-                      isActive
-                        ? "text-accent-blue"
-                        : "text-gray-500 hover:text-navy"
-                    }`}
-                  >
-                    {item.label}
-                    {isActive && (
-                      <span className="absolute -bottom-[26px] left-0 right-0 h-[3px] bg-accent-blue rounded-full" />
-                    )}
-                  </button>
-                );
-              })}
+              {navItems.map((item) => (
+                <button
+                  key={item.key}
+                  onClick={() => onNavClick?.(item.key)}
+                  className="text-[10px] font-bold tracking-[0.16em] text-gray-500 uppercase hover:text-navy transition-colors duration-200 cursor-pointer"
+                >
+                  {item.label}
+                </button>
+              ))}
             </div>
 
             {/* Join Us Button - right */}
@@ -94,17 +94,27 @@ export default function Navbar({
 
           {/* Mobile layout */}
           <div className="md:hidden flex items-center justify-between w-full">
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              <div className="w-[34px] h-[34px] rounded-lg bg-navy flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
-                <span className="text-white text-base font-bold leading-none">O</span>
+            <Link href="/" className="flex items-center gap-2.5 group shrink-0">
+              <div className="w-[34px] h-[34px] rounded-full bg-navy flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
+                <svg
+                  width="17"
+                  height="17"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="white"
+                  strokeWidth="2"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
+                  className="w-[17px] h-[17px]"
+                >
+                  <circle cx="12" cy="12" r="3" />
+                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
+                </svg>
               </div>
-              <div className="flex flex-col leading-[1.1]">
-                <span className="text-[9px] font-bold tracking-[0.16em] text-navy uppercase">
-                  OSC Foundation
-                </span>
-                <span className="text-[6px] font-semibold tracking-[0.2em] text-gray-400 uppercase">
-                  Global Standards Entity
-                </span>
+              <div className="flex flex-col leading-[1.15]">
+                <span className="text-[9px] font-bold tracking-[0.16em] text-navy uppercase">Open</span>
+                <span className="text-[9px] font-bold tracking-[0.16em] text-navy uppercase">Source</span>
+                <span className="text-[9px] font-bold tracking-[0.16em] text-navy uppercase">Connect</span>
               </div>
             </Link>
             {/* Hamburger / Close button */}
