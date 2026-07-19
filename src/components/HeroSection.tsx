@@ -49,17 +49,17 @@ export default function HeroSection() {
               sustainability of high-impact open-source technologies worldwide.
             </p>
 
-            {/* CTA Buttons - align with paragraph left edge */}
-            <div className="max-w-[470px] flex flex-wrap gap-[18px]">
+            {/* CTA Buttons - stack full-width on mobile, inline on desktop */}
+            <div className="max-w-[470px] flex flex-col sm:flex-row gap-3 sm:gap-[18px]">
               <Link
                 href="#"
-                className="inline-flex items-center h-[46px] px-[26px] bg-navy text-white text-[11px] font-bold tracking-[0.12em] uppercase rounded-[6px] hover:bg-navy-light transition-all duration-200"
+                className="inline-flex items-center justify-center h-[46px] px-[26px] bg-navy text-white text-[11px] font-bold tracking-[0.12em] uppercase rounded-[6px] hover:bg-navy-light transition-all duration-200 w-full sm:w-auto"
               >
                 Our Mission &amp; Bylaws
               </Link>
               <Link
                 href="#"
-                className="inline-flex items-center h-[46px] px-[26px] bg-transparent text-navy border border-navy/25 text-[11px] font-bold tracking-[0.12em] uppercase rounded-[6px] hover:bg-navy hover:text-white hover:border-navy transition-all duration-200"
+                className="inline-flex items-center justify-center h-[46px] px-[26px] bg-transparent text-navy border border-navy/25 text-[11px] font-bold tracking-[0.12em] uppercase rounded-[6px] hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 w-full sm:w-auto"
               >
                 Technical Portfolio
               </Link>

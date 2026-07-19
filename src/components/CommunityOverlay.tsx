@@ -24,8 +24,8 @@ export default function CommunityOverlay({ isOpen, onClose }: CommunityOverlayPr
 
       {/* Overlay dropdown panel — slides down below the nav bar */}
       <div
-        className="fixed inset-x-0 z-50 shadow-2xl animate-slideDown"
-        style={{ top: "110px" }}
+        className="fixed inset-x-0 z-50 shadow-2xl animate-slideDown overflow-y-auto"
+        style={{ top: "110px", maxHeight: "calc(100vh - 110px)" }}
       >
         <div className="w-full bg-white">
           {/* ===== MEGA MENU CONTENT ===== */}
