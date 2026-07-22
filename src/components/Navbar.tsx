@@ -28,7 +28,7 @@ export default function Navbar({
   onMobileMenuToggle,
   onMobileNavClick,
 }: NavbarProps) {
-  // Lock body scroll when mobile menu is open
+  // Lock body scroll when mobile menu is open (simple approach)
   useEffect(() => {
     if (isMobileMenuOpen) {
       document.body.style.overflow = "hidden";

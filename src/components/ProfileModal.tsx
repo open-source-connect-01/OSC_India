@@ -18,16 +18,26 @@ interface ProfileModalProps {
 }
 
 export default function ProfileModal({ profile, onClose }: ProfileModalProps) {
-  // Lock body scroll when modal is open
+  // Lock body scroll when modal is open (robust for mobile)
   useEffect(() => {
     if (profile) {
+      const scrollY = window.scrollY;
+      document.body.style.position = "fixed";
+      document.body.style.top = `-${scrollY}px`;
+      document.body.style.left = "0";
+      document.body.style.right = "0";
       document.body.style.overflow = "hidden";
+      document.body.style.width = "100%";
     } else {
+      const scrollY = parseInt(document.body.style.top || "0") * -1;
+      document.body.style.position = "";
+      document.body.style.top = "";
+      document.body.style.left = "";
+      document.body.style.right = "";
       document.body.style.overflow = "";
+      document.body.style.width = "";
+      window.scrollTo(0, scrollY);
     }
-    return () => {
-      document.body.style.overflow = "";
-    };
   }, [profile]);
 
   // Close on Escape key

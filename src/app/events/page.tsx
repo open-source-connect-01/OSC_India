@@ -1,17 +1,29 @@
 "use client";
 
 import { useState } from "react";
+import { useRouter } from "next/navigation";
 import TopUtilityBar from "@/components/TopUtilityBar";
 import Navbar from "@/components/Navbar";
 import ResearchLeadershipSection from "@/components/ResearchLeadershipSection";
+import type { ActiveOverlay } from "@/components/Navbar";
 
 export default function EventsPage() {
+  const router = useRouter();
   const [showResearch, setShowResearch] = useState(false);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const handleNavClick = (label: ActiveOverlay) => {
+    setIsMobileMenuOpen(false);
+    if (label && label !== "events") {
+      router.push("/?nav=" + label);
+    }
+  };
 
   const navBar = (
     <Navbar
       activeOverlay={null}
+      onNavClick={handleNavClick}
+      onMobileNavClick={handleNavClick}
       isMobileMenuOpen={isMobileMenuOpen}
       onMobileMenuToggle={() => setIsMobileMenuOpen((prev) => !prev)}
     />
