@@ -23,7 +23,7 @@ export default function ResearchLeadershipSection() {
   return (
     <>
       {/* ===== RESEARCH LEADERSHIP ===== */}
-      <section className="w-full bg-white">
+      <section id="research-leadership" className="w-full bg-white">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8 pt-12 lg:pt-14 pb-8 lg:pb-10">
           {/* Page Header */}
           <div className="mb-6">

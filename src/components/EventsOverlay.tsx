@@ -1,7 +1,5 @@
 "use client";
 
-import Link from "next/link";
-
 interface EventsOverlayProps {
   isOpen: boolean;
   onClose: () => void;
@@ -155,9 +153,14 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
                 <p className="text-[9px] font-bold tracking-[0.2em] text-gray-500 uppercase">
                   Stay updated with our newsletter
                 </p>
-                <Link
-                  href="#"
-                  className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.12em] text-accent-blue uppercase hover:text-accent-blue/80 transition-colors duration-200 group"
+                <button
+                  onClick={() => {
+                    onClose();
+                    setTimeout(() => {
+                      document.getElementById('research-leadership')?.scrollIntoView({ behavior: 'smooth' });
+                    }, 300);
+                  }}
+                  className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.12em] text-accent-blue uppercase hover:text-accent-blue/80 transition-colors duration-200 group cursor-pointer"
                 >
                   View Full Calendar
                   <svg
@@ -174,7 +177,7 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
                     <path d="M5 12h14" />
                     <path d="m12 5 7 7-7 7" />
                   </svg>
-                </Link>
+                </button>
               </div>
             </div>
           </div>
