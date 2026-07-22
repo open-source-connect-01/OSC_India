@@ -10,7 +10,7 @@ export default function TopUtilityBar() {
   return (
     <div className="w-full bg-[#0f1420]">
       <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14">
-        <div className="flex items-center justify-between h-[38px]">
+        <div className="flex items-center justify-between h-[32px]">
           {/* Left links — hide on mobile */}
           <div className="hidden sm:flex items-center gap-8">
             {["Working Groups", "Members Portal", "Events"].map((label) => (
@@ -73,28 +73,6 @@ export default function TopUtilityBar() {
 
             {/* Vertical divider */}
             <div className="w-px h-4 bg-gray-600 hidden sm:block" />
-
-            {/* Language selector */}
-            <button
-              className="flex items-center gap-1.5 text-[9px] font-semibold tracking-[0.1em] text-gray-400 hover:text-white uppercase transition-colors duration-200"
-              aria-label="Select language"
-            >
-              <svg
-                width="12"
-                height="12"
-                viewBox="0 0 24 24"
-                fill="none"
-                stroke="currentColor"
-                strokeWidth="2"
-                strokeLinecap="round"
-                strokeLinejoin="round"
-              >
-                <circle cx="12" cy="12" r="10" />
-                <line x1="2" y1="12" x2="22" y2="12" />
-                <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
-              </svg>
-              <span className="hidden sm:inline">EN</span>
-            </button>
 
             {/* Dark/Light mode toggle */}
             <button

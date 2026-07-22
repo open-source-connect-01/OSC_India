@@ -31,15 +31,14 @@ const stats = [
 
 export default function StatsRow() {
   return (
-    <section className="relative w-full bg-white border-b border-divider-blue">
-      <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-8 lg:py-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-8 gap-x-6 justify-items-center">
+    <section className="relative w-full bg-white">
+      <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-6 lg:py-8">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-y-6 gap-x-6 justify-items-center">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              {/* Value */}
+              {/* Value — suffix same color as number */}
               <div className="text-[44px] lg:text-[60px] font-bold text-navy leading-none mb-1">
-                {stat.value}
-                <span className="text-accent-blue">{stat.suffix}</span>
+                {stat.value}<span className="text-navy">{stat.suffix}</span>
               </div>
 
               {/* Label */}

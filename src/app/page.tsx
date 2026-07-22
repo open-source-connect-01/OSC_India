@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useCallback } from "react";
+import { useState, useCallback, useEffect } from "react";
 import type { ActiveOverlay } from "@/components/Navbar";
 import TopUtilityBar from "@/components/TopUtilityBar";
 import Navbar from "@/components/Navbar";
@@ -35,6 +35,18 @@ export default function Home() {
   }, []);
 
   const hasActiveOverlay = activeOverlay !== null;
+
+  // Lock body scroll when any overlay is open
+  useEffect(() => {
+    if (hasActiveOverlay) {
+      document.body.style.overflow = "hidden";
+    } else {
+      document.body.style.overflow = "";
+    }
+    return () => {
+      document.body.style.overflow = "";
+    };
+  }, [hasActiveOverlay]);
 
   return (
     <div className="flex flex-col min-h-full">
