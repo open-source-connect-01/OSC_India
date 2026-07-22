@@ -4,6 +4,12 @@ import { useState } from "react";
 import { useRouter } from "next/navigation";
 import TopUtilityBar from "@/components/TopUtilityBar";
 import Navbar from "@/components/Navbar";
+import HeroSection from "@/components/HeroSection";
+import StatsRow from "@/components/StatsRow";
+import CoreFocusSection from "@/components/CoreFocusSection";
+import CommunitySpotlightSection from "@/components/CommunitySpotlightSection";
+import ConnectContributeGrowSection from "@/components/ConnectContributeGrowSection";
+import FooterSection from "@/components/FooterSection";
 import ResearchLeadershipSection from "@/components/ResearchLeadershipSection";
 import type { ActiveOverlay } from "@/components/Navbar";
 
@@ -221,6 +227,16 @@ export default function EventsPage() {
           </div>
           </div>
         </section>
+
+        {/* ===== LANDING PAGE CONTENT ===== */}
+        <div className="flex flex-col">
+          <HeroSection />
+          <StatsRow />
+          <CoreFocusSection />
+          <CommunitySpotlightSection />
+          <ConnectContributeGrowSection />
+          <FooterSection />
+        </div>
       </main>
     </div>
   );
