@@ -3,9 +3,10 @@
 interface EventsOverlayProps {
   isOpen: boolean;
   onClose: () => void;
+  onOpenResearch?: () => void;
 }
 
-export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
+export default function EventsOverlay({ isOpen, onClose, onOpenResearch }: EventsOverlayProps) {
   if (!isOpen) return null;
 
   return (
@@ -154,12 +155,7 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
                   Stay updated with our newsletter
                 </p>
                 <button
-                  onClick={() => {
-                    onClose();
-                    setTimeout(() => {
-                      document.getElementById('research-leadership')?.scrollIntoView({ behavior: 'smooth' });
-                    }, 300);
-                  }}
+                  onClick={() => onOpenResearch?.()}
                   className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.12em] text-accent-blue uppercase hover:text-accent-blue/80 transition-colors duration-200 group cursor-pointer"
                 >
                   View Full Calendar
