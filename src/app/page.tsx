@@ -7,17 +7,16 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
 import CoreFocusSection from "@/components/CoreFocusSection";
-import ResearchLeadershipSection from "@/components/ResearchLeadershipSection";
+import CommunitySpotlightSection from "@/components/CommunitySpotlightSection";
+import ConnectContributeGrowSection from "@/components/ConnectContributeGrowSection";
 import FooterSection from "@/components/FooterSection";
 import AboutOverlay from "@/components/AboutOverlay";
 import WhatWeDoOverlay from "@/components/WhatWeDoOverlay";
 import CommunityOverlay from "@/components/CommunityOverlay";
-import EventsOverlay from "@/components/EventsOverlay";
 
 export default function Home() {
   const [activeOverlay, setActiveOverlay] = useState<ActiveOverlay>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
-  const [showResearchLeadership, setShowResearchLeadership] = useState(false);
 
   const handleNavClick = useCallback((label: ActiveOverlay) => {
     setActiveOverlay((prev) => (prev === label ? null : label));
@@ -26,14 +25,6 @@ export default function Home() {
 
   const handleCloseOverlay = useCallback(() => {
     setActiveOverlay(null);
-  }, []);
-
-  const handleOpenResearch = useCallback(() => {
-    setActiveOverlay(null);
-    setShowResearchLeadership(true);
-    setTimeout(() => {
-      document.getElementById('research-leadership')?.scrollIntoView({ behavior: 'smooth' });
-    }, 300);
   }, []);
 
   const handleMobileMenuToggle = useCallback(() => {
@@ -82,7 +73,8 @@ export default function Home() {
         <HeroSection />
         <StatsRow />
         <CoreFocusSection />
-        {showResearchLeadership && <ResearchLeadershipSection />}
+        <CommunitySpotlightSection />
+        <ConnectContributeGrowSection />
       </main>
 
       <FooterSection />
@@ -91,7 +83,6 @@ export default function Home() {
       <AboutOverlay isOpen={activeOverlay === "about"} onClose={handleCloseOverlay} />
       <WhatWeDoOverlay isOpen={activeOverlay === "whatwedo"} onClose={handleCloseOverlay} />
       <CommunityOverlay isOpen={activeOverlay === "resources"} onClose={handleCloseOverlay} />
-      <EventsOverlay isOpen={activeOverlay === "events"} onClose={handleCloseOverlay} onOpenResearch={handleOpenResearch} />
     </div>
   );
 }

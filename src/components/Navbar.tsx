@@ -59,15 +59,25 @@ export default function Navbar({
 
             {/* Nav links - centered - all neutral gray, no active state */}
             <div className="flex items-center gap-8 lg:gap-10 mx-auto">
-              {navItems.map((item) => (
-                <button
-                  key={item.key}
-                  onClick={() => onNavClick?.(item.key)}
-                  className="text-[9px] font-bold tracking-[0.18em] text-gray-500 uppercase hover:text-navy transition-colors duration-200 cursor-pointer"
-                >
-                  {item.label}
-                </button>
-              ))}
+              {navItems.map((item) =>
+                item.key === "events" ? (
+                  <Link
+                    key={item.key}
+                    href="/events"
+                    className="text-[9px] font-bold tracking-[0.18em] text-gray-500 uppercase hover:text-navy transition-colors duration-200"
+                  >
+                    {item.label}
+                  </Link>
+                ) : (
+                  <button
+                    key={item.key}
+                    onClick={() => onNavClick?.(item.key)}
+                    className="text-[9px] font-bold tracking-[0.18em] text-gray-500 uppercase hover:text-navy transition-colors duration-200 cursor-pointer"
+                  >
+                    {item.label}
+                  </button>
+                )
+              )}
             </div>
 
             {/* Join Us Button - right */}
@@ -125,9 +135,20 @@ export default function Navbar({
         }`}
         style={{ top: "110px" }}
       >
-        <div className="px-6 py-6 space-y-1">
-          {navItems.map((item) => {
+        <div className="px-6 py-6 space-y-1">              {navItems.map((item) => {
             const isActive = activeOverlay === item.key;
+            if (item.key === "events") {
+              return (
+                <Link
+                  key={item.key}
+                  href="/events"
+                  className="block w-full text-left py-3 px-4 text-sm font-bold tracking-[0.12em] uppercase rounded-lg transition-colors duration-200 min-h-[44px] text-navy hover:bg-gray-50"
+                  onClick={() => onMobileMenuToggle?.()}
+                >
+                  {item.label}
+                </Link>
+              );
+            }
             return (
               <button
                 key={item.key}

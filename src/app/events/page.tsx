@@ -1,30 +1,47 @@
 "use client";
 
-interface EventsOverlayProps {
-  isOpen: boolean;
-  onClose: () => void;
-  onOpenResearch?: () => void;
-}
+import { useState } from "react";
+import TopUtilityBar from "@/components/TopUtilityBar";
+import Navbar from "@/components/Navbar";
+import ResearchLeadershipSection from "@/components/ResearchLeadershipSection";
 
-export default function EventsOverlay({ isOpen, onClose, onOpenResearch }: EventsOverlayProps) {
-  if (!isOpen) return null;
+export default function EventsPage() {
+  const [showResearch, setShowResearch] = useState(false);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+
+  const navBar = (
+    <Navbar
+      activeOverlay={null}
+      isMobileMenuOpen={isMobileMenuOpen}
+      onMobileMenuToggle={() => setIsMobileMenuOpen((prev) => !prev)}
+    />
+  );
+
+  if (showResearch) {
+    return (
+      <div className="flex flex-col min-h-full">
+        <header className="relative z-30">
+          <TopUtilityBar />
+          {navBar}
+        </header>
+        <main className="flex-1">
+          <ResearchLeadershipSection />
+        </main>
+      </div>
+    );
+  }
 
   return (
-    <>
-      {/* Dimmed backdrop */}
-      <div
-        className="fixed inset-x-0 z-40 bg-navy/30 backdrop-blur-[2px]"
-        style={{ top: "110px", bottom: 0 }}
-        onClick={onClose}
-      />
+    <div className="flex flex-col min-h-full">
+      <header className="relative z-30">
+        <TopUtilityBar />
+        {navBar}
+      </header>
 
-      {/* Overlay panel */}
-      <div
-        className="fixed inset-x-0 z-50 shadow-2xl animate-slideDown overflow-y-auto"
-        style={{ top: "110px", maxHeight: "calc(100vh - 110px)" }}
-      >
-        <div className="w-full bg-white">
-          <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-10 lg:py-12">
+      <main className="flex-1">
+        {/* ===== EVENTS OVERLAY CONTENT ===== */}
+        <section className="w-full bg-white">
+          <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-10 lg:py-12">
             <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
               {/* --- Column 1: Browse Events --- */}
               <div>
@@ -155,7 +172,7 @@ export default function EventsOverlay({ isOpen, onClose, onOpenResearch }: Event
                   Stay updated with our newsletter
                 </p>
                 <button
-                  onClick={() => onOpenResearch?.()}
+                  onClick={() => setShowResearch(true)}
                   className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.12em] text-accent-blue uppercase hover:text-accent-blue/80 transition-colors duration-200 group cursor-pointer"
                 >
                   View Full Calendar
@@ -177,20 +194,8 @@ export default function EventsOverlay({ isOpen, onClose, onOpenResearch }: Event
               </div>
             </div>
           </div>
-        </div>
-      </div>
-
-      {/* Close button */}
-      <button
-        onClick={onClose}
-        className="fixed top-[76px] right-6 z-[60] w-8 h-8 flex items-center justify-center rounded-full bg-white/80 hover:bg-white shadow-md text-navy transition-all duration-200"
-        aria-label="Close menu"
-      >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M18 6 6 18" />
-          <path d="m6 6 12 12" />
-        </svg>
-      </button>
-    </>
+        </section>
+      </main>
+    </div>
   );
 }
