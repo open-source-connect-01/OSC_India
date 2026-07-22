@@ -29,7 +29,7 @@ export default function CommunityOverlay({ isOpen, onClose }: CommunityOverlayPr
       >
         <div className="w-full bg-white">
           <div className="sticky top-0 z-10 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
-            <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-6 lg:pr-8 py-4 flex justify-end">
+            <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-6 lg:pr-8 py-4 flex justify-start">
               <button
                 onClick={onClose}
                 className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3.5 py-2 text-[9px] font-bold tracking-[0.16em] uppercase text-navy shadow-sm transition-all duration-200 hover:border-gray-300 hover:bg-gray-50"

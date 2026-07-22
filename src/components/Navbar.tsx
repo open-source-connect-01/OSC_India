@@ -27,6 +27,8 @@ export default function Navbar({
   onMobileMenuToggle,
   onMobileNavClick,
 }: NavbarProps) {
+  const isMobileToggleLocked = activeOverlay !== null;
+
   // Lock body scroll when mobile menu is open (simple approach)
   useEffect(() => {
     if (isMobileMenuOpen) {
@@ -101,9 +103,17 @@ export default function Navbar({
             </Link>
             {/* Hamburger / Close button */}
             <button
-              onClick={onMobileMenuToggle}
-              className="relative z-[80] flex flex-col items-center justify-center w-10 h-10 p-2 group"
+              onClick={() => {
+                if (!isMobileToggleLocked) {
+                  onMobileMenuToggle?.();
+                }
+              }}
+              className={`relative z-[80] flex flex-col items-center justify-center w-10 h-10 p-2 group transition-opacity duration-200 ${
+                isMobileToggleLocked ? "cursor-not-allowed opacity-40" : ""
+              }`}
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
+              aria-disabled={isMobileToggleLocked}
+              disabled={isMobileToggleLocked}
             >
               <span
                 className={`block w-5 h-0.5 bg-navy rounded-full transition-all duration-300 ease-in-out ${
