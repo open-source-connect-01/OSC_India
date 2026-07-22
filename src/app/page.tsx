@@ -6,7 +6,7 @@ import TopUtilityBar from "@/components/TopUtilityBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
-import MissionSection from "@/components/MissionSection";
+import CoreFocusSection from "@/components/CoreFocusSection";
 import AboutOverlay from "@/components/AboutOverlay";
 import WhatWeDoOverlay from "@/components/WhatWeDoOverlay";
 import CommunityOverlay from "@/components/CommunityOverlay";
@@ -70,7 +70,7 @@ export default function Home() {
       >
         <HeroSection />
         <StatsRow />
-        <MissionSection />
+        <CoreFocusSection />
       </main>
 
       {/* Overlays */}
