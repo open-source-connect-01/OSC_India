@@ -2,32 +2,32 @@ import Link from "next/link";
 
 const focusCards = [
   {
-    blobColor: "bg-amber-400/30",
+    blobColor: "bg-blue-300/40",
     title: "Sustainable Open Source Ecosystems",
     desc: "Building resilient foundations for projects to thrive long-term, ensuring stability and continuous evolution.",
   },
   {
-    blobColor: "bg-teal-400/30",
+    blobColor: "bg-green-300/40",
     title: "From Builders to Maintainers",
     desc: "Empowering developers to transition from casual contributors to project leaders and maintainers.",
   },
   {
-    blobColor: "bg-pink-400/30",
+    blobColor: "bg-yellow-300/40",
     title: "Open Source with Impact",
     desc: "Focusing on projects that solve real-world problems and drive tangible social and economic change.",
   },
   {
-    blobColor: "bg-purple-400/30",
+    blobColor: "bg-purple-300/40",
     title: "Global Collaboration, Local Leadership",
     desc: "Connecting global expertise while fostering strong local communities to drive adoption and innovation.",
   },
   {
-    blobColor: "bg-teal-400/30",
+    blobColor: "bg-pink-300/40",
     title: "Responsible Open Innovation",
     desc: "Promoting ethical practices, security, and inclusive governance in all open source endeavors.",
   },
   {
-    blobColor: "bg-purple-400/30",
+    blobColor: "bg-orange-300/40",
     title: "Responsible Open Innovation",
     desc: "Promoting ethical practices, security, and inclusive governance in all open source endeavors.",
   },
@@ -57,12 +57,6 @@ const projectCards = [
   },
 ];
 
-function BlobShape({ className }: { className: string }) {
-  return (
-    <div className={`w-8 h-8 rounded-full ${className} opacity-60`} style={{ borderRadius: "40% 60% 30% 70% / 50% 40% 60% 50%" }} />
-  );
-}
-
 export default function CoreFocusSection() {
   return (
     <>
@@ -85,13 +79,17 @@ export default function CoreFocusSection() {
             {focusCards.map((card, i) => (
               <div
                 key={i}
-                className="bg-white border border-gray-200 rounded-[10px] p-6"
+                className="relative bg-white border border-gray-200 rounded-[10px] pt-3 pb-5 pl-5 pr-5 overflow-hidden"
               >
-                <BlobShape className={card.blobColor} />
-                <h3 className="text-[16px] font-bold text-navy-deep mt-4 mb-3 leading-snug">
+                {/* Large decorative blob in top-right corner, cropped at card edge */}
+                <div
+                  className={`absolute -top-8 -right-8 w-[100px] h-[100px] rounded-full ${card.blobColor}`}
+                  style={{ borderRadius: "40% 60% 30% 70% / 50% 40% 60% 50%" }}
+                />
+                <h3 className="text-[15px] font-bold text-navy-deep mt-3 mb-2 leading-snug relative z-10">
                   {card.title}
                 </h3>
-                <p className="text-[14px] text-gray-400 leading-relaxed">
+                <p className="text-[13px] text-gray-400 leading-relaxed relative z-10">
                   {card.desc}
                 </p>
               </div>
