@@ -7,6 +7,7 @@ import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
 import CoreFocusSection from "@/components/CoreFocusSection";
+import ResearchLeadershipSection from "@/components/ResearchLeadershipSection";
 import FooterSection from "@/components/FooterSection";
 import AboutOverlay from "@/components/AboutOverlay";
 import WhatWeDoOverlay from "@/components/WhatWeDoOverlay";
@@ -72,6 +73,7 @@ export default function Home() {
         <HeroSection />
         <StatsRow />
         <CoreFocusSection />
+        <ResearchLeadershipSection />
       </main>
 
       <FooterSection />
