@@ -103,7 +103,7 @@ export default function Navbar({
             {/* Hamburger / Close button */}
             <button
               onClick={onMobileMenuToggle}
-              className="flex flex-col items-center justify-center w-10 h-10 p-2 group relative"
+              className="relative z-[80] flex flex-col items-center justify-center w-10 h-10 p-2 group"
               aria-label={isMobileMenuOpen ? "Close menu" : "Open menu"}
             >
               <span
@@ -128,7 +128,7 @@ export default function Navbar({
 
       {/* Mobile Drawer */}
       <div
-        className={`md:hidden fixed inset-x-0 z-50 bg-white shadow-xl transition-all duration-300 ease-in-out ${
+        className={`md:hidden fixed inset-x-0 z-[70] bg-white shadow-xl transition-all duration-300 ease-in-out ${
           isMobileMenuOpen
             ? "translate-y-0 opacity-100 border-b border-gray-200"
             : "-translate-y-full opacity-0 pointer-events-none"
