@@ -53,7 +53,20 @@ export default function EventsPage() {
       <main className="flex-1 flex flex-col">
         {/* ===== EVENTS OVERLAY CONTENT ===== */}
         <section className="w-full bg-white flex-1">
-          <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-10 lg:py-12">
+          <div className="max-w-[1240px] mx-auto px-6 lg:px-8 pt-6 lg:pt-8 pb-10 lg:pb-12">
+            <button
+              onClick={() => router.push("/")}
+              className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3.5 py-2 text-[9px] font-bold tracking-[0.16em] uppercase text-navy shadow-sm transition-all duration-200 hover:border-gray-300 hover:bg-gray-50"
+              aria-label="Back to home"
+            >
+              <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                <path d="M19 12H5" />
+                <path d="m12 19-7-7 7-7" />
+              </svg>
+              Back
+            </button>
+
+            <div className="mt-6">
             <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
               {/* --- Column 1: Browse Events --- */}
               <div>
@@ -205,6 +218,7 @@ export default function EventsPage() {
                 </button>
               </div>
             </div>
+          </div>
           </div>
         </section>
       </main>
