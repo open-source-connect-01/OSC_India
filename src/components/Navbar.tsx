@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 
-export type ActiveOverlay = "about" | "whatwedo" | "resources" | "projects" | "events" | null;
+export type ActiveOverlay = "about" | "whatwedo" | "resources" | "events" | null;
 
 interface NavbarProps {
   onNavClick?: (label: ActiveOverlay) => void;
@@ -17,7 +17,6 @@ const navItems: { label: string; key: ActiveOverlay }[] = [
   { label: "About", key: "about" },
   { label: "What We Do", key: "whatwedo" },
   { label: "Resources", key: "resources" },
-  { label: "Projects", key: "projects" },
   { label: "Events", key: "events" },
 ];
 
@@ -125,6 +124,15 @@ export default function Navbar({
           </div>
         </div>
       </div>
+
+      {/* Mobile Backdrop */}
+      <div
+        className={`md:hidden fixed inset-x-0 z-[60] bg-navy/25 backdrop-blur-sm transition-opacity duration-300 ease-in-out ${
+          isMobileMenuOpen ? "opacity-100" : "opacity-0 pointer-events-none"
+        }`}
+        style={{ top: "110px", bottom: 0 }}
+        onClick={onMobileMenuToggle}
+      />
 
       {/* Mobile Drawer */}
       <div

@@ -58,12 +58,8 @@ function HomeContent() {
 
   const hasActiveOverlay = activeOverlay !== null;
 
-  // Lock body scroll when any overlay is open (robust for mobile)
+  // Lock body scroll when any overlay is open (position:fixed prevents bg scroll on mobile)
   useEffect(() => {
-    const preventTouch = (e: TouchEvent) => {
-      e.preventDefault();
-    };
-
     if (hasActiveOverlay) {
       scrollYRef.current = window.scrollY;
       document.body.style.position = "fixed";
@@ -72,7 +68,6 @@ function HomeContent() {
       document.body.style.right = "0";
       document.body.style.overflow = "hidden";
       document.body.style.width = "100%";
-      document.addEventListener("touchmove", preventTouch, { passive: false });
     } else {
       document.body.style.position = "";
       document.body.style.top = "";
@@ -82,9 +77,6 @@ function HomeContent() {
       document.body.style.width = "";
       window.scrollTo(0, scrollYRef.current);
     }
-    return () => {
-      document.removeEventListener("touchmove", preventTouch);
-    };
   }, [hasActiveOverlay]);
 
   return (

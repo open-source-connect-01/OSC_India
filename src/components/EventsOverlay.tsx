@@ -182,15 +182,15 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
         </div>
       </div>
 
-      {/* Close button */}
+      {/* Back button */}
       <button
         onClick={onClose}
-        className="fixed top-[76px] right-6 z-[60] w-8 h-8 flex items-center justify-center rounded-full bg-white/80 hover:bg-white shadow-md text-navy transition-all duration-200"
-        aria-label="Close menu"
+        className="fixed top-[76px] left-6 z-[60] w-8 h-8 flex items-center justify-center rounded-full bg-white/80 hover:bg-white shadow-md text-navy transition-all duration-200"
+        aria-label="Go back"
       >
-        <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-          <path d="M18 6 6 18" />
-          <path d="m6 6 12 12" />
+        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+          <path d="M19 12H5" />
+          <path d="m12 19-7-7 7-7" />
         </svg>
       </button>
     </>
