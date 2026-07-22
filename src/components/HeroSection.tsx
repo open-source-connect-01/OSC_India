@@ -56,24 +56,14 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right: Floating CoreFocusCard (desktop only) - positioned mid-hero */}
-          <div className="hidden lg:block w-[280px] shrink-0 relative">
-            {/* Solid offset block behind the card (cool gray-blue) */}
-            <div className="absolute top-6 right-[-6px] w-[255px] h-full bg-[#dce3ef] rounded-[6px] z-0" />
-
-            <div className="absolute right-0 top-4 z-20">
-              <CoreFocusCard />
-            </div>
-
-            {/* Decorative dots pattern */}
-            <div className="absolute top-[180px] right-4 w-36 h-36 opacity-[0.2]">
-              <div className="grid grid-cols-5 gap-2.5">
-                {Array.from({ length: 25 }).map((_, i) => (
-                  <div
-                    key={i}
-                    className="w-[5px] h-[5px] rounded-full bg-navy"
-                  />
-                ))}
+          {/* Right: Floating CoreFocusCard (desktop only) */}
+          <div className="hidden lg:block w-[280px] shrink-0 relative mt-16">
+            <div className="relative">
+              {/* Thin offset sliver — ~10px visible edge on right and bottom */}
+              <div className="absolute top-[10px] left-[10px] w-full h-full bg-[#dce3ef] rounded-[6px] z-0" />
+              {/* Card sits on top */}
+              <div className="relative z-10">
+                <CoreFocusCard />
               </div>
             </div>
           </div>
@@ -85,8 +75,8 @@ export default function HeroSection() {
 
 function CoreFocusCard() {
   return (
-    <div className="w-full lg:w-[255px] bg-white shadow-[0_12px_32px_rgba(0,0,0,0.12)] p-5 rounded-[6px]">
-      <h3 className="text-[10px] font-bold tracking-[0.2em] text-navy uppercase mb-4">
+    <div className="w-full lg:w-[255px] bg-white p-5 rounded-[6px]">
+      <h3 className="text-[10px] font-bold tracking-[0.2em] text-[#8b93a8] uppercase mb-4">
         Core Focus
       </h3>
       <ul className="space-y-3.5">
@@ -98,7 +88,7 @@ function CoreFocusCard() {
         ].map((item) => (
           <li key={item} className="flex items-center gap-3">
             <span className="w-[9px] h-[9px] bg-[#F2811D] shrink-0" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }} />
-            <span className="text-sm font-medium text-gray-600">
+            <span className="text-sm font-semibold text-navy">
               {item}
             </span>
           </li>
