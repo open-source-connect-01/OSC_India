@@ -79,7 +79,7 @@ export default function Home() {
       {/* Overlays */}
       <AboutOverlay isOpen={activeOverlay === "about"} onClose={handleCloseOverlay} />
       <WhatWeDoOverlay isOpen={activeOverlay === "whatwedo"} onClose={handleCloseOverlay} />
-      <CommunityOverlay isOpen={activeOverlay === "community"} onClose={handleCloseOverlay} />
+      <CommunityOverlay isOpen={activeOverlay === "resources"} onClose={handleCloseOverlay} />
       <EventsOverlay isOpen={activeOverlay === "events"} onClose={handleCloseOverlay} />
     </div>
   );

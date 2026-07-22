@@ -3,7 +3,7 @@
 import Link from "next/link";
 import { useEffect } from "react";
 
-export type ActiveOverlay = "about" | "whatwedo" | "community" | "events" | null;
+export type ActiveOverlay = "about" | "whatwedo" | "resources" | "projects" | "events" | null;
 
 interface NavbarProps {
   onNavClick?: (label: ActiveOverlay) => void;
@@ -16,7 +16,8 @@ interface NavbarProps {
 const navItems: { label: string; key: ActiveOverlay }[] = [
   { label: "About", key: "about" },
   { label: "What We Do", key: "whatwedo" },
-  { label: "Community", key: "community" },
+  { label: "Resources", key: "resources" },
+  { label: "Projects", key: "projects" },
   { label: "Events", key: "events" },
 ];
 
@@ -42,41 +43,27 @@ export default function Navbar({
   return (
     <nav className="w-full bg-white border-b border-gray-200/70 relative">
       <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14">
-        <div className="flex items-center justify-between h-[72px]">
+        <div className="flex items-center justify-between h-[64px]">
           {/* Desktop layout */}
           <div className="hidden md:flex items-center w-full">
-            {/* Logo: abstract circular/pinwheel + OPEN/SOURCE/CONNECT stacked */}
+            {/* Logo: dark navy rounded-square with 'O' + OSC FOUNDATION / GLOBAL STANDARDS ENTITY */}
             <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-              <div className="w-[34px] h-[34px] rounded-full bg-navy flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
-                <svg
-                  width="17"
-                  height="17"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-[17px] h-[17px]"
-                >
-                  <circle cx="12" cy="12" r="3" />
-                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
-                </svg>
+              <div className="w-[30px] h-[30px] rounded-[5px] bg-navy flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
+                <span className="text-white font-extrabold text-[14px] leading-none">O</span>
               </div>
               <div className="flex flex-col leading-[1.15]">
-                <span className="text-[9px] font-bold tracking-[0.2em] text-navy uppercase">Open</span>
-                <span className="text-[9px] font-bold tracking-[0.2em] text-navy uppercase">Source</span>
-                <span className="text-[9px] font-bold tracking-[0.2em] text-navy uppercase">Connect</span>
+                <span className="text-[10px] font-bold tracking-[0.15em] text-navy uppercase">OSC Foundation</span>
+                <span className="text-[7.5px] font-semibold tracking-[0.18em] text-gray-400 uppercase">Global Standards Entity</span>
               </div>
             </Link>
 
             {/* Nav links - centered - all neutral gray, no active state */}
-            <div className="flex items-center gap-10 lg:gap-14 mx-auto">
+            <div className="flex items-center gap-8 lg:gap-10 mx-auto">
               {navItems.map((item) => (
                 <button
                   key={item.key}
                   onClick={() => onNavClick?.(item.key)}
-                  className="text-[10px] font-bold tracking-[0.16em] text-gray-500 uppercase hover:text-navy transition-colors duration-200 cursor-pointer"
+                  className="text-[9px] font-bold tracking-[0.18em] text-gray-500 uppercase hover:text-navy transition-colors duration-200 cursor-pointer"
                 >
                   {item.label}
                 </button>
@@ -86,7 +73,7 @@ export default function Navbar({
             {/* Join Us Button - right */}
             <Link
               href="#"
-              className="inline-flex items-center h-[40px] px-6 bg-navy text-white text-[10px] font-bold tracking-[0.16em] uppercase rounded hover:bg-navy-light transition-all duration-200 shrink-0"
+              className="inline-flex items-center h-[36px] px-5 bg-navy text-white text-[9px] font-bold tracking-[0.18em] uppercase rounded hover:bg-navy-light transition-all duration-200 shrink-0"
             >
               Join Us
             </Link>
@@ -95,26 +82,12 @@ export default function Navbar({
           {/* Mobile layout */}
           <div className="md:hidden flex items-center justify-between w-full">
             <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-              <div className="w-[34px] h-[34px] rounded-full bg-navy flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
-                <svg
-                  width="17"
-                  height="17"
-                  viewBox="0 0 24 24"
-                  fill="none"
-                  stroke="white"
-                  strokeWidth="2"
-                  strokeLinecap="round"
-                  strokeLinejoin="round"
-                  className="w-[17px] h-[17px]"
-                >
-                  <circle cx="12" cy="12" r="3" />
-                  <path d="M12 1v4M12 19v4M4.22 4.22l2.83 2.83M16.95 16.95l2.83 2.83M1 12h4M19 12h4M4.22 19.78l2.83-2.83M16.95 7.05l2.83-2.83" />
-                </svg>
+              <div className="w-[30px] h-[30px] rounded-[5px] bg-navy flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
+                <span className="text-white font-extrabold text-[14px] leading-none">O</span>
               </div>
               <div className="flex flex-col leading-[1.15]">
-                <span className="text-[9px] font-bold tracking-[0.16em] text-navy uppercase">Open</span>
-                <span className="text-[9px] font-bold tracking-[0.16em] text-navy uppercase">Source</span>
-                <span className="text-[9px] font-bold tracking-[0.16em] text-navy uppercase">Connect</span>
+                <span className="text-[9px] font-bold tracking-[0.18em] text-navy uppercase">OSC Foundation</span>
+                <span className="text-[7px] font-semibold tracking-[0.18em] text-gray-400 uppercase">Global Standards Entity</span>
               </div>
             </Link>
             {/* Hamburger / Close button */}

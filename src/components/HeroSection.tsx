@@ -3,21 +3,21 @@ import Link from "next/link";
 export default function HeroSection() {
   return (
     <section className="relative w-full bg-hero-bg overflow-hidden">
-      <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 pt-8 pb-4 lg:pb-6">
-        <div className="relative flex flex-col lg:flex-row lg:gap-16 xl:gap-24">
+      <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 pt-6 lg:pt-8 pb-4 lg:pb-6">
+        <div className="relative flex flex-col lg:flex-row lg:gap-12 xl:gap-16">
           {/* Left Content */}
           <div className="relative z-10 flex-1">
             {/* Eyebrow / Announcement — compact */}
-            <div className="flex items-center gap-2 mb-3">
+            <div className="flex items-center gap-2 mb-2">
               <span className="w-1.5 h-1.5 rounded-full bg-accent-blue shrink-0" />
-              <span className="text-[9px] font-bold tracking-[0.08em] text-accent-blue uppercase">
+              <span className="text-[8.5px] font-bold tracking-[0.1em] text-gray-700 uppercase">
                 Governance Update: Charter v2.4 Approved
               </span>
             </div>
 
-            {/* Main Headline - 2-line wrap, larger, tighter */}
+            {/* Main Headline - scaled down to fit 2 lines */}
             <div className="max-w-[620px]">
-              <h1 className="text-[42px] sm:text-[52px] lg:text-[64px] xl:text-[72px] font-extrabold text-navy leading-[1.02] mb-4 tracking-tight">
+              <h1 className="text-[36px] sm:text-[42px] lg:text-[50px] xl:text-[54px] font-extrabold text-navy leading-[1.08] mb-3 tracking-tight">
                 Connecting The World
                 <br />
                 Through{" "}
@@ -27,24 +27,24 @@ export default function HeroSection() {
               </h1>
             </div>
 
-            {/* Subheading - wider for 3-line wrap, tighter spacing */}
-            <p className="max-w-[500px] text-[17px] leading-[1.7] text-gray-400 mb-4">
-              Open Source Connect (OSC) provides governance, financial
-              stewardship, and collaborative infrastructure to ensure long-term
-              sustainability of high-impact open-source technologies worldwide.
+            {/* Subheading - Figma copy */}
+            <p className="max-w-[500px] text-[15px] leading-[1.7] text-gray-400 mb-4">
+              Open Source Connect (OSC) provides the legal, financial, and
+              technical framework to ensure the long-term stewardship of the
+              world&apos;s most high-impact technology domains.
             </p>
 
             {/* CTA Buttons - tighter spacing */}
             <div className="max-w-[470px] flex flex-col sm:flex-row gap-2 sm:gap-3">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center h-[44px] px-[24px] bg-navy text-white text-[11px] font-bold tracking-[0.12em] uppercase rounded-[6px] hover:bg-navy-light transition-all duration-200 w-full sm:w-auto"
+                className="inline-flex items-center justify-center h-[42px] px-[22px] bg-navy text-white text-[10px] font-bold tracking-[0.14em] uppercase rounded-[6px] hover:bg-navy-light transition-all duration-200 w-full sm:w-auto"
               >
                 Our Mission &amp; Bylaws
               </Link>
               <Link
                 href="#"
-                className="inline-flex items-center justify-center h-[44px] px-[24px] bg-transparent text-navy border border-navy/25 text-[11px] font-bold tracking-[0.12em] uppercase rounded-[6px] hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 w-full sm:w-auto"
+                className="inline-flex items-center justify-center h-[42px] px-[22px] bg-transparent text-navy border border-navy/25 text-[10px] font-bold tracking-[0.14em] uppercase rounded-[6px] hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 w-full sm:w-auto"
               >
                 Technical Portfolio
               </Link>
@@ -56,14 +56,17 @@ export default function HeroSection() {
             </div>
           </div>
 
-          {/* Right: Floating CoreFocusCard (desktop only) - positioned higher */}
+          {/* Right: Floating CoreFocusCard (desktop only) - positioned mid-hero */}
           <div className="hidden lg:block w-[280px] shrink-0 relative">
-            <div className="absolute right-0 top-[-40px] z-20">
+            {/* Solid offset block behind the card (cool gray-blue) */}
+            <div className="absolute top-6 right-[-6px] w-[255px] h-full bg-[#dce3ef] rounded-[6px] z-0" />
+
+            <div className="absolute right-0 top-4 z-20">
               <CoreFocusCard />
             </div>
 
             {/* Decorative dots pattern */}
-            <div className="absolute top-16 right-4 w-36 h-36 opacity-[0.25]">
+            <div className="absolute top-[180px] right-4 w-36 h-36 opacity-[0.2]">
               <div className="grid grid-cols-5 gap-2.5">
                 {Array.from({ length: 25 }).map((_, i) => (
                   <div
@@ -82,19 +85,19 @@ export default function HeroSection() {
 
 function CoreFocusCard() {
   return (
-    <div className="w-full lg:w-[255px] bg-white shadow-[0_16px_40px_rgba(0,0,0,0.18)] p-5 rounded-[6px]">
+    <div className="w-full lg:w-[255px] bg-white shadow-[0_12px_32px_rgba(0,0,0,0.12)] p-5 rounded-[6px]">
       <h3 className="text-[10px] font-bold tracking-[0.2em] text-navy uppercase mb-4">
         Core Focus
       </h3>
-      <ul className="space-y-4">
+      <ul className="space-y-3.5">
         {[
-          "Responsible & Applied AI",
-          "Cloud-Native",
-          "Digital Resilience",
-          "Robotics Engineering",
+          "AI & Ethics",
+          "Cloud Native",
+          "Cyber Defense",
+          "Robotics",
         ].map((item) => (
           <li key={item} className="flex items-center gap-3">
-            <span className="w-[10px] h-[10px] bg-amber-500 shrink-0" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }} />
+            <span className="w-[9px] h-[9px] bg-[#F2811D] shrink-0" style={{ clipPath: "polygon(0 0, 100% 0, 100% 100%, 0 100%)" }} />
             <span className="text-sm font-medium text-gray-600">
               {item}
             </span>
