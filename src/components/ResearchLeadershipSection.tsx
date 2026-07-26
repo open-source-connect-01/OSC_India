@@ -4,6 +4,37 @@ import { useState } from "react";
 import ProfileModal from "./ProfileModal";
 import type { ProfileData } from "./ProfileModal";
 
+const avatarGradients = [
+  "from-blue-400 to-blue-600",
+  "from-emerald-400 to-emerald-600",
+  "from-violet-400 to-violet-600",
+  "from-amber-400 to-amber-600",
+  "from-rose-400 to-rose-600",
+  "from-cyan-400 to-cyan-600",
+  "from-orange-400 to-orange-600",
+  "from-purple-400 to-purple-600",
+  "from-teal-400 to-teal-600",
+  "from-pink-400 to-pink-600",
+];
+
+function getInitials(name: string): string {
+  return name
+    .split(/\s+/)
+    .filter((w) => w.length > 0 && !w.startsWith("Dr."))
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+}
+
+function getAvatarColor(name: string): string {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return avatarGradients[Math.abs(hash) % avatarGradients.length];
+}
+
 const teamMembers: (ProfileData & { cardRole: string })[] = [
   {
     name: "Dr. Aris Thorne",
@@ -209,11 +240,15 @@ export default function ResearchLeadershipSection({
                 }
                 className="rounded-[6px] overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.08)] bg-white text-left cursor-pointer transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.14)] hover:-translate-y-0.5"
               >
-                {/* Photo placeholder */}
-                <div className="aspect-[3/4] bg-[#D9D9D9] w-full" />
+                {/* Photo — gradient avatar */}
+                <div className={`aspect-[3/4] w-full bg-gradient-to-br ${getAvatarColor(member.name)} flex items-center justify-center`}>
+                  <span className="text-white font-bold text-xl sm:text-2xl tracking-wide">
+                    {getInitials(member.name)}
+                  </span>
+                </div>
                 {/* Caption bar */}
                 <div className="bg-navy-deep px-3.5 py-3 min-h-[68px] flex flex-col justify-center">
-                  <span className="text-[11px] font-bold text-white leading-tight">
+                  <span className="text-[11px] font-bold text-white leading-tight uppercase">
                     {member.name}
                   </span>
                   <span className="text-[9px] font-medium text-gray-400 uppercase tracking-[0.04em] mt-0.5 leading-snug">
