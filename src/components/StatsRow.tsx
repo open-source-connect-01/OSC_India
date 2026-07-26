@@ -53,7 +53,7 @@ export default function StatsRow() {
   return (
     <>
       {/* ===== STATS ROW (plain, no borders) ===== */}
-      <section className="w-full bg-white">
+      <section className="w-full" style={{ background: 'linear-gradient(180deg, #F5F8FC 0%, #FAFBFD 40%, #FFFFFF 100%)' }}>
         <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-8 lg:py-10">
           <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
             {stats.map((stat) => (

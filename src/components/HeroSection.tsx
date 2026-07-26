@@ -2,7 +2,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full bg-white overflow-hidden">
+    <section className="relative w-full overflow-hidden" style={{ background: 'linear-gradient(180deg, #EEF3FC 0%, #E0EAF5 35%, #F0F5FB 65%, #F5F8FC 100%)' }}>
       <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 pt-8 lg:pt-14 pb-4 lg:pb-6">
         <div className="relative flex flex-col lg:flex-row lg:gap-12 xl:gap-16">
           {/* Left Content */}
