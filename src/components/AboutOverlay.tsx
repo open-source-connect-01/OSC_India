@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import ResearchLeadershipSection from "./ResearchLeadershipSection";
+import ProfileModal from "./ProfileModal";
 import type { ProfileData } from "./ProfileModal";
 
 interface AboutOverlayProps {
@@ -239,6 +240,11 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
           )}
         </div>
       </div>
+      {/* Profile Modal — rendered at root level, outside the overlay panel's stacking context */}
+      <ProfileModal
+        profile={selectedProfile}
+        onClose={() => setSelectedProfile(null)}
+      />
     </>
   );
 }

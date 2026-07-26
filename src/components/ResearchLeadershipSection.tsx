@@ -179,6 +179,9 @@ export default function ResearchLeadershipSection({
   const onProfileClose =
     externalOnProfileClose || (() => setInternalProfile(null));
 
+  // Standalone mode (events page) — render modal internally; AboutOverlay handles it externally
+  const isStandalone = externalSelectedProfile === undefined;
+
   return (
     <>
       {/* ===== RESEARCH LEADERSHIP ===== */}
@@ -315,11 +318,10 @@ export default function ResearchLeadershipSection({
         </div>
       </div>
 
-      {/* Profile Modal */}
-      <ProfileModal
-        profile={selectedProfile}
-        onClose={onProfileClose}
-      />
+      {/* Profile Modal — only render here when standalone (events page); AboutOverlay renders it externally */}
+      {isStandalone && (
+        <ProfileModal profile={selectedProfile} onClose={onProfileClose} />
+      )}
     </>
   );
 }
