@@ -43,7 +43,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
         className="fixed inset-x-0 z-50 shadow-2xl animate-slideDown overflow-y-auto"
         style={{ top: "110px", maxHeight: "calc(100vh - 110px)" }}
       >
-        <div className="w-full bg-white min-h-[calc(100vh-110px)]">
+        <div className="w-full bg-white">
           {/* Sticky back button bar */}
           <div className="sticky top-0 z-10 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
             <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-6 lg:pr-8 py-4 flex justify-start">
@@ -63,7 +63,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
 
           {/* ---------- MAIN VIEW ---------- */}
           {subview === "main" && (
-            <>
+            <div className="min-h-[calc(100vh-110px)]">
               <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-10 lg:py-12">
                 <div className="grid md:grid-cols-12 gap-x-8 gap-y-10">
                   {/* --- Column 1 (wider): Image + About OSC --- */}
@@ -224,7 +224,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                   </div>
                 </div>
               </div>
-            </>
+            </div>
           )}
 
           {/* ---------- MENTORS & SPEAKERS SUBVIEW ---------- */}

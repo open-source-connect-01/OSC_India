@@ -121,11 +121,11 @@ export default function CommunitySpotlightSection() {
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-16 lg:py-20">
         {/* Heading */}
         <div className="mb-10">
-          <h2 className="text-[28px] lg:text-[30px] font-extrabold text-[#0B0F1A] leading-tight">
+          <h2 className="text-[24px] lg:text-[26px] font-extrabold text-[#0B0F1A] leading-tight">
             Community Spotlight
           </h2>
-          <div className="w-[60px] h-[4px] bg-accent-orange rounded-full mt-2 mb-5" />
-          <p className="max-w-[650px] text-[15px] text-gray-400 leading-relaxed mt-3">
+          <div className="w-[50px] h-[3px] bg-accent-orange rounded-full mt-2 mb-4" />
+          <p className="max-w-[620px] text-[14px] text-gray-400 leading-relaxed mt-3">
             Celebrating the builders, maintainers, researchers, and leaders
             driving meaningful innovation across the Open Source Connect
             ecosystem. Our community represents diverse expertise across
@@ -133,42 +133,56 @@ export default function CommunitySpotlightSection() {
           </p>
         </div>
 
-        {/* Stats Row */}
-        <div className="flex flex-wrap gap-x-12 sm:gap-x-16 gap-y-8 mb-12 lg:mb-14">
+        {/* Stats Row — compact inline layout */}
+        <div className="flex items-center gap-0 mb-10 lg:mb-12">
           {/* Stat 1 — Blue / Growth */}
-          <div className="flex flex-col items-center text-center">
-            <div className="w-11 h-11 rounded-full bg-blue-50 flex items-center justify-center mb-3">
-              <TrendingUpIcon className="text-blue-500 w-[18px] h-[18px]" />
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+              <TrendingUpIcon className="text-blue-500 w-[13px] h-[13px]" />
             </div>
-            <div className="text-[26px] sm:text-[28px] font-extrabold text-navy-deep leading-none">
-              500+
-            </div>
-            <div className="text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-1.5">
-              Active Leaders
+            <div>
+              <div className="text-[20px] sm:text-[22px] font-extrabold text-navy-deep leading-none">
+                500+
+              </div>
+              <div className="text-[9px] font-bold tracking-[0.06em] text-gray-400 uppercase mt-0.5 leading-tight">
+                Active Leaders
+              </div>
             </div>
           </div>
+
+          {/* Divider */}
+          <div className="w-px h-10 bg-gray-200 mx-5 lg:mx-7 shrink-0" />
+
           {/* Stat 2 — Green / Globe */}
-          <div className="flex flex-col items-center text-center">
-            <div className="w-11 h-11 rounded-full bg-green-50 flex items-center justify-center mb-3">
-              <GlobeIcon className="text-green-500 w-[18px] h-[18px]" />
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 rounded-full bg-green-50 flex items-center justify-center shrink-0">
+              <GlobeIcon className="text-green-500 w-[13px] h-[13px]" />
             </div>
-            <div className="text-[26px] sm:text-[28px] font-extrabold text-navy-deep leading-none">
-              50+
-            </div>
-            <div className="text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-1.5">
-              Countries
+            <div>
+              <div className="text-[20px] sm:text-[22px] font-extrabold text-navy-deep leading-none">
+                50+
+              </div>
+              <div className="text-[9px] font-bold tracking-[0.06em] text-gray-400 uppercase mt-0.5 leading-tight">
+                Countries
+              </div>
             </div>
           </div>
+
+          {/* Divider */}
+          <div className="w-px h-10 bg-gray-200 mx-5 lg:mx-7 shrink-0" />
+
           {/* Stat 3 — Amber / Medal */}
-          <div className="flex flex-col items-center text-center">
-            <div className="w-11 h-11 rounded-full bg-amber-50 flex items-center justify-center mb-3">
-              <MedalIcon className="text-amber-500 w-[18px] h-[18px]" />
+          <div className="flex items-center gap-2.5">
+            <div className="w-7 h-7 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
+              <MedalIcon className="text-amber-500 w-[13px] h-[13px]" />
             </div>
-            <div className="text-[26px] sm:text-[28px] font-extrabold text-navy-deep leading-none">
-              100+
-            </div>
-            <div className="text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-1.5">
-              Speaking Sessions
+            <div>
+              <div className="text-[20px] sm:text-[22px] font-extrabold text-navy-deep leading-none">
+                100+
+              </div>
+              <div className="text-[9px] font-bold tracking-[0.06em] text-gray-400 uppercase mt-0.5 leading-tight">
+                Speaking Sessions
+              </div>
             </div>
           </div>
         </div>
