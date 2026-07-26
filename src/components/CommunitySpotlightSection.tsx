@@ -133,54 +133,48 @@ export default function CommunitySpotlightSection() {
           </p>
         </div>
 
-        {/* Stats Row — compact inline layout */}
-        <div className="flex items-center gap-0 mb-10 lg:mb-12">
+        {/* Stats Row — stretched horizontally like hero section */}
+        <div className="grid grid-cols-3 gap-6 mb-10 lg:mb-12">
           {/* Stat 1 — Blue / Growth */}
-          <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-              <TrendingUpIcon className="text-blue-500 w-[13px] h-[13px]" />
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
+              <TrendingUpIcon className="text-blue-500 w-[16px] h-[16px]" />
             </div>
             <div>
-              <div className="text-[20px] sm:text-[22px] font-extrabold text-navy-deep leading-none">
+              <div className="text-[22px] sm:text-[26px] font-extrabold text-navy-deep leading-none">
                 500+
               </div>
-              <div className="text-[9px] font-bold tracking-[0.06em] text-gray-400 uppercase mt-0.5 leading-tight">
+              <div className="text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-1 leading-tight">
                 Active Leaders
               </div>
             </div>
           </div>
 
-          {/* Divider */}
-          <div className="w-px h-10 bg-gray-200 mx-5 lg:mx-7 shrink-0" />
-
           {/* Stat 2 — Green / Globe */}
-          <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-full bg-green-50 flex items-center justify-center shrink-0">
-              <GlobeIcon className="text-green-500 w-[13px] h-[13px]" />
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-9 h-9 rounded-full bg-green-50 flex items-center justify-center shrink-0">
+              <GlobeIcon className="text-green-500 w-[16px] h-[16px]" />
             </div>
             <div>
-              <div className="text-[20px] sm:text-[22px] font-extrabold text-navy-deep leading-none">
+              <div className="text-[22px] sm:text-[26px] font-extrabold text-navy-deep leading-none">
                 50+
               </div>
-              <div className="text-[9px] font-bold tracking-[0.06em] text-gray-400 uppercase mt-0.5 leading-tight">
+              <div className="text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-1 leading-tight">
                 Countries
               </div>
             </div>
           </div>
 
-          {/* Divider */}
-          <div className="w-px h-10 bg-gray-200 mx-5 lg:mx-7 shrink-0" />
-
           {/* Stat 3 — Amber / Medal */}
-          <div className="flex items-center gap-2.5">
-            <div className="w-7 h-7 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
-              <MedalIcon className="text-amber-500 w-[13px] h-[13px]" />
+          <div className="flex items-center justify-center gap-3">
+            <div className="w-9 h-9 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
+              <MedalIcon className="text-amber-500 w-[16px] h-[16px]" />
             </div>
             <div>
-              <div className="text-[20px] sm:text-[22px] font-extrabold text-navy-deep leading-none">
+              <div className="text-[22px] sm:text-[26px] font-extrabold text-navy-deep leading-none">
                 100+
               </div>
-              <div className="text-[9px] font-bold tracking-[0.06em] text-gray-400 uppercase mt-0.5 leading-tight">
+              <div className="text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-1 leading-tight">
                 Speaking Sessions
               </div>
             </div>
