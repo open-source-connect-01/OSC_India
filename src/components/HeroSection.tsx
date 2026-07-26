@@ -59,7 +59,14 @@ export default function HeroSection() {
 
           {/* Right: Floating CoreFocusCard (desktop only) */}
           <div className="hidden lg:block w-[280px] shrink-0 relative mt-10">
-            <CoreFocusCard />
+            <div className="relative">
+              {/* Thin offset sliver — ~10px visible edge on right and bottom */}
+              <div className="absolute top-[10px] left-[10px] w-full h-full bg-[#dce3ef] rounded-[6px] z-0" />
+              {/* Card sits on top */}
+              <div className="relative z-10">
+                <CoreFocusCard />
+              </div>
+            </div>
           </div>
         </div>
       </div>
