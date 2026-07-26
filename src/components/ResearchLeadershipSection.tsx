@@ -127,11 +127,26 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
 ];
 
-export default function ResearchLeadershipSection() {
+export default function ResearchLeadershipSection({
+  selectedProfile: externalSelectedProfile,
+  onProfileSelect: externalOnProfileSelect,
+  onProfileClose: externalOnProfileClose,
+}: {
+  selectedProfile?: ProfileData | null;
+  onProfileSelect?: (profile: ProfileData) => void;
+  onProfileClose?: () => void;
+}) {
   const [activeTab, setActiveTab] = useState<"mentors" | "speakers">("mentors");
   const [activePage, setActivePage] = useState(1);
   const [email, setEmail] = useState("");
-  const [selectedProfile, setSelectedProfile] = useState<ProfileData | null>(null);
+  const [internalProfile, setInternalProfile] = useState<ProfileData | null>(null);
+
+  // Use external state (from AboutOverlay) if provided, otherwise internal
+  const selectedProfile =
+    externalSelectedProfile !== undefined ? externalSelectedProfile : internalProfile;
+  const onProfileSelect = externalOnProfileSelect || setInternalProfile;
+  const onProfileClose =
+    externalOnProfileClose || (() => setInternalProfile(null));
 
   return (
     <>
@@ -183,7 +198,7 @@ export default function ResearchLeadershipSection() {
               <button
                 key={member.name}
                 onClick={() =>
-                  setSelectedProfile({
+                  onProfileSelect({
                     name: member.name,
                     role: member.role,
                     org: member.org,
@@ -268,7 +283,7 @@ export default function ResearchLeadershipSection() {
       {/* Profile Modal */}
       <ProfileModal
         profile={selectedProfile}
-        onClose={() => setSelectedProfile(null)}
+        onClose={onProfileClose}
       />
     </>
   );

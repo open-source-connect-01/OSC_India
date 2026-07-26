@@ -3,6 +3,7 @@
 import { useState, useEffect } from "react";
 import Link from "next/link";
 import ResearchLeadershipSection from "./ResearchLeadershipSection";
+import type { ProfileData } from "./ProfileModal";
 
 interface AboutOverlayProps {
   isOpen: boolean;
@@ -13,6 +14,7 @@ type SubView = "main" | "mentors-speakers";
 
 export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
   const [subview, setSubview] = useState<SubView>("main");
+  const [selectedProfile, setSelectedProfile] = useState<ProfileData | null>(null);
 
   // Reset to main view every time the overlay opens
   useEffect(() => {
@@ -40,7 +42,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
 
       {/* Overlay panel */}
       <div
-        className="fixed inset-x-0 z-50 shadow-2xl animate-slideDown overflow-y-auto"
+        className={`fixed inset-x-0 z-50 shadow-2xl animate-slideDown ${selectedProfile ? "overflow-hidden" : "overflow-y-auto"}`}
         style={{ top: "110px", maxHeight: "calc(100vh - 110px)" }}
       >
         <div className="w-full bg-white">
@@ -229,7 +231,11 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
 
           {/* ---------- MENTORS & SPEAKERS SUBVIEW ---------- */}
           {subview === "mentors-speakers" && (
-            <ResearchLeadershipSection />
+            <ResearchLeadershipSection
+              selectedProfile={selectedProfile}
+              onProfileSelect={(profile) => setSelectedProfile(profile)}
+              onProfileClose={() => setSelectedProfile(null)}
+            />
           )}
         </div>
       </div>
