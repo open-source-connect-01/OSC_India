@@ -124,7 +124,7 @@ export default function CommunitySpotlightSection() {
           <h2 className="text-[24px] lg:text-[26px] font-extrabold text-[#0B0F1A] leading-tight">
             Community Spotlight
           </h2>
-          <div className="w-[50px] h-[3px] bg-accent-orange rounded-full mt-2 mb-4" />
+          <div className="w-[50px] h-[3px] bg-accent-orange mt-2 mb-4" />
           <p className="max-w-[620px] text-[14px] text-gray-400 leading-relaxed mt-3">
             Celebrating the builders, maintainers, researchers, and leaders
             driving meaningful innovation across the Open Source Connect
@@ -188,12 +188,12 @@ export default function CommunitySpotlightSection() {
             return (
               <div
                 key={person.name}
-                className="flex gap-4 sm:gap-5 bg-white border border-gray-200 rounded-[8px] p-5"
+                className="flex gap-4 sm:gap-5 bg-white border border-gray-200 p-5"
               >
                 {/* Photo with colored badge */}
                 <div className="relative w-[110px] sm:w-[130px] aspect-[3/4] shrink-0">
                   <div
-                    className={`w-full h-full rounded-[6px] bg-gradient-to-br ${colors.photoBg} flex items-center justify-center`}
+                    className={`w-full h-full bg-gradient-to-br ${colors.photoBg} flex items-center justify-center`}
                   >
                     <span className="text-white font-bold text-lg sm:text-xl tracking-wide">
                       {person.initials}
@@ -201,7 +201,7 @@ export default function CommunitySpotlightSection() {
                   </div>
                   {/* Colored square badge — bottom-right corner overlap */}
                   <div
-                    className={`absolute -bottom-1.5 -right-1.5 w-[28px] h-[28px] rounded-[5px] ${colors.badge} flex items-center justify-center shadow-sm`}
+                    className={`absolute -bottom-1.5 -right-1.5 w-[28px] h-[28px] ${colors.badge} flex items-center justify-center shadow-sm`}
                   >
                     <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
                       <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
@@ -245,7 +245,7 @@ export default function CommunitySpotlightSection() {
         </div>
 
         {/* CTA Banner — subtle neutral gradient */}
-        <div className="mt-12 lg:mt-14 w-full bg-gradient-to-r from-[#F5F7FA] via-[#FAFBFC] to-white rounded-[12px] px-8 lg:px-12 py-10 text-center">
+        <div className="mt-12 lg:mt-14 w-full bg-gradient-to-r from-[#F5F7FA] via-[#FAFBFC] to-white px-8 lg:px-12 py-10 text-center">
           <h3 className="text-[22px] lg:text-[24px] font-bold text-navy-deep">
             Become a Community Leader
           </h3>
@@ -257,13 +257,13 @@ export default function CommunitySpotlightSection() {
           <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
             <Link
               href="#"
-              className="inline-flex items-center justify-center h-[46px] px-6 bg-navy-deep text-white text-[11px] font-bold tracking-[0.1em] uppercase rounded-[6px] hover:bg-navy transition-all duration-200"
+              className="inline-flex items-center justify-center h-[46px] px-6 bg-navy-deep text-white text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-navy transition-all duration-200"
             >
               Apply to Speak
             </Link>
             <Link
               href="#"
-              className="inline-flex items-center justify-center h-[46px] px-6 bg-white text-navy-deep border-2 border-navy-deep text-[11px] font-bold tracking-[0.1em] uppercase rounded-[6px] hover:bg-navy-deep hover:text-white transition-all duration-200"
+              className="inline-flex items-center justify-center h-[46px] px-6 bg-white text-navy-deep border-2 border-navy-deep text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-navy-deep hover:text-white transition-all duration-200"
             >
               View All Leaders
             </Link>

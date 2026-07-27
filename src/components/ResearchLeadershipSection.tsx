@@ -241,7 +241,7 @@ export default function ResearchLeadershipSection({
                     tags: member.tags,
                   })
                 }
-                className="rounded-[6px] overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.08)] bg-white text-left cursor-pointer transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.14)] hover:-translate-y-0.5"
+                className="overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.08)] bg-white text-left cursor-pointer transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.14)] hover:-translate-y-0.5"
               >
                 {/* Photo — gradient avatar */}
                 <div className={`aspect-[3/4] w-full bg-gradient-to-br ${getAvatarColor(member.name)} flex items-center justify-center`}>
@@ -264,14 +264,14 @@ export default function ResearchLeadershipSection({
 
           {/* Pagination */}
           <div className="flex items-center justify-center gap-2 mt-8 lg:mt-10">
-            <button className="w-8 h-8 flex items-center justify-center rounded text-gray-400 text-sm font-medium cursor-default">
+            <button className="w-8 h-8 flex items-center justify-center text-gray-400 text-sm font-medium cursor-default">
               ‹
             </button>
             {[1, 2, 3].map((page) => (
               <button
                 key={page}
                 onClick={() => setActivePage(page)}
-                className={`w-8 h-8 flex items-center justify-center rounded text-[13px] font-bold transition-all duration-200 ${
+                className={`w-8 h-8 flex items-center justify-center text-[13px] font-bold transition-all duration-200 ${
                   activePage === page
                     ? "bg-navy-deep text-white"
                     : "bg-white text-gray-500 border border-gray-200 hover:border-gray-400"
@@ -280,7 +280,7 @@ export default function ResearchLeadershipSection({
                 {page}
               </button>
             ))}
-            <button className="w-8 h-8 flex items-center justify-center rounded text-gray-400 text-sm font-medium hover:text-navy-deep transition-colors duration-200">
+            <button className="w-8 h-8 flex items-center justify-center text-gray-400 text-sm font-medium hover:text-navy-deep transition-colors duration-200">
               ›
             </button>
           </div>
@@ -290,7 +290,7 @@ export default function ResearchLeadershipSection({
       {/* ===== STAY CONNECTED NEWSLETTER ===== */}
       <div className="w-full bg-white pb-12 lg:pb-16">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
-          <div className="w-full bg-[#0B0F1A] rounded-[12px] px-6 sm:px-10 lg:px-12 py-10 lg:py-12">
+          <div className="w-full bg-[#0B0F1A] px-6 sm:px-10 lg:px-12 py-10 lg:py-12">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
               <div className="flex-1">
                 <h2 className="text-[24px] lg:text-[26px] font-bold text-white leading-tight">
@@ -307,9 +307,9 @@ export default function ResearchLeadershipSection({
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 sm:w-[260px] h-[46px] px-4 bg-[#1a1f2e] text-white text-[14px] placeholder-gray-500 rounded-[6px] outline-none focus:ring-1 focus:ring-accent-blue transition-all duration-200"
+                  className="flex-1 sm:w-[260px] h-[46px] px-4 bg-[#1a1f2e] text-white text-[14px] placeholder-gray-500 outline-none focus:ring-1 focus:ring-accent-blue transition-all duration-200"
                 />
-                <button className="h-[46px] px-6 bg-accent-blue text-white text-[11px] font-bold tracking-[0.1em] uppercase rounded-[6px] hover:bg-blue-600 transition-all duration-200 whitespace-nowrap">
+                <button className="h-[46px] px-6 bg-accent-blue text-white text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-blue-600 transition-all duration-200 whitespace-nowrap">
                   Subscribe
                 </button>
               </div>

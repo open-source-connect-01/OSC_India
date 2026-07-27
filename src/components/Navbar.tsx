@@ -184,7 +184,7 @@ export default function Navbar({
                 <Link
                   key={item.key}
                   href="/events"
-                  className="block w-full text-left py-3 px-4 text-sm font-bold tracking-[0.12em] uppercase rounded-lg transition-colors duration-200 min-h-[44px] text-navy hover:bg-gray-50"
+                  className="block w-full text-left py-3 px-4 text-sm font-bold tracking-[0.12em] uppercase transition-colors duration-200 min-h-[44px] text-navy hover:bg-gray-50"
                   onClick={() => onMobileMenuToggle?.()}
                 >
                   {item.label}
@@ -197,7 +197,7 @@ export default function Navbar({
                 onClick={() => {
                   onMobileNavClick?.(item.key);
                 }}
-                className={`block w-full text-left py-3 px-4 text-sm font-bold tracking-[0.12em] uppercase rounded-lg transition-colors duration-200 min-h-[44px] ${
+                className={`block w-full text-left py-3 px-4 text-sm font-bold tracking-[0.12em] uppercase transition-colors duration-200 min-h-[44px] ${
                   isActive
                     ? "text-accent-blue bg-accent-blue/5"
                     : "text-navy hover:bg-gray-50"
@@ -210,7 +210,7 @@ export default function Navbar({
           <div className="pt-4">
             <Link
               href="#"
-              className="block w-full text-center py-3 px-6 bg-navy text-white text-xs font-bold tracking-[0.14em] uppercase rounded-lg min-h-[44px] leading-none flex items-center justify-center"
+              className="block w-full text-center py-3 px-6 bg-navy text-white text-xs font-bold tracking-[0.14em] uppercase min-h-[44px] leading-none flex items-center justify-center"
               onClick={() => onMobileMenuToggle?.()}
             >
               Join Us

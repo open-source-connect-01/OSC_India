@@ -47,7 +47,7 @@ export default function ConnectContributeGrowSection() {
           <h2 className="text-[28px] lg:text-[30px] font-extrabold text-navy-deep leading-tight">
             Connect, Contribute &amp; Grow
           </h2>
-          <div className="w-[60px] h-[4px] bg-accent-blue rounded-full mt-2 mb-5" />
+          <div className="w-[60px] h-[4px] bg-accent-blue mt-2 mb-5" />
           <p className="max-w-[600px] text-[15px] text-gray-400 leading-relaxed">
             Join a vibrant ecosystem where innovation meets collaboration.
             Discover how you can be part of our mission.
@@ -57,7 +57,7 @@ export default function ConnectContributeGrowSection() {
         {/* Two-column card layout */}
         <div className="grid md:grid-cols-2 gap-6">
           {/* Card 1: Collaboration Models */}
-          <div className="bg-white border border-gray-200 rounded-[10px] p-8 flex flex-col">
+          <div className="bg-white border border-gray-200 p-8 flex flex-col">
             <div className="w-10 h-10 rounded-full bg-accent-blue/20 flex items-center justify-center mb-5">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
                 <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
@@ -92,14 +92,14 @@ export default function ConnectContributeGrowSection() {
 
             <Link
               href="#"
-              className="inline-flex items-center justify-center h-[46px] px-6 bg-navy-deep text-white text-[11px] font-bold tracking-[0.1em] uppercase rounded-[6px] hover:bg-navy transition-all duration-200 mt-8 self-start"
+              className="inline-flex items-center justify-center h-[46px] px-6 bg-navy-deep text-white text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-navy transition-all duration-200 mt-8 self-start"
             >
               Explore Opportunities
             </Link>
           </div>
 
           {/* Card 2: Community Events */}
-          <div className="bg-white border border-gray-200 rounded-[10px] p-8 flex flex-col">
+          <div className="bg-white border border-gray-200 p-8 flex flex-col">
             <div className="w-10 h-10 rounded-full bg-accent-emerald/20 flex items-center justify-center mb-5">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-emerald">
                 <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
@@ -134,7 +134,7 @@ export default function ConnectContributeGrowSection() {
 
             <Link
               href="#"
-              className="inline-flex items-center justify-center h-[46px] px-6 bg-white text-navy-deep border-2 border-navy-deep text-[11px] font-bold tracking-[0.1em] uppercase rounded-[6px] hover:bg-navy-deep hover:text-white transition-all duration-200 mt-8 self-start"
+              className="inline-flex items-center justify-center h-[46px] px-6 bg-white text-navy-deep border-2 border-navy-deep text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-navy-deep hover:text-white transition-all duration-200 mt-8 self-start"
             >
               View Event Calendar
             </Link>

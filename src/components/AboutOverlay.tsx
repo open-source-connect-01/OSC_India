@@ -93,7 +93,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                       {/* About the OSC */}
                       <div className="group cursor-pointer">
                         <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
+                          <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
                               <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
                               <line x1="8" y1="21" x2="16" y2="21" />
@@ -114,7 +114,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                       {/* Advisory Board */}
                       <div className="group cursor-pointer">
                         <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
+                          <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
                               <path d="M3 3v18h18" />
                               <path d="M7 16l4-8 4 4 4-6" />
@@ -143,7 +143,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                       {/* Meet the Team */}
                       <div className="group cursor-pointer">
                         <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
+                          <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
                               <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
                               <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
@@ -166,7 +166,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                         onClick={() => setSubview("mentors-speakers")}
                       >
                         <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
+                          <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
                             <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
                               <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
                               <circle cx="9" cy="7" r="4" />

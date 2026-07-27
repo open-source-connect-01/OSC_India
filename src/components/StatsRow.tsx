@@ -82,7 +82,7 @@ export default function StatsRow() {
             <h2 className="text-[32px] lg:text-[40px] font-extrabold text-navy-deep leading-tight">
               Our Mission
             </h2>
-            <div className="w-[60px] h-[4px] bg-accent-orange rounded-full mt-2 mb-5" />
+            <div className="w-[60px] h-[4px] bg-accent-orange mt-2 mb-5" />
             <p className="max-w-[700px] text-base leading-relaxed text-gray-400 mb-4">
               We are a community of communities, bringing together developers,
               organizations, and innovators from around the globe to share
@@ -101,10 +101,10 @@ export default function StatsRow() {
             {missionCards.map((card) => (
               <div
                 key={card.title}
-                className="bg-white border border-gray-200 rounded-lg p-7"
+                className="bg-white border border-gray-200 p-7"
               >
                 <div
-                  className={`w-7 h-7 rounded-[6px] mb-5 ${card.iconColor}`}
+                  className={`w-7 h-7 mb-5 ${card.iconColor}`}
                 />
                 <h3 className="text-[14px] font-bold tracking-[0.04em] text-navy-deep uppercase mb-3">
                   {card.title}

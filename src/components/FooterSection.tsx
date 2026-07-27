@@ -89,7 +89,7 @@ export default function FooterSection() {
 
               <Link
                 href="#"
-                className="inline-flex items-center justify-center mt-8 w-full sm:w-auto h-[50px] px-7 bg-navy-deep text-white text-[12.5px] font-bold tracking-[0.5px] uppercase rounded hover:bg-navy transition-all duration-200"
+                className="inline-flex items-center justify-center mt-8 w-full sm:w-auto h-[50px] px-7 bg-navy-deep text-white text-[12.5px] font-bold tracking-[0.5px] uppercase hover:bg-navy transition-all duration-200"
               >
                 View Membership Tiers
               </Link>
@@ -98,9 +98,9 @@ export default function FooterSection() {
             {/* Right: Why Join card */}
             <div className="relative">
               {/* Cream offset background */}
-              <div className="absolute top-2 sm:top-4 left-2 sm:left-4 w-full h-full bg-accent-cream rounded-[6px] z-0" />
-              <div className="relative z-10 bg-navy-deep rounded-[6px] p-6 sm:p-8 lg:p-9 text-white">
-                <div className="w-[30px] h-[30px] bg-white text-navy-deep font-extrabold text-[15px] flex items-center justify-center rounded mb-4">
+              <div className="absolute top-2 sm:top-4 left-2 sm:left-4 w-full h-full bg-accent-cream z-0" />
+              <div className="relative z-10 bg-navy-deep p-6 sm:p-8 lg:p-9 text-white">
+                <div className="w-[30px] h-[30px] bg-white text-navy-deep font-extrabold text-[15px] flex items-center justify-center mb-4">
                   ?
                 </div>
                 <h3 className="text-[18px] sm:text-[19px] font-bold mb-6">
@@ -110,7 +110,7 @@ export default function FooterSection() {
                 <div className="space-y-5">
                   {whyItems.map((item) => (
                     <div key={item.num} className="flex gap-3.5">
-                      <div className="flex-none w-[26px] h-[22px] bg-accent-orange text-white text-[10px] font-extrabold flex items-center justify-center rounded mt-1">
+                      <div className="flex-none w-[26px] h-[22px] bg-accent-orange text-white text-[10px] font-extrabold flex items-center justify-center mt-1">
                         {item.num}
                       </div>
                       <div className="min-w-0">
@@ -135,7 +135,7 @@ export default function FooterSection() {
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-10 sm:py-12 lg:py-14">
           <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-8">
             <div>
-              <span className="inline-block bg-accent-orange text-white text-[10.5px] font-extrabold tracking-[0.6px] uppercase px-3 py-1.5 rounded mb-4">
+              <span className="inline-block bg-accent-orange text-white text-[10.5px] font-extrabold tracking-[0.6px] uppercase px-3 py-1.5 mb-4">
                 Current Event
               </span>
               <h2 className="text-[24px] sm:text-[28px] font-extrabold text-white mb-3">
@@ -166,7 +166,7 @@ export default function FooterSection() {
             </div>
             <Link
               href="#"
-              className="inline-flex items-center justify-center w-full sm:w-auto h-[50px] px-7 bg-accent-orange text-white text-[12.5px] font-extrabold tracking-[0.5px] uppercase rounded hover:opacity-90 transition-all duration-200 shrink-0"
+              className="inline-flex items-center justify-center w-full sm:w-auto h-[50px] px-7 bg-accent-orange text-white text-[12.5px] font-extrabold tracking-[0.5px] uppercase hover:opacity-90 transition-all duration-200 shrink-0"
             >
               Register Now
             </Link>
@@ -180,7 +180,7 @@ export default function FooterSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-10">
             {/* Brand column */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <div className="w-8 h-8 bg-white text-navy-deep font-extrabold flex items-center justify-center rounded mb-4">
+              <div className="w-8 h-8 bg-white text-navy-deep font-extrabold flex items-center justify-center mb-4">
                 O
               </div>
               <p className="text-[13px] leading-relaxed max-w-[260px] sm:max-w-[220px] mb-4">
@@ -188,8 +188,8 @@ export default function FooterSection() {
                 innovation and technical meritocracy.
               </p>
               <div className="flex gap-2.5">
-                <span className="w-4 h-4 rounded bg-gray-500 inline-block" />
-                <span className="w-4 h-4 rounded bg-gray-500 inline-block" />
+                <span className="w-4 h-4 bg-gray-500 inline-block" />
+                <span className="w-4 h-4 bg-gray-500 inline-block" />
               </div>
             </div>
 

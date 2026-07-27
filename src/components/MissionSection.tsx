@@ -5,7 +5,7 @@ export default function MissionSection() {
         <div className="max-w-3xl">
           {/* Section Heading with accent */}
           <div className="flex items-center gap-4 mb-8">
-            <div className="w-1 h-8 bg-accent-blue rounded-full" />
+            <div className="w-1 h-8 bg-accent-blue" />
             <h2 className="text-3xl lg:text-4xl font-bold text-navy">
               Our Mission
             </h2>
@@ -47,7 +47,7 @@ export default function MissionSection() {
             ].map((item) => (
               <div
                 key={item.number}
-                className="group p-6 rounded-xl bg-gray-50 border border-gray-100 hover:border-accent-blue/30 hover:bg-white hover:shadow-lg transition-all duration-300"
+                className="group p-6 bg-gray-50 border border-gray-100 hover:border-accent-blue/30 hover:bg-white hover:shadow-lg transition-all duration-300"
               >
                 <span className="text-2xl font-bold text-accent-blue/30 group-hover:text-accent-blue/50 transition-colors duration-300">
                   {item.number}

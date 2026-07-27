@@ -39,13 +39,13 @@ export default function HeroSection() {
             <div className="max-w-[470px] flex flex-col sm:flex-row gap-2 sm:gap-3">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center h-[42px] px-[22px] bg-navy text-white text-[10px] font-bold tracking-[0.14em] uppercase rounded-[6px] hover:bg-navy-light transition-all duration-200 w-full sm:w-auto"
+                className="inline-flex items-center justify-center h-[42px] px-[22px] bg-navy text-white text-[10px] font-bold tracking-[0.14em] uppercase hover:bg-navy-light transition-all duration-200 w-full sm:w-auto"
               >
                 Our Mission &amp; Bylaws
               </Link>
               <Link
                 href="#"
-                className="inline-flex items-center justify-center h-[42px] px-[22px] bg-transparent text-navy border border-navy/25 text-[10px] font-bold tracking-[0.14em] uppercase rounded-[6px] hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 w-full sm:w-auto"
+                className="inline-flex items-center justify-center h-[42px] px-[22px] bg-transparent text-navy border border-navy/25 text-[10px] font-bold tracking-[0.14em] uppercase hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 w-full sm:w-auto"
               >
                 Technical Portfolio
               </Link>
@@ -61,7 +61,7 @@ export default function HeroSection() {
           <div className="hidden lg:block w-[280px] shrink-0 relative mt-10">
             <div className="relative">
               {/* Thin offset sliver — ~10px visible edge on right and bottom */}
-              <div className="absolute top-[10px] left-[10px] w-full h-full bg-[#dce3ef] rounded-[6px] z-0" />
+              <div className="absolute top-[10px] left-[10px] w-full h-full bg-[#dce3ef] z-0" />
               {/* Card sits on top */}
               <div className="relative z-10">
                 <CoreFocusCard />
@@ -76,7 +76,7 @@ export default function HeroSection() {
 
 function CoreFocusCard() {
   return (
-    <div className="w-full lg:w-[255px] bg-white p-5 rounded-[6px] shadow-sm border border-gray-100">
+    <div className="w-full lg:w-[255px] bg-white p-5 shadow-sm border border-gray-100">
       <h3 className="text-[10px] font-bold tracking-[0.2em] text-[#8b93a8] uppercase mb-4">
         Core Focus
       </h3>
