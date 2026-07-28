@@ -57,7 +57,7 @@ export default function CommunityOverlay({ isOpen, onClose }: CommunityOverlayPr
                   {/* Top Contributors */}
                   <div className="group cursor-pointer">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
+                      <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
                         <svg
                           width="18"
                           height="18"
@@ -95,7 +95,7 @@ export default function CommunityOverlay({ isOpen, onClose }: CommunityOverlayPr
                   {/* Volunteer With Us */}
                   <div className="group cursor-pointer">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
+                      <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
                         <svg
                           width="18"
                           height="18"
@@ -136,7 +136,7 @@ export default function CommunityOverlay({ isOpen, onClose }: CommunityOverlayPr
                   {/* Community Guidelines */}
                   <div className="group cursor-pointer">
                     <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 rounded-lg bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
+                      <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
                         <svg
                           width="18"
                           height="18"
@@ -208,9 +208,9 @@ export default function CommunityOverlay({ isOpen, onClose }: CommunityOverlayPr
                     placeholder="Enter your email"
                     value={email}
                     onChange={(e) => setEmail(e.target.value)}
-                    className="flex-1 sm:w-[220px] h-[38px] px-4 text-xs bg-white border border-gray-200 rounded-[6px] outline-none focus:border-accent-blue transition-colors duration-200 placeholder-gray-400"
+                    className="flex-1 sm:w-[220px] h-[38px] px-4 text-xs bg-white border border-gray-200 outline-none focus:border-accent-blue transition-colors duration-200 placeholder-gray-400"
                   />
-                  <button className="h-[38px] px-5 bg-accent-blue text-white text-[9px] font-bold tracking-[0.14em] uppercase rounded-[6px] hover:bg-blue-600 transition-all duration-200 shrink-0">
+                  <button className="h-[38px] px-5 bg-accent-blue text-white text-[9px] font-bold tracking-[0.14em] uppercase hover:bg-blue-600 transition-all duration-200 shrink-0">
                     Subscribe
                   </button>
                 </div>

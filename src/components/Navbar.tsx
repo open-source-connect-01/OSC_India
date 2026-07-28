@@ -16,7 +16,7 @@ interface NavbarProps {
 const navItems: { label: string; key: ActiveOverlay }[] = [
   { label: "About", key: "about" },
   { label: "What We Do", key: "whatwedo" },
-  { label: "Resources", key: "resources" },
+  { label: "Community", key: "resources" },
   { label: "Events", key: "events" },
 ];
 
@@ -42,20 +42,32 @@ export default function Navbar({
   }, [isMobileMenuOpen]);
 
   return (
-    <nav className="w-full bg-white border-b border-gray-200/70 relative">
+    <nav className="w-full bg-white relative">
       <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14">
         <div className="flex items-center justify-between h-[64px]">
           {/* Desktop layout */}
           <div className="hidden md:flex items-center w-full">
-            {/* Logo: dark navy rounded-square with 'O' + OSC FOUNDATION / GLOBAL STANDARDS ENTITY */}
-            <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-              <div className="w-[30px] h-[30px] rounded-[5px] bg-navy flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
-                <span className="text-white font-extrabold text-[14px] leading-none">O</span>
+            {/* Logo: circular multi-dot icon + OPEN SOURCE CONNECT */}
+            <Link href="/" className="flex items-center gap-3 group shrink-0">
+              {/* Multi-dot circle icon */}
+              <div className="relative w-[32px] h-[32px] shrink-0">
+                {/* Central dot */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[10px] h-[10px] rounded-full bg-navy" />
+                {/* Outer ring dots */}
+                {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
+                  <div
+                    key={angle}
+                    className="absolute w-[5px] h-[5px] rounded-full bg-navy/60 transition-all duration-300 group-hover:bg-navy"
+                    style={{
+                      top: `calc(50% + ${11 * Math.sin((angle * Math.PI) / 180)}px - 2.5px)`,
+                      left: `calc(50% + ${11 * Math.cos((angle * Math.PI) / 180)}px - 2.5px)`,
+                    }}
+                  />
+                ))}
               </div>
-              <div className="flex flex-col leading-[1.15]">
-                <span className="text-[10px] font-bold tracking-[0.15em] text-navy uppercase">OSC Foundation</span>
-                <span className="text-[7.5px] font-semibold tracking-[0.18em] text-gray-400 uppercase">Global Standards Entity</span>
-              </div>
+              <span className="text-[12px] font-extrabold tracking-[0.18em] text-navy uppercase leading-none">
+                Open Source Connect
+              </span>
             </Link>
 
             {/* Nav links - centered - all neutral gray, no active state */}
@@ -93,13 +105,25 @@ export default function Navbar({
           {/* Mobile layout */}
           <div className="md:hidden flex items-center justify-between w-full">
             <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-              <div className="w-[30px] h-[30px] rounded-[5px] bg-navy flex items-center justify-center shrink-0 transition-transform duration-300 group-hover:scale-105">
-                <span className="text-white font-extrabold text-[14px] leading-none">O</span>
+              {/* Multi-dot circle icon */}
+              <div className="relative w-[26px] h-[26px] shrink-0">
+                {/* Central dot */}
+                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[8px] h-[8px] rounded-full bg-navy" />
+                {/* Outer ring dots */}
+                {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
+                  <div
+                    key={angle}
+                    className="absolute w-[4px] h-[4px] rounded-full bg-navy/60"
+                    style={{
+                      top: `calc(50% + ${9 * Math.sin((angle * Math.PI) / 180)}px - 2px)`,
+                      left: `calc(50% + ${9 * Math.cos((angle * Math.PI) / 180)}px - 2px)`,
+                    }}
+                  />
+                ))}
               </div>
-              <div className="flex flex-col leading-[1.15]">
-                <span className="text-[9px] font-bold tracking-[0.18em] text-navy uppercase">OSC Foundation</span>
-                <span className="text-[7px] font-semibold tracking-[0.18em] text-gray-400 uppercase">Global Standards Entity</span>
-              </div>
+              <span className="text-[10px] font-extrabold tracking-[0.18em] text-navy uppercase leading-none">
+                Open Source Connect
+              </span>
             </Link>
             {/* Hamburger / Close button */}
             <button
@@ -160,7 +184,7 @@ export default function Navbar({
                 <Link
                   key={item.key}
                   href="/events"
-                  className="block w-full text-left py-3 px-4 text-sm font-bold tracking-[0.12em] uppercase rounded-lg transition-colors duration-200 min-h-[44px] text-navy hover:bg-gray-50"
+                  className="block w-full text-left py-3 px-4 text-sm font-bold tracking-[0.12em] uppercase transition-colors duration-200 min-h-[44px] text-navy hover:bg-gray-50"
                   onClick={() => onMobileMenuToggle?.()}
                 >
                   {item.label}
@@ -173,7 +197,7 @@ export default function Navbar({
                 onClick={() => {
                   onMobileNavClick?.(item.key);
                 }}
-                className={`block w-full text-left py-3 px-4 text-sm font-bold tracking-[0.12em] uppercase rounded-lg transition-colors duration-200 min-h-[44px] ${
+                className={`block w-full text-left py-3 px-4 text-sm font-bold tracking-[0.12em] uppercase transition-colors duration-200 min-h-[44px] ${
                   isActive
                     ? "text-accent-blue bg-accent-blue/5"
                     : "text-navy hover:bg-gray-50"
@@ -186,7 +210,7 @@ export default function Navbar({
           <div className="pt-4">
             <Link
               href="#"
-              className="block w-full text-center py-3 px-6 bg-navy text-white text-xs font-bold tracking-[0.14em] uppercase rounded-lg min-h-[44px] leading-none flex items-center justify-center"
+              className="block w-full text-center py-3 px-6 bg-navy text-white text-xs font-bold tracking-[0.14em] uppercase min-h-[44px] leading-none flex items-center justify-center"
               onClick={() => onMobileMenuToggle?.()}
             >
               Join Us

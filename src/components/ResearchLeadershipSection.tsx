@@ -4,6 +4,37 @@ import { useState } from "react";
 import ProfileModal from "./ProfileModal";
 import type { ProfileData } from "./ProfileModal";
 
+const avatarGradients = [
+  "from-blue-400 to-blue-600",
+  "from-emerald-400 to-emerald-600",
+  "from-violet-400 to-violet-600",
+  "from-amber-400 to-amber-600",
+  "from-rose-400 to-rose-600",
+  "from-cyan-400 to-cyan-600",
+  "from-orange-400 to-orange-600",
+  "from-purple-400 to-purple-600",
+  "from-teal-400 to-teal-600",
+  "from-pink-400 to-pink-600",
+];
+
+function getInitials(name: string): string {
+  return name
+    .split(/\s+/)
+    .filter((w) => w.length > 0 && !w.startsWith("Dr."))
+    .map((w) => w[0])
+    .join("")
+    .toUpperCase()
+    .slice(0, 2);
+}
+
+function getAvatarColor(name: string): string {
+  let hash = 0;
+  for (let i = 0; i < name.length; i++) {
+    hash = name.charCodeAt(i) + ((hash << 5) - hash);
+  }
+  return avatarGradients[Math.abs(hash) % avatarGradients.length];
+}
+
 const teamMembers: (ProfileData & { cardRole: string })[] = [
   {
     name: "Dr. Aris Thorne",
@@ -127,11 +158,29 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
 ];
 
-export default function ResearchLeadershipSection() {
+export default function ResearchLeadershipSection({
+  selectedProfile: externalSelectedProfile,
+  onProfileSelect: externalOnProfileSelect,
+  onProfileClose: externalOnProfileClose,
+}: {
+  selectedProfile?: ProfileData | null;
+  onProfileSelect?: (profile: ProfileData) => void;
+  onProfileClose?: () => void;
+}) {
   const [activeTab, setActiveTab] = useState<"mentors" | "speakers">("mentors");
   const [activePage, setActivePage] = useState(1);
   const [email, setEmail] = useState("");
-  const [selectedProfile, setSelectedProfile] = useState<ProfileData | null>(null);
+  const [internalProfile, setInternalProfile] = useState<ProfileData | null>(null);
+
+  // Use external state (from AboutOverlay) if provided, otherwise internal
+  const selectedProfile =
+    externalSelectedProfile !== undefined ? externalSelectedProfile : internalProfile;
+  const onProfileSelect = externalOnProfileSelect || setInternalProfile;
+  const onProfileClose =
+    externalOnProfileClose || (() => setInternalProfile(null));
+
+  // Standalone mode (events page) — render modal internally; AboutOverlay handles it externally
+  const isStandalone = externalSelectedProfile === undefined;
 
   return (
     <>
@@ -183,7 +232,7 @@ export default function ResearchLeadershipSection() {
               <button
                 key={member.name}
                 onClick={() =>
-                  setSelectedProfile({
+                  onProfileSelect({
                     name: member.name,
                     role: member.role,
                     org: member.org,
@@ -192,13 +241,17 @@ export default function ResearchLeadershipSection() {
                     tags: member.tags,
                   })
                 }
-                className="rounded-[6px] overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.08)] bg-white text-left cursor-pointer transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.14)] hover:-translate-y-0.5"
+                className="overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.08)] bg-white text-left cursor-pointer transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.14)] hover:-translate-y-0.5"
               >
-                {/* Photo placeholder */}
-                <div className="aspect-[3/4] bg-[#D9D9D9] w-full" />
+                {/* Photo — gradient avatar */}
+                <div className={`aspect-[3/4] w-full bg-gradient-to-br ${getAvatarColor(member.name)} flex items-center justify-center`}>
+                  <span className="text-white font-bold text-xl sm:text-2xl tracking-wide">
+                    {getInitials(member.name)}
+                  </span>
+                </div>
                 {/* Caption bar */}
                 <div className="bg-navy-deep px-3.5 py-3 min-h-[68px] flex flex-col justify-center">
-                  <span className="text-[11px] font-bold text-white leading-tight">
+                  <span className="text-[11px] font-bold text-white leading-tight uppercase">
                     {member.name}
                   </span>
                   <span className="text-[9px] font-medium text-gray-400 uppercase tracking-[0.04em] mt-0.5 leading-snug">
@@ -211,14 +264,14 @@ export default function ResearchLeadershipSection() {
 
           {/* Pagination */}
           <div className="flex items-center justify-center gap-2 mt-8 lg:mt-10">
-            <button className="w-8 h-8 flex items-center justify-center rounded text-gray-400 text-sm font-medium cursor-default">
+            <button className="w-8 h-8 flex items-center justify-center text-gray-400 text-sm font-medium cursor-default">
               ‹
             </button>
             {[1, 2, 3].map((page) => (
               <button
                 key={page}
                 onClick={() => setActivePage(page)}
-                className={`w-8 h-8 flex items-center justify-center rounded text-[13px] font-bold transition-all duration-200 ${
+                className={`w-8 h-8 flex items-center justify-center text-[13px] font-bold transition-all duration-200 ${
                   activePage === page
                     ? "bg-navy-deep text-white"
                     : "bg-white text-gray-500 border border-gray-200 hover:border-gray-400"
@@ -227,7 +280,7 @@ export default function ResearchLeadershipSection() {
                 {page}
               </button>
             ))}
-            <button className="w-8 h-8 flex items-center justify-center rounded text-gray-400 text-sm font-medium hover:text-navy-deep transition-colors duration-200">
+            <button className="w-8 h-8 flex items-center justify-center text-gray-400 text-sm font-medium hover:text-navy-deep transition-colors duration-200">
               ›
             </button>
           </div>
@@ -237,7 +290,7 @@ export default function ResearchLeadershipSection() {
       {/* ===== STAY CONNECTED NEWSLETTER ===== */}
       <div className="w-full bg-white pb-12 lg:pb-16">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
-          <div className="w-full bg-[#0B0F1A] rounded-[12px] px-6 sm:px-10 lg:px-12 py-10 lg:py-12">
+          <div className="w-full bg-[#0B0F1A] px-6 sm:px-10 lg:px-12 py-10 lg:py-12">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
               <div className="flex-1">
                 <h2 className="text-[24px] lg:text-[26px] font-bold text-white leading-tight">
@@ -254,9 +307,9 @@ export default function ResearchLeadershipSection() {
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 sm:w-[260px] h-[46px] px-4 bg-[#1a1f2e] text-white text-[14px] placeholder-gray-500 rounded-[6px] outline-none focus:ring-1 focus:ring-accent-blue transition-all duration-200"
+                  className="flex-1 sm:w-[260px] h-[46px] px-4 bg-[#1a1f2e] text-white text-[14px] placeholder-gray-500 outline-none focus:ring-1 focus:ring-accent-blue transition-all duration-200"
                 />
-                <button className="h-[46px] px-6 bg-accent-blue text-white text-[11px] font-bold tracking-[0.1em] uppercase rounded-[6px] hover:bg-blue-600 transition-all duration-200 whitespace-nowrap">
+                <button className="h-[46px] px-6 bg-accent-blue text-white text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-blue-600 transition-all duration-200 whitespace-nowrap">
                   Subscribe
                 </button>
               </div>
@@ -265,11 +318,10 @@ export default function ResearchLeadershipSection() {
         </div>
       </div>
 
-      {/* Profile Modal */}
-      <ProfileModal
-        profile={selectedProfile}
-        onClose={() => setSelectedProfile(null)}
-      />
+      {/* Profile Modal — only render here when standalone (events page); AboutOverlay renders it externally */}
+      {isStandalone && (
+        <ProfileModal profile={selectedProfile} onClose={onProfileClose} />
+      )}
     </>
   );
 }
