@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 import { useEffect } from "react";
 
 export type ActiveOverlay = "about" | "whatwedo" | "resources" | "events" | null;
@@ -47,27 +48,16 @@ export default function Navbar({
         <div className="flex items-center justify-between h-[64px]">
           {/* Desktop layout */}
           <div className="hidden md:flex items-center w-full">
-            {/* Logo: circular multi-dot icon + OPEN SOURCE CONNECT */}
-            <Link href="/" className="flex items-center gap-3 group shrink-0">
-              {/* Multi-dot circle icon */}
-              <div className="relative w-[32px] h-[32px] shrink-0">
-                {/* Central dot */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[10px] h-[10px] rounded-full bg-navy" />
-                {/* Outer ring dots */}
-                {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
-                  <div
-                    key={angle}
-                    className="absolute w-[5px] h-[5px] rounded-full bg-navy/60 transition-all duration-300 group-hover:bg-navy"
-                    style={{
-                      top: `calc(50% + ${11 * Math.sin((angle * Math.PI) / 180)}px - 2.5px)`,
-                      left: `calc(50% + ${11 * Math.cos((angle * Math.PI) / 180)}px - 2.5px)`,
-                    }}
-                  />
-                ))}
-              </div>
-              <span className="text-[12px] font-extrabold tracking-[0.18em] text-navy uppercase leading-none">
-                Open Source Connect
-              </span>
+            {/* Logo */}
+            <Link href="/" className="flex items-center shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Open Source Connect"
+                width={150}
+                height={40}
+                className="h-8 w-auto object-contain"
+                priority
+              />
             </Link>
 
             {/* Nav links - centered */}
@@ -112,26 +102,15 @@ export default function Navbar({
 
           {/* Mobile layout */}
           <div className="md:hidden flex items-center justify-between w-full">
-            <Link href="/" className="flex items-center gap-2.5 group shrink-0">
-              {/* Multi-dot circle icon */}
-              <div className="relative w-[26px] h-[26px] shrink-0">
-                {/* Central dot */}
-                <div className="absolute top-1/2 left-1/2 -translate-x-1/2 -translate-y-1/2 w-[8px] h-[8px] rounded-full bg-navy" />
-                {/* Outer ring dots */}
-                {[0, 45, 90, 135, 180, 225, 270, 315].map((angle) => (
-                  <div
-                    key={angle}
-                    className="absolute w-[4px] h-[4px] rounded-full bg-navy/60"
-                    style={{
-                      top: `calc(50% + ${9 * Math.sin((angle * Math.PI) / 180)}px - 2px)`,
-                      left: `calc(50% + ${9 * Math.cos((angle * Math.PI) / 180)}px - 2px)`,
-                    }}
-                  />
-                ))}
-              </div>
-              <span className="text-[10px] font-extrabold tracking-[0.18em] text-navy uppercase leading-none">
-                Open Source Connect
-              </span>
+            <Link href="/" className="flex items-center shrink-0">
+              <Image
+                src="/logo.png"
+                alt="Open Source Connect"
+                width={130}
+                height={32}
+                className="h-7 w-auto object-contain"
+                priority
+              />
             </Link>
             {/* Hamburger / Close button */}
             <button

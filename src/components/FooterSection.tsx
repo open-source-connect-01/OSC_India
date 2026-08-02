@@ -1,4 +1,5 @@
 import Link from "next/link";
+import Image from "next/image";
 
 const whyItems = [
   {
@@ -180,9 +181,13 @@ export default function FooterSection() {
           <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-10 pb-10">
             {/* Brand column */}
             <div className="sm:col-span-2 lg:col-span-1">
-              <div className="w-8 h-8 bg-white text-navy-deep font-extrabold flex items-center justify-center mb-4">
-                O
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Open Source Connect"
+                width={140}
+                height={36}
+                className="h-8 w-auto object-contain brightness-0 invert mb-4"
+              />
               <p className="text-[13px] leading-relaxed max-w-[260px] sm:max-w-[220px] mb-4">
                 Providing the institutional framework for collaborative
                 innovation and technical meritocracy.
