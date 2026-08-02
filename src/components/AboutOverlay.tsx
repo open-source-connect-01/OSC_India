@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState } from "react";
 import Link from "next/link";
 import ResearchLeadershipSection from "./ResearchLeadershipSection";
 import ProfileModal from "./ProfileModal";
@@ -16,11 +16,14 @@ type SubView = "main" | "mentors-speakers";
 export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
   const [subview, setSubview] = useState<SubView>("main");
   const [selectedProfile, setSelectedProfile] = useState<ProfileData | null>(null);
+  const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
 
-  // Reset to main view every time the overlay opens
-  useEffect(() => {
-    if (isOpen) setSubview("main");
-  }, [isOpen]);
+  if (isOpen !== prevIsOpen) {
+    setPrevIsOpen(isOpen);
+    if (isOpen) {
+      setSubview("main");
+    }
+  }
 
   if (!isOpen) return null;
 

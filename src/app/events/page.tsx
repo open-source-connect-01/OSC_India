@@ -2,7 +2,6 @@
 
 import { useState } from "react";
 import { useRouter } from "next/navigation";
-import TopUtilityBar from "@/components/TopUtilityBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
@@ -39,7 +38,6 @@ export default function EventsPage() {
     return (
       <div className="flex flex-col min-h-full">
         <header className="relative z-30">
-          <TopUtilityBar />
           {navBar}
         </header>
         <main className="flex-1">
@@ -52,7 +50,6 @@ export default function EventsPage() {
   return (
     <div className="relative flex flex-col min-h-full overflow-hidden">
       <header className="relative z-30">
-        <TopUtilityBar />
         {navBar}
       </header>
 
