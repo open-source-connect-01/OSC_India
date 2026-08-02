@@ -1,4 +1,5 @@
 import Image from "next/image";
+import AnimatedCounter from "./AnimatedCounter";
 
 const personColors: Record<
   string,
@@ -187,7 +188,7 @@ export default function CommunitySpotlightSection() {
             <TrendingUpIcon className="text-[#2563EB]" />
             <div className="flex items-baseline gap-2 sm:block">
               <span className="text-3xl font-extrabold text-[#0B0F1A] tracking-tight">
-                500+
+                <AnimatedCounter value={500} suffix="+" />
               </span>
               <div className="text-[10px] font-bold tracking-wider text-gray-400 uppercase mt-0.5">
                 ACTIVE LEADERS
@@ -202,7 +203,7 @@ export default function CommunitySpotlightSection() {
             <GlobeIcon className="text-[#10B981]" />
             <div className="flex items-baseline gap-2 sm:block">
               <span className="text-3xl font-extrabold text-[#0B0F1A] tracking-tight">
-                50+
+                <AnimatedCounter value={50} suffix="+" />
               </span>
               <div className="text-[10px] font-bold tracking-wider text-gray-400 uppercase mt-0.5">
                 COUNTRIES
@@ -217,7 +218,7 @@ export default function CommunitySpotlightSection() {
             <MedalIcon className="text-[#F59E0B]" />
             <div className="flex items-baseline gap-2 sm:block">
               <span className="text-3xl font-extrabold text-[#0B0F1A] tracking-tight">
-                100+
+                <AnimatedCounter value={100} suffix="+" />
               </span>
               <div className="text-[10px] font-bold tracking-wider text-gray-400 uppercase mt-0.5">
                 SPEAKING SESSIONS
