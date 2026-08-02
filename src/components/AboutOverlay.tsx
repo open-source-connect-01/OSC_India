@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Link from "next/link";
+import Image from "next/image";
 import ResearchLeadershipSection from "./ResearchLeadershipSection";
 import ProfileModal from "./ProfileModal";
 import type { ProfileData } from "./ProfileModal";
@@ -12,6 +13,95 @@ interface AboutOverlayProps {
 }
 
 type SubView = "main" | "mentors-speakers";
+
+// Custom SVG Icons matching exact dropdown screenshot
+function BuildingIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#2563EB"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 mt-0.5"
+    >
+      <rect x="4" y="2" width="8" height="20" rx="1" />
+      <rect x="12" y="8" width="8" height="14" rx="1" />
+      <path d="M8 6h.01M8 10h.01M8 14h.01M8 18h.01M16 12h.01M16 16h.01" />
+    </svg>
+  );
+}
+
+function SlidersIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#2563EB"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 mt-0.5"
+    >
+      <line x1="4" y1="21" x2="4" y2="14" />
+      <line x1="4" y1="10" x2="4" y2="3" />
+      <line x1="12" y1="21" x2="12" y2="12" />
+      <line x1="12" y1="8" x2="12" y2="3" />
+      <line x1="20" y1="21" x2="20" y2="16" />
+      <line x1="20" y1="12" x2="20" y2="3" />
+      <line x1="1" y1="14" x2="7" y2="14" />
+      <line x1="9" y1="8" x2="15" y2="8" />
+      <line x1="17" y1="16" x2="23" y2="16" />
+    </svg>
+  );
+}
+
+function BadgeIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#2563EB"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 mt-0.5"
+    >
+      <path d="M16 2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" />
+      <circle cx="12" cy="10" r="3" />
+      <path d="M7 19c0-2.5 2.2-4.5 5-4.5s5 2 5 4.5" />
+      <line x1="10" y1="5" x2="14" y2="5" />
+    </svg>
+  );
+}
+
+function SpeakerIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#2563EB"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 mt-0.5"
+    >
+      <path d="M19 11a6 6 0 0 1 0 12" />
+      <path d="M21 7a10 10 0 0 1 0 20" />
+      <circle cx="9" cy="7" r="4" />
+      <path d="M2 21v-2a4 4 0 0 1 4-4h6a4 4 0 0 1 4 4v2" />
+    </svg>
+  );
+}
 
 export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
   const [subview, setSubview] = useState<SubView>("main");
@@ -27,162 +117,145 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
 
   if (!isOpen) return null;
 
-  const handleBack = () => {
-    if (subview === "main") {
-      onClose();
-    } else {
-      setSubview("main");
-    }
-  };
-
   return (
     <>
       {/* Dimmed backdrop */}
       <div
         className="fixed inset-x-0 z-40 bg-navy/30 backdrop-blur-[2px]"
-        style={{ top: "110px", bottom: 0 }}
+        style={{ top: "64px", bottom: 0 }}
         onClick={subview === "main" ? onClose : () => setSubview("main")}
       />
 
       {/* Overlay panel */}
       <div
-        className={`fixed inset-x-0 z-50 shadow-2xl animate-slideDown ${selectedProfile ? "overflow-hidden" : "overflow-y-auto"}`}
-        style={{ top: "110px", maxHeight: "calc(100vh - 110px)" }}
+        className={`fixed inset-x-0 z-50 shadow-2xl animate-slideDown ${
+          selectedProfile ? "overflow-hidden" : "overflow-y-auto"
+        }`}
+        style={{ top: "64px", maxHeight: "calc(100vh - 64px)" }}
       >
-        <div className="w-full bg-white">
-          {/* Sticky back button bar */}
-          <div className="sticky top-0 z-10 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
-            <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-6 lg:pr-8 py-4 flex justify-start">
-              <button
-                onClick={handleBack}
-                className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3.5 py-2 text-[9px] font-bold tracking-[0.16em] uppercase text-navy shadow-sm transition-all duration-200 hover:border-gray-300 hover:bg-gray-50"
-                aria-label={subview === "main" ? "Go back" : "Back to About"}
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M19 12H5" />
-                  <path d="m12 19-7-7 7-7" />
-                </svg>
-                {subview === "main" ? "Back" : "Back to About"}
-              </button>
+        <div className="w-full bg-white border-t border-gray-100">
+          {/* Subview back button bar (only visible in subview mode) */}
+          {subview !== "main" && (
+            <div className="sticky top-0 z-10 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
+              <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-3 flex justify-start">
+                <button
+                  onClick={() => setSubview("main")}
+                  className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-4 py-1.5 text-[10px] font-bold tracking-wider uppercase text-navy shadow-sm transition-all duration-200 hover:bg-gray-50"
+                >
+                  <svg
+                    width="14"
+                    height="14"
+                    viewBox="0 0 24 24"
+                    fill="none"
+                    stroke="currentColor"
+                    strokeWidth="2"
+                    strokeLinecap="round"
+                    strokeLinejoin="round"
+                  >
+                    <path d="M19 12H5" />
+                    <path d="m12 19-7-7 7-7" />
+                  </svg>
+                  Back to About
+                </button>
+              </div>
             </div>
-          </div>
+          )}
 
           {/* ---------- MAIN VIEW ---------- */}
           {subview === "main" && (
-            <div className="min-h-[calc(100vh-110px)]">
-              <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-10 lg:py-12">
-                <div className="grid md:grid-cols-12 gap-x-8 gap-y-10">
-                  {/* --- Column 1 (wider): Image + About OSC --- */}
-                  <div className="md:col-span-5">
-                    {/* Placeholder image box */}
-                    <div className="w-full aspect-[280/180] bg-gray-200 rounded-lg mb-5" />
-
-                    <h3 className="text-sm font-bold text-navy mb-2">
+            <div>
+              <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-10 lg:py-12">
+                <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
+                  {/* --- Column 1: Image + About OSC Foundation --- */}
+                  <div className="md:col-span-5 lg:col-span-4">
+                    <Image
+                      src="/about_foundation.jpg"
+                      alt="About OSC Foundation"
+                      width={400}
+                      height={250}
+                      className="w-full aspect-[16/10] object-cover rounded-sm mb-4"
+                    />
+                    <h3 className="text-[17px] font-extrabold text-[#0B0F1A] tracking-tight">
                       About OSC Foundation
                     </h3>
-                    <p className="text-xs text-gray-400 leading-relaxed max-w-[380px]">
+                    <p className="text-xs text-gray-500 leading-relaxed mt-1.5 max-w-[340px]">
                       Learn more about our mission to democratize open source
                       education and impact lives globally.
                     </p>
                   </div>
 
-                  {/* --- Column 2: The Foundation --- */}
-                  <div className="md:col-span-3">
-                    <h3 className="text-[9px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
-                      The Foundation
-                    </h3>
+                  {/* --- Column 2: THE FOUNDATION --- */}
+                  <div className="md:col-span-7 lg:col-span-8 grid grid-cols-1 sm:grid-cols-2 gap-8 lg:gap-12">
+                    <div>
+                      <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
+                        THE FOUNDATION
+                      </h3>
 
-                    <div className="space-y-6">
-                      {/* About the OSC */}
-                      <div className="group cursor-pointer">
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
-                              <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-                              <line x1="8" y1="21" x2="16" y2="21" />
-                              <line x1="12" y1="17" x2="12" y2="21" />
-                            </svg>
-                          </div>
+                      <div className="space-y-7">
+                        {/* About the OSC */}
+                        <div className="group cursor-pointer flex items-start gap-4">
+                          <BuildingIcon />
                           <div>
-                            <h4 className="text-sm font-bold text-navy group-hover:text-accent-blue transition-colors duration-200">
+                            <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
                               About the OSC
                             </h4>
-                            <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                              Our mission, vision, and core values driving open source excellence.
+                            <p className="text-xs text-gray-500 mt-1 leading-snug">
+                              Our mission, vision, and core values driving open
+                              source excellence.
                             </p>
                           </div>
                         </div>
-                      </div>
 
-                      {/* Advisory Board */}
-                      <div className="group cursor-pointer">
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
-                              <path d="M3 3v18h18" />
-                              <path d="M7 16l4-8 4 4 4-6" />
-                            </svg>
-                          </div>
+                        {/* Advisory Board */}
+                        <div className="group cursor-pointer flex items-start gap-4">
+                          <SlidersIcon />
                           <div>
-                            <h4 className="text-sm font-bold text-navy group-hover:text-accent-blue transition-colors duration-200">
+                            <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
                               Advisory Board
                             </h4>
-                            <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                              Meet the industry leaders shaping our strategic direction.
+                            <p className="text-xs text-gray-500 mt-1 leading-snug">
+                              Meet the industry leaders shaping our strategic
+                              direction.
                             </p>
                           </div>
                         </div>
                       </div>
                     </div>
-                  </div>
 
-                  {/* --- Column 3: Our People --- */}
-                  <div className="md:col-span-3">
-                    <h3 className="text-[9px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
-                      Our People
-                    </h3>
+                    {/* --- Column 3: OUR PEOPLE --- */}
+                    <div>
+                      <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
+                        OUR PEOPLE
+                      </h3>
 
-                    <div className="space-y-6">
-                      {/* Meet the Team */}
-                      <div className="group cursor-pointer">
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
-                              <rect x="2" y="7" width="20" height="14" rx="2" ry="2" />
-                              <path d="M16 21V5a2 2 0 0 0-2-2h-4a2 2 0 0 0-2 2v16" />
-                            </svg>
-                          </div>
+                      <div className="space-y-7">
+                        {/* Meet the Team */}
+                        <div className="group cursor-pointer flex items-start gap-4">
+                          <BadgeIcon />
                           <div>
-                            <h4 className="text-sm font-bold text-navy group-hover:text-accent-blue transition-colors duration-200">
+                            <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
                               Meet the Team
                             </h4>
-                            <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                              The dedicated individuals working behind the scenes.
+                            <p className="text-xs text-gray-500 mt-1 leading-snug">
+                              The dedicated individuals working behind the
+                              scenes.
                             </p>
                           </div>
                         </div>
-                      </div>
 
-                      {/* Mentors & Speakers */}
-                      <div
-                        className="group cursor-pointer"
-                        onClick={() => setSubview("mentors-speakers")}
-                      >
-                        <div className="flex items-start gap-4">
-                          <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
-                            <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
-                              <path d="M17 21v-2a4 4 0 0 0-4-4H5a4 4 0 0 0-4 4v2" />
-                              <circle cx="9" cy="7" r="4" />
-                              <path d="M23 21v-2a4 4 0 0 0-3-3.87" />
-                              <path d="M16 3.13a4 4 0 0 1 0 7.75" />
-                            </svg>
-                          </div>
+                        {/* Mentors & Speakers */}
+                        <div
+                          className="group cursor-pointer flex items-start gap-4"
+                          onClick={() => setSubview("mentors-speakers")}
+                        >
+                          <SpeakerIcon />
                           <div>
-                            <h4 className="text-sm font-bold text-navy group-hover:text-accent-blue transition-colors duration-200">
+                            <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
                               Mentors &amp; Speakers
                             </h4>
-                            <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                              Expert contributors sharing knowledge with the community.
+                            <p className="text-xs text-gray-500 mt-1 leading-snug">
+                              Expert contributors sharing knowledge with the
+                              community.
                             </p>
                           </div>
                         </div>
@@ -193,41 +266,39 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
               </div>
 
               {/* Bottom footer strip */}
-              <div className="w-full bg-gray-50 border-t border-gray-100">
-                <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-5">
-                  <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                    <div className="flex items-center gap-3 flex-wrap">
-                      <p className="text-[9px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-                        Stay updated with our newsletter
-                      </p>
-                      <Link
-                        href="#"
-                        className="text-[10px] font-bold tracking-[0.12em] text-accent-blue uppercase hover:text-accent-blue/80 transition-colors duration-200"
-                      >
-                        Sign up now
-                      </Link>
-                    </div>
+              <div className="w-full bg-[#F8FAFC] border-t border-gray-100 py-4.5 px-6 lg:px-8">
+                <div className="max-w-[1240px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+                  <div className="flex items-center gap-2 text-xs">
+                    <span className="font-bold tracking-[0.18em] text-gray-400 uppercase text-[10px] sm:text-[11px]">
+                      STAY UPDATED WITH OUR NEWSLETTER
+                    </span>
                     <Link
                       href="#"
-                      className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.12em] text-accent-blue uppercase hover:text-accent-blue/80 transition-colors duration-200 group"
+                      className="font-bold text-accent-blue hover:underline text-xs"
                     >
-                      View Our History
-                      <svg
-                        width="14"
-                        height="14"
-                        viewBox="0 0 24 24"
-                        fill="none"
-                        stroke="currentColor"
-                        strokeWidth="2"
-                        strokeLinecap="round"
-                        strokeLinejoin="round"
-                        className="transition-transform duration-200 group-hover:translate-x-0.5"
-                      >
-                        <path d="M5 12h14" />
-                        <path d="m12 5 7 7-7 7" />
-                      </svg>
+                      Sign up now
                     </Link>
                   </div>
+
+                  <Link
+                    href="#"
+                    className="inline-flex items-center gap-1.5 text-xs font-bold text-accent-blue hover:underline"
+                  >
+                    <span>View Our History</span>
+                    <svg
+                      width="14"
+                      height="14"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="currentColor"
+                      strokeWidth="2.5"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M5 12h14" />
+                      <path d="m12 5 7 7-7 7" />
+                    </svg>
+                  </Link>
                 </div>
               </div>
             </div>
@@ -243,7 +314,8 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
           )}
         </div>
       </div>
-      {/* Profile Modal — rendered at root level, outside the overlay panel's stacking context */}
+
+      {/* Profile Modal */}
       <ProfileModal
         profile={selectedProfile}
         onClose={() => setSelectedProfile(null)}

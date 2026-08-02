@@ -70,14 +70,15 @@ export default function Navbar({
               </span>
             </Link>
 
-            {/* Nav links - centered - all neutral gray, no active state */}
-            <div className="flex items-center gap-8 lg:gap-10 mx-auto">
-              {navItems.map((item) =>
-                item.key === "events" ? (
+            {/* Nav links - centered */}
+            <div className="flex items-center gap-8 lg:gap-10 mx-auto h-full">
+              {navItems.map((item) => {
+                const isActive = activeOverlay === item.key;
+                return item.key === "events" ? (
                   <Link
                     key={item.key}
                     href="/events"
-                    className="text-[9px] font-bold tracking-[0.18em] text-gray-500 uppercase hover:text-navy transition-colors duration-200"
+                    className="text-[10px] font-bold tracking-[0.18em] text-gray-500 uppercase hover:text-navy transition-colors duration-200"
                   >
                     {item.label}
                   </Link>
@@ -85,12 +86,19 @@ export default function Navbar({
                   <button
                     key={item.key}
                     onClick={() => onNavClick?.(item.key)}
-                    className="text-[9px] font-bold tracking-[0.18em] text-gray-500 uppercase hover:text-navy transition-colors duration-200 cursor-pointer"
+                    className={`relative py-5 text-[10px] font-bold tracking-[0.18em] uppercase transition-colors duration-200 cursor-pointer ${
+                      isActive
+                        ? "text-accent-blue"
+                        : "text-gray-500 hover:text-navy"
+                    }`}
                   >
                     {item.label}
+                    {isActive && (
+                      <span className="absolute bottom-0 left-0 w-full h-[3px] bg-accent-blue rounded-full" />
+                    )}
                   </button>
-                )
-              )}
+                );
+              })}
             </div>
 
             {/* Join Us Button - right */}
