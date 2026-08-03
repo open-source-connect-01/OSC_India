@@ -1,29 +1,31 @@
-import Link from "next/link";
+"use client";
+
+import AnimatedCounter from "./AnimatedCounter";
 
 const stats = [
   {
-    value: "400",
+    numericValue: 400,
     suffix: "+",
     label: "PROJECTS",
     sublabel: "Hosted & Supported",
     labelColor: "text-accent-teal",
   },
   {
-    value: "15K",
-    suffix: "+",
+    numericValue: 15,
+    suffix: "K+",
     label: "CONTRIBUTORS",
     sublabel: "Active Developers",
     labelColor: "text-accent-emerald",
   },
   {
-    value: "300",
+    numericValue: 300,
     suffix: "+",
     label: "MEMBERS",
     sublabel: "Global Organizations",
     labelColor: "text-accent-orange",
   },
   {
-    value: "20",
+    numericValue: 20,
     suffix: "+",
     label: "COLLABORATIONS",
     sublabel: "Strategic Partnerships",
@@ -59,8 +61,7 @@ export default function StatsRow() {
             {stats.map((stat) => (
               <div key={stat.label} className="text-center">
                 <div className="text-[36px] lg:text-[44px] font-extrabold text-navy-deep leading-none mb-0.5">
-                  {stat.value}
-                  <span className="text-navy-deep">{stat.suffix}</span>
+                  <AnimatedCounter value={stat.numericValue} suffix={stat.suffix} />
                 </div>
                 <div
                   className={`text-[13px] font-bold tracking-[0.08em] uppercase mb-0.5 ${stat.labelColor}`}

@@ -1,40 +1,49 @@
-import Link from "next/link";
+import Image from "next/image";
+import AnimatedCounter from "./AnimatedCounter";
 
-const personColors: Record<string, { badge: string; pillBg: string; pillText: string; pillIcon: string; photoBg: string }> = {
+const personColors: Record<
+  string,
+  {
+    badge: string;
+    pillBg: string;
+    pillText: string;
+    bulletColor: string;
+    photo: string;
+  }
+> = {
   "Dr. Sarah Chen": {
-    badge: "bg-blue-500",
-    pillBg: "bg-blue-50",
-    pillText: "text-blue-700",
-    pillIcon: "text-blue-500",
-    photoBg: "from-blue-400 to-blue-600",
+    badge: "bg-[#2563EB]",
+    pillBg: "bg-[#EFF6FF]",
+    pillText: "text-[#2563EB]",
+    bulletColor: "bg-[#2563EB]",
+    photo: "/spotlight/sarah_chen.jpg",
   },
   "Marcus Johnson": {
-    badge: "bg-green-500",
-    pillBg: "bg-green-50",
-    pillText: "text-green-700",
-    pillIcon: "text-green-500",
-    photoBg: "from-green-400 to-green-600",
+    badge: "bg-[#10B981]",
+    pillBg: "bg-[#ECFDF5]",
+    pillText: "text-[#059669]",
+    bulletColor: "bg-[#10B981]",
+    photo: "/spotlight/marcus_johnson.jpg",
   },
   "Elena Rodriguez": {
-    badge: "bg-orange-500",
-    pillBg: "bg-orange-50",
-    pillText: "text-orange-700",
-    pillIcon: "text-orange-500",
-    photoBg: "from-orange-400 to-orange-600",
+    badge: "bg-[#F59E0B]",
+    pillBg: "bg-[#FFFBEB]",
+    pillText: "text-[#D97706]",
+    bulletColor: "bg-[#F59E0B]",
+    photo: "/spotlight/elena_rodriguez.jpg",
   },
   "James Park": {
-    badge: "bg-purple-500",
-    pillBg: "bg-purple-50",
-    pillText: "text-purple-700",
-    pillIcon: "text-purple-500",
-    photoBg: "from-purple-400 to-purple-600",
+    badge: "bg-[#8B5CF6]",
+    pillBg: "bg-[#F5F3FF]",
+    pillText: "text-[#7C3AED]",
+    bulletColor: "bg-[#8B5CF6]",
+    photo: "/spotlight/james_park.jpg",
   },
 };
 
 const spotlightCards = [
   {
     name: "Dr. Sarah Chen",
-    initials: "SC",
     role: "Chief Technology Officer",
     org: "CloudNative Foundation",
     specialty: "Cloud Architecture & DevOps",
@@ -45,9 +54,8 @@ const spotlightCards = [
   },
   {
     name: "Marcus Johnson",
-    initials: "MJ",
     role: "Principal Engineer",
-    org: "Open Source Labs Inc.",
+    org: "Open Source Labs",
     specialty: "Distributed Systems & Security",
     highlights: [
       "Keynote Speaker at OSS Summit 2026",
@@ -56,9 +64,8 @@ const spotlightCards = [
   },
   {
     name: "Elena Rodriguez",
-    initials: "ER",
     role: "VP of Engineering",
-    org: "TechVentures Inc.",
+    org: "TechVentures Inc",
     specialty: "AI/ML & Open Innovation",
     highlights: [
       "Keynote Speaker at OSS Summit 2026",
@@ -67,7 +74,6 @@ const spotlightCards = [
   },
   {
     name: "James Park",
-    initials: "JP",
     role: "Lead Developer Advocate",
     org: "Global Tech Alliance",
     specialty: "Developer Relations & Community",
@@ -80,7 +86,17 @@ const spotlightCards = [
 
 function TrendingUpIcon({ className }: { className?: string }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <polyline points="23 6 13.5 15.5 8.5 10.5 1 18" />
       <polyline points="17 6 23 6 23 12" />
     </svg>
@@ -89,7 +105,17 @@ function TrendingUpIcon({ className }: { className?: string }) {
 
 function GlobeIcon({ className }: { className?: string }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <circle cx="12" cy="12" r="10" />
       <line x1="2" y1="12" x2="22" y2="12" />
       <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
@@ -99,7 +125,17 @@ function GlobeIcon({ className }: { className?: string }) {
 
 function MedalIcon({ className }: { className?: string }) {
   return (
-    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      width="20"
+      height="20"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <circle cx="12" cy="8" r="6" />
       <path d="M15.477 12.89 17 22l-5-3-5 3 1.523-9.11" />
     </svg>
@@ -108,7 +144,17 @@ function MedalIcon({ className }: { className?: string }) {
 
 function CodeIcon({ className }: { className?: string }) {
   return (
-    <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round" className={className}>
+    <svg
+      width="13"
+      height="13"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="currentColor"
+      strokeWidth="2.5"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className={className}
+    >
       <polyline points="16 18 22 12 16 6" />
       <polyline points="8 6 2 12 8 18" />
     </svg>
@@ -117,15 +163,17 @@ function CodeIcon({ className }: { className?: string }) {
 
 export default function CommunitySpotlightSection() {
   return (
-    <section className="w-full bg-white">
-      <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-16 lg:py-20">
-        {/* Heading */}
-        <div className="mb-10">
-          <h2 className="text-[24px] lg:text-[26px] font-extrabold text-[#0B0F1A] leading-tight">
-            Community Spotlight
-          </h2>
-          <div className="w-[50px] h-[3px] bg-accent-orange mt-2 mb-4" />
-          <p className="max-w-[620px] text-[14px] text-gray-400 leading-relaxed mt-3">
+    <section className="w-full bg-white py-16 lg:py-24">
+      <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
+        {/* Title and Description */}
+        <div className="mb-12">
+          <div className="relative inline-block pb-3">
+            <h2 className="text-3xl lg:text-4xl font-extrabold text-[#0B0F1A] tracking-tight">
+              Community Spotlight
+            </h2>
+            <div className="absolute bottom-0 left-0 w-[68px] h-[4px] bg-[#F59E0B]" />
+          </div>
+          <p className="max-w-4xl text-base text-gray-500 leading-relaxed mt-4">
             Celebrating the builders, maintainers, researchers, and leaders
             driving meaningful innovation across the Open Source Connect
             ecosystem. Our community represents diverse expertise across
@@ -133,106 +181,104 @@ export default function CommunitySpotlightSection() {
           </p>
         </div>
 
-        {/* Stats Row — stretched horizontally like hero section */}
-        <div className="grid grid-cols-3 gap-6 mb-10 lg:mb-12">
-          {/* Stat 1 — Blue / Growth */}
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-blue-50 flex items-center justify-center shrink-0">
-              <TrendingUpIcon className="text-blue-500 w-[16px] h-[16px]" />
-            </div>
-            <div>
-              <div className="text-[22px] sm:text-[26px] font-extrabold text-navy-deep leading-none">
-                500+
-              </div>
-              <div className="text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-1 leading-tight">
-                Active Leaders
+        {/* Stats Row */}
+        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-16 my-12 py-4">
+          {/* Stat 1 */}
+          <div className="flex items-center gap-3">
+            <TrendingUpIcon className="text-[#2563EB]" />
+            <div className="flex items-baseline gap-2 sm:block">
+              <span className="text-3xl font-extrabold text-[#0B0F1A] tracking-tight">
+                <AnimatedCounter value={500} suffix="+" />
+              </span>
+              <div className="text-[10px] font-bold tracking-wider text-gray-400 uppercase mt-0.5">
+                ACTIVE LEADERS
               </div>
             </div>
           </div>
 
-          {/* Stat 2 — Green / Globe */}
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-green-50 flex items-center justify-center shrink-0">
-              <GlobeIcon className="text-green-500 w-[16px] h-[16px]" />
-            </div>
-            <div>
-              <div className="text-[22px] sm:text-[26px] font-extrabold text-navy-deep leading-none">
-                50+
-              </div>
-              <div className="text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-1 leading-tight">
-                Countries
+          <div className="hidden sm:block w-px h-10 bg-gray-200" />
+
+          {/* Stat 2 */}
+          <div className="flex items-center gap-3">
+            <GlobeIcon className="text-[#10B981]" />
+            <div className="flex items-baseline gap-2 sm:block">
+              <span className="text-3xl font-extrabold text-[#0B0F1A] tracking-tight">
+                <AnimatedCounter value={50} suffix="+" />
+              </span>
+              <div className="text-[10px] font-bold tracking-wider text-gray-400 uppercase mt-0.5">
+                COUNTRIES
               </div>
             </div>
           </div>
 
-          {/* Stat 3 — Amber / Medal */}
-          <div className="flex items-center justify-center gap-3">
-            <div className="w-9 h-9 rounded-full bg-amber-50 flex items-center justify-center shrink-0">
-              <MedalIcon className="text-amber-500 w-[16px] h-[16px]" />
-            </div>
-            <div>
-              <div className="text-[22px] sm:text-[26px] font-extrabold text-navy-deep leading-none">
-                100+
-              </div>
-              <div className="text-[10px] font-bold tracking-[0.08em] text-gray-400 uppercase mt-1 leading-tight">
-                Speaking Sessions
+          <div className="hidden sm:block w-px h-10 bg-gray-200" />
+
+          {/* Stat 3 */}
+          <div className="flex items-center gap-3">
+            <MedalIcon className="text-[#F59E0B]" />
+            <div className="flex items-baseline gap-2 sm:block">
+              <span className="text-3xl font-extrabold text-[#0B0F1A] tracking-tight">
+                <AnimatedCounter value={100} suffix="+" />
+              </span>
+              <div className="text-[10px] font-bold tracking-wider text-gray-400 uppercase mt-0.5">
+                SPEAKING SESSIONS
               </div>
             </div>
           </div>
         </div>
 
-        {/* 2×2 Horizontal Cards Grid */}
-        <div className="grid sm:grid-cols-2 gap-5 lg:gap-6">
+        {/* 2×2 Cards Grid */}
+        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-10">
           {spotlightCards.map((person) => {
             const colors = personColors[person.name];
             return (
               <div
                 key={person.name}
-                className="flex gap-4 sm:gap-5 bg-white border border-gray-200 p-5"
+                className="bg-white border border-gray-100/80 rounded-sm p-6 shadow-[0_2px_12px_-2px_rgba(0,0,0,0.04)] flex flex-col sm:flex-row items-start gap-6 transition-all duration-200 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]"
               >
-                {/* Photo with colored badge */}
-                <div className="relative w-[110px] sm:w-[130px] aspect-[3/4] shrink-0">
+                {/* Photo container */}
+                <div className="relative w-[110px] h-[110px] sm:w-[125px] sm:h-[125px] shrink-0">
+                  <Image
+                    src={colors.photo}
+                    alt={person.name}
+                    width={125}
+                    height={125}
+                    className="w-full h-full object-cover rounded-sm"
+                  />
+                  {/* Colored corner badge */}
                   <div
-                    className={`w-full h-full bg-gradient-to-br ${colors.photoBg} flex items-center justify-center`}
-                  >
-                    <span className="text-white font-bold text-lg sm:text-xl tracking-wide">
-                      {person.initials}
-                    </span>
-                  </div>
-                  {/* Colored square badge — bottom-right corner overlap */}
-                  <div
-                    className={`absolute -bottom-1.5 -right-1.5 w-[28px] h-[28px] ${colors.badge} flex items-center justify-center shadow-sm`}
-                  >
-                    <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="white" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M20 21v-2a4 4 0 0 0-4-4H8a4 4 0 0 0-4 4v2" />
-                      <circle cx="12" cy="7" r="4" />
-                    </svg>
-                  </div>
+                    className={`absolute -bottom-1 -right-1 w-5 h-5 sm:w-5.5 sm:h-5.5 ${colors.badge} rounded-[2px]`}
+                  />
                 </div>
-                {/* Text content */}
+
+                {/* Info Container */}
                 <div className="flex-1 min-w-0">
-                  <h3 className="text-[15px] font-bold text-navy-deep leading-snug">
+                  <h3 className="text-xl font-extrabold text-[#0B0F1A] tracking-tight leading-snug">
                     {person.name}
                   </h3>
-                  <p className="text-[12px] text-gray-400 mt-0.5">{person.role}</p>
-                  <p className="text-[11px] text-accent-blue font-medium mt-0.5">
+                  <p className="text-sm font-semibold text-gray-500 mt-1">
+                    {person.role}
+                  </p>
+                  <p className="text-xs text-gray-400 mt-0.5 font-medium">
                     {person.org}
                   </p>
 
-                  {/* Specialty — colored pill badge */}
-                  <div className={`inline-flex items-center gap-1.5 px-2.5 py-1 rounded-full ${colors.pillBg} mt-2.5 mb-2`}>
-                    <CodeIcon className={colors.pillIcon} />
-                    <span className={`text-[10px] font-semibold ${colors.pillText} leading-none`}>
-                      {person.specialty}
-                    </span>
+                  {/* Specialty tag */}
+                  <div
+                    className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-[4px] ${colors.pillBg} ${colors.pillText} text-[11px] font-semibold my-3`}
+                  >
+                    <CodeIcon className="shrink-0" />
+                    <span>{person.specialty}</span>
                   </div>
 
                   {/* Highlights */}
                   <ul className="space-y-1.5">
                     {person.highlights.map((h, i) => (
-                      <li key={i} className="flex items-start gap-2">
-                        <span className="w-[5px] h-[5px] bg-[#F2811D] rounded-full mt-[5px] shrink-0" />
-                        <span className="text-[11px] text-gray-500 leading-snug">
+                      <li key={i} className="flex items-center gap-2">
+                        <span
+                          className={`w-1.5 h-1.5 rounded-full shrink-0 ${colors.bulletColor}`}
+                        />
+                        <span className="text-xs text-gray-500 font-medium">
                           {h}
                         </span>
                       </li>
@@ -242,32 +288,6 @@ export default function CommunitySpotlightSection() {
               </div>
             );
           })}
-        </div>
-
-        {/* CTA Banner — subtle neutral gradient */}
-        <div className="mt-12 lg:mt-14 w-full bg-gradient-to-r from-[#F5F7FA] via-[#FAFBFC] to-white px-8 lg:px-12 py-10 text-center">
-          <h3 className="text-[22px] lg:text-[24px] font-bold text-navy-deep">
-            Become a Community Leader
-          </h3>
-          <p className="max-w-[500px] text-[14px] text-gray-400 leading-relaxed mx-auto mt-3 mb-6">
-            Share your expertise, mentor the next generation, and help shape
-            the future of open source. Apply to speak at our events or join our
-            ambassador program.
-          </p>
-          <div className="flex flex-col sm:flex-row items-center justify-center gap-3">
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center h-[46px] px-6 bg-navy-deep text-white text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-navy transition-all duration-200"
-            >
-              Apply to Speak
-            </Link>
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center h-[46px] px-6 bg-white text-navy-deep border-2 border-navy-deep text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-navy-deep hover:text-white transition-all duration-200"
-            >
-              View All Leaders
-            </Link>
-          </div>
         </div>
       </div>
     </section>

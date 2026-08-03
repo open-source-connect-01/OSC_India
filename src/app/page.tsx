@@ -3,7 +3,6 @@
 import { useState, useCallback, useEffect, useRef, Suspense } from "react";
 import { useSearchParams } from "next/navigation";
 import type { ActiveOverlay } from "@/components/Navbar";
-import TopUtilityBar from "@/components/TopUtilityBar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
@@ -17,20 +16,12 @@ import CommunityOverlay from "@/components/CommunityOverlay";
 
 function HomeContent() {
   const searchParams = useSearchParams();
-  const [activeOverlay, setActiveOverlay] = useState<ActiveOverlay>(null);
+  const [activeOverlay, setActiveOverlay] = useState<ActiveOverlay>(() => {
+    const nav = searchParams.get("nav") as ActiveOverlay | null;
+    return nav && nav !== "events" ? nav : null;
+  });
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const scrollYRef = useRef(0);
-  const navReadRef = useRef(false);
-
-  // Read ?nav= query param on mount only
-  useEffect(() => {
-    if (navReadRef.current) return;
-    navReadRef.current = true;
-    const nav = searchParams.get("nav") as ActiveOverlay | null;
-    if (nav && nav !== "events") {
-      setActiveOverlay(nav);
-    }
-  }, [searchParams]);
 
   const handleNavClick = useCallback((label: ActiveOverlay) => {
     setActiveOverlay((prev) => (prev === label ? null : label));
@@ -82,7 +73,6 @@ function HomeContent() {
   return (
     <div className="flex flex-col min-h-full">
       <header className="relative z-30">
-        <TopUtilityBar />
         <Navbar
           onNavClick={handleNavClick}
           activeOverlay={activeOverlay}
