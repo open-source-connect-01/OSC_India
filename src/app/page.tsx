@@ -8,6 +8,7 @@ import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
 import CoreFocusSection from "@/components/CoreFocusSection";
 import CommunitySpotlightSection from "@/components/CommunitySpotlightSection";
+import BecomeCommunityLeaderSection from "@/components/BecomeCommunityLeaderSection";
 import ConnectContributeGrowSection from "@/components/ConnectContributeGrowSection";
 import FooterSection from "@/components/FooterSection";
 import AboutOverlay from "@/components/AboutOverlay";
@@ -92,6 +93,7 @@ function HomeContent() {
         <StatsRow />
         <CoreFocusSection />
         <CommunitySpotlightSection />
+        <BecomeCommunityLeaderSection />
         <ConnectContributeGrowSection />
       </main>
 
