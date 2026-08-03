@@ -4,7 +4,7 @@ import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full bg-white overflow-hidden">
+    <section className="relative w-full overflow-hidden" style={{ background: 'linear-gradient(180deg, #EFF4FC 0%, #FAFBFE 55%, #FFFFFF 100%)' }}>
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8 pt-10 lg:pt-14 pb-10 lg:pb-14">
         <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-10">
           {/* Left Content Column */}
@@ -58,7 +58,7 @@ export default function HeroSection() {
           </div>
 
           {/* Right: Floating CoreFocusCard with offset shadow */}
-          <div className="hidden lg:block w-[330px] shrink-0 relative mt-[115px]">
+          <div className="hidden lg:block w-[330px] shrink-0 relative mt-[165px]">
             <div className="relative">
               {/* Slate-blue offset shadow block */}
               <div className="absolute top-3 left-3 w-full h-full bg-[#94A3B8]/60 rounded-[2px] z-0" />

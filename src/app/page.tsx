@@ -73,7 +73,7 @@ function HomeContent() {
 
   return (
     <div className="flex flex-col min-h-full">
-      <header className="relative z-30">
+      <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
         <Navbar
           onNavClick={handleNavClick}
           activeOverlay={activeOverlay}
