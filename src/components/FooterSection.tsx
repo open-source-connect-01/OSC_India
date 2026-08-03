@@ -100,66 +100,65 @@ export default function FooterSection() {
             </div>
 
             {/* Right: Why Join card */}
-            <div className="relative">
-              <div className="absolute top-4 left-4 w-full h-full bg-accent-cream z-0" />
-              <div className="relative z-10 bg-navy-deep p-9 text-white">
-                <div className="w-[30px] h-[30px] bg-white text-navy-deep font-extrabold text-[15px] flex items-center justify-center mb-4">
+            <div className="w-full bg-[#0c1a38] p-8 lg:p-9 rounded-[16px] text-white shadow-2xl">
+              <div className="flex items-center gap-3.5 mb-7">
+                <div className="w-8 h-8 rounded-full border-2 border-[#F2811D] text-[#F2811D] font-extrabold flex items-center justify-center text-sm shrink-0">
                   ?
                 </div>
-                <h3 className="text-[19px] font-bold mb-6">
+                <h3 className="text-[20px] font-extrabold text-white tracking-tight">
                   Why Organizations Join
                 </h3>
+              </div>
 
-                <div className="space-y-5">
-                  {whyItems.map((item) => (
-                    <div key={item.num} className="flex gap-3.5">
-                      <div className="flex-none w-[26px] h-[22px] bg-accent-orange text-white text-[10px] font-extrabold flex items-center justify-center mt-1">
-                        {item.num}
-                      </div>
-                      <div className="min-w-0">
-                        <h4 className="text-[12px] font-extrabold tracking-[0.5px] text-accent-orange uppercase mb-1.5">
-                          {item.title}
-                        </h4>
-                        <p className="text-[13px] text-gray-300 leading-relaxed">
-                          {item.desc}
-                        </p>
-                      </div>
+              <div className="space-y-7">
+                {whyItems.map((item) => (
+                  <div key={item.num} className="flex gap-4">
+                    <div className="flex-none w-7 h-7 bg-[#F2811D] text-white text-xs font-extrabold rounded-[5px] flex items-center justify-center mt-0.5">
+                      {item.num}
                     </div>
-                  ))}
-                </div>
+                    <div className="min-w-0">
+                      <h4 className="text-xs font-extrabold tracking-[0.1em] text-[#F2811D] uppercase mb-1.5">
+                        {item.title}
+                      </h4>
+                      <p className="text-[13.5px] text-slate-300 leading-relaxed max-w-[320px]">
+                        {item.desc}
+                      </p>
+                    </div>
+                  </div>
+                ))}
               </div>
             </div>
           </div>
 
-          {/* Mobile Layout (Matching Mobile Screenshot 1) */}
+          {/* Mobile Layout (Matching Figma Composite Screenshot) */}
           <div className="lg:hidden space-y-6">
-            {/* View Membership Tiers Full Width Top Button */}
+            {/* VIEW MEMBERSHIP TIERS Full Width Top Button */}
             <Link
               href="#"
-              className="w-full bg-[#0A1B3D] text-white text-xs font-extrabold tracking-[0.16em] uppercase py-4 rounded-[6px] shadow-sm flex items-center justify-center text-center block mb-6"
+              className="w-full bg-[#0A1B3D] text-white text-xs font-extrabold tracking-[0.16em] uppercase py-4 rounded-[4px] shadow-sm flex items-center justify-center text-center block mb-6 hover:bg-[#122752] transition-colors"
             >
               VIEW MEMBERSHIP TIERS
             </Link>
 
             {/* Rounded Dark Navy Why Organizations Join Card */}
-            <div className="w-full bg-[#0B132B] p-6 rounded-[16px] text-white shadow-xl">
-              <div className="flex items-center gap-2.5 mb-6">
-                <span className="w-6 h-6 rounded-full bg-[#F2811D]/20 text-[#F2811D] flex items-center justify-center font-bold text-xs">
-                  🌐
-                </span>
-                <h3 className="text-base font-extrabold text-white">
+            <div className="w-full bg-[#0d1e42] p-6 sm:p-7 rounded-[16px] text-white shadow-2xl">
+              <div className="flex items-center gap-3 mb-6">
+                <div className="w-7 h-7 rounded-full border-2 border-[#F2811D] text-[#F2811D] font-extrabold flex items-center justify-center text-xs shrink-0">
+                  ?
+                </div>
+                <h3 className="text-lg font-extrabold text-white tracking-tight">
                   Why Organizations Join
                 </h3>
               </div>
 
-              <div className="space-y-5">
+              <div className="space-y-6">
                 {whyItems.map((item) => (
-                  <div key={item.num} className="flex gap-3">
-                    <div className="flex-none w-5 h-5 bg-[#F2811D] text-white text-[10px] font-extrabold rounded-[3px] flex items-center justify-center mt-0.5">
+                  <div key={item.num} className="flex gap-3.5">
+                    <div className="flex-none w-6 h-6 bg-[#F2811D] text-white text-[11px] font-extrabold rounded-[5px] flex items-center justify-center mt-0.5">
                       {item.num}
                     </div>
                     <div className="min-w-0">
-                      <h4 className="text-xs font-extrabold tracking-wider text-[#F2811D] uppercase mb-1">
+                      <h4 className="text-xs font-extrabold tracking-[0.1em] text-[#F2811D] uppercase mb-1">
                         {item.title}
                       </h4>
                       <p className="text-xs text-slate-300 leading-relaxed">
@@ -172,7 +171,7 @@ export default function FooterSection() {
             </div>
 
             {/* Rounded Dark Navy Current Event Card */}
-            <div className="w-full bg-[#162550] p-6 rounded-[16px] text-white shadow-xl relative overflow-hidden">
+            <div className="w-full bg-[#162550] p-6 rounded-[12px] text-white shadow-xl relative overflow-hidden">
               <div className="text-[10px] font-extrabold tracking-widest text-[#F2811D] uppercase mb-2">
                 CURRENT EVENT
               </div>
@@ -183,7 +182,7 @@ export default function FooterSection() {
                 Join us for our annual gathering of maintainers, contributors, and industry leaders. March 15-17, 2026 in San Francisco.
               </p>
 
-              <div className="space-y-1.5 text-[10.5px] font-bold text-slate-400 uppercase tracking-wider mb-5">
+              <div className="space-y-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-5">
                 <div className="flex items-center gap-2">
                   <span>📅</span>
                   <span>MARCH 15-17, 2026</span>
@@ -196,7 +195,7 @@ export default function FooterSection() {
 
               <Link
                 href="#"
-                className="w-full bg-[#F2811D] text-white text-xs font-extrabold tracking-[0.16em] uppercase py-3.5 rounded-[10px] shadow-md flex items-center justify-center text-center block hover:bg-orange-600 transition-colors"
+                className="w-full bg-[#F2811D] text-white text-xs font-extrabold tracking-[0.16em] uppercase py-3.5 rounded-[8px] shadow-md flex items-center justify-center text-center block hover:bg-orange-600 transition-colors"
               >
                 REGISTER NOW
               </Link>
@@ -266,14 +265,14 @@ export default function FooterSection() {
                 Providing the institutional framework for collaborative innovation and technical meritocracy.
               </p>
               <div className="flex items-center gap-4 text-slate-400">
-                <Link href="#" className="hover:text-white transition-colors" aria-label="GitHub">
-                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
-                    <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
-                  </svg>
-                </Link>
                 <Link href="#" className="hover:text-white transition-colors" aria-label="LinkedIn">
                   <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z" />
+                  </svg>
+                </Link>
+                <Link href="#" className="hover:text-white transition-colors" aria-label="GitHub">
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path fillRule="evenodd" clipRule="evenodd" d="M12 2C6.477 2 2 6.484 2 12.017c0 4.425 2.865 8.18 6.839 9.504.5.092.682-.217.682-.483 0-.237-.008-.868-.013-1.703-2.782.605-3.369-1.343-3.369-1.343-.454-1.158-1.11-1.466-1.11-1.466-.908-.62.069-.608.069-.608 1.003.07 1.53 1.032 1.53 1.032.892 1.53 2.341 1.088 2.91.832.092-.647.35-1.088.636-1.338-2.22-.253-4.555-1.113-4.555-4.951 0-1.093.39-1.988 1.029-2.688-.103-.253-.446-1.272.098-2.65 0 0 .84-.27 2.75 1.026A9.564 9.564 0 0112 6.844c.85.004 1.705.115 2.504.337 1.909-1.296 2.747-1.027 2.747-1.027.546 1.379.202 2.398.1 2.651.64.7 1.028 1.595 1.028 2.688 0 3.848-2.339 4.695-4.566 4.943.359.309.678.92.678 1.855 0 1.338-.012 2.419-.012 2.747 0 .268.18.58.688.482A10.019 10.019 0 0022 12.017C22 6.484 17.522 2 12 2z" />
                   </svg>
                 </Link>
               </div>
@@ -306,7 +305,7 @@ export default function FooterSection() {
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Providing the institutional framework for collaborative innovation and technical meritocracy.
               </p>
-              <div className="flex items-center gap-3 text-slate-400">
+              <div className="flex items-center gap-3.5 text-slate-400">
                 <Link href="#" aria-label="LinkedIn" className="hover:text-white">
                   <svg width="20" height="20" viewBox="0 0 24 24" fill="currentColor">
                     <path d="M19 3a2 2 0 0 1 2 2v14a2 2 0 0 1-2 2H5a2 2 0 0 1-2-2V5a2 2 0 0 1 2-2h14m-.5 15.5v-5.3a3.26 3.26 0 0 0-3.26-3.26c-.85 0-1.84.52-2.28 1.3v-1.11h-2.79v8.37h2.79v-4.93c0-.77.62-1.4 1.39-1.4a1.4 1.4 0 0 1 1.4 1.4v4.93h2.75M6.46 10.9v8.37H9.25V10.9H6.46M7.86 6.74a1.65 1.65 0 1 0 0 3.3 1.65 1.65 0 0 0 0-3.3z" />
@@ -367,10 +366,11 @@ export default function FooterSection() {
           </div>
 
           {/* Bottom Legal Bar */}
-          <div className="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-[10px] sm:text-[11px] text-slate-500 tracking-[0.05em] uppercase">
+          <div className="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-[9.5px] sm:text-[11px] text-slate-500 tracking-[0.05em] uppercase">
             <div>
-              &copy; 2026 OPEN SOURCE CONNECT COMMUNITY. ALL RIGHTS RESERVED.
-              <br className="hidden sm:block" />
+              &copy; 2024 OPEN SOURCE COMMUNITY FOUNDATION. ALL RIGHTS RESERVED.
+              <br />
+              A REGISTERED 501(C)(6) ORGANIZATION. ID: 12-4556789
             </div>
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               <Link href="#" className="hover:text-slate-300 transition-colors whitespace-nowrap">
