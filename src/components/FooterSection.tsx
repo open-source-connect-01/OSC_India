@@ -58,15 +58,15 @@ export default function FooterSection() {
           <div className="grid lg:grid-cols-2 gap-10 lg:gap-16 items-start">
             {/* Left */}
             <div>
-              <h1 className="text-[30px] sm:text-[40px] lg:text-[44px] font-extrabold text-navy-deep leading-[1.15] tracking-tight">
-                Shared{" "}
-                <span className="text-accent-blue">investment</span> in our
-                digital future.
+              <h1 className="text-[36px] sm:text-[44px] lg:text-[48px] font-extrabold text-navy-deep leading-[1.1] tracking-tight">
+                Why Support
+                <br />
+                OSC?
               </h1>
               <p className="mt-5 text-[15px] sm:text-[15.5px] text-gray-400 leading-relaxed max-w-[440px]">
-                Membership allows organizations to formally support the
-                foundation&apos;s mission while gaining a seat at the table in
-                strategic working groups and governance boards.
+                Your support helps us provide free learning opportunities, reward
+                contributors, organize world-class events, and make open source
+                accessible to everyone.
               </p>
 
               <div className="flex flex-wrap gap-6 sm:gap-12 mt-8">
