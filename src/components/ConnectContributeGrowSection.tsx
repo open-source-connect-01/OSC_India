@@ -2,39 +2,39 @@ import Link from "next/link";
 
 const collabItems = [
   {
-    title: "Technical Working Groups",
-    desc: "Collaborate on standards, best practices, and technical direction across projects.",
+    title: "Open Source Programs",
+    desc: "Contribute to real-world open source projects alongside maintainers and experienced developers.",
   },
   {
-    title: "Project Contributions",
-    desc: "Contribute code, documentation, or expertise to our newest open source projects.",
+    title: "Hackathons",
+    desc: "Build innovative solutions, collaborate with global participants, and win exciting rewards.",
   },
   {
-    title: "Mentorship Programs",
-    desc: "Guide the next generation as academics or new contributors through structured mentoring.",
+    title: "Mentorship",
+    desc: "Learn directly from industry experts, maintainers, and experienced contributors.",
   },
   {
-    title: "Governance Participation",
-    desc: "Shape foundation policies and strategic decisions as a board or council member.",
+    title: "Career Opportunities",
+    desc: "Discover internships, jobs, networking opportunities, and showcase your contributions.",
   },
 ];
 
 const eventItems = [
   {
-    title: "Annual Summits",
-    desc: "Flagship conferences bringing together thousands of contributors, maintainers, and industry leaders.",
+    title: "Sponsorship",
+    desc: "Support hackathons, community programs, and developer initiatives while increasing your brand visibility.",
   },
   {
-    title: "Regional Meetups",
-    desc: "Local gatherings in major cities worldwide for networking and knowledge sharing.",
+    title: "Hiring & Talent",
+    desc: "Connect with skilled contributors, students, and developers from around the world.",
   },
   {
-    title: "Virtual Workshops",
-    desc: "Hands-on technical sessions and training programs accessible from anywhere.",
+    title: "Community Partnerships",
+    desc: "Collaborate on events, workshops, contribution programs, and developer engagement.",
   },
   {
-    title: "Hackathons & Sprints",
-    desc: "Intensive collaborative sessions focused on solving challenges and shipping features.",
+    title: "Speaking & Mentorship",
+    desc: "Share your expertise through workshops, technical sessions, hackathons, and mentorship programs.",
   },
 ];
 
@@ -49,8 +49,8 @@ export default function ConnectContributeGrowSection() {
           </h2>
           <div className="w-[60px] h-[4px] bg-accent-blue mt-2 mb-5" />
           <p className="max-w-[600px] text-[15px] text-gray-400 leading-relaxed">
-            Join a vibrant ecosystem where innovation meets collaboration.
-            Discover how you can be part of our mission.
+            Empowering contributors and organizations to build, 
+            collaborate,and grow through open source.
           </p>
         </div>
 
@@ -67,11 +67,10 @@ export default function ConnectContributeGrowSection() {
               </svg>
             </div>
             <h3 className="text-[20px] font-bold text-navy-deep mb-3">
-              Collaboration Models
+              For Contributors
             </h3>
             <p className="text-[14px] text-gray-400 leading-relaxed mb-6">
-              Engage through multiple pathways designed for different levels of
-              commitment and expertise.
+              Grow your skills, contribute to meaningful projects, connect with mentors, and become part of a global open source community.
             </p>
 
             <ul className="space-y-5 flex-1">
@@ -94,7 +93,7 @@ export default function ConnectContributeGrowSection() {
               href="#"
               className="inline-flex items-center justify-center h-[46px] px-6 bg-navy-deep text-white text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-navy transition-all duration-200 mt-8 self-start"
             >
-              Explore Opportunities
+              Become a Contributor
             </Link>
           </div>
 
@@ -109,11 +108,10 @@ export default function ConnectContributeGrowSection() {
               </svg>
             </div>
             <h3 className="text-[20px] font-bold text-navy-deep mb-3">
-              Community Events
+              For Organizations
             </h3>
             <p className="text-[14px] text-gray-400 leading-relaxed mb-6">
-              Connect with peers, learn from experts, and showcase your work at
-              our global and regional gatherings.
+              Partner with Open Source Connect to engage developers, support innovation, and strengthen your presence in the global open source ecosystem.
             </p>
 
             <ul className="space-y-5 flex-1">
@@ -136,7 +134,7 @@ export default function ConnectContributeGrowSection() {
               href="#"
               className="inline-flex items-center justify-center h-[46px] px-6 bg-white text-navy-deep border-2 border-navy-deep text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-navy-deep hover:text-white transition-all duration-200 mt-8 self-start"
             >
-              View Event Calendar
+              Partner With Us
             </Link>
           </div>
         </div>
