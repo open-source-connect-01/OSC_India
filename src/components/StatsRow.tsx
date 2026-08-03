@@ -79,22 +79,45 @@ export default function StatsRow() {
       <section className="w-full bg-white">
         <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-12 lg:py-16">
           {/* Heading */}
-          <div className="mb-12">
-            <h2 className="text-[32px] lg:text-[40px] font-extrabold text-navy-deep leading-tight">
-              Our Mission
-            </h2>
-            <div className="w-[60px] h-[4px] bg-accent-orange mt-2 mb-5" />
-            <p className="max-w-[700px] text-base leading-relaxed text-slate-600 font-medium mb-4">
-              We are a community of communities, bringing together developers,
-              organizations, and innovators from around the globe to share
-              knowledge, collaborate openly, and build solutions having
+          <div className="mb-8 lg:mb-12">
+            {/* Mobile Title (Matching screenshot: OurMission with orange underline under Our) */}
+            <div className="sm:hidden mb-4">
+              <h2 className="text-[28px] font-extrabold text-[#0B0F1A] tracking-tight">
+                OurMission
+              </h2>
+              <div className="w-[50px] h-[3.5px] bg-[#F59E0B] mt-1" />
+            </div>
+
+            {/* Desktop Title */}
+            <div className="hidden sm:block mb-5">
+              <h2 className="text-[32px] lg:text-[40px] font-extrabold text-navy-deep leading-tight">
+                Our Mission
+              </h2>
+              <div className="w-[60px] h-[4px] bg-accent-orange mt-2" />
+            </div>
+
+            {/* Mobile Paragraph (Exact copy from mobile reference screenshot) */}
+            <p className="sm:hidden text-sm leading-relaxed text-slate-600 font-medium max-w-[480px]">
+              Open Source Connect exists to strengthen the open-source ecosystem
+              by bringing together developers, students, startups, and
+              organizations to collaborate openly and build solutions that create
               real-world impact.
             </p>
-            <p className="max-w-[700px] text-base leading-relaxed text-slate-600 font-medium">
-              We are building a structured, transparent, and community-driven
-              platform where innovation is supported, contributors are respected,
-              and projects are nurtured from idea to long-term sustainability.
-            </p>
+
+            {/* Desktop Paragraphs */}
+            <div className="hidden sm:block space-y-4">
+              <p className="max-w-[700px] text-base leading-relaxed text-slate-600 font-medium">
+                We are a community of communities, bringing together developers,
+                organizations, and innovators from around the globe to share
+                knowledge, collaborate openly, and build solutions having
+                real-world impact.
+              </p>
+              <p className="max-w-[700px] text-base leading-relaxed text-slate-600 font-medium">
+                We are building a structured, transparent, and community-driven
+                platform where innovation is supported, contributors are respected,
+                and projects are nurtured from idea to long-term sustainability.
+              </p>
+            </div>
           </div>
 
           {/* Mission feature cards */}

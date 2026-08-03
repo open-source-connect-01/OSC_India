@@ -118,7 +118,7 @@ function GlobeIcon({ className }: { className?: string }) {
     >
       <circle cx="12" cy="12" r="10" />
       <line x1="2" y1="12" x2="22" y2="12" />
-      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10 15.3 15.3 0 0 1 4-10z" />
+      <path d="M12 2a15.3 15.3 0 0 1 4 10 15.3 15.3 0 0 1-4 10 15.3 15.3 0 0 1-4-10z" />
     </svg>
   );
 }
@@ -163,30 +163,27 @@ function CodeIcon({ className }: { className?: string }) {
 
 export default function CommunitySpotlightSection() {
   return (
-    <section className="w-full bg-white py-16 lg:py-24">
+    <section className="w-full bg-white py-12 sm:py-16 lg:py-24">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
         {/* Title and Description */}
-        <div className="mb-12">
-          <div className="relative inline-block pb-3">
-            <h2 className="text-3xl lg:text-4xl font-extrabold text-[#0B0F1A] tracking-tight">
-              Community Spotlight
+        <div className="mb-8 lg:mb-12">
+          <div className="relative inline-block pb-2 lg:pb-3">
+            <h2 className="text-[28px] sm:text-3xl lg:text-4xl font-extrabold text-[#0B0F1A] tracking-tight">
+              CommunitySpotlight
             </h2>
-            <div className="absolute bottom-0 left-0 w-[68px] h-[4px] bg-[#F59E0B]" />
+            <div className="hidden lg:block absolute bottom-0 left-0 w-[68px] h-[4px] bg-[#F59E0B]" />
           </div>
-          <p className="max-w-4xl text-base text-gray-500 leading-relaxed mt-4">
+          <p className="max-w-4xl text-xs sm:text-sm lg:text-base text-gray-500 font-medium leading-relaxed mt-2 lg:mt-4">
             Celebrating the builders, maintainers, researchers, and leaders
-            driving meaningful innovation across the Open Source Connect
-            ecosystem. Our community represents diverse expertise across
-            emerging technologies and real-world industry challenges.
+            driving meaningful innovation.
           </p>
         </div>
 
-        {/* Stats Row */}
-        <div className="flex flex-wrap items-center justify-center gap-8 sm:gap-16 my-12 py-4">
-          {/* Stat 1 */}
+        {/* Stats Row (Desktop & Tablet) */}
+        <div className="hidden sm:flex flex-wrap items-center justify-center gap-8 sm:gap-16 my-10 py-4">
           <div className="flex items-center gap-3">
             <TrendingUpIcon className="text-[#2563EB]" />
-            <div className="flex items-baseline gap-2 sm:block">
+            <div>
               <span className="text-3xl font-extrabold text-[#0B0F1A] tracking-tight">
                 <AnimatedCounter value={500} suffix="+" />
               </span>
@@ -196,12 +193,11 @@ export default function CommunitySpotlightSection() {
             </div>
           </div>
 
-          <div className="hidden sm:block w-px h-10 bg-gray-200" />
+          <div className="w-px h-10 bg-gray-200" />
 
-          {/* Stat 2 */}
           <div className="flex items-center gap-3">
             <GlobeIcon className="text-[#10B981]" />
-            <div className="flex items-baseline gap-2 sm:block">
+            <div>
               <span className="text-3xl font-extrabold text-[#0B0F1A] tracking-tight">
                 <AnimatedCounter value={50} suffix="+" />
               </span>
@@ -211,12 +207,11 @@ export default function CommunitySpotlightSection() {
             </div>
           </div>
 
-          <div className="hidden sm:block w-px h-10 bg-gray-200" />
+          <div className="w-px h-10 bg-gray-200" />
 
-          {/* Stat 3 */}
           <div className="flex items-center gap-3">
             <MedalIcon className="text-[#F59E0B]" />
-            <div className="flex items-baseline gap-2 sm:block">
+            <div>
               <span className="text-3xl font-extrabold text-[#0B0F1A] tracking-tight">
                 <AnimatedCounter value={100} suffix="+" />
               </span>
@@ -227,14 +222,72 @@ export default function CommunitySpotlightSection() {
           </div>
         </div>
 
-        {/* 2×2 Cards Grid */}
-        <div className="grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-10">
+        {/* Mobile Cards View (Matching Mobile Screenshot) */}
+        <div className="sm:hidden space-y-4 mt-6">
           {spotlightCards.map((person) => {
             const colors = personColors[person.name];
             return (
               <div
                 key={person.name}
-                className="bg-white border border-gray-100/80 rounded-sm p-6 shadow-[0_2px_12px_-2px_rgba(0,0,0,0.04)] flex flex-col sm:flex-row items-start gap-6 transition-all duration-200 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]"
+                className="bg-white border border-gray-100/90 rounded-[10px] p-5 shadow-xs"
+              >
+                {/* Top Row: Avatar + Info */}
+                <div className="flex items-start gap-4">
+                  <Image
+                    src={colors.photo}
+                    alt={person.name}
+                    width={64}
+                    height={64}
+                    className="w-16 h-16 rounded-[12px] object-cover shrink-0"
+                  />
+                  <div className="min-w-0">
+                    <h3 className="text-base font-extrabold text-[#0B0F1A] tracking-tight">
+                      {person.name}
+                    </h3>
+                    <p className="text-[12.5px] font-bold text-[#2563EB] mt-0.5">
+                      {person.role}
+                    </p>
+                    <p className="text-[11.5px] text-gray-400 font-medium mt-0.5">
+                      {person.org}
+                    </p>
+                  </div>
+                </div>
+
+                {/* Horizontal Divider */}
+                <div className="border-t border-gray-100 my-4" />
+
+                {/* Bottom Section: Specialty Bullet */}
+                <div>
+                  <div className="flex items-center gap-2 mb-2">
+                    <span className="w-2 h-2 rounded-full bg-[#2563EB] shrink-0" />
+                    <span className="text-[12.5px] font-extrabold text-[#0B0F1A]">
+                      {person.specialty}
+                    </span>
+                  </div>
+
+                  {person.highlights && person.highlights.length > 0 && (
+                    <ul className="space-y-1 pl-4">
+                      {person.highlights.map((h, i) => (
+                        <li key={i} className="text-[11.5px] text-gray-400 font-medium">
+                          • {h}
+                        </li>
+                      ))}
+                    </ul>
+                  )}
+                </div>
+              </div>
+            );
+          })}
+        </div>
+
+        {/* Desktop Cards Grid */}
+        <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-10">
+          {spotlightCards.map((person) => {
+            const colors = personColors[person.name];
+            return (
+              <div
+                key={person.name}
+                className="bg-white border border-gray-100/80 rounded-sm p-6 shadow-[0_2px_12px_-2px_rgba(0,0,0,0.04)] flex items-start gap-6 transition-all duration-200 hover:shadow-[0_4px_20px_-4px_rgba(0,0,0,0.08)]"
               >
                 {/* Photo container */}
                 <div className="relative w-[110px] h-[110px] sm:w-[125px] sm:h-[125px] shrink-0">
@@ -245,7 +298,6 @@ export default function CommunitySpotlightSection() {
                     height={125}
                     className="w-full h-full object-cover rounded-sm"
                   />
-                  {/* Colored corner badge */}
                   <div
                     className={`absolute -bottom-1 -right-1 w-5 h-5 sm:w-5.5 sm:h-5.5 ${colors.badge} rounded-[2px]`}
                   />
@@ -263,7 +315,6 @@ export default function CommunitySpotlightSection() {
                     {person.org}
                   </p>
 
-                  {/* Specialty tag */}
                   <div
                     className={`inline-flex items-center gap-1.5 px-3 py-1 rounded-[4px] ${colors.pillBg} ${colors.pillText} text-[11px] font-semibold my-3`}
                   >
@@ -271,7 +322,6 @@ export default function CommunitySpotlightSection() {
                     <span>{person.specialty}</span>
                   </div>
 
-                  {/* Highlights */}
                   <ul className="space-y-1.5">
                     {person.highlights.map((h, i) => (
                       <li key={i} className="flex items-center gap-2">
