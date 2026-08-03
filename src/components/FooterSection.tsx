@@ -385,9 +385,9 @@ export default function FooterSection() {
           {/* Bottom Legal Bar */}
           <div className="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-[9.5px] sm:text-[11px] text-slate-500 tracking-[0.05em] uppercase">
             <div>
-              &copy; 2024 OPEN SOURCE COMMUNITY FOUNDATION. ALL RIGHTS RESERVED.
+              &copy; 2026 Open Source Connect Community. All rights reserved.
               <br />
-              A REGISTERED 501(C)(6) ORGANIZATION. ID: 12-4556789
+              
             </div>
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               <Link href="#" className="hover:text-slate-300 transition-colors whitespace-nowrap">

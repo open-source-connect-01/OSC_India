@@ -401,9 +401,9 @@ export default function ResearchLeadershipSection({
           {/* Bottom legal line */}
           <div className="border-t border-[#1E293B] pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[10.5px] text-slate-500 font-medium">
             <div>
-              &copy; 2024 Open Source Community Foundation. All rights reserved.
+              &copy; 2026 Open Source Connect Community. All rights reserved.
               <br />
-              A REGISTERED 501(C)(6) ORGANIZATION. ID: 12-4556789
+              
             </div>
             <div className="flex items-center gap-4 text-slate-400">
               <Link href="#" className="hover:text-white transition-colors">
