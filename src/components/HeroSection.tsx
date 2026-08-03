@@ -1,68 +1,68 @@
+"use client";
+
 import Link from "next/link";
 
 export default function HeroSection() {
   return (
-    <section className="relative w-full overflow-hidden" style={{ background: 'linear-gradient(180deg, #EFF4FC 0%, #FAFBFE 55%, #FFFFFF 100%)' }}>
-      <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 pt-8 lg:pt-14 pb-4 lg:pb-6">
-        <div className="relative flex flex-col lg:flex-row lg:gap-12 xl:gap-16">
-          {/* Left Content */}
-          <div className="relative z-10 flex-1">
-            {/* Eyebrow / Announcement — compact */}
-            <div className="flex items-center gap-2 mb-2">
-              <span className="w-1.5 h-1.5 rounded-full bg-accent-blue shrink-0" />
-              <span className="text-[8.5px] font-bold tracking-[0.1em] text-gray-700 uppercase">
-                Governance Update: Charter v2.4 Approved
+    <section className="relative w-full bg-white overflow-hidden">
+      <div className="max-w-[1240px] mx-auto px-6 lg:px-8 pt-10 lg:pt-14 pb-10 lg:pb-14">
+        <div className="flex flex-col lg:flex-row lg:items-start lg:justify-between gap-8 lg:gap-10">
+          {/* Left Content Column */}
+          <div className="flex-1 min-w-0">
+            {/* Announcement Pill Badge */}
+            <div className="inline-flex items-center gap-2 border border-blue-200/90 bg-blue-50/40 rounded-full px-3.5 py-1 mb-6">
+              <span className="w-2 h-2 rounded-full bg-[#2563EB] shrink-0" />
+              <span className="text-[10px] sm:text-[10.5px] font-extrabold tracking-[0.12em] text-[#2563EB] uppercase">
+                GOVERNANCE UPDATE: CHARTER V2.4 APPROVED
               </span>
             </div>
 
-            {/* Main Headline - scaled down to fit 2 lines */}
-            <div className="max-w-[620px]">
-              <h1 className="text-[36px] sm:text-[42px] lg:text-[50px] xl:text-[54px] font-extrabold text-navy leading-[1.08] mb-3 tracking-tight">
-                Connecting The World
-                <br />
+            {/* Main Headline — Massive scale matching Figma */}
+            <h1 className="text-4xl sm:text-6xl md:text-[68px] lg:text-[76px] xl:text-[84px] font-black text-[#0B0F1A] leading-[0.98] tracking-[-0.03em] mb-6">
+              <span className="block sm:whitespace-nowrap">Connecting The World</span>
+              <span className="block sm:whitespace-nowrap mt-1 sm:mt-2">
                 Through{" "}
-                <span className="font-serif italic text-[#1a3a7a] font-bold">
+                <span className="font-serif italic font-normal text-[#1D4ED8]">
                   Open Source
                 </span>
-              </h1>
-            </div>
+              </span>
+            </h1>
 
-            {/* Subheading - Figma copy */}
-            <p className="max-w-[500px] text-[15px] leading-[1.7] text-gray-400 mb-4">
-              Open Source Connect (OSC) provides governance, financial
-              stewardship, and collaborative infrastructure to ensure
-              long-term sustainability of high-impact open-source technologies
-              worldwide.
+            {/* Subheading Description */}
+            <p className="text-sm sm:text-base lg:text-[17px] text-gray-500 max-w-[580px] leading-relaxed mb-8">
+              Open Source Connect (OSC) provides governance, financial stewardship,
+              and collaborative infrastructure to ensure long-term sustainability of
+              high-impact open-source technologies worldwide.
             </p>
 
-            {/* CTA Buttons - tighter spacing */}
-            <div className="max-w-[470px] flex flex-col sm:flex-row gap-2 sm:gap-3">
+            {/* Action Buttons */}
+            <div className="flex flex-col sm:flex-row gap-3.5">
               <Link
                 href="#"
-                className="inline-flex items-center justify-center h-[42px] px-[22px] bg-navy text-white text-[10px] font-bold tracking-[0.14em] uppercase hover:bg-navy-light transition-all duration-200 w-full sm:w-auto"
+                className="inline-flex items-center justify-center h-[52px] px-8 bg-[#0B0F1A] text-white text-[11px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] shadow-sm hover:bg-slate-800 transition-colors w-full sm:w-auto"
               >
-                Our Mission &amp; Bylaws
+                OUR MISSION &amp; BYLAWS
               </Link>
               <Link
                 href="#"
-                className="inline-flex items-center justify-center h-[42px] px-[22px] bg-transparent text-navy border border-navy/25 text-[10px] font-bold tracking-[0.14em] uppercase hover:bg-navy hover:text-white hover:border-navy transition-all duration-200 w-full sm:w-auto"
+                className="inline-flex items-center justify-center h-[52px] px-8 bg-white text-[#0B0F1A] border border-slate-300 text-[11px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] hover:bg-slate-50 transition-colors w-full sm:w-auto"
               >
-                Technical Portfolio
+                TECHNICAL PORTFOLIO
               </Link>
             </div>
 
             {/* Mobile CoreFocusCard */}
-            <div className="mt-6 lg:hidden">
+            <div className="mt-8 lg:hidden">
               <CoreFocusCard />
             </div>
           </div>
 
-          {/* Right: Floating CoreFocusCard (desktop only) */}
-          <div className="hidden lg:block w-[280px] shrink-0 relative mt-10">
+          {/* Right: Floating CoreFocusCard with offset shadow */}
+          <div className="hidden lg:block w-[330px] shrink-0 relative mt-[115px]">
             <div className="relative">
-              {/* Thin offset sliver — ~10px visible edge on right and bottom */}
-              <div className="absolute top-[10px] left-[10px] w-full h-full bg-[#dce3ef] z-0" />
-              {/* Card sits on top */}
+              {/* Slate-blue offset shadow block */}
+              <div className="absolute top-3 left-3 w-full h-full bg-[#94A3B8]/60 rounded-[2px] z-0" />
+              {/* White card */}
               <div className="relative z-10">
                 <CoreFocusCard />
               </div>
@@ -76,11 +76,11 @@ export default function HeroSection() {
 
 function CoreFocusCard() {
   return (
-    <div className="w-full lg:w-[255px] bg-white p-5 shadow-sm border border-gray-100">
-      <h3 className="text-[10px] font-bold tracking-[0.2em] text-[#8b93a8] uppercase mb-4">
-        Core Focus
+    <div className="w-full bg-white p-7 border border-gray-100/90 shadow-xl rounded-[2px]">
+      <h3 className="text-[11px] font-extrabold tracking-[0.2em] text-gray-400 uppercase mb-5">
+        CORE FOCUS
       </h3>
-      <ul className="space-y-3.5">
+      <ul className="space-y-4">
         {[
           "Responsible & Applied AI",
           "Cloud-Native",
@@ -88,8 +88,8 @@ function CoreFocusCard() {
           "Robotics Engineering",
         ].map((item) => (
           <li key={item} className="flex items-center gap-3">
-            <span className="w-[9px] h-[9px] bg-[#F2811D] shrink-0" />
-            <span className="text-sm font-semibold text-navy">
+            <span className="w-2 h-2 bg-[#F59E0B] rounded-[1px] shrink-0" />
+            <span className="text-[15px] font-extrabold text-[#0B0F1A]">
               {item}
             </span>
           </li>
