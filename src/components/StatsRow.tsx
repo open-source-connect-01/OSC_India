@@ -68,7 +68,7 @@ export default function StatsRow() {
                 >
                   {stat.label}
                 </div>
-                <div className="text-[13px] text-gray-400">{stat.sublabel}</div>
+                <div className="text-[13px] text-gray-600 font-medium">{stat.sublabel}</div>
               </div>
             ))}
           </div>
@@ -84,13 +84,13 @@ export default function StatsRow() {
               Our Mission
             </h2>
             <div className="w-[60px] h-[4px] bg-accent-orange mt-2 mb-5" />
-            <p className="max-w-[700px] text-base leading-relaxed text-gray-400 mb-4">
+            <p className="max-w-[700px] text-base leading-relaxed text-slate-600 font-medium mb-4">
               We are a community of communities, bringing together developers,
               organizations, and innovators from around the globe to share
               knowledge, collaborate openly, and build solutions having
               real-world impact.
             </p>
-            <p className="max-w-[700px] text-base leading-relaxed text-gray-400">
+            <p className="max-w-[700px] text-base leading-relaxed text-slate-600 font-medium">
               We are building a structured, transparent, and community-driven
               platform where innovation is supported, contributors are respected,
               and projects are nurtured from idea to long-term sustainability.
@@ -110,7 +110,7 @@ export default function StatsRow() {
                 <h3 className="text-[14px] font-bold tracking-[0.04em] text-navy-deep uppercase mb-3">
                   {card.title}
                 </h3>
-                <p className="text-[14px] text-gray-400 leading-relaxed">
+                <p className="text-[14px] text-slate-600 leading-relaxed">
                   {card.desc}
                 </p>
               </div>

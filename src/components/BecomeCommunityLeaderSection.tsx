@@ -16,7 +16,7 @@ export default function BecomeCommunityLeaderSection() {
           </h2>
 
           {/* Subtitle Description */}
-          <p className="text-sm sm:text-base text-gray-500 max-w-[620px] mx-auto leading-relaxed mb-8">
+          <p className="text-sm sm:text-base text-slate-600 font-medium max-w-[620px] mx-auto leading-relaxed mb-8">
             Share your expertise, mentor the next generation, and help shape the future of open source. Apply to speak at our events or join our ambassador program.
           </p>
 

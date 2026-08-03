@@ -29,7 +29,7 @@ export default function HeroSection() {
             </h1>
 
             {/* Subheading Description */}
-            <p className="text-sm sm:text-base lg:text-[17px] text-gray-500 max-w-[580px] leading-relaxed mb-8">
+            <p className="text-sm sm:text-base lg:text-[17px] text-slate-600 font-medium max-w-[580px] leading-relaxed mb-8">
               Open Source Connect (OSC) provides governance, financial stewardship,
               and collaborative infrastructure to ensure long-term sustainability of
               high-impact open-source technologies worldwide.
