@@ -8,11 +8,13 @@ import HeroSection from "@/components/HeroSection";
 import StatsRow from "@/components/StatsRow";
 import CoreFocusSection from "@/components/CoreFocusSection";
 import CommunitySpotlightSection from "@/components/CommunitySpotlightSection";
+import BecomeCommunityLeaderSection from "@/components/BecomeCommunityLeaderSection";
 import ConnectContributeGrowSection from "@/components/ConnectContributeGrowSection";
 import FooterSection from "@/components/FooterSection";
 import AboutOverlay from "@/components/AboutOverlay";
 import WhatWeDoOverlay from "@/components/WhatWeDoOverlay";
 import CommunityOverlay from "@/components/CommunityOverlay";
+import EventsOverlay from "@/components/EventsOverlay";
 
 function HomeContent() {
   const searchParams = useSearchParams();
@@ -72,7 +74,7 @@ function HomeContent() {
 
   return (
     <div className="flex flex-col min-h-full">
-      <header className="relative z-30">
+      <header className="sticky top-0 z-50 bg-white shadow-sm border-b border-gray-100">
         <Navbar
           onNavClick={handleNavClick}
           activeOverlay={activeOverlay}
@@ -91,6 +93,7 @@ function HomeContent() {
         <StatsRow />
         <CoreFocusSection />
         <CommunitySpotlightSection />
+        <BecomeCommunityLeaderSection />
         <ConnectContributeGrowSection />
       </main>
 
@@ -100,6 +103,7 @@ function HomeContent() {
       <AboutOverlay isOpen={activeOverlay === "about"} onClose={handleCloseOverlay} />
       <WhatWeDoOverlay isOpen={activeOverlay === "whatwedo"} onClose={handleCloseOverlay} />
       <CommunityOverlay isOpen={activeOverlay === "resources"} onClose={handleCloseOverlay} />
+      <EventsOverlay isOpen={activeOverlay === "events"} onClose={handleCloseOverlay} />
     </div>
   );
 }

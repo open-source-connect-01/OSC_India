@@ -2,6 +2,7 @@
 
 import { useState } from "react";
 import Image from "next/image";
+import Link from "next/link";
 import ProfileModal from "./ProfileModal";
 import type { ProfileData } from "./ProfileModal";
 
@@ -304,6 +305,120 @@ export default function ResearchLeadershipSection({
           </div>
         </div>
       </section>
+
+      {/* ===== FOOTER SECTION ===== */}
+      <div className="w-full h-[4px] bg-[#F59E0B]" />
+      <footer className="w-full bg-[#0A101D] text-slate-400 text-xs pt-12 pb-8">
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
+          <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 pb-10">
+            {/* Brand Column */}
+            <div>
+              <div className="w-7 h-7 bg-white text-[#0A101D] font-extrabold flex items-center justify-center rounded-[2px] mb-3.5 text-sm">
+                O
+              </div>
+              <p className="text-[12px] text-slate-400 leading-relaxed max-w-[240px] mb-4">
+                Providing the institutional framework for collaborative
+                innovation and technical meritocracy.
+              </p>
+              {/* Social icons */}
+              <div className="flex items-center gap-3">
+                <Link
+                  href="#"
+                  aria-label="GitHub"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M12 0C5.37 0 0 5.37 0 12c0 5.31 3.435 9.795 8.205 11.385.6.105.825-.255.825-.57 0-.285-.015-1.23-.015-2.235-3.015.555-3.795-.735-4.035-1.41-.135-.345-.72-1.41-1.23-1.695-.42-.225-1.02-.78-.015-.795.945-.015 1.62.87 1.845 1.23 1.08 1.815 2.805 1.305 3.495.99.105-.78.42-1.305.765-1.605-2.67-.3-5.46-1.335-5.46-5.925 0-1.305.465-2.385 1.23-3.225-.12-.3-.54-1.53.12-3.18 0 0 1.005-.315 3.3 1.23.96-.27 1.98-.405 3-.405s2.04.135 3 .405c2.295-1.56 3.3-1.23 3.3-1.23.66 1.65.24 2.88.12 3.18.765.84 1.23 1.905 1.23 3.225 0 4.605-2.805 5.625-5.475 5.925.435.375.81 1.095.81 2.22 0 1.605-.015 2.895-.015 3.3 0 .315.225.69.825.57A12.02 12.02 0 0024 12c0-6.63-5.37-12-12-12z" />
+                  </svg>
+                </Link>
+                <Link
+                  href="#"
+                  aria-label="LinkedIn"
+                  className="text-slate-400 hover:text-white transition-colors"
+                >
+                  <svg width="18" height="18" viewBox="0 0 24 24" fill="currentColor">
+                    <path d="M19 0h-14c-2.761 0-5 2.239-5 5v14c0 2.761 2.239 5 5 5h14c2.762 0 5-2.239 5-5v-14c0-2.761-2.238-5-5-5zm-11 19h-3v-11h3v11zm-1.5-12.268c-.966 0-1.75-.79-1.75-1.764s.784-1.764 1.75-1.764 1.75.79 1.75 1.764-.783 1.764-1.75 1.764zm13.5 12.268h-3v-5.604c0-3.368-4-3.113-4 0v5.604h-3v-11h3v1.765c1.396-2.586 7-2.777 7 2.476v6.759z" />
+                  </svg>
+                </Link>
+              </div>
+            </div>
+
+            {/* OUR WORK */}
+            <div>
+              <h3 className="text-white text-[11px] font-extrabold tracking-[0.15em] uppercase mb-4">
+                OUR WORK
+              </h3>
+              <ul className="space-y-2.5 text-[12px]">
+                {["Hosted Projects", "Project Lifecycle", "Technical Standards", "Working Groups"].map(
+                  (item) => (
+                    <li key={item}>
+                      <Link href="#" className="hover:text-white transition-colors">
+                        {item}
+                      </Link>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+
+            {/* COMPLIANCE */}
+            <div>
+              <h3 className="text-white text-[11px] font-extrabold tracking-[0.15em] uppercase mb-4">
+                COMPLIANCE
+              </h3>
+              <ul className="space-y-2.5 text-[12px]">
+                {["Trademark Policy", "Antitrust Policy", "Governance Bylaws", "Transparency Report"].map(
+                  (item) => (
+                    <li key={item}>
+                      <Link href="#" className="hover:text-white transition-colors">
+                        {item}
+                      </Link>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+
+            {/* SUPPORT */}
+            <div>
+              <h3 className="text-white text-[11px] font-extrabold tracking-[0.15em] uppercase mb-4">
+                SUPPORT
+              </h3>
+              <ul className="space-y-2.5 text-[12px]">
+                {["Membership", "Donations", "Mentorship", "Legal Support"].map(
+                  (item) => (
+                    <li key={item}>
+                      <Link href="#" className="hover:text-white transition-colors">
+                        {item}
+                      </Link>
+                    </li>
+                  )
+                )}
+              </ul>
+            </div>
+          </div>
+
+          {/* Bottom legal line */}
+          <div className="border-t border-[#1E293B] pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[10.5px] text-slate-500 font-medium">
+            <div>
+              &copy; 2024 Open Source Community Foundation. All rights reserved.
+              <br />
+              A REGISTERED 501(C)(6) ORGANIZATION. ID: 12-4556789
+            </div>
+            <div className="flex items-center gap-4 text-slate-400">
+              <Link href="#" className="hover:text-white transition-colors">
+                Privacy Policy
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                Terms of Use
+              </Link>
+              <Link href="#" className="hover:text-white transition-colors">
+                Code of Conduct
+              </Link>
+            </div>
+          </div>
+        </div>
+      </footer>
 
       {/* Profile Modal */}
       {isStandalone && (

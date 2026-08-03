@@ -7,6 +7,110 @@ interface EventsOverlayProps {
   onClose: () => void;
 }
 
+// Custom SVG Icons matching exact Events dropdown screenshot
+function CalendarIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#2563EB"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 mt-0.5"
+    >
+      <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+      <line x1="16" y1="2" x2="16" y2="6" />
+      <line x1="8" y1="2" x2="8" y2="6" />
+      <line x1="3" y1="10" x2="21" y2="10" />
+    </svg>
+  );
+}
+
+function LiveSignalIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#2563EB"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 mt-0.5"
+    >
+      <path d="M4.93 4.93a10 10 0 0 1 14.14 0" />
+      <path d="M7.76 7.76a6 6 0 0 1 8.48 0" />
+      <circle cx="12" cy="12" r="2" />
+      <path d="M4.93 19.07a10 10 0 0 1 0-14.14" />
+      <path d="M19.07 4.93a10 10 0 0 1 0 14.14" />
+    </svg>
+  );
+}
+
+function HistoryClockIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#2563EB"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 mt-0.5"
+    >
+      <path d="M3 12a9 9 0 1 0 9-9 9.75 9.75 0 0 0-6.74 2.74L3 8" />
+      <path d="M3 3v5h5" />
+      <polyline points="12 7 12 12 15 15" />
+    </svg>
+  );
+}
+
+function HackathonCodeIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#2563EB"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 mt-0.5"
+    >
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <path d="m7 8 4 4-4 4" />
+      <path d="M13 16h4" />
+    </svg>
+  );
+}
+
+function EventGalleryIcon() {
+  return (
+    <svg
+      width="22"
+      height="22"
+      viewBox="0 0 24 24"
+      fill="none"
+      stroke="#2563EB"
+      strokeWidth="2"
+      strokeLinecap="round"
+      strokeLinejoin="round"
+      className="shrink-0 mt-0.5"
+    >
+      <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
+      <circle cx="8.5" cy="8.5" r="1.5" />
+      <polyline points="21 15 16 10 5 21" />
+    </svg>
+  );
+}
+
 export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
   if (!isOpen) return null;
 
@@ -15,148 +119,91 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
       {/* Dimmed backdrop */}
       <div
         className="fixed inset-x-0 z-40 bg-navy/30 backdrop-blur-[2px]"
-        style={{ top: "110px", bottom: 0 }}
+        style={{ top: "64px", bottom: 0 }}
         onClick={onClose}
       />
 
       {/* Overlay panel */}
       <div
         className="fixed inset-x-0 z-50 shadow-2xl animate-slideDown overflow-y-auto"
-        style={{ top: "110px", maxHeight: "calc(100vh - 110px)" }}
+        style={{ top: "64px", maxHeight: "calc(100vh - 64px)" }}
       >
-        <div className="w-full bg-white">
-          <div className="sticky top-0 z-10 border-b border-gray-100 bg-white/95 backdrop-blur-sm">
-            <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-6 lg:pr-8 py-4 flex justify-start">
-              <button
-                onClick={onClose}
-                className="inline-flex items-center gap-2 rounded-full border border-gray-200 bg-white px-3.5 py-2 text-[9px] font-bold tracking-[0.16em] uppercase text-navy shadow-sm transition-all duration-200 hover:border-gray-300 hover:bg-gray-50"
-                aria-label="Go back"
-              >
-                <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                  <path d="M19 12H5" />
-                  <path d="m12 19-7-7 7-7" />
-                </svg>
-                Back
-              </button>
-            </div>
-          </div>
-
-          <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-10 lg:py-12">
-            <div className="grid md:grid-cols-2 gap-x-16 gap-y-10">
-              {/* --- Column 1: Browse Events --- */}
-              <div>
-                <h3 className="text-[9px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
-                  Browse Events
+        <div className="w-full bg-white border-t border-gray-100">
+          <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-10 lg:py-12">
+            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100 gap-y-8 md:gap-y-0">
+              {/* --- Column 1: BROWSE EVENTS --- */}
+              <div className="md:pr-10 lg:pr-14">
+                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
+                  BROWSE EVENTS
                 </h3>
 
-                <div className="space-y-8">
+                <div className="space-y-7">
                   {/* Upcoming Events */}
-                  <div className="group cursor-pointer">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
-                          <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
-                          <line x1="16" y1="2" x2="16" y2="6" />
-                          <line x1="8" y1="2" x2="8" y2="6" />
-                          <line x1="3" y1="10" x2="21" y2="10" />
-                        </svg>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <h4 className="text-sm font-bold text-navy group-hover:text-accent-blue transition-colors duration-200">
-                          Upcoming Events
-                        </h4>
-                        <span className="inline-flex items-center px-2 py-0.5 rounded-full bg-purple-100 text-[8px] font-bold text-purple-600 uppercase tracking-wider">
-                          12 New
-                        </span>
-                      </div>
+                  <div className="group cursor-pointer flex items-center gap-4">
+                    <CalendarIcon />
+                    <div className="flex items-center gap-3">
+                      <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
+                        Upcoming Events
+                      </h4>
+                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#EFF6FF] text-[10px] font-bold text-[#2563EB] uppercase tracking-wider">
+                        12 NEW
+                      </span>
                     </div>
                   </div>
 
                   {/* Ongoing Now */}
-                  <div className="group cursor-pointer">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
-                          <circle cx="12" cy="12" r="10" />
-                          <path d="M9.08 9.08a4 4 0 0 0 0 5.84" />
-                          <path d="M14.92 9.08a4 4 0 0 1 0 5.84" />
-                          <path d="M6.34 6.34a8 8 0 0 0 0 11.32" />
-                          <path d="M17.66 6.34a8 8 0 0 1 0 11.32" />
-                        </svg>
-                      </div>
-                      <div className="flex items-center gap-3">
-                        <h4 className="text-sm font-bold text-navy group-hover:text-accent-blue transition-colors duration-200">
-                          Ongoing Now
-                        </h4>
-                        <span className="w-2 h-2 rounded-full bg-green-500 animate-pulse" />
-                      </div>
+                  <div className="group cursor-pointer flex items-center gap-4">
+                    <LiveSignalIcon />
+                    <div className="flex items-center gap-3">
+                      <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
+                        Ongoing Now
+                      </h4>
+                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
                     </div>
                   </div>
 
                   {/* Past Events */}
-                  <div className="group cursor-pointer">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
-                          <circle cx="12" cy="12" r="10" />
-                          <polyline points="12 6 12 12 16 14" />
-                        </svg>
-                      </div>
-                      <div className="flex items-center h-10">
-                        <h4 className="text-sm font-bold text-navy group-hover:text-accent-blue transition-colors duration-200">
-                          Past Events
-                        </h4>
-                      </div>
+                  <div className="group cursor-pointer flex items-center gap-4">
+                    <HistoryClockIcon />
+                    <div>
+                      <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
+                        Past Events
+                      </h4>
                     </div>
                   </div>
                 </div>
               </div>
 
-              {/* --- Column 2: Special Programs --- */}
-              <div>
-                <h3 className="text-[9px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
-                  Special Programs
+              {/* --- Column 2: SPECIAL PROGRAMS --- */}
+              <div className="pt-8 md:pt-0 md:pl-10 lg:pl-14">
+                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
+                  SPECIAL PROGRAMS
                 </h3>
 
-                <div className="space-y-8">
+                <div className="space-y-7">
                   {/* Global Hackathons */}
-                  <div className="group cursor-pointer">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
-                          <polygon points="23 7 16 12 23 17 23 7" />
-                          <rect x="1" y="5" width="15" height="14" rx="2" ry="2" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-navy group-hover:text-accent-blue transition-colors duration-200">
-                          Global Hackathons
-                        </h4>
-                        <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                          Compete with top developers and build the future of open source.
-                        </p>
-                      </div>
+                  <div className="group cursor-pointer flex items-start gap-4">
+                    <HackathonCodeIcon />
+                    <div>
+                      <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
+                        Global Hackathons
+                      </h4>
+                      <p className="text-xs text-gray-500 mt-1 leading-snug">
+                        Compete with top developers and build the future of open source.
+                      </p>
                     </div>
                   </div>
 
                   {/* Event Gallery */}
-                  <div className="group cursor-pointer">
-                    <div className="flex items-start gap-4">
-                      <div className="w-10 h-10 bg-accent-blue/10 flex items-center justify-center shrink-0 mt-0.5 group-hover:bg-accent-blue/20 transition-colors duration-200">
-                        <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
-                          <rect x="3" y="3" width="18" height="18" rx="2" ry="2" />
-                          <circle cx="8.5" cy="8.5" r="1.5" />
-                          <polyline points="21 15 16 10 5 21" />
-                        </svg>
-                      </div>
-                      <div>
-                        <h4 className="text-sm font-bold text-navy group-hover:text-accent-blue transition-colors duration-200">
-                          Event Gallery
-                        </h4>
-                        <p className="text-xs text-gray-400 mt-1 leading-relaxed">
-                          Explore highlights, keynote recordings, and session photography.
-                        </p>
-                      </div>
+                  <div className="group cursor-pointer flex items-start gap-4">
+                    <EventGalleryIcon />
+                    <div>
+                      <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
+                        Event Gallery
+                      </h4>
+                      <p className="text-xs text-gray-500 mt-1 leading-snug">
+                        Explore highlights, keynote recordings, and session photography.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -165,39 +212,36 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
           </div>
 
           {/* Bottom footer strip */}
-          <div className="w-full bg-gray-50 border-t border-gray-100">
-            <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-5">
-              <div className="flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
-                <p className="text-[9px] font-bold tracking-[0.2em] text-gray-500 uppercase">
-                  Stay updated with our newsletter
-                </p>
-                <Link
-                  href="/events"
-                  onClick={onClose}
-                  className="inline-flex items-center gap-2 text-[10px] font-bold tracking-[0.12em] text-accent-blue uppercase hover:text-accent-blue/80 transition-colors duration-200 group"
+          <div className="w-full bg-[#F8FAFC] border-t border-gray-100 py-4.5 px-6 lg:px-8">
+            <div className="max-w-[1240px] mx-auto flex flex-col sm:flex-row items-center justify-between gap-4">
+              <span className="font-bold tracking-[0.18em] text-gray-400 uppercase text-[10px] sm:text-[11px]">
+                STAY UPDATED WITH OUR NEWSLETTER
+              </span>
+
+              <Link
+                href="/events"
+                onClick={onClose}
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-accent-blue hover:underline"
+              >
+                <span>View Full Calendar</span>
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  View Full Calendar
-                  <svg
-                    width="14"
-                    height="14"
-                    viewBox="0 0 24 24"
-                    fill="none"
-                    stroke="currentColor"
-                    strokeWidth="2"
-                    strokeLinecap="round"
-                    strokeLinejoin="round"
-                    className="transition-transform duration-200 group-hover:translate-x-0.5"
-                  >
-                    <path d="M5 12h14" />
-                    <path d="m12 5 7 7-7 7" />
-                  </svg>
-                </Link>
-              </div>
+                  <path d="M5 12h14" />
+                  <path d="m12 5 7 7-7 7" />
+                </svg>
+              </Link>
             </div>
           </div>
         </div>
       </div>
-
     </>
   );
 }
