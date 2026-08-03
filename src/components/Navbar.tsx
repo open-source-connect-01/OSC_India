@@ -64,15 +64,7 @@ export default function Navbar({
             <div className="flex items-center gap-8 lg:gap-10 mx-auto h-full">
               {navItems.map((item) => {
                 const isActive = activeOverlay === item.key;
-                return item.key === "events" ? (
-                  <Link
-                    key={item.key}
-                    href="/events"
-                    className="text-[10px] font-bold tracking-[0.18em] text-gray-500 uppercase hover:text-navy transition-colors duration-200"
-                  >
-                    {item.label}
-                  </Link>
-                ) : (
+                return (
                   <button
                     key={item.key}
                     onClick={() => onNavClick?.(item.key)}
