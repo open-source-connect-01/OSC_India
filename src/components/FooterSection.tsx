@@ -171,31 +171,48 @@ export default function FooterSection() {
             </div>
 
             {/* Rounded Dark Navy Current Event Card */}
-            <div className="w-full bg-[#162550] p-6 rounded-[12px] text-white shadow-xl relative overflow-hidden">
-              <div className="text-[10px] font-extrabold tracking-widest text-[#F2811D] uppercase mb-2">
+            <div className="w-full bg-[#182750] p-7 rounded-[22px] text-white shadow-2xl relative overflow-hidden">
+              {/* Top-Right Decorative Curve Overlay */}
+              <div
+                className="absolute -top-10 -right-10 w-[180px] h-[180px] bg-white/5 rounded-full pointer-events-none"
+              />
+
+              <div className="text-[10.5px] font-extrabold tracking-[0.18em] text-[#F2811D] uppercase mb-3 relative z-10">
                 CURRENT EVENT
               </div>
-              <h3 className="text-xl font-extrabold text-white mb-2 leading-snug">
-                Open Source Summit 2026
+
+              <h3 className="text-[26px] sm:text-[28px] font-extrabold text-white mb-3 leading-[1.15] tracking-tight relative z-10">
+                Open Source
+                <br />
+                Summit 2026
               </h3>
-              <p className="text-xs text-slate-300 leading-relaxed mb-4">
+
+              <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed mb-6 max-w-[280px] relative z-10">
                 Join us for our annual gathering of maintainers, contributors, and industry leaders. March 15-17, 2026 in San Francisco.
               </p>
 
-              <div className="space-y-1.5 text-[10px] font-bold text-slate-400 uppercase tracking-wider mb-5">
+              <div className="space-y-2 text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.1em] mb-7 relative z-10">
                 <div className="flex items-center gap-2">
-                  <span>📅</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-slate-400">
+                    <rect x="3" y="4" width="18" height="18" rx="2" ry="2" />
+                    <line x1="16" y1="2" x2="16" y2="6" />
+                    <line x1="8" y1="2" x2="8" y2="6" />
+                    <line x1="3" y1="10" x2="21" y2="10" />
+                  </svg>
                   <span>MARCH 15-17, 2026</span>
                 </div>
                 <div className="flex items-center gap-2">
-                  <span>📍</span>
+                  <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-slate-400">
+                    <path d="M21 10c0 7-9 13-9 13s-9-6-9-13a9 9 0 0 1 18 0z" />
+                    <circle cx="12" cy="10" r="3" />
+                  </svg>
                   <span>SAN FRANCISCO, CA</span>
                 </div>
               </div>
 
               <Link
                 href="#"
-                className="w-full bg-[#F2811D] text-white text-xs font-extrabold tracking-[0.16em] uppercase py-3.5 rounded-[8px] shadow-md flex items-center justify-center text-center block hover:bg-orange-600 transition-colors"
+                className="w-full bg-[#F2811D] text-white text-xs font-extrabold tracking-[0.16em] uppercase py-3.5 rounded-[12px] shadow-lg flex items-center justify-center text-center block hover:bg-orange-600 transition-colors relative z-10"
               >
                 REGISTER NOW
               </Link>
