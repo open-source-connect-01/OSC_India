@@ -1,47 +1,18 @@
 "use client";
 
 import { useState } from "react";
+import Image from "next/image";
 import ProfileModal from "./ProfileModal";
 import type { ProfileData } from "./ProfileModal";
 
-const avatarGradients = [
-  "from-blue-400 to-blue-600",
-  "from-emerald-400 to-emerald-600",
-  "from-violet-400 to-violet-600",
-  "from-amber-400 to-amber-600",
-  "from-rose-400 to-rose-600",
-  "from-cyan-400 to-cyan-600",
-  "from-orange-400 to-orange-600",
-  "from-purple-400 to-purple-600",
-  "from-teal-400 to-teal-600",
-  "from-pink-400 to-pink-600",
-];
-
-function getInitials(name: string): string {
-  return name
-    .split(/\s+/)
-    .filter((w) => w.length > 0 && !w.startsWith("Dr."))
-    .map((w) => w[0])
-    .join("")
-    .toUpperCase()
-    .slice(0, 2);
-}
-
-function getAvatarColor(name: string): string {
-  let hash = 0;
-  for (let i = 0; i < name.length; i++) {
-    hash = name.charCodeAt(i) + ((hash << 5) - hash);
-  }
-  return avatarGradients[Math.abs(hash) % avatarGradients.length];
-}
-
-const teamMembers: (ProfileData & { cardRole: string })[] = [
+export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] = [
   {
     name: "Dr. Aris Thorne",
-    cardRole: "Lead Architect, Project Alpha",
+    cardRole: "LEAD ARCHITECT, PROJECT ALPHA",
     role: "Senior Researcher & Ecosystem Manager",
     org: "OSC Foundation",
     badge: "Senior Mentor",
+    photo: "/leaders/aris_thorne.jpg",
     bioParagraphs: [
       "Dr. Aris Thorne is a distinguished researcher and strategic leader in the open-source ecosystem. With over 15 years of experience in distributed systems and community governance, he leads the OSC Foundation's initiatives in sustainable development and researcher mentorship.",
       "His work focuses on the intersection of academic research and practical industry application, ensuring that open-source contributors have the tools and institutional backing necessary to thrive in high-stakes environments. Aris has previously held senior roles at global tech consortia and is a frequent keynote speaker on digital sovereignty.",
@@ -50,10 +21,11 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
   {
     name: "Sarah Jenkins",
-    cardRole: "Community Director",
+    cardRole: "COMMUNITY DIRECTOR",
     role: "Community Strategy Director",
     org: "OSC Foundation",
     badge: "Senior Mentor",
+    photo: "/leaders/sarah_jenkins.jpg",
     bioParagraphs: [
       "Sarah Jenkins is a passionate community builder and strategist with over a decade of experience growing open-source communities worldwide. She has successfully scaled multiple developer communities from inception to global reach.",
       "Her expertise lies in fostering inclusive environments where contributors at all levels can thrive. Sarah has designed mentorship programs that have helped thousands of developers transition from newcomers to project maintainers.",
@@ -62,10 +34,11 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
   {
     name: "Marcus Holloway",
-    cardRole: "Principal Researcher",
+    cardRole: "PRINCIPAL RESEARCHER",
     role: "Principal Research Scientist",
     org: "OSC Foundation",
     badge: "Senior Mentor",
+    photo: "/leaders/marcus_holloway.jpg",
     bioParagraphs: [
       "Marcus Holloway is a principal research scientist specializing in distributed systems architecture and consensus protocols. His groundbreaking work on scalable blockchain infrastructure has been adopted by major open-source projects worldwide.",
       "He brings deep technical expertise in decentralized systems, cryptographic protocols, and high-performance computing. Marcus is a prolific author with over 40 peer-reviewed publications and serves on the editorial board of several top-tier journals.",
@@ -74,10 +47,11 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
   {
     name: "Elena Rodriguez",
-    cardRole: "DevOps Strategy Lead",
+    cardRole: "DEVOPS STRATEGY LEAD",
     role: "DevOps & Platform Engineering Lead",
     org: "OSC Foundation",
     badge: "Senior Mentor",
+    photo: "/leaders/elena_rodriguez.jpg",
     bioParagraphs: [
       "Elena Rodriguez leads DevOps strategy and platform engineering at the OSC Foundation, where she architects CI/CD pipelines and infrastructure-as-code frameworks that serve thousands of open-source projects globally.",
       "With a background in site reliability engineering at major cloud providers, Elena specializes in building resilient, scalable systems. She is a passionate advocate for GitOps methodologies and has contributed extensively to Kubernetes ecosystem projects.",
@@ -86,10 +60,11 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
   {
     name: "David Chen",
-    cardRole: "Security Standards Chair",
+    cardRole: "SECURITY STANDARDS CHAIR",
     role: "Cybersecurity Standards Lead",
     org: "OSC Foundation",
     badge: "Senior Mentor",
+    photo: "/leaders/david_chen.jpg",
     bioParagraphs: [
       "David Chen chairs the Security Standards Working Group at the OSC Foundation, where he coordinates cross-industry efforts to establish best practices for open-source software security and supply chain integrity.",
       "His career spans two decades in cybersecurity, including leadership roles at major tech firms and government advisory boards. David has been instrumental in developing the Foundation's vulnerability disclosure framework and security audit programs.",
@@ -98,10 +73,11 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
   {
     name: "Dr. Linda Wu",
-    cardRole: "Open Standards Liaison",
+    cardRole: "OPEN STANDARDS LIAISON",
     role: "Standards & Interoperability Director",
     org: "OSC Foundation",
     badge: "Senior Mentor",
+    photo: "/leaders/linda_wu.jpg",
     bioParagraphs: [
       "Dr. Linda Wu serves as the Open Standards Liaison, bridging the gap between technical communities and international standards bodies. She ensures that open-source innovations align with global interoperability requirements.",
       "With a PhD in Computer Science and extensive experience in standards development organizations, Linda has facilitated the adoption of open standards across multiple industries. She chairs several W3C and IEEE working groups focused on web standards and data interoperability.",
@@ -110,10 +86,11 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
   {
     name: "James Wilson",
-    cardRole: "Cloud Infrastructure Lead",
+    cardRole: "CLOUD INFRASTRUCTURE LEAD",
     role: "Cloud Architecture Director",
     org: "OSC Foundation",
     badge: "Senior Mentor",
+    photo: "/leaders/james_wilson.jpg",
     bioParagraphs: [
       "James Wilson directs cloud infrastructure strategy at the OSC Foundation, overseeing the architecture and operations of cloud-native platforms that support hundreds of open-source projects across multiple cloud providers.",
       "His expertise spans serverless computing, container orchestration, and multi-cloud networking. James is a core contributor to several CNCF projects and frequently speaks at industry conferences about cloud-native best practices and infrastructure automation.",
@@ -122,10 +99,11 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
   {
     name: "Amara Okafor",
-    cardRole: "Strategic Partnerships",
+    cardRole: "STRATEGIC PARTNERSHIPS",
     role: "Partnerships & Alliances Director",
     org: "OSC Foundation",
     badge: "Senior Mentor",
+    photo: "/leaders/amara_okafor.jpg",
     bioParagraphs: [
       "Amara Okafor leads strategic partnerships at the OSC Foundation, building relationships with corporations, academic institutions, and government agencies to expand the foundation's reach and impact across the open-source ecosystem.",
       "With extensive experience in business development and technology strategy, Amara has forged collaborations that have resulted in significant funding and resource commitments for critical open-source projects. She is a strong advocate for sustainable open-source business models.",
@@ -134,10 +112,11 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
   {
     name: "Kevin Schmidt",
-    cardRole: "Technical Mentor",
+    cardRole: "TECHNICAL MENTOR",
     role: "Senior Technical Mentor & Advisor",
     org: "OSC Foundation",
     badge: "Senior Mentor",
+    photo: "/leaders/kevin_schmidt.jpg",
     bioParagraphs: [
       "Kevin Schmidt is a senior technical mentor at the OSC Foundation, where he guides aspiring open-source contributors through structured mentorship programs and helps projects establish healthy community practices.",
       "His approach combines technical coaching with community building, having mentored over 200 developers who have gone on to become project maintainers and community leaders. Kevin is the author of several widely-used open-source libraries and documentation frameworks.",
@@ -146,10 +125,11 @@ const teamMembers: (ProfileData & { cardRole: string })[] = [
   },
   {
     name: "Sophia Rossi",
-    cardRole: "Developer Relations",
+    cardRole: "DEVELOPER RELATIONS",
     role: "Developer Relations Director",
     org: "OSC Foundation",
     badge: "Senior Mentor",
+    photo: "/leaders/sophia_rossi.jpg",
     bioParagraphs: [
       "Sophia Rossi leads Developer Relations at the OSC Foundation, building bridges between the foundation and the global developer community through events, content, and direct engagement programs.",
       "She is a seasoned developer advocate with a talent for translating complex technical concepts into accessible learning resources. Sophia has organized over 50 hackathons and speaking events worldwide, and hosts a popular technical podcast on open-source development practices.",
@@ -185,14 +165,14 @@ export default function ResearchLeadershipSection({
   return (
     <>
       {/* ===== RESEARCH LEADERSHIP ===== */}
-      <section id="research-leadership" className="w-full bg-white">
-        <div className="max-w-[1240px] mx-auto px-6 lg:px-8 pt-12 lg:pt-14 pb-8 lg:pb-10">
+      <section id="research-leadership" className="w-full bg-white py-12 lg:py-16">
+        <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
           {/* Page Header */}
-          <div className="mb-6">
-            <h1 className="text-[32px] lg:text-[36px] font-extrabold text-navy-deep leading-tight">
+          <div className="mb-8">
+            <h1 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#0B0F1A] tracking-tight">
               Research Leadership
             </h1>
-            <p className="max-w-[600px] text-[15px] text-gray-400 leading-relaxed mt-3">
+            <p className="max-w-3xl text-sm sm:text-base text-gray-500 leading-relaxed mt-3">
               Meet the industry experts and community leaders driving open
               source research and innovation forward. Our leadership team brings
               decades of experience in decentralized systems and collaborative
@@ -201,33 +181,31 @@ export default function ResearchLeadershipSection({
           </div>
 
           {/* Tab Toggle */}
-          <div className="mb-8">
-            <div className="inline-flex items-center bg-gray-100 rounded-full p-1">
-              <button
-                onClick={() => setActiveTab("mentors")}
-                className={`px-5 py-2 text-[11px] font-bold tracking-[0.08em] uppercase rounded-full transition-all duration-200 ${
-                  activeTab === "mentors"
-                    ? "bg-navy-deep text-white"
-                    : "text-gray-500 hover:text-navy-deep"
-                }`}
-              >
-                Mentors
-              </button>
-              <button
-                onClick={() => setActiveTab("speakers")}
-                className={`px-5 py-2 text-[11px] font-bold tracking-[0.08em] uppercase rounded-full transition-all duration-200 ${
-                  activeTab === "speakers"
-                    ? "bg-navy-deep text-white"
-                    : "text-gray-500 hover:text-navy-deep"
-                }`}
-              >
-                Speakers
-              </button>
-            </div>
+          <div className="flex items-center gap-2 mb-8">
+            <button
+              onClick={() => setActiveTab("mentors")}
+              className={`px-6 py-2.5 text-xs font-extrabold tracking-[0.12em] uppercase transition-colors duration-200 rounded-[2px] ${
+                activeTab === "mentors"
+                  ? "bg-[#0F172A] text-white"
+                  : "bg-[#F1F5F9] text-[#475569] hover:bg-slate-200"
+              }`}
+            >
+              MENTORS
+            </button>
+            <button
+              onClick={() => setActiveTab("speakers")}
+              className={`px-6 py-2.5 text-xs font-extrabold tracking-[0.12em] uppercase transition-colors duration-200 rounded-[2px] ${
+                activeTab === "speakers"
+                  ? "bg-[#0F172A] text-white"
+                  : "bg-[#F1F5F9] text-[#475569] hover:bg-slate-200"
+              }`}
+            >
+              SPEAKERS
+            </button>
           </div>
 
-          {/* Team Grid — 5 cols, responsive */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 lg:grid-cols-5 gap-5">
+          {/* 5-Column Leadership Team Grid */}
+          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-5">
             {teamMembers.map((member) => (
               <button
                 key={member.name}
@@ -241,84 +219,93 @@ export default function ResearchLeadershipSection({
                     tags: member.tags,
                   })
                 }
-                className="overflow-hidden shadow-[0_4px_12px_rgba(0,0,0,0.08)] bg-white text-left cursor-pointer transition-all duration-200 hover:shadow-[0_8px_24px_rgba(0,0,0,0.14)] hover:-translate-y-0.5"
+                className="relative group overflow-hidden bg-white text-left cursor-pointer shadow-sm hover:shadow-md transition-all duration-200"
               >
-                {/* Photo — gradient avatar */}
-                <div className={`aspect-[3/4] w-full bg-gradient-to-br ${getAvatarColor(member.name)} flex items-center justify-center`}>
-                  <span className="text-white font-bold text-xl sm:text-2xl tracking-wide">
-                    {getInitials(member.name)}
-                  </span>
-                </div>
-                {/* Caption bar */}
-                <div className="bg-navy-deep px-3.5 py-3 min-h-[68px] flex flex-col justify-center">
-                  <span className="text-[11px] font-bold text-white leading-tight uppercase">
-                    {member.name}
-                  </span>
-                  <span className="text-[9px] font-medium text-gray-400 uppercase tracking-[0.04em] mt-0.5 leading-snug">
-                    {member.cardRole}
-                  </span>
+                {/* Photo container */}
+                <div className="relative aspect-[3/4] w-full bg-slate-100">
+                  <Image
+                    src={member.photo}
+                    alt={member.name}
+                    fill
+                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                  />
+                  {/* Overlaid dark caption bar */}
+                  <div className="absolute bottom-0 inset-x-0 bg-[#0F172A] p-3 min-h-[58px] flex flex-col justify-center">
+                    <span className="text-[11px] font-extrabold text-white tracking-wide uppercase leading-tight truncate">
+                      {member.name}
+                    </span>
+                    <span className="text-[9px] font-semibold text-gray-300 uppercase tracking-[0.04em] mt-0.5 leading-snug truncate">
+                      {member.cardRole}
+                    </span>
+                  </div>
                 </div>
               </button>
             ))}
           </div>
 
           {/* Pagination */}
-          <div className="flex items-center justify-center gap-2 mt-8 lg:mt-10">
-            <button className="w-8 h-8 flex items-center justify-center text-gray-400 text-sm font-medium cursor-default">
-              ‹
+          <div className="flex items-center justify-center gap-1.5 mt-10 mb-6">
+            <button
+              aria-label="Previous Page"
+              className="w-9 h-9 flex items-center justify-center text-gray-400 hover:text-[#0B0F1A] border border-gray-200 rounded-[2px] transition-colors"
+            >
+              &lt;
             </button>
             {[1, 2, 3].map((page) => (
               <button
                 key={page}
                 onClick={() => setActivePage(page)}
-                className={`w-8 h-8 flex items-center justify-center text-[13px] font-bold transition-all duration-200 ${
+                className={`w-9 h-9 flex items-center justify-center text-xs font-extrabold rounded-[2px] transition-colors ${
                   activePage === page
-                    ? "bg-navy-deep text-white"
-                    : "bg-white text-gray-500 border border-gray-200 hover:border-gray-400"
+                    ? "bg-[#0F172A] text-white"
+                    : "bg-white text-slate-600 border border-gray-200 hover:border-slate-400"
                 }`}
               >
                 {page}
               </button>
             ))}
-            <button className="w-8 h-8 flex items-center justify-center text-gray-400 text-sm font-medium hover:text-navy-deep transition-colors duration-200">
-              ›
+            <button
+              aria-label="Next Page"
+              className="w-9 h-9 flex items-center justify-center text-gray-400 hover:text-[#0B0F1A] border border-gray-200 rounded-[2px] transition-colors"
+            >
+              &gt;
             </button>
           </div>
         </div>
       </section>
 
       {/* ===== STAY CONNECTED NEWSLETTER ===== */}
-      <div className="w-full bg-white pb-12 lg:pb-16">
+      <section className="w-full bg-white pb-16 lg:pb-20">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
-          <div className="w-full bg-[#0B0F1A] px-6 sm:px-10 lg:px-12 py-10 lg:py-12">
+          <div className="w-full bg-[#0F172A] rounded-sm p-8 lg:p-12 text-white">
             <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
               <div className="flex-1">
-                <h2 className="text-[24px] lg:text-[26px] font-bold text-white leading-tight">
+                <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
                   Stay Connected
                 </h2>
-                <p className="text-[14px] text-gray-400 leading-relaxed max-w-[440px] mt-2">
-                  Subscribe to our newsletter for the latest research updates
-                  and community news.
+                <p className="text-sm text-slate-300 max-w-md leading-relaxed">
+                  Subscribe to our newsletter for the latest research updates and
+                  community news.
                 </p>
               </div>
-              <div className="flex flex-col sm:flex-row gap-3 shrink-0 w-full sm:w-auto">
+              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
                 <input
                   type="email"
                   placeholder="Enter your email"
                   value={email}
                   onChange={(e) => setEmail(e.target.value)}
-                  className="flex-1 sm:w-[260px] h-[46px] px-4 bg-[#1a1f2e] text-white text-[14px] placeholder-gray-500 outline-none focus:ring-1 focus:ring-accent-blue transition-all duration-200"
+                  className="bg-[#1E293B] border border-slate-700 text-white placeholder-slate-400 text-sm px-4 py-3 rounded-sm sm:w-[280px] outline-none focus:border-blue-500 transition-colors"
                 />
-                <button className="h-[46px] px-6 bg-accent-blue text-white text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-blue-600 transition-all duration-200 whitespace-nowrap">
-                  Subscribe
+                <button className="bg-[#2563EB] text-white font-extrabold text-xs tracking-wider uppercase px-8 py-3 rounded-sm hover:bg-blue-600 transition-colors whitespace-nowrap">
+                  SUBSCRIBE
                 </button>
               </div>
             </div>
           </div>
         </div>
-      </div>
+      </section>
 
-      {/* Profile Modal — only render here when standalone (events page); AboutOverlay renders it externally */}
+      {/* Profile Modal */}
       {isStandalone && (
         <ProfileModal profile={selectedProfile} onClose={onProfileClose} />
       )}
