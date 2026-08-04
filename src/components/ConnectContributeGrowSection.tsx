@@ -48,15 +48,14 @@ export default function ConnectContributeGrowSection() {
             Connect, Contribute &amp; Grow
           </h2>
           <div className="w-[60px] h-[4px] bg-accent-blue mt-2 mb-5" />
-          <p className="max-w-[600px] text-[15px] text-gray-400 leading-relaxed">
-            Empowering contributors and organizations to build, 
-            collaborate,and grow through open source.
+          <p className="max-w-[600px] text-[15px] text-slate-600 font-medium leading-relaxed">
+            Empowering contributors and organizations to build, collaborate, and grow through open source.
           </p>
         </div>
 
         {/* Two-column card layout */}
         <div className="grid md:grid-cols-2 gap-6">
-          {/* Card 1: Collaboration Models */}
+          {/* Card 1: For Contributors */}
           <div className="bg-white border border-gray-200 p-8 flex flex-col">
             <div className="w-10 h-10 rounded-full bg-accent-blue/20 flex items-center justify-center mb-5">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-blue">
@@ -69,7 +68,7 @@ export default function ConnectContributeGrowSection() {
             <h3 className="text-[20px] font-bold text-navy-deep mb-3">
               For Contributors
             </h3>
-            <p className="text-[14px] text-gray-400 leading-relaxed mb-6">
+            <p className="text-[14px] text-slate-600 font-medium leading-relaxed mb-6">
               Grow your skills, contribute to meaningful projects, connect with mentors, and become part of a global open source community.
             </p>
 
@@ -81,7 +80,7 @@ export default function ConnectContributeGrowSection() {
                     <span className="text-[14px] font-bold text-navy-deep">
                       {item.title}
                     </span>
-                    <p className="text-[13px] text-gray-400 leading-relaxed mt-0.5">
+                    <p className="text-[13.5px] text-slate-600 font-medium leading-relaxed mt-0.5">
                       {item.desc}
                     </p>
                   </div>
@@ -97,7 +96,7 @@ export default function ConnectContributeGrowSection() {
             </Link>
           </div>
 
-          {/* Card 2: Community Events */}
+          {/* Card 2: For Organizations */}
           <div className="bg-white border border-gray-200 p-8 flex flex-col">
             <div className="w-10 h-10 rounded-full bg-accent-emerald/20 flex items-center justify-center mb-5">
               <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="1.5" strokeLinecap="round" strokeLinejoin="round" className="text-accent-emerald">
@@ -110,8 +109,8 @@ export default function ConnectContributeGrowSection() {
             <h3 className="text-[20px] font-bold text-navy-deep mb-3">
               For Organizations
             </h3>
-            <p className="text-[14px] text-gray-400 leading-relaxed mb-6">
-              Partner with Open Source Connect to engage developers, support innovation, and strengthen your presence in the global open source ecosystem.
+            <p className="text-[14px] text-slate-600 font-medium leading-relaxed mb-6">
+              Partner with us to engage developers, support innovation, and strengthen your presence in the global open source ecosystem.
             </p>
 
             <ul className="space-y-5 flex-1">
@@ -122,7 +121,7 @@ export default function ConnectContributeGrowSection() {
                     <span className="text-[14px] font-bold text-navy-deep">
                       {item.title}
                     </span>
-                    <p className="text-[13px] text-gray-400 leading-relaxed mt-0.5">
+                    <p className="text-[13.5px] text-slate-600 font-medium leading-relaxed mt-0.5">
                       {item.desc}
                     </p>
                   </div>
