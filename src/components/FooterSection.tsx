@@ -211,7 +211,9 @@ export default function FooterSection() {
               </div>
 
               <Link
-                href="#"
+                href="https://luma.com/3u22sml7"
+                target="_blank"
+                rel="noopener noreferrer"
                 className="w-full bg-[#F2811D] text-white text-xs font-extrabold tracking-[0.16em] uppercase py-3.5 rounded-[12px] shadow-lg flex items-center justify-center text-center block hover:bg-orange-600 transition-colors relative z-10"
               >
                 REGISTER NOW
@@ -255,7 +257,9 @@ export default function FooterSection() {
               </div>
             </div>
             <Link
-              href="#"
+              href="https://luma.com/3u22sml7"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center h-[48px] px-8 bg-[#F2811D] text-white text-[11px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] hover:bg-orange-600 transition-all duration-200 shrink-0 shadow-md"
             >
               REGISTER NOW
