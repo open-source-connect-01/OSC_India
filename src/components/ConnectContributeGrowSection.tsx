@@ -111,7 +111,7 @@ export default function ConnectContributeGrowSection() {
               For Organizations
             </h3>
             <p className="text-[14px] text-gray-400 leading-relaxed mb-6">
-              Partner with Open Source Connect to engage developers, support innovation, and strengthen your presence in the global open source ecosystem.
+              Partner with us to engage developers, support innovation, and strengthen your presence in the global open source ecosystem.
             </p>
 
             <ul className="space-y-5 flex-1">
