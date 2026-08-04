@@ -12,11 +12,11 @@ export default function BecomeCommunityLeaderSection() {
         >
           {/* Section Title */}
           <h2 className="text-2xl sm:text-3xl lg:text-[36px] font-bold text-[#0B0F1A] tracking-tight mb-4">
-            Become a Community Leader
+            Speak at Open Source Connect
           </h2>
 
           {/* Subtitle Description */}
-          <p className="text-sm sm:text-base text-gray-500 max-w-[620px] mx-auto leading-relaxed mb-8">
+          <p className="text-sm sm:text-base text-slate-600 font-medium max-w-[620px] mx-auto leading-relaxed mb-8">
             Share your expertise, mentor the next generation, and help shape the future of open source. Apply to speak at our events or join our ambassador program.
           </p>
 
@@ -26,14 +26,14 @@ export default function BecomeCommunityLeaderSection() {
               href="#"
               className="inline-flex items-center justify-center h-[46px] px-8 bg-[#0B0F1A] text-white text-[11px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] shadow-sm hover:bg-slate-800 transition-colors w-full sm:w-auto"
             >
-              APPLY TO SPEAK
+              BECOME A SPEAKER
             </Link>
 
             <Link
               href="/events"
               className="inline-flex items-center justify-center h-[46px] px-8 bg-white text-[#0B0F1A] border border-slate-300 text-[11px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] hover:bg-slate-50 transition-colors w-full sm:w-auto"
             >
-              VIEW ALL LEADERS
+              VIEW ALL SPEKERS
             </Link>
           </div>
         </div>

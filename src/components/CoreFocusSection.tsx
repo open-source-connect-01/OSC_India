@@ -43,7 +43,7 @@ export default function CoreFocusSection() {
               Our Core Focus
             </h2>
             <div className="w-[60px] h-[4px] bg-accent-teal mt-2 mb-5" />
-            <p className="max-w-[600px] text-base text-gray-400 leading-relaxed">
+            <p className="max-w-[600px] text-base text-slate-600 font-medium leading-relaxed">
               Driving the future of open innovation through five strategic pillars.
             </p>
           </div>
@@ -63,7 +63,7 @@ export default function CoreFocusSection() {
                 <h3 className="text-[15px] font-bold text-navy-deep mt-3 mb-2 leading-snug relative z-10">
                   {card.title}
                 </h3>
-                <p className="text-[13px] text-gray-400 leading-relaxed relative z-10">
+                <p className="text-[13.5px] text-slate-600 leading-relaxed relative z-10">
                   {card.desc}
                 </p>
               </div>
