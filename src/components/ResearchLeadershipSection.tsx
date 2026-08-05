@@ -85,58 +85,6 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     ],
     tags: ["Open Standards", "Interoperability", "Open Protocols"],
   },
-  {
-    name: "James Wilson",
-    cardRole: "CLOUD INFRASTRUCTURE LEAD",
-    role: "Cloud Architecture Director",
-    org: "OSC Foundation",
-    badge: "Senior Mentor",
-    photo: "/leaders/james_wilson.jpg",
-    bioParagraphs: [
-      "James Wilson directs cloud infrastructure strategy at the OSC Foundation, overseeing the architecture and operations of cloud-native platforms that support hundreds of open-source projects across multiple cloud providers.",
-      "His expertise spans serverless computing, container orchestration, and multi-cloud networking. James is a core contributor to several CNCF projects and frequently speaks at industry conferences about cloud-native best practices and infrastructure automation.",
-    ],
-    tags: ["Cloud Native", "Kubernetes", "Infrastructure as Code"],
-  },
-  {
-    name: "Amara Okafor",
-    cardRole: "STRATEGIC PARTNERSHIPS",
-    role: "Partnerships & Alliances Director",
-    org: "OSC Foundation",
-    badge: "Senior Mentor",
-    photo: "/leaders/amara_okafor.jpg",
-    bioParagraphs: [
-      "Amara Okafor leads strategic partnerships at the OSC Foundation, building relationships with corporations, academic institutions, and government agencies to expand the foundation's reach and impact across the open-source ecosystem.",
-      "With extensive experience in business development and technology strategy, Amara has forged collaborations that have resulted in significant funding and resource commitments for critical open-source projects. She is a strong advocate for sustainable open-source business models.",
-    ],
-    tags: ["Strategic Partnerships", "Business Development", "Funding"],
-  },
-  {
-    name: "Kevin Schmidt",
-    cardRole: "TECHNICAL MENTOR",
-    role: "Senior Technical Mentor & Advisor",
-    org: "OSC Foundation",
-    badge: "Senior Mentor",
-    photo: "/leaders/kevin_schmidt.jpg",
-    bioParagraphs: [
-      "Kevin Schmidt is a senior technical mentor at the OSC Foundation, where he guides aspiring open-source contributors through structured mentorship programs and helps projects establish healthy community practices.",
-      "His approach combines technical coaching with community building, having mentored over 200 developers who have gone on to become project maintainers and community leaders. Kevin is the author of several widely-used open-source libraries and documentation frameworks.",
-    ],
-    tags: ["Mentorship", "Developer Education", "Documentation"],
-  },
-  {
-    name: "Sophia Rossi",
-    cardRole: "DEVELOPER RELATIONS",
-    role: "Developer Relations Director",
-    org: "OSC Foundation",
-    badge: "Senior Mentor",
-    photo: "/leaders/sophia_rossi.jpg",
-    bioParagraphs: [
-      "Sophia Rossi leads Developer Relations at the OSC Foundation, building bridges between the foundation and the global developer community through events, content, and direct engagement programs.",
-      "She is a seasoned developer advocate with a talent for translating complex technical concepts into accessible learning resources. Sophia has organized over 50 hackathons and speaking events worldwide, and hosts a popular technical podcast on open-source development practices.",
-    ],
-    tags: ["Developer Relations", "Community Events", "Technical Content"],
-  },
 ];
 
 export default function ResearchLeadershipSection({
