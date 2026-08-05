@@ -127,9 +127,12 @@ export default function StatsRow() {
                 key={card.title}
                 className="bg-white border border-gray-200 p-7"
               >
-                <div
-                  className={`w-7 h-7 mb-5 ${card.iconColor}`}
-                />
+                <div className="relative w-7 h-7 mb-5">
+                  {/* Hard offset shadow block */}
+                  <div className="absolute top-1 left-1 w-7 h-7 bg-[#E2E8F0] rounded-[2px] z-0" />
+                  {/* Solid color square badge */}
+                  <div className={`relative z-10 w-7 h-7 rounded-[2px] ${card.iconColor}`} />
+                </div>
                 <h3 className="text-[14px] font-bold tracking-[0.04em] text-navy-deep uppercase mb-3">
                   {card.title}
                 </h3>

@@ -62,14 +62,12 @@ export default function FooterSection() {
             {/* Left */}
             <div>
               <h1 className="text-[48px] font-extrabold text-navy-deep leading-[1.1] tracking-tight">
-                Why Support
+                Support the Future of
                 <br />
-                OSC?
+                Open Source
               </h1>
               <p className="mt-5 text-[15.5px] text-slate-600 font-medium leading-relaxed max-w-[440px]">
-                Your support helps us provide free learning opportunities, reward
-                contributors, organize world-class events, and make open source
-                accessible to everyone.
+                Your support helps us provide free learning opportunities, reward contributors, organize world-class events, and make open source accessible to everyone.
               </p>
 
               <div className="flex gap-12 mt-8">

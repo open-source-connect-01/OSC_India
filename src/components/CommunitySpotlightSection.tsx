@@ -169,7 +169,7 @@ export default function CommunitySpotlightSection() {
         <div className="mb-8 lg:mb-12">
           <div className="relative inline-block pb-2 lg:pb-3">
             <h2 className="text-[28px] sm:text-3xl lg:text-4xl font-extrabold text-[#0B0F1A] tracking-tight">
-              CommunitySpotlight
+              Community Spotlight
             </h2>
             <div className="hidden lg:block absolute bottom-0 left-0 w-[68px] h-[4px] bg-[#F59E0B]" />
           </div>

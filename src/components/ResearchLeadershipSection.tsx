@@ -148,7 +148,7 @@ export default function ResearchLeadershipSection({
   onProfileSelect?: (profile: ProfileData) => void;
   onProfileClose?: () => void;
 }) {
-  const [activeTab, setActiveTab] = useState<"mentors" | "speakers">("mentors");
+  const [activeTab, setActiveTab] = useState<"speakers" | "mentors">("speakers");
   const [activePage, setActivePage] = useState(1);
   const [email, setEmail] = useState("");
   const [internalProfile, setInternalProfile] = useState<ProfileData | null>(null);
@@ -184,16 +184,6 @@ export default function ResearchLeadershipSection({
           {/* Tab Toggle */}
           <div className="flex items-center gap-2 mb-8">
             <button
-              onClick={() => setActiveTab("mentors")}
-              className={`px-6 py-2.5 text-xs font-extrabold tracking-[0.12em] uppercase transition-colors duration-200 rounded-[2px] ${
-                activeTab === "mentors"
-                  ? "bg-[#0F172A] text-white"
-                  : "bg-[#F1F5F9] text-[#475569] hover:bg-slate-200"
-              }`}
-            >
-              MENTORS
-            </button>
-            <button
               onClick={() => setActiveTab("speakers")}
               className={`px-6 py-2.5 text-xs font-extrabold tracking-[0.12em] uppercase transition-colors duration-200 rounded-[2px] ${
                 activeTab === "speakers"
@@ -202,6 +192,16 @@ export default function ResearchLeadershipSection({
               }`}
             >
               SPEAKERS
+            </button>
+            <button
+              onClick={() => setActiveTab("mentors")}
+              className={`px-6 py-2.5 text-xs font-extrabold tracking-[0.12em] uppercase transition-colors duration-200 rounded-[2px] ${
+                activeTab === "mentors"
+                  ? "bg-[#0F172A] text-white"
+                  : "bg-[#F1F5F9] text-[#475569] hover:bg-slate-200"
+              }`}
+            >
+              MENTORS
             </button>
           </div>
 
