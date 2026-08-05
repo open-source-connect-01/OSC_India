@@ -87,6 +87,87 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
 ];
 
+export const mentorMembers: (ProfileData & { slotTitle: string })[] = [
+  {
+    name: "Dr. Aris Thorne",
+    slotTitle: "Senior Ecosystem Mentor",
+    role: "Senior Researcher & Ecosystem Manager",
+    org: "OSC Foundation",
+    badge: "Senior Mentor",
+    photo: "/leaders/sebastiano_fuccio.jpg",
+    bioParagraphs: [
+      "Dr. Aris Thorne is a distinguished researcher and strategic leader in the open-source ecosystem. With over 15 years of experience in distributed systems and community governance, he leads the OSC Foundation's initiatives in sustainable development and researcher mentorship.",
+      "His work focuses on the intersection of academic research and practical industry application, ensuring that open-source contributors have the tools and institutional backing necessary to thrive in high-stakes environments.",
+    ],
+    tags: ["Open Source Governance", "Ecosystem Strategy", "Sustainability"],
+  },
+  {
+    name: "Sarah Jenkins",
+    slotTitle: "Community Strategy Mentor",
+    role: "Community Strategy Director",
+    org: "OSC Foundation",
+    badge: "Senior Mentor",
+    photo: "/leaders/olena_yara.jpg",
+    bioParagraphs: [
+      "Sarah Jenkins is a passionate community builder and strategist with over a decade of experience growing open-source communities worldwide. She has successfully scaled multiple developer communities from inception to global reach.",
+      "Her expertise lies in fostering inclusive environments where contributors at all levels can thrive. Sarah has designed mentorship programs that have helped thousands of developers transition from newcomers to project maintainers.",
+    ],
+    tags: ["Community Building", "DEI Initiatives", "Developer Relations"],
+  },
+  {
+    name: "Marcus Holloway",
+    slotTitle: "Distributed Systems Mentor",
+    role: "Principal Research Scientist",
+    org: "OSC Foundation",
+    badge: "Senior Mentor",
+    photo: "/leaders/chikahiro_tokoro.jpg",
+    bioParagraphs: [
+      "Marcus Holloway is a principal research scientist specializing in distributed systems architecture and consensus protocols. His groundbreaking work on scalable infrastructure has been adopted by major open-source projects worldwide.",
+      "He brings deep technical expertise in decentralized systems, cryptographic protocols, and high-performance computing. Marcus is a prolific author and mentor across open-source communities.",
+    ],
+    tags: ["Distributed Systems", "Cryptography", "Protocol Design"],
+  },
+  {
+    name: "Elena Rodriguez",
+    slotTitle: "DevOps & Infrastructure Mentor",
+    role: "DevOps & Platform Engineering Lead",
+    org: "OSC Foundation",
+    badge: "Senior Mentor",
+    photo: "/leaders/dishant_gandhi.jpg",
+    bioParagraphs: [
+      "Elena Rodriguez leads DevOps strategy and platform engineering at the OSC Foundation, where she architects CI/CD pipelines and infrastructure-as-code frameworks serving open-source projects globally.",
+      "With a background in site reliability engineering at major cloud providers, Elena specializes in building resilient, scalable cloud systems and mentoring platform engineers.",
+    ],
+    tags: ["DevOps", "Cloud Infrastructure", "Platform Engineering"],
+  },
+  {
+    name: "David Chen",
+    slotTitle: "Security & Compliance Mentor",
+    role: "Cybersecurity Standards Lead",
+    org: "OSC Foundation",
+    badge: "Senior Mentor",
+    photo: "/leaders/kamesh_sampath.jpg",
+    bioParagraphs: [
+      "David Chen chairs the Security Standards Working Group at the OSC Foundation, where he coordinates cross-industry efforts to establish best practices for open-source software security.",
+      "His career spans two decades in cybersecurity, including leadership roles at major tech firms and government advisory boards. David has been instrumental in developing vulnerability disclosure frameworks.",
+    ],
+    tags: ["Cybersecurity", "Supply Chain Security", "Standards"],
+  },
+  {
+    name: "Dr. Linda Wu",
+    slotTitle: "Standards & Interoperability Mentor",
+    role: "Standards & Interoperability Director",
+    org: "OSC Foundation",
+    badge: "Senior Mentor",
+    photo: "/leaders/nithin_ss.jpg",
+    bioParagraphs: [
+      "Dr. Linda Wu serves as the Open Standards Liaison, bridging technical communities with international standards bodies to align open-source innovations with global interoperability requirements.",
+      "With a PhD in Computer Science and extensive experience in standards development organizations, Linda has facilitated open standards adoption across multiple technology domains.",
+    ],
+    tags: ["Open Standards", "Interoperability", "Web Standards"],
+  },
+];
+
 export default function ResearchLeadershipSection({
   selectedProfile: externalSelectedProfile,
   onProfileSelect: externalOnProfileSelect,
@@ -164,6 +245,7 @@ export default function ResearchLeadershipSection({
                       role: member.role,
                       org: member.org,
                       badge: member.badge,
+                      photo: member.photo,
                       bioParagraphs: member.bioParagraphs,
                       tags: member.tags,
                     })
@@ -193,10 +275,21 @@ export default function ResearchLeadershipSection({
             </div>
           ) : (
             <div className="max-w-[880px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-              {[1, 2, 3, 4, 5, 6].map((i) => (
-                <div
-                  key={i}
-                  className="rounded-none overflow-hidden bg-white border border-slate-200/90 shadow-xs flex flex-col aspect-[3/3.8] transition-all duration-200 hover:shadow-md"
+              {mentorMembers.map((mentor) => (
+                <button
+                  key={mentor.name}
+                  onClick={() =>
+                    onProfileSelect({
+                      name: mentor.name,
+                      role: mentor.role,
+                      org: mentor.org,
+                      badge: mentor.badge,
+                      photo: mentor.photo,
+                      bioParagraphs: mentor.bioParagraphs,
+                      tags: mentor.tags,
+                    })
+                  }
+                  className="rounded-none overflow-hidden bg-white border border-slate-200/90 shadow-xs flex flex-col aspect-[3/3.8] transition-all duration-200 hover:shadow-md cursor-pointer text-left w-full border-0 outline-none ring-0 group"
                 >
                   {/* Top Dark Navy Header */}
                   <div className="bg-[#18254A] px-4 py-3.5 flex items-center justify-between shrink-0">
@@ -213,8 +306,15 @@ export default function ResearchLeadershipSection({
                     <div className="w-6 h-[3px] bg-slate-400/50 rounded-full" />
                   </div>
 
-                  {/* Middle Blank White Body */}
-                  <div className="flex-1 bg-white" />
+                  {/* Middle Blank White Body with Mentor Name */}
+                  <div className="flex-1 bg-white p-4 flex flex-col justify-end">
+                    <span className="text-[12.5px] font-bold text-slate-800 tracking-wide uppercase leading-tight truncate group-hover:text-accent-blue transition-colors">
+                      {mentor.name}
+                    </span>
+                    <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.02em] mt-0.5 leading-snug truncate">
+                      {mentor.slotTitle}
+                    </span>
+                  </div>
 
                   {/* Bottom Bar with Paperclip & Arrow Icons */}
                   <div className="border-t border-slate-200/80 px-4 py-3 bg-white flex items-center justify-between shrink-0 text-slate-400">
@@ -226,7 +326,7 @@ export default function ResearchLeadershipSection({
                       <path d="M20 4v7a4 4 0 0 1-4 4H4" />
                     </svg>
                   </div>
-                </div>
+                </button>
               ))}
             </div>
           )}

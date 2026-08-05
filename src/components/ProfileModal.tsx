@@ -2,12 +2,14 @@
 
 import { useEffect } from "react";
 import Link from "next/link";
+import Image from "next/image";
 
 export interface ProfileData {
   name: string;
   role: string;
   org: string;
   badge: string;
+  photo?: string;
   bioParagraphs: string[];
   tags: string[];
 }
@@ -23,11 +25,6 @@ const avatarGradients = [
   "from-violet-400 to-violet-600",
   "from-amber-400 to-amber-600",
   "from-rose-400 to-rose-600",
-  "from-cyan-400 to-cyan-600",
-  "from-orange-400 to-orange-600",
-  "from-purple-400 to-purple-600",
-  "from-teal-400 to-teal-600",
-  "from-pink-400 to-pink-600",
 ];
 
 function getInitials(name: string): string {
@@ -89,122 +86,108 @@ export default function ProfileModal({ profile, onClose }: ProfileModalProps) {
 
   return (
     <div
-      className="fixed inset-0 z-[100] flex items-center justify-center p-4"
+      className="fixed inset-0 z-[100] flex items-center justify-center p-4 sm:p-6"
       onClick={onClose}
     >
       {/* Dark backdrop */}
-      <div className="absolute inset-0 bg-black/60" />
+      <div className="absolute inset-0 bg-[#0F172A]/65 backdrop-blur-[2px]" />
 
-      {/* Modal */}
+      {/* Modal Container */}
       <div
-        className="relative w-full max-w-[650px] bg-white shadow-2xl flex flex-col md:flex-row overflow-hidden"
+        className="relative w-full max-w-[620px] bg-white rounded-[4px] shadow-2xl p-6 sm:p-9 text-left z-10 overflow-hidden"
         onClick={(e) => e.stopPropagation()}
       >
         {/* Close button */}
         <button
           onClick={onClose}
-          className="absolute top-3 right-3 z-10 w-7 h-7 flex items-center justify-center rounded-full bg-white/90 hover:bg-white shadow text-navy-deep transition-all duration-200"
+          className="absolute top-4 right-4 p-1 text-slate-400 hover:text-slate-700 transition-colors cursor-pointer"
           aria-label="Close"
         >
-          <svg width="12" height="12" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.5" strokeLinecap="round" strokeLinejoin="round">
-            <path d="M18 6 6 18" />
-            <path d="m6 6 12 12" />
+          <svg
+            width="18"
+            height="18"
+            viewBox="0 0 24 24"
+            fill="none"
+            stroke="currentColor"
+            strokeWidth="2"
+            strokeLinecap="round"
+            strokeLinejoin="round"
+          >
+            <line x1="18" y1="6" x2="6" y2="18" />
+            <line x1="6" y1="6" x2="18" y2="18" />
           </svg>
         </button>
 
-        {/* Left: Photo — edge-to-edge */}
-        <div className={`md:w-[35%] shrink-0 min-h-[200px] md:min-h-full bg-gradient-to-br ${avatarColor} flex items-center justify-center`}>
-          <span className="text-white font-bold text-3xl sm:text-4xl tracking-wide">
-            {initials}
-          </span>
+        {/* Header Profile Section */}
+        <div className="flex items-start gap-5 sm:gap-6 mb-6">
+          {/* Profile Photo Frame with Offset Shadow */}
+          <div className="relative w-[110px] h-[110px] sm:w-[125px] sm:h-[125px] shrink-0">
+            {/* Hard Offset Shadow Block */}
+            <div className="absolute top-1.5 left-1.5 w-full h-full bg-[#A3B8D8]/70 z-0" />
+            {/* Dark Bordered Square Photo */}
+            <div className="relative z-10 w-full h-full border-2 border-[#0B1428] bg-white overflow-hidden shadow-xs">
+              {profile.photo ? (
+                <Image
+                  src={profile.photo}
+                  alt={profile.name}
+                  fill
+                  className="object-cover object-top scale-[1.05]"
+                />
+              ) : (
+                <div
+                  className={`w-full h-full bg-gradient-to-br ${avatarColor} flex items-center justify-center`}
+                >
+                  <span className="text-white font-bold text-2xl tracking-wide">
+                    {initials}
+                  </span>
+                </div>
+              )}
+            </div>
+          </div>
+
+          {/* Right Header Info */}
+          <div className="flex-1 pr-6 pt-0.5">
+            <span className="inline-block px-2.5 py-0.5 bg-[#EFF6FF] text-[#2563EB] text-[10px] font-extrabold tracking-[0.1em] uppercase rounded-[2px] mb-2">
+              {profile.badge}
+            </span>
+            <h2 className="text-2xl sm:text-[26px] font-extrabold text-[#0B0F1A] tracking-tight leading-tight mb-1">
+              {profile.name}
+            </h2>
+            <p className="text-[13.5px] font-semibold text-slate-600 leading-snug">
+              {profile.role}
+            </p>
+            <p className="text-[12.5px] font-bold text-[#2563EB] mt-0.5">
+              {profile.org}
+            </p>
+          </div>
         </div>
 
-        {/* Right: Content */}
-        <div className="flex-1 p-5 sm:p-6">
-          {/* Breadcrumb */}
-          <div className="flex items-center gap-1.5 mb-3">
-            <span className="text-[9px] font-medium tracking-[0.1em] text-gray-400 uppercase">Home</span>
-            <span className="text-[9px] text-gray-300">/</span>
-            <span className="text-[9px] font-medium tracking-[0.1em] text-gray-500 uppercase">Research Leadership</span>
-          </div>
-
-          {/* Badge */}
-          <span className="inline-block px-2.5 py-0.5 rounded-full bg-[#DCEAFB] text-[#1D4ED8] text-[10px] font-bold uppercase tracking-[0.04em] mb-2.5">
-            {profile.badge}
-          </span>
-
-          {/* Name */}
-          <h2 className="text-[20px] sm:text-[22px] font-bold text-navy-deep leading-tight">
-            {profile.name}
-          </h2>
-
-          {/* Role */}
-          <p className="text-[13px] text-[#4B5563] mt-0.5">{profile.role}</p>
-
-          {/* Organization */}
-          <p className="text-[13px] text-[#2563EB] font-medium mt-0.5">
-            {profile.org}
-          </p>
-
-          {/* Social Icons */}
-          <div className="flex gap-1.5 mt-3">
-            <div className="w-7 h-7 bg-navy-deep flex items-center justify-center hover:bg-navy transition-colors duration-200 cursor-pointer">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="white" stroke="none">
-                <path d="M18.244 2.25h3.308l-7.227 8.26 8.502 11.24H16.17l-5.214-6.817L4.99 21.75H1.68l7.73-8.835L1.254 2.25H8.08l4.713 6.231zm-1.161 17.52h1.833L7.084 4.126H5.117z" />
-              </svg>
-            </div>
-            <div className="w-7 h-7 bg-navy-deep flex items-center justify-center hover:bg-navy transition-colors duration-200 cursor-pointer">
-              <svg width="12" height="12" viewBox="0 0 24 24" fill="white" stroke="none">
-                <path d="M20.447 20.452h-3.554v-5.569c0-1.328-.027-3.037-1.852-3.037-1.853 0-2.136 1.445-2.136 2.939v5.667H9.351V9h3.414v1.561h.046c.477-.9 1.637-1.85 3.37-1.85 3.601 0 4.267 2.37 4.267 5.455v6.286zM5.337 7.433c-1.144 0-2.063-.926-2.063-2.065 0-1.138.92-2.063 2.063-2.063 1.14 0 2.064.925 2.064 2.063 0 1.139-.925 2.065-2.064 2.065zm1.782 13.019H3.555V9h3.564v11.452zM22.225 0H1.771C.792 0 0 .774 0 1.729v20.542C0 23.227.792 24 1.771 24h20.451C23.2 24 24 23.227 24 22.271V1.729C24 .774 23.2 0 22.222 0h.003z" />
-              </svg>
-            </div>
-          </div>
-
-          {/* Divider + BIOGRAPHY label */}
-          <div className="h-px bg-gray-100 my-3.5" />
-          <span className="text-[9px] font-bold tracking-[0.12em] text-gray-400 uppercase">
-            Biography
-          </span>
-
-          {/* Bio text — tight spacing */}
-          <div className="mt-2 space-y-2">
+        {/* BIOGRAPHY Section */}
+        <div className="mb-8">
+          <h3 className="text-[11px] font-extrabold tracking-[0.18em] text-[#94A3B8] uppercase mb-3">
+            BIOGRAPHY
+          </h3>
+          <div className="space-y-3.5 text-[13px] text-slate-600 font-medium leading-relaxed">
             {profile.bioParagraphs.map((para, i) => (
-              <p key={i} className="text-[13px] text-[#374151] leading-[1.6]">
-                {para}
-              </p>
+              <p key={i}>{para}</p>
             ))}
           </div>
+        </div>
 
-          {/* Thin divider */}
-          <div className="h-px bg-gray-100 my-3.5" />
-
-          {/* Tags — compact pills */}
-          <div className="flex flex-wrap gap-1.5">
-            {profile.tags.map((tag) => (
-              <span
-                key={tag}
-                className="inline-flex px-2.5 py-1 rounded-full bg-gray-100 text-gray-600 text-[10px] font-medium"
-              >
-                {tag}
-              </span>
-            ))}
-          </div>
-
-          {/* Action Buttons */}
-          <div className="flex gap-2.5 mt-4">
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center h-[38px] px-5 bg-navy-deep text-white text-[10px] font-bold tracking-[0.1em] uppercase hover:bg-navy transition-all duration-200"
-            >
-              Book a Session
-            </Link>
-            <Link
-              href="#"
-              className="inline-flex items-center justify-center h-[38px] px-5 bg-white text-navy-deep border-2 border-navy-deep text-[10px] font-bold tracking-[0.1em] uppercase hover:bg-navy-deep hover:text-white transition-all duration-200"
-            >
-              View Research
-            </Link>
-          </div>
+        {/* Action Buttons */}
+        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
+          <Link
+            href="#"
+            className="w-full sm:w-auto inline-flex items-center justify-center h-[42px] px-8 bg-[#0F172A] text-white text-[12px] font-extrabold tracking-[0.06em] rounded-[3px] shadow-xs hover:bg-[#1E293B] transition-colors"
+          >
+            Book a Session
+          </Link>
+          <Link
+            href="#"
+            className="w-full sm:w-auto inline-flex items-center justify-center h-[42px] px-8 bg-white border border-[#0F172A] text-[#0F172A] text-[12px] font-extrabold tracking-[0.06em] rounded-[3px] hover:bg-slate-50 transition-colors"
+          >
+            View Research
+          </Link>
         </div>
       </div>
     </div>
