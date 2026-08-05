@@ -134,12 +134,14 @@ export default function Navbar({
               })}
             </div>
 
-            {/* Right Action: Join Us Button */}
+            {/* Right Action: Donate Us Button */}
             <Link
-              href="#"
+              href="https://ko-fi.com/opensourceconnect"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center h-[38px] px-6 bg-[#0A1B3D] text-white text-[10px] font-extrabold tracking-[0.18em] uppercase rounded-[2px] hover:bg-[#122752] transition-all duration-200 shrink-0 shadow-sm"
             >
-              JOIN US
+              DONATE US
             </Link>
           </div>
 
@@ -267,13 +269,15 @@ export default function Navbar({
 
         {/* Drawer Inner Content */}
         <div className="px-6 pb-8 flex-1">
-          {/* JOIN US CTA Button at the top */}
+          {/* DONATE US CTA Button at the top */}
           <Link
-            href="#"
+            href="https://ko-fi.com/opensourceconnect"
+            target="_blank"
+            rel="noopener noreferrer"
             onClick={onMobileMenuToggle}
             className="w-full bg-[#0A1B3D] text-white text-xs font-extrabold tracking-[0.18em] uppercase py-3.5 rounded-[2px] mb-8 shadow-md flex items-center justify-center text-center hover:bg-[#122752] transition-colors"
           >
-            JOIN US
+            DONATE US
           </Link>
 
           {/* Accordion Categories */}
