@@ -20,6 +20,15 @@ export const metadata: Metadata = {
   title: "Open Source Connect | Connecting The World Through Open Source",
   description:
     "Open Source Connect (OSC) provides governance, financial stewardship, and collaborative infrastructure to ensure long-term sustainability of high-impact open-source technologies worldwide.",
+  icons: {
+    icon: [
+      { url: "/favicon.ico", sizes: "any" },
+      { url: "/icon.png", type: "image/png" },
+      { url: "/favicon.png", type: "image/png" },
+    ],
+    shortcut: "/favicon.ico",
+    apple: "/apple-icon.png",
+  },
 };
 
 export default function RootLayout({
