@@ -97,7 +97,6 @@ export default function ResearchLeadershipSection({
   onProfileClose?: () => void;
 }) {
   const [activeTab, setActiveTab] = useState<"speakers" | "mentors">("speakers");
-  const [activePage, setActivePage] = useState(1);
   const [email, setEmail] = useState("");
   const [internalProfile, setInternalProfile] = useState<ProfileData | null>(null);
 
@@ -190,35 +189,6 @@ export default function ResearchLeadershipSection({
                 </div>
               </button>
             ))}
-          </div>
-
-          {/* Pagination */}
-          <div className="flex items-center justify-center gap-1.5 mt-10 mb-6">
-            <button
-              aria-label="Previous Page"
-              className="w-9 h-9 flex items-center justify-center text-gray-400 hover:text-[#0B0F1A] border border-gray-200 rounded-[2px] transition-colors"
-            >
-              &lt;
-            </button>
-            {[1, 2, 3].map((page) => (
-              <button
-                key={page}
-                onClick={() => setActivePage(page)}
-                className={`w-9 h-9 flex items-center justify-center text-xs font-extrabold rounded-[2px] transition-colors ${
-                  activePage === page
-                    ? "bg-[#0F172A] text-white"
-                    : "bg-white text-slate-600 border border-gray-200 hover:border-slate-400"
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-            <button
-              aria-label="Next Page"
-              className="w-9 h-9 flex items-center justify-center text-gray-400 hover:text-[#0B0F1A] border border-gray-200 rounded-[2px] transition-colors"
-            >
-              &gt;
-            </button>
           </div>
         </div>
       </section>
