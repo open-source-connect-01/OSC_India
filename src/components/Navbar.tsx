@@ -111,8 +111,8 @@ export default function Navbar({
               />
             </Link>
 
-            {/* Nav links - centered */}
-            <div className="flex items-center gap-8 lg:gap-10 mx-auto h-full">
+            {/* Right side: Nav links + Donate Us Button */}
+            <div className="flex items-center gap-7 lg:gap-9 ml-auto h-full">
               {navItems.map((item) => {
                 const isActive = activeOverlay === item.key;
                 return (
@@ -132,17 +132,17 @@ export default function Navbar({
                   </button>
                 );
               })}
-            </div>
 
-            {/* Right Action: Donate Us Button */}
-            <Link
-              href="https://ko-fi.com/opensourceconnect"
-              target="_blank"
-              rel="noopener noreferrer"
-              className="inline-flex items-center justify-center h-[38px] px-6 bg-[#0A1B3D] text-white text-[10px] font-extrabold tracking-[0.18em] uppercase rounded-[2px] hover:bg-[#122752] transition-all duration-200 shrink-0 shadow-sm"
-            >
-              DONATE US
-            </Link>
+              {/* Right Action: Donate Us Button */}
+              <Link
+                href="https://ko-fi.com/opensourceconnect"
+                target="_blank"
+                rel="noopener noreferrer"
+                className="inline-flex items-center justify-center h-[38px] px-6 bg-[#0A1B3D] text-white text-[10px] font-extrabold tracking-[0.18em] uppercase rounded-[2px] hover:bg-[#122752] transition-all duration-200 shrink-0 shadow-sm ml-2"
+              >
+                DONATE US
+              </Link>
+            </div>
           </div>
 
           {/* Mobile Layout */}
