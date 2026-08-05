@@ -153,8 +153,8 @@ export default function ResearchLeadershipSection({
             </button>
           </div>
 
-          {/* 5-Column Leadership Team Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-5">
+          {/* 3-Column Leadership Team Grid (Compact Sized Cards) */}
+          <div className="max-w-[880px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
             {teamMembers.map((member) => (
               <button
                 key={member.name}
@@ -168,22 +168,22 @@ export default function ResearchLeadershipSection({
                     tags: member.tags,
                   })
                 }
-                className="relative group overflow-hidden bg-white text-left cursor-pointer shadow-sm hover:shadow-md transition-all duration-200"
+                className="relative group overflow-hidden bg-[#0A1835] text-left cursor-pointer border-0 outline-none ring-0 transition-all duration-200"
               >
                 {/* Photo container */}
-                <div className="relative aspect-[3/4] w-full bg-slate-100">
+                <div className="relative aspect-[3/3.6] w-full bg-[#0A1835] overflow-hidden">
                   <Image
                     src={member.photo}
                     alt={member.name}
                     fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
+                    className="object-cover object-top scale-[1.08] transition-transform duration-300 group-hover:scale-115"
                   />
                   {/* Overlaid dark caption bar */}
-                  <div className="absolute bottom-0 inset-x-0 bg-[#0F172A] p-3 min-h-[58px] flex flex-col justify-center">
-                    <span className="text-[11px] font-extrabold text-white tracking-wide uppercase leading-tight truncate">
+                  <div className="absolute bottom-0 inset-x-0 bg-[#0A1835] px-4 py-3 flex flex-col justify-center">
+                    <span className="text-[13px] font-bold text-white tracking-wide uppercase leading-tight truncate">
                       {member.name}
                     </span>
-                    <span className="text-[9px] font-semibold text-gray-300 uppercase tracking-[0.04em] mt-0.5 leading-snug truncate">
+                    <span className="text-[10.5px] font-medium text-[#94A3B8] uppercase tracking-[0.02em] mt-1 leading-snug truncate">
                       {member.cardRole}
                     </span>
                   </div>
