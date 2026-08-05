@@ -152,44 +152,84 @@ export default function ResearchLeadershipSection({
             </button>
           </div>
 
-          {/* 3-Column Leadership Team Grid (Compact Sized Cards) */}
-          <div className="max-w-[880px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-            {teamMembers.map((member) => (
-              <button
-                key={member.name}
-                onClick={() =>
-                  onProfileSelect({
-                    name: member.name,
-                    role: member.role,
-                    org: member.org,
-                    badge: member.badge,
-                    bioParagraphs: member.bioParagraphs,
-                    tags: member.tags,
-                  })
-                }
-                className="relative group overflow-hidden bg-[#0A1835] text-left cursor-pointer border-0 outline-none ring-0 transition-all duration-200"
-              >
-                {/* Photo container */}
-                <div className="relative aspect-[3/3.6] w-full bg-[#0A1835] overflow-hidden">
-                  <Image
-                    src={member.photo}
-                    alt={member.name}
-                    fill
-                    className="object-cover object-top scale-[1.08] transition-transform duration-300 group-hover:scale-115"
-                  />
-                  {/* Overlaid dark caption bar */}
-                  <div className="absolute bottom-0 inset-x-0 bg-[#0A1835] px-4 py-3 flex flex-col justify-center">
-                    <span className="text-[13px] font-bold text-white tracking-wide uppercase leading-tight truncate">
-                      {member.name}
-                    </span>
-                    <span className="text-[10.5px] font-medium text-[#94A3B8] uppercase tracking-[0.02em] mt-1 leading-snug truncate">
-                      {member.cardRole}
-                    </span>
+          {/* 3-Column Leadership Team Grid */}
+          {activeTab === "speakers" ? (
+            <div className="max-w-[880px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+              {teamMembers.map((member) => (
+                <button
+                  key={member.name}
+                  onClick={() =>
+                    onProfileSelect({
+                      name: member.name,
+                      role: member.role,
+                      org: member.org,
+                      badge: member.badge,
+                      bioParagraphs: member.bioParagraphs,
+                      tags: member.tags,
+                    })
+                  }
+                  className="relative group overflow-hidden bg-[#0A1835] text-left cursor-pointer border-0 outline-none ring-0 transition-all duration-200"
+                >
+                  {/* Photo container */}
+                  <div className="relative aspect-[3/3.6] w-full bg-[#0A1835] overflow-hidden">
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top scale-[1.08] transition-transform duration-300 group-hover:scale-115"
+                    />
+                    {/* Overlaid dark caption bar */}
+                    <div className="absolute bottom-0 inset-x-0 bg-[#0A1835] px-4 py-3 flex flex-col justify-center">
+                      <span className="text-[13px] font-bold text-white tracking-wide uppercase leading-tight truncate">
+                        {member.name}
+                      </span>
+                      <span className="text-[10.5px] font-medium text-[#94A3B8] uppercase tracking-[0.02em] mt-1 leading-snug truncate">
+                        {member.cardRole}
+                      </span>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <div className="max-w-[880px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+              {[1, 2, 3, 4, 5, 6].map((i) => (
+                <div
+                  key={i}
+                  className="rounded-[14px] overflow-hidden bg-white border border-slate-200/90 shadow-xs flex flex-col aspect-[3/3.8] transition-all duration-200 hover:shadow-md"
+                >
+                  {/* Top Dark Navy Header */}
+                  <div className="bg-[#18254A] px-4 py-3.5 flex items-center justify-between shrink-0">
+                    {/* Left: Avatar Badge */}
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-xs overflow-hidden">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="7" r="3.5" fill="#B45309" />
+                        <path d="M6 18c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="#BFDBFE" />
+                        <path d="M5 11c0-1.1.9-2 2-2h1v4H7a2 2 0 0 1-2-2zM16 9h1a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-1V9z" fill="#1E293B" />
+                        <path d="M17 12c0 2-1 3-3 3" stroke="#1E293B" strokeWidth="1.5" strokeLinecap="round" />
+                      </svg>
+                    </div>
+                    {/* Right: Dash accent line */}
+                    <div className="w-6 h-[3px] bg-slate-400/50 rounded-full" />
+                  </div>
+
+                  {/* Middle Blank White Body */}
+                  <div className="flex-1 bg-white" />
+
+                  {/* Bottom Bar with Paperclip & Arrow Icons */}
+                  <div className="border-t border-slate-200/80 px-4 py-3 bg-white flex items-center justify-between shrink-0 text-slate-400">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+                    </svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 10 4 15 9 20" />
+                      <path d="M20 4v7a4 4 0 0 1-4 4H4" />
+                    </svg>
                   </div>
                 </div>
-              </button>
-            ))}
-          </div>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
