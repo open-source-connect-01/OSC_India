@@ -8,25 +8,106 @@ import type { ProfileData } from "./ProfileModal";
 
 export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] = [
   {
+    name: "Sebastiano Fuccio",
+    cardRole: "FOUNDER & CEO | MANAGING PARTNER",
+    role: "Founder & CEO | Managing Partner",
+    org: "OSC Foundation",
+    badge: "Keynote Speaker",
+    photo: "/leaders/sebastiano_fuccio.jpg",
+    bioParagraphs: [
+      "Sebastiano Fuccio is a founder, CEO, and managing partner with extensive leadership experience across technology, open-source strategy, and business growth.",
+      "His work focuses on driving strategic innovation, supporting global open-source ecosystems, and building high-impact partnerships between technology teams and industry leaders.",
+    ],
+    tags: ["Leadership", "Strategy", "Managing Partner"],
+  },
+  {
+    name: "Chikahiro Tokoro",
+    cardRole: "SOFTWARE ENGINEER, PODCASTER",
+    role: "Software Engineer & Podcaster",
+    org: "OSC Foundation",
+    badge: "Keynote Speaker",
+    photo: "/leaders/chikahiro_tokoro.jpg",
+    bioParagraphs: [
+      "Chikahiro Tokoro is a software engineer and popular technology podcaster focused on developer education, open-source software architecture, and global tech culture.",
+      "He engages with thousands of software engineers worldwide through technical sessions, podcasts, and open-source contribution workshops.",
+    ],
+    tags: ["Software Engineering", "Podcasting", "Developer Advocacy"],
+  },
+  {
+    name: "Kamesh Sampath",
+    cardRole: "DEVELOPER ADVOCATE AT SNOWFLAKE",
+    role: "Developer Advocate at Snowflake",
+    org: "Snowflake",
+    badge: "Keynote Speaker",
+    photo: "/leaders/kamesh_sampath.jpg",
+    bioParagraphs: [
+      "Kamesh Sampath is a Developer Advocate at Snowflake, specializing in cloud-native applications, Kubernetes, and developer ecosystem tooling.",
+      "He is a frequent international speaker and author with extensive experience empowering developers and maintainers across the global open-source community.",
+    ],
+    tags: ["Developer Advocacy", "Cloud Native", "Kubernetes"],
+  },
+  {
+    name: "Dishant Gandhi",
+    cardRole: "AI/ML CONSULTANT",
+    role: "AI/ML Consultant",
+    org: "OSC Foundation",
+    badge: "Keynote Speaker",
+    photo: "/leaders/dishant_gandhi.jpg",
+    bioParagraphs: [
+      "Dishant Gandhi is an AI/ML Consultant specializing in machine learning systems, applied artificial intelligence, and open-source ML workflows.",
+      "He works with technology organizations and research teams to architect scalable AI models, streamline MLOps pipelines, and advocate for transparent AI development.",
+    ],
+    tags: ["Artificial Intelligence", "Machine Learning", "MLOps"],
+  },
+  {
+    name: "Olena Yara",
+    cardRole: "FOUNDER AT YARA AGENCY",
+    role: "Founder at Yara Agency",
+    org: "Yara Agency",
+    badge: "Keynote Speaker",
+    photo: "/leaders/olena_yara.jpg",
+    bioParagraphs: [
+      "Olena Yara is the Founder of Yara Agency, a creative technology and strategic brand agency driving digital innovation for tech organizations.",
+      "She leads cross-disciplinary initiatives bridging design, marketing, and developer relations to amplify high-impact open-source initiatives globally.",
+    ],
+    tags: ["Brand Strategy", "Technology Agency", "Digital Innovation"],
+  },
+  {
+    name: "Nithin S.S",
+    cardRole: "OPEN STANDARDS LIAISON",
+    role: "Open Standards Liaison",
+    org: "OSC Foundation",
+    badge: "Keynote Speaker",
+    photo: "/leaders/nithin_ss.jpg",
+    bioParagraphs: [
+      "Nithin S.S serves as the Open Standards Liaison at the OSC Foundation, bridging technical communities with global standards frameworks.",
+      "He advocates for open protocols, interoperable architectures, and transparent developer standards across open-source ecosystems.",
+    ],
+    tags: ["Open Standards", "Interoperability", "Open Protocols"],
+  },
+];
+
+export const mentorMembers: (ProfileData & { slotTitle: string })[] = [
+  {
     name: "Dr. Aris Thorne",
-    cardRole: "LEAD ARCHITECT, PROJECT ALPHA",
+    slotTitle: "Senior Ecosystem Mentor",
     role: "Senior Researcher & Ecosystem Manager",
     org: "OSC Foundation",
     badge: "Senior Mentor",
-    photo: "/leaders/aris_thorne.jpg",
+    photo: "/leaders/sebastiano_fuccio.jpg",
     bioParagraphs: [
       "Dr. Aris Thorne is a distinguished researcher and strategic leader in the open-source ecosystem. With over 15 years of experience in distributed systems and community governance, he leads the OSC Foundation's initiatives in sustainable development and researcher mentorship.",
-      "His work focuses on the intersection of academic research and practical industry application, ensuring that open-source contributors have the tools and institutional backing necessary to thrive in high-stakes environments. Aris has previously held senior roles at global tech consortia and is a frequent keynote speaker on digital sovereignty.",
+      "His work focuses on the intersection of academic research and practical industry application, ensuring that open-source contributors have the tools and institutional backing necessary to thrive in high-stakes environments.",
     ],
     tags: ["Open Source Governance", "Ecosystem Strategy", "Sustainability"],
   },
   {
     name: "Sarah Jenkins",
-    cardRole: "COMMUNITY DIRECTOR",
+    slotTitle: "Community Strategy Mentor",
     role: "Community Strategy Director",
     org: "OSC Foundation",
     badge: "Senior Mentor",
-    photo: "/leaders/sarah_jenkins.jpg",
+    photo: "/leaders/olena_yara.jpg",
     bioParagraphs: [
       "Sarah Jenkins is a passionate community builder and strategist with over a decade of experience growing open-source communities worldwide. She has successfully scaled multiple developer communities from inception to global reach.",
       "Her expertise lies in fostering inclusive environments where contributors at all levels can thrive. Sarah has designed mentorship programs that have helped thousands of developers transition from newcomers to project maintainers.",
@@ -35,107 +116,55 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Marcus Holloway",
-    cardRole: "PRINCIPAL RESEARCHER",
+    slotTitle: "Distributed Systems Mentor",
     role: "Principal Research Scientist",
     org: "OSC Foundation",
     badge: "Senior Mentor",
-    photo: "/leaders/marcus_holloway.jpg",
+    photo: "/leaders/chikahiro_tokoro.jpg",
     bioParagraphs: [
-      "Marcus Holloway is a principal research scientist specializing in distributed systems architecture and consensus protocols. His groundbreaking work on scalable blockchain infrastructure has been adopted by major open-source projects worldwide.",
-      "He brings deep technical expertise in decentralized systems, cryptographic protocols, and high-performance computing. Marcus is a prolific author with over 40 peer-reviewed publications and serves on the editorial board of several top-tier journals.",
+      "Marcus Holloway is a principal research scientist specializing in distributed systems architecture and consensus protocols. His groundbreaking work on scalable infrastructure has been adopted by major open-source projects worldwide.",
+      "He brings deep technical expertise in decentralized systems, cryptographic protocols, and high-performance computing. Marcus is a prolific author and mentor across open-source communities.",
     ],
     tags: ["Distributed Systems", "Cryptography", "Protocol Design"],
   },
   {
     name: "Elena Rodriguez",
-    cardRole: "DEVOPS STRATEGY LEAD",
+    slotTitle: "DevOps & Infrastructure Mentor",
     role: "DevOps & Platform Engineering Lead",
     org: "OSC Foundation",
     badge: "Senior Mentor",
-    photo: "/leaders/elena_rodriguez.jpg",
+    photo: "/leaders/dishant_gandhi.jpg",
     bioParagraphs: [
-      "Elena Rodriguez leads DevOps strategy and platform engineering at the OSC Foundation, where she architects CI/CD pipelines and infrastructure-as-code frameworks that serve thousands of open-source projects globally.",
-      "With a background in site reliability engineering at major cloud providers, Elena specializes in building resilient, scalable systems. She is a passionate advocate for GitOps methodologies and has contributed extensively to Kubernetes ecosystem projects.",
+      "Elena Rodriguez leads DevOps strategy and platform engineering at the OSC Foundation, where she architects CI/CD pipelines and infrastructure-as-code frameworks serving open-source projects globally.",
+      "With a background in site reliability engineering at major cloud providers, Elena specializes in building resilient, scalable cloud systems and mentoring platform engineers.",
     ],
     tags: ["DevOps", "Cloud Infrastructure", "Platform Engineering"],
   },
   {
     name: "David Chen",
-    cardRole: "SECURITY STANDARDS CHAIR",
+    slotTitle: "Security & Compliance Mentor",
     role: "Cybersecurity Standards Lead",
     org: "OSC Foundation",
     badge: "Senior Mentor",
-    photo: "/leaders/david_chen.jpg",
+    photo: "/leaders/kamesh_sampath.jpg",
     bioParagraphs: [
-      "David Chen chairs the Security Standards Working Group at the OSC Foundation, where he coordinates cross-industry efforts to establish best practices for open-source software security and supply chain integrity.",
-      "His career spans two decades in cybersecurity, including leadership roles at major tech firms and government advisory boards. David has been instrumental in developing the Foundation's vulnerability disclosure framework and security audit programs.",
+      "David Chen chairs the Security Standards Working Group at the OSC Foundation, where he coordinates cross-industry efforts to establish best practices for open-source software security.",
+      "His career spans two decades in cybersecurity, including leadership roles at major tech firms and government advisory boards. David has been instrumental in developing vulnerability disclosure frameworks.",
     ],
     tags: ["Cybersecurity", "Supply Chain Security", "Standards"],
   },
   {
     name: "Dr. Linda Wu",
-    cardRole: "OPEN STANDARDS LIAISON",
+    slotTitle: "Standards & Interoperability Mentor",
     role: "Standards & Interoperability Director",
     org: "OSC Foundation",
     badge: "Senior Mentor",
-    photo: "/leaders/linda_wu.jpg",
+    photo: "/leaders/nithin_ss.jpg",
     bioParagraphs: [
-      "Dr. Linda Wu serves as the Open Standards Liaison, bridging the gap between technical communities and international standards bodies. She ensures that open-source innovations align with global interoperability requirements.",
-      "With a PhD in Computer Science and extensive experience in standards development organizations, Linda has facilitated the adoption of open standards across multiple industries. She chairs several W3C and IEEE working groups focused on web standards and data interoperability.",
+      "Dr. Linda Wu serves as the Open Standards Liaison, bridging technical communities with international standards bodies to align open-source innovations with global interoperability requirements.",
+      "With a PhD in Computer Science and extensive experience in standards development organizations, Linda has facilitated open standards adoption across multiple technology domains.",
     ],
     tags: ["Open Standards", "Interoperability", "Web Standards"],
-  },
-  {
-    name: "James Wilson",
-    cardRole: "CLOUD INFRASTRUCTURE LEAD",
-    role: "Cloud Architecture Director",
-    org: "OSC Foundation",
-    badge: "Senior Mentor",
-    photo: "/leaders/james_wilson.jpg",
-    bioParagraphs: [
-      "James Wilson directs cloud infrastructure strategy at the OSC Foundation, overseeing the architecture and operations of cloud-native platforms that support hundreds of open-source projects across multiple cloud providers.",
-      "His expertise spans serverless computing, container orchestration, and multi-cloud networking. James is a core contributor to several CNCF projects and frequently speaks at industry conferences about cloud-native best practices and infrastructure automation.",
-    ],
-    tags: ["Cloud Native", "Kubernetes", "Infrastructure as Code"],
-  },
-  {
-    name: "Amara Okafor",
-    cardRole: "STRATEGIC PARTNERSHIPS",
-    role: "Partnerships & Alliances Director",
-    org: "OSC Foundation",
-    badge: "Senior Mentor",
-    photo: "/leaders/amara_okafor.jpg",
-    bioParagraphs: [
-      "Amara Okafor leads strategic partnerships at the OSC Foundation, building relationships with corporations, academic institutions, and government agencies to expand the foundation's reach and impact across the open-source ecosystem.",
-      "With extensive experience in business development and technology strategy, Amara has forged collaborations that have resulted in significant funding and resource commitments for critical open-source projects. She is a strong advocate for sustainable open-source business models.",
-    ],
-    tags: ["Strategic Partnerships", "Business Development", "Funding"],
-  },
-  {
-    name: "Kevin Schmidt",
-    cardRole: "TECHNICAL MENTOR",
-    role: "Senior Technical Mentor & Advisor",
-    org: "OSC Foundation",
-    badge: "Senior Mentor",
-    photo: "/leaders/kevin_schmidt.jpg",
-    bioParagraphs: [
-      "Kevin Schmidt is a senior technical mentor at the OSC Foundation, where he guides aspiring open-source contributors through structured mentorship programs and helps projects establish healthy community practices.",
-      "His approach combines technical coaching with community building, having mentored over 200 developers who have gone on to become project maintainers and community leaders. Kevin is the author of several widely-used open-source libraries and documentation frameworks.",
-    ],
-    tags: ["Mentorship", "Developer Education", "Documentation"],
-  },
-  {
-    name: "Sophia Rossi",
-    cardRole: "DEVELOPER RELATIONS",
-    role: "Developer Relations Director",
-    org: "OSC Foundation",
-    badge: "Senior Mentor",
-    photo: "/leaders/sophia_rossi.jpg",
-    bioParagraphs: [
-      "Sophia Rossi leads Developer Relations at the OSC Foundation, building bridges between the foundation and the global developer community through events, content, and direct engagement programs.",
-      "She is a seasoned developer advocate with a talent for translating complex technical concepts into accessible learning resources. Sophia has organized over 50 hackathons and speaking events worldwide, and hosts a popular technical podcast on open-source development practices.",
-    ],
-    tags: ["Developer Relations", "Community Events", "Technical Content"],
   },
 ];
 
@@ -149,7 +178,6 @@ export default function ResearchLeadershipSection({
   onProfileClose?: () => void;
 }) {
   const [activeTab, setActiveTab] = useState<"speakers" | "mentors">("speakers");
-  const [activePage, setActivePage] = useState(1);
   const [email, setEmail] = useState("");
   const [internalProfile, setInternalProfile] = useState<ProfileData | null>(null);
 
@@ -205,73 +233,103 @@ export default function ResearchLeadershipSection({
             </button>
           </div>
 
-          {/* 5-Column Leadership Team Grid */}
-          <div className="grid grid-cols-2 sm:grid-cols-3 md:grid-cols-4 lg:grid-cols-5 gap-4 lg:gap-5">
-            {teamMembers.map((member) => (
-              <button
-                key={member.name}
-                onClick={() =>
-                  onProfileSelect({
-                    name: member.name,
-                    role: member.role,
-                    org: member.org,
-                    badge: member.badge,
-                    bioParagraphs: member.bioParagraphs,
-                    tags: member.tags,
-                  })
-                }
-                className="relative group overflow-hidden bg-white text-left cursor-pointer shadow-sm hover:shadow-md transition-all duration-200"
-              >
-                {/* Photo container */}
-                <div className="relative aspect-[3/4] w-full bg-slate-100">
-                  <Image
-                    src={member.photo}
-                    alt={member.name}
-                    fill
-                    className="object-cover transition-transform duration-300 group-hover:scale-105"
-                  />
-                  {/* Overlaid dark caption bar */}
-                  <div className="absolute bottom-0 inset-x-0 bg-[#0F172A] p-3 min-h-[58px] flex flex-col justify-center">
-                    <span className="text-[11px] font-extrabold text-white tracking-wide uppercase leading-tight truncate">
-                      {member.name}
+          {/* 3-Column Leadership Team Grid */}
+          {activeTab === "speakers" ? (
+            <div className="max-w-[880px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+              {teamMembers.map((member) => (
+                <button
+                  key={member.name}
+                  onClick={() =>
+                    onProfileSelect({
+                      name: member.name,
+                      role: member.role,
+                      org: member.org,
+                      badge: member.badge,
+                      photo: member.photo,
+                      bioParagraphs: member.bioParagraphs,
+                      tags: member.tags,
+                    })
+                  }
+                  className="relative group overflow-hidden bg-[#0A1835] text-left cursor-pointer border-0 outline-none ring-0 transition-all duration-200"
+                >
+                  {/* Photo container */}
+                  <div className="relative aspect-[3/3.6] w-full bg-[#0A1835] overflow-hidden">
+                    <Image
+                      src={member.photo}
+                      alt={member.name}
+                      fill
+                      className="object-cover object-top scale-[1.08] transition-transform duration-300 group-hover:scale-115"
+                    />
+                    {/* Overlaid dark caption bar */}
+                    <div className="absolute bottom-0 inset-x-0 bg-[#0A1835] px-4 py-3 flex flex-col justify-center">
+                      <span className="text-[13px] font-bold text-white tracking-wide uppercase leading-tight truncate">
+                        {member.name}
+                      </span>
+                      <span className="text-[10.5px] font-medium text-[#94A3B8] uppercase tracking-[0.02em] mt-1 leading-snug truncate">
+                        {member.cardRole}
+                      </span>
+                    </div>
+                  </div>
+                </button>
+              ))}
+            </div>
+          ) : (
+            <div className="max-w-[880px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+              {mentorMembers.map((mentor) => (
+                <button
+                  key={mentor.name}
+                  onClick={() =>
+                    onProfileSelect({
+                      name: mentor.name,
+                      role: mentor.role,
+                      org: mentor.org,
+                      badge: mentor.badge,
+                      photo: mentor.photo,
+                      bioParagraphs: mentor.bioParagraphs,
+                      tags: mentor.tags,
+                    })
+                  }
+                  className="rounded-none overflow-hidden bg-white border border-slate-200/90 shadow-xs flex flex-col aspect-[3/3.8] transition-all duration-200 hover:shadow-md cursor-pointer text-left w-full border-0 outline-none ring-0 group"
+                >
+                  {/* Top Dark Navy Header */}
+                  <div className="bg-[#18254A] px-4 py-3.5 flex items-center justify-between shrink-0">
+                    {/* Left: Avatar Badge */}
+                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-xs overflow-hidden">
+                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
+                        <circle cx="12" cy="7" r="3.5" fill="#B45309" />
+                        <path d="M6 18c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="#BFDBFE" />
+                        <path d="M5 11c0-1.1.9-2 2-2h1v4H7a2 2 0 0 1-2-2zM16 9h1a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-1V9z" fill="#1E293B" />
+                        <path d="M17 12c0 2-1 3-3 3" stroke="#1E293B" strokeWidth="1.5" strokeLinecap="round" />
+                      </svg>
+                    </div>
+                    {/* Right: Dash accent line */}
+                    <div className="w-6 h-[3px] bg-slate-400/50 rounded-full" />
+                  </div>
+
+                  {/* Middle Blank White Body with Mentor Name */}
+                  <div className="flex-1 bg-white p-4 flex flex-col justify-end">
+                    <span className="text-[12.5px] font-bold text-slate-800 tracking-wide uppercase leading-tight truncate group-hover:text-accent-blue transition-colors">
+                      {mentor.name}
                     </span>
-                    <span className="text-[9px] font-semibold text-gray-300 uppercase tracking-[0.04em] mt-0.5 leading-snug truncate">
-                      {member.cardRole}
+                    <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.02em] mt-0.5 leading-snug truncate">
+                      {mentor.slotTitle}
                     </span>
                   </div>
-                </div>
-              </button>
-            ))}
-          </div>
 
-          {/* Pagination */}
-          <div className="flex items-center justify-center gap-1.5 mt-10 mb-6">
-            <button
-              aria-label="Previous Page"
-              className="w-9 h-9 flex items-center justify-center text-gray-400 hover:text-[#0B0F1A] border border-gray-200 rounded-[2px] transition-colors"
-            >
-              &lt;
-            </button>
-            {[1, 2, 3].map((page) => (
-              <button
-                key={page}
-                onClick={() => setActivePage(page)}
-                className={`w-9 h-9 flex items-center justify-center text-xs font-extrabold rounded-[2px] transition-colors ${
-                  activePage === page
-                    ? "bg-[#0F172A] text-white"
-                    : "bg-white text-slate-600 border border-gray-200 hover:border-slate-400"
-                }`}
-              >
-                {page}
-              </button>
-            ))}
-            <button
-              aria-label="Next Page"
-              className="w-9 h-9 flex items-center justify-center text-gray-400 hover:text-[#0B0F1A] border border-gray-200 rounded-[2px] transition-colors"
-            >
-              &gt;
-            </button>
-          </div>
+                  {/* Bottom Bar with Paperclip & Arrow Icons */}
+                  <div className="border-t border-slate-200/80 px-4 py-3 bg-white flex items-center justify-between shrink-0 text-slate-400">
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
+                    </svg>
+                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
+                      <polyline points="9 10 4 15 9 20" />
+                      <path d="M20 4v7a4 4 0 0 1-4 4H4" />
+                    </svg>
+                  </div>
+                </button>
+              ))}
+            </div>
+          )}
         </div>
       </section>
 
