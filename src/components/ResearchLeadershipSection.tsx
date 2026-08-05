@@ -196,7 +196,7 @@ export default function ResearchLeadershipSection({
               {[1, 2, 3, 4, 5, 6].map((i) => (
                 <div
                   key={i}
-                  className="rounded-[14px] overflow-hidden bg-white border border-slate-200/90 shadow-xs flex flex-col aspect-[3/3.8] transition-all duration-200 hover:shadow-md"
+                  className="rounded-none overflow-hidden bg-white border border-slate-200/90 shadow-xs flex flex-col aspect-[3/3.8] transition-all duration-200 hover:shadow-md"
                 >
                   {/* Top Dark Navy Header */}
                   <div className="bg-[#18254A] px-4 py-3.5 flex items-center justify-between shrink-0">
