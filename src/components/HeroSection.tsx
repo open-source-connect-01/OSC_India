@@ -10,10 +10,10 @@ export default function HeroSection() {
           {/* Left Content Column */}
           <div className="flex-1 min-w-0">
             {/* Announcement Pill Badge */}
-            <div className="inline-flex items-center gap-2.5 border border-blue-200/90 bg-blue-50/50 rounded-full px-4.5 py-1.5 mb-6 sm:mb-7">
-              <span className="w-2.5 h-2.5 rounded-full bg-[#2563EB] shrink-0" />
-              <span className="text-[11px] sm:text-[12.5px] lg:text-[13px] font-extrabold tracking-[0.14em] text-[#2563EB] uppercase">
-                OPEN SOURCE FOR EVERYONE
+            <div className="inline-flex items-center gap-2.5 border border-blue-200/90 bg-blue-50/50 rounded-full px-4 py-1.5 mb-6 sm:mb-7">
+              <span className="w-2 h-2 rounded-full bg-[#2563EB] shrink-0" />
+              <span className="text-[10px] sm:text-[11.5px] lg:text-[12px] font-extrabold tracking-[0.14em] text-[#2563EB] uppercase">
+                GOVERNANCE UPDATE: CHARTER V2.4 APPROVED
               </span>
             </div>
 
