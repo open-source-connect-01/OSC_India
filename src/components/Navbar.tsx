@@ -93,6 +93,16 @@ export default function Navbar({
     };
   }, [isMobileMenuOpen]);
 
+  const handleLogoClick = () => {
+    onNavClick?.(null);
+    if (isMobileMenuOpen) {
+      onMobileMenuToggle?.();
+    }
+    if (typeof window !== "undefined" && window.location.pathname === "/") {
+      window.scrollTo({ top: 0, behavior: "smooth" });
+    }
+  };
+
   return (
     <nav className="w-full bg-white relative border-b border-gray-100">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
@@ -100,7 +110,7 @@ export default function Navbar({
           {/* Desktop Layout */}
           <div className="hidden md:flex items-center justify-between w-full">
             {/* Logo */}
-            <Link href="/" className="flex items-center shrink-0">
+            <Link href="/" onClick={handleLogoClick} className="flex items-center shrink-0">
               <Image
                 src="/logo.png"
                 alt="Open Source Connect"
@@ -148,7 +158,7 @@ export default function Navbar({
           {/* Mobile Layout */}
           <div className="md:hidden flex items-center justify-between w-full">
             {/* Left: Logo */}
-            <Link href="/" className="flex items-center shrink-0">
+            <Link href="/" onClick={handleLogoClick} className="flex items-center shrink-0">
               <Image
                 src="/logo.png"
                 alt="Open Source Connect"

@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import type { ActiveOverlay } from "@/components/Navbar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import StatsRow from "@/components/StatsRow";
+import { StatsNumbersRow, OurMissionSection } from "@/components/StatsRow";
 import CoreFocusSection from "@/components/CoreFocusSection";
 import CommunitySpotlightSection from "@/components/CommunitySpotlightSection";
 import BecomeCommunityLeaderSection from "@/components/BecomeCommunityLeaderSection";
@@ -18,26 +18,30 @@ import EventsOverlay from "@/components/EventsOverlay";
 
 function HomeContent() {
   const searchParams = useSearchParams();
-  const [activeOverlay, setActiveOverlay] = useState<ActiveOverlay>(() => {
-    const nav = searchParams.get("nav") as ActiveOverlay | null;
-    return nav && nav !== "events" ? nav : null;
-  });
+  const [userOverlay, setUserOverlay] = useState<ActiveOverlay | undefined>(undefined);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const scrollYRef = useRef(0);
 
+  const navParam = searchParams.get("nav") as ActiveOverlay | null;
+  const activeOverlay =
+    userOverlay !== undefined
+      ? userOverlay
+      : navParam && navParam !== "events"
+      ? navParam
+      : null;
+
   const handleNavClick = useCallback((label: ActiveOverlay) => {
-    setActiveOverlay((prev) => (prev === label ? null : label));
+    setUserOverlay((prev) => (prev === label ? null : label));
     setIsMobileMenuOpen(false);
   }, []);
 
   const handleCloseOverlay = useCallback(() => {
-    // Clean up ?nav= query param from URL if present
     const url = new URL(window.location.href);
     if (url.searchParams.has("nav")) {
       url.searchParams.delete("nav");
       window.history.replaceState({}, "", url.toString());
     }
-    setActiveOverlay(null);
+    setUserOverlay(null);
   }, []);
 
   const handleMobileMenuToggle = useCallback(() => {
@@ -45,13 +49,13 @@ function HomeContent() {
   }, []);
 
   const handleMobileNavClick = useCallback((label: ActiveOverlay) => {
-    setActiveOverlay((prev) => (prev === label ? null : label));
+    setUserOverlay((prev) => (prev === label ? null : label));
     setIsMobileMenuOpen(false);
   }, []);
 
   const hasActiveOverlay = activeOverlay !== null;
 
-  // Lock body scroll when any overlay is open (position:fixed prevents bg scroll on mobile)
+  // Lock body scroll when any overlay is open
   useEffect(() => {
     if (hasActiveOverlay) {
       scrollYRef.current = window.scrollY;
@@ -89,8 +93,14 @@ function HomeContent() {
           hasActiveOverlay ? "opacity-40 pointer-events-none" : ""
         }`}
       >
-        <HeroSection />
-        <StatsRow />
+        {/* Full-screen initial viewport fold (Navbar + Hero + Stats) */}
+        <div className="min-h-[calc(100vh-65px)] lg:min-h-[calc(100vh-73px)] flex flex-col justify-between bg-gradient-to-b from-[#EFF4FC] via-[#FAFBFE] to-white">
+          <HeroSection />
+          <StatsNumbersRow />
+        </div>
+
+        {/* Content below the initial fold */}
+        <OurMissionSection />
         <CoreFocusSection />
         <CommunitySpotlightSection />
         <BecomeCommunityLeaderSection />
