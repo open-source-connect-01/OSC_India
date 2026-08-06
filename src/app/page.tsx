@@ -18,12 +18,17 @@ import EventsOverlay from "@/components/EventsOverlay";
 
 function HomeContent() {
   const searchParams = useSearchParams();
-  const [activeOverlay, setActiveOverlay] = useState<ActiveOverlay>(() => {
-    const nav = searchParams.get("nav") as ActiveOverlay | null;
-    return nav && nav !== "events" ? nav : null;
-  });
+  const [activeOverlay, setActiveOverlay] = useState<ActiveOverlay>(null);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const scrollYRef = useRef(0);
+
+  // Sync query param after hydration to prevent SSR mismatch
+  useEffect(() => {
+    const nav = searchParams.get("nav") as ActiveOverlay | null;
+    if (nav && nav !== "events") {
+      setActiveOverlay(nav);
+    }
+  }, [searchParams]);
 
   const handleNavClick = useCallback((label: ActiveOverlay) => {
     setActiveOverlay((prev) => (prev === label ? null : label));
@@ -31,7 +36,6 @@ function HomeContent() {
   }, []);
 
   const handleCloseOverlay = useCallback(() => {
-    // Clean up ?nav= query param from URL if present
     const url = new URL(window.location.href);
     if (url.searchParams.has("nav")) {
       url.searchParams.delete("nav");
