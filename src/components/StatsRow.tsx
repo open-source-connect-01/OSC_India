@@ -54,19 +54,19 @@ const missionCards = [
 export function StatsNumbersRow({ className = "" }: { className?: string }) {
   return (
     <section className={`w-full ${className}`}>
-      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-6 sm:py-8 lg:py-10">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+      <div className="max-w-[1360px] mx-auto px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-[38px] sm:text-[46px] lg:text-[52px] xl:text-[58px] font-extrabold text-[#0B0F1A] leading-none mb-1">
+              <div className="text-[40px] sm:text-[50px] lg:text-[62px] xl:text-[70px] font-extrabold text-[#0B0F1A] leading-none mb-1.5">
                 <AnimatedCounter value={stat.numericValue} suffix={stat.suffix} />
               </div>
               <div
-                className={`text-[13px] sm:text-[14px] lg:text-[15px] font-extrabold tracking-[0.1em] uppercase mb-0.5 ${stat.labelColor}`}
+                className={`text-[13.5px] sm:text-[14.5px] lg:text-[15.5px] font-extrabold tracking-[0.1em] uppercase mb-0.5 ${stat.labelColor}`}
               >
                 {stat.label}
               </div>
-              <div className="text-[13px] sm:text-[14px] lg:text-[15px] text-gray-500 font-medium">
+              <div className="text-[13.5px] sm:text-[14.5px] lg:text-[15.5px] text-gray-500 font-medium">
                 {stat.sublabel}
               </div>
             </div>
