@@ -18,20 +18,20 @@ import EventsOverlay from "@/components/EventsOverlay";
 
 function HomeContent() {
   const searchParams = useSearchParams();
-  const [activeOverlay, setActiveOverlay] = useState<ActiveOverlay>(null);
+  const [userOverlay, setUserOverlay] = useState<ActiveOverlay | undefined>(undefined);
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const scrollYRef = useRef(0);
 
-  // Sync query param after hydration to prevent SSR mismatch
-  useEffect(() => {
-    const nav = searchParams.get("nav") as ActiveOverlay | null;
-    if (nav && nav !== "events") {
-      setActiveOverlay(nav);
-    }
-  }, [searchParams]);
+  const navParam = searchParams.get("nav") as ActiveOverlay | null;
+  const activeOverlay =
+    userOverlay !== undefined
+      ? userOverlay
+      : navParam && navParam !== "events"
+      ? navParam
+      : null;
 
   const handleNavClick = useCallback((label: ActiveOverlay) => {
-    setActiveOverlay((prev) => (prev === label ? null : label));
+    setUserOverlay((prev) => (prev === label ? null : label));
     setIsMobileMenuOpen(false);
   }, []);
 
@@ -41,7 +41,7 @@ function HomeContent() {
       url.searchParams.delete("nav");
       window.history.replaceState({}, "", url.toString());
     }
-    setActiveOverlay(null);
+    setUserOverlay(null);
   }, []);
 
   const handleMobileMenuToggle = useCallback(() => {
@@ -49,7 +49,7 @@ function HomeContent() {
   }, []);
 
   const handleMobileNavClick = useCallback((label: ActiveOverlay) => {
-    setActiveOverlay((prev) => (prev === label ? null : label));
+    setUserOverlay((prev) => (prev === label ? null : label));
     setIsMobileMenuOpen(false);
   }, []);
 
