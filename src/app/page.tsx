@@ -5,7 +5,7 @@ import { useSearchParams } from "next/navigation";
 import type { ActiveOverlay } from "@/components/Navbar";
 import Navbar from "@/components/Navbar";
 import HeroSection from "@/components/HeroSection";
-import StatsRow from "@/components/StatsRow";
+import { StatsNumbersRow, OurMissionSection } from "@/components/StatsRow";
 import CoreFocusSection from "@/components/CoreFocusSection";
 import CommunitySpotlightSection from "@/components/CommunitySpotlightSection";
 import BecomeCommunityLeaderSection from "@/components/BecomeCommunityLeaderSection";
@@ -51,7 +51,7 @@ function HomeContent() {
 
   const hasActiveOverlay = activeOverlay !== null;
 
-  // Lock body scroll when any overlay is open (position:fixed prevents bg scroll on mobile)
+  // Lock body scroll when any overlay is open
   useEffect(() => {
     if (hasActiveOverlay) {
       scrollYRef.current = window.scrollY;
@@ -89,8 +89,14 @@ function HomeContent() {
           hasActiveOverlay ? "opacity-40 pointer-events-none" : ""
         }`}
       >
-        <HeroSection />
-        <StatsRow />
+        {/* Full-screen initial viewport fold (Navbar + Hero + Stats) */}
+        <div className="min-h-[calc(100vh-65px)] lg:min-h-[calc(100vh-73px)] flex flex-col justify-between bg-gradient-to-b from-[#EFF4FC] via-[#FAFBFE] to-white">
+          <HeroSection />
+          <StatsNumbersRow />
+        </div>
+
+        {/* Content below the initial fold */}
+        <OurMissionSection />
         <CoreFocusSection />
         <CommunitySpotlightSection />
         <BecomeCommunityLeaderSection />

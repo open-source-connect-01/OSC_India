@@ -40,110 +40,121 @@ const missionCards = [
     desc: "We support projects beyond initial contributions by providing mentorship, community engagement frameworks, and long-term visibility.",
   },
   {
-    iconColor: "bg-accent-blue",
+    iconColor: "bg-[#2563EB]",
     title: "RESPONSIBLE CONTRIBUTION",
     desc: "We encourage ethical contribution practices, clear documentation standards, and respect for intellectual ownership.",
   },
   {
-    iconColor: "bg-accent-green",
+    iconColor: "bg-accent-teal",
     title: "TRANSPARENT GOVERNANCE",
     desc: "Openness is at the core of everything we do. Decision-making processes, community guidelines, and leadership structures are clearly defined and accessible.",
   },
 ];
 
+export function StatsNumbersRow({ className = "" }: { className?: string }) {
+  return (
+    <section className={`w-full ${className}`}>
+      <div className="max-w-[1280px] mx-auto px-6 lg:px-10 py-6 sm:py-8 lg:py-10">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
+          {stats.map((stat) => (
+            <div key={stat.label} className="text-center">
+              <div className="text-[38px] sm:text-[46px] lg:text-[52px] xl:text-[58px] font-extrabold text-[#0B0F1A] leading-none mb-1">
+                <AnimatedCounter value={stat.numericValue} suffix={stat.suffix} />
+              </div>
+              <div
+                className={`text-[13px] sm:text-[14px] lg:text-[15px] font-extrabold tracking-[0.1em] uppercase mb-0.5 ${stat.labelColor}`}
+              >
+                {stat.label}
+              </div>
+              <div className="text-[13px] sm:text-[14px] lg:text-[15px] text-gray-500 font-medium">
+                {stat.sublabel}
+              </div>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
+export function OurMissionSection() {
+  return (
+    <section className="w-full bg-white border-t border-gray-100">
+      <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-14 lg:py-20">
+        {/* Heading */}
+        <div className="mb-8 lg:mb-12">
+          {/* Mobile Title */}
+          <div className="sm:hidden mb-4">
+            <h2 className="text-[28px] font-extrabold text-[#0B0F1A] tracking-tight">
+              OurMission
+            </h2>
+            <div className="w-[50px] h-[3.5px] bg-[#F59E0B] mt-1" />
+          </div>
+
+          {/* Desktop Title */}
+          <div className="hidden sm:block mb-5">
+            <h2 className="text-[32px] lg:text-[42px] font-extrabold text-[#0B0F1A] leading-tight">
+              Our Mission
+            </h2>
+            <div className="w-[60px] h-[4px] bg-accent-orange mt-2" />
+          </div>
+
+          {/* Mobile Paragraph */}
+          <p className="sm:hidden text-sm leading-relaxed text-slate-600 font-medium max-w-[480px]">
+            Open Source Connect exists to strengthen the open-source ecosystem
+            by bringing together developers, students, startups, and
+            organizations to collaborate openly and build solutions that create
+            real-world impact.
+          </p>
+
+          {/* Desktop Paragraphs */}
+          <div className="hidden sm:block space-y-4">
+            <p className="max-w-[720px] text-base lg:text-[17px] leading-relaxed text-slate-600 font-medium">
+              We are a community of communities, bringing together developers,
+              organizations, and innovators from around the globe to share
+              knowledge, collaborate openly, and build solutions having
+              real-world impact.
+            </p>
+            <p className="max-w-[720px] text-base lg:text-[17px] leading-relaxed text-slate-600 font-medium">
+              We are building a structured, transparent, and community-driven
+              platform where innovation is supported, contributors are respected,
+              and projects are nurtured from idea to long-term sustainability.
+            </p>
+          </div>
+        </div>
+
+        {/* Mission feature cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
+          {missionCards.map((card) => (
+            <div
+              key={card.title}
+              className="bg-white border border-gray-200 p-7 lg:p-8"
+            >
+              <div className="relative w-7 h-7 mb-5">
+                {/* Hard offset shadow block */}
+                <div className="absolute top-1 left-1 w-7 h-7 bg-[#E2E8F0] rounded-[2px] z-0" />
+                {/* Solid color square badge */}
+                <div className={`relative z-10 w-7 h-7 rounded-[2px] ${card.iconColor}`} />
+              </div>
+              <h3 className="text-[14px] lg:text-[15px] font-bold tracking-[0.04em] text-[#0B0F1A] uppercase mb-3">
+                {card.title}
+              </h3>
+              <p className="text-[14px] lg:text-[14.5px] text-slate-600 leading-relaxed">
+                {card.desc}
+              </p>
+            </div>
+          ))}
+        </div>
+      </div>
+    </section>
+  );
+}
+
 export default function StatsRow() {
   return (
     <>
-      {/* ===== STATS ROW (plain, no borders) ===== */}
-      <section className="w-full bg-white">
-        <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-6 lg:py-8">
-          <div className="grid grid-cols-2 lg:grid-cols-4 gap-6">
-            {stats.map((stat) => (
-              <div key={stat.label} className="text-center">
-                <div className="text-[36px] lg:text-[44px] font-extrabold text-navy-deep leading-none mb-0.5">
-                  <AnimatedCounter value={stat.numericValue} suffix={stat.suffix} />
-                </div>
-                <div
-                  className={`text-[13px] font-bold tracking-[0.08em] uppercase mb-0.5 ${stat.labelColor}`}
-                >
-                  {stat.label}
-                </div>
-                <div className="text-[13px] text-gray-600 font-medium">{stat.sublabel}</div>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
-
-      {/* ===== OUR MISSION SECTION ===== */}
-      <section className="w-full bg-white">
-        <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-12 lg:py-16">
-          {/* Heading */}
-          <div className="mb-8 lg:mb-12">
-            {/* Mobile Title (Matching screenshot: OurMission with orange underline under Our) */}
-            <div className="sm:hidden mb-4">
-              <h2 className="text-[28px] font-extrabold text-[#0B0F1A] tracking-tight">
-                OurMission
-              </h2>
-              <div className="w-[50px] h-[3.5px] bg-[#F59E0B] mt-1" />
-            </div>
-
-            {/* Desktop Title */}
-            <div className="hidden sm:block mb-5">
-              <h2 className="text-[32px] lg:text-[40px] font-extrabold text-navy-deep leading-tight">
-                Our Mission
-              </h2>
-              <div className="w-[60px] h-[4px] bg-accent-orange mt-2" />
-            </div>
-
-            {/* Mobile Paragraph (Exact copy from mobile reference screenshot) */}
-            <p className="sm:hidden text-sm leading-relaxed text-slate-600 font-medium max-w-[480px]">
-              Open Source Connect exists to strengthen the open-source ecosystem
-              by bringing together developers, students, startups, and
-              organizations to collaborate openly and build solutions that create
-              real-world impact.
-            </p>
-
-            {/* Desktop Paragraphs */}
-            <div className="hidden sm:block space-y-4">
-              <p className="max-w-[700px] text-base leading-relaxed text-slate-600 font-medium">
-                We are a community of communities, bringing together developers,
-                organizations, and innovators from around the globe to share
-                knowledge, collaborate openly, and build solutions having
-                real-world impact.
-              </p>
-              <p className="max-w-[700px] text-base leading-relaxed text-slate-600 font-medium">
-                We are building a structured, transparent, and community-driven
-                platform where innovation is supported, contributors are respected,
-                and projects are nurtured from idea to long-term sustainability.
-              </p>
-            </div>
-          </div>
-
-          {/* Mission feature cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6">
-            {missionCards.map((card) => (
-              <div
-                key={card.title}
-                className="bg-white border border-gray-200 p-7"
-              >
-                <div className="relative w-7 h-7 mb-5">
-                  {/* Hard offset shadow block */}
-                  <div className="absolute top-1 left-1 w-7 h-7 bg-[#E2E8F0] rounded-[2px] z-0" />
-                  {/* Solid color square badge */}
-                  <div className={`relative z-10 w-7 h-7 rounded-[2px] ${card.iconColor}`} />
-                </div>
-                <h3 className="text-[14px] font-bold tracking-[0.04em] text-navy-deep uppercase mb-3">
-                  {card.title}
-                </h3>
-                <p className="text-[14px] text-slate-600 leading-relaxed">
-                  {card.desc}
-                </p>
-              </div>
-            ))}
-          </div>
-        </div>
-      </section>
+      <StatsNumbersRow className="bg-white" />
+      <OurMissionSection />
     </>
   );
 }
