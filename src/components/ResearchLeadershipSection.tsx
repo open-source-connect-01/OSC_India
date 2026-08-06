@@ -371,9 +371,13 @@ export default function ResearchLeadershipSection({
           <div className="grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-8 lg:gap-12 pb-10">
             {/* Brand Column */}
             <div>
-              <div className="w-7 h-7 bg-white text-[#0A101D] font-extrabold flex items-center justify-center rounded-[2px] mb-3.5 text-sm">
-                O
-              </div>
+              <Image
+                src="/logo.png"
+                alt="Open Source Connect"
+                width={160}
+                height={40}
+                className="h-8 w-auto object-contain brightness-0 invert mb-4"
+              />
               <p className="text-[12px] text-slate-400 leading-relaxed max-w-[240px] mb-4">
                 Providing the institutional framework for collaborative
                 innovation and technical meritocracy.
