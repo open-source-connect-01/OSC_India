@@ -8,7 +8,7 @@ import ProfileModal from "@/components/ProfileModal";
 import type { ProfileData } from "@/components/ProfileModal";
 import type { ActiveOverlay } from "@/components/Navbar";
 
-export default function MentorsAndSpeakersPage() {
+export default function SpeakersAndMentorsPage() {
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedProfile, setSelectedProfile] = useState<ProfileData | null>(null);

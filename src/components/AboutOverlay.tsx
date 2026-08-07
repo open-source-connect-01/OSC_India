@@ -222,7 +222,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                         {/* Mentors & Speakers */}
                         <div
                           className="group cursor-pointer flex items-start gap-4"
-                          onClick={() => { onClose(); router.push("/mentors&speakers"); }}
+                          onClick={() => { onClose(); router.push("/speakers-and-mentors"); }}
                         >
                           <SpeakerIcon />
                           <div>
