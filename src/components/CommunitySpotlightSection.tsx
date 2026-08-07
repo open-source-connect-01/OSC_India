@@ -11,7 +11,7 @@ const personColors: Record<
     photo: string;
   }
 > = {
-  "Dr. Sarah Chen": {
+  "Jennifer Wilson": {
     badge: "bg-[#2563EB]",
     pillBg: "bg-[#EFF6FF]",
     pillText: "text-[#2563EB]",
@@ -43,13 +43,13 @@ const personColors: Record<
 
 const spotlightCards = [
   {
-    name: "Dr. Sarah Chen",
-    role: "Chief Technology Officer",
-    org: "CloudNative Foundation",
-    specialty: "Cloud Architecture & DevOps",
+    name: "Jennifer Wilson",
+    role: "Senior Engineering Manager",
+    org: "Atlassian",
+    specialty: "Developer Experience",
     highlights: [
-      "Keynote Speaker at OSS Summit 2026",
-      "Maintainer of 10+ major projects",
+      "Creator of internal developer platforms",
+      "Community mentor and conference speaker",
     ],
   },
   {
