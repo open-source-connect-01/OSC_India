@@ -93,7 +93,7 @@ export default function FooterSection() {
                 href="#"
                 className="inline-flex items-center justify-center mt-8 h-[50px] px-7 bg-navy-deep text-white text-[12.5px] font-bold tracking-[0.5px] uppercase hover:bg-navy transition-all duration-200"
               >
-                View Membership Tiers
+                SUPPORT THE COMMUNITY
               </Link>
             </div>
 
@@ -140,7 +140,7 @@ export default function FooterSection() {
               href="#"
               className="w-full bg-[#0A1B3D] text-white text-xs font-extrabold tracking-[0.16em] uppercase py-4 rounded-[4px] shadow-sm flex items-center justify-center text-center block mb-6 hover:bg-[#122752] transition-colors"
             >
-              VIEW MEMBERSHIP TIERS
+              SUPPORT THE COMMUNITY
             </Link>
 
             {/* Dark Navy Why Support Card with cream offset shadow */}
