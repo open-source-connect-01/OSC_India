@@ -48,22 +48,22 @@ export default function CoreFocusSection() {
           </p>
         </div>
 
-        {/* 3×2 Grid of focus cards with uniform equal heights and larger sizing */}
-        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-6 sm:gap-7">
+        {/* 3×2 Grid of focus cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
           {focusCards.map((card, i) => (
             <div
               key={i}
-              className="relative bg-white border border-[#E2E8F0] rounded-[2px] p-8 sm:p-9 overflow-hidden flex flex-col justify-between h-full min-h-[230px] sm:min-h-[250px] shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:border-slate-300 transition-colors"
+              className="relative bg-white border border-[#E2E8F0] rounded-[2px] p-6 sm:p-7 overflow-hidden flex flex-col justify-between h-full min-h-[175px] sm:min-h-[190px] shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:border-slate-300 transition-colors"
             >
               {/* Distinct soft pastel corner quarter-circle arc */}
               <div
-                className={`absolute -top-14 -right-14 w-[180px] h-[180px] rounded-full ${card.blobColor} pointer-events-none z-0`}
+                className={`absolute -top-12 -right-10 w-[130px] h-[130px] rounded-full ${card.blobColor} pointer-events-none z-0`}
               />
               <div className="relative z-10">
-                <h3 className="text-[17.5px] sm:text-[18.5px] lg:text-[19px] font-bold text-[#0B1428] mb-3 leading-snug pr-8">
+                <h3 className="text-[16px] sm:text-[17px] font-bold text-[#0B1428] mb-2.5 leading-snug pr-6">
                   {card.title}
                 </h3>
-                <p className="text-[14px] sm:text-[15px] text-slate-500 font-medium leading-relaxed">
+                <p className="text-[13px] sm:text-[13.5px] text-slate-500 font-medium leading-relaxed">
                   {card.desc}
                 </p>
               </div>
