@@ -81,13 +81,13 @@ const spotlightCards = [
     ],
   },
   {
-    name: "James Park",
-    role: "Lead Developer Advocate",
-    org: "Global Tech Alliance",
-    specialty: "Developer Relations & Community",
+    name: "Aarav Mehta",
+    role: "Senior Staff Engineer",
+    org: "Google",
+    specialty: "Cloud Infrastructure & Kubernetes",
     highlights: [
-      "Keynote Speaker at OSS Summit 2026",
-      "Maintainer of 10+ major projects",
+      "CNCF Ambassador and open source contributor",
+      "Speaker on Cloud Native and Platform Engineering",
     ],
   },
 ];
