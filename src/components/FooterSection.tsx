@@ -6,18 +6,18 @@ import Image from "next/image";
 const whyItems = [
   {
     num: "01",
-    title: "INFLUENCE",
-    desc: "Participate in Technical Advisory Councils and shape direction.",
+    title: "EMPOWER DEVELOPERS",
+    desc: "Help students and developers gain hands-on experience through real open source projects, workshops, and hackathons.",
   },
   {
     num: "02",
-    title: "COMPLIANCE",
-    desc: "Access specialized legal audit reports and trademark support.",
+    title: "BUILD GLOBAL COMMUNITIES",
+    desc: "Support collaborations between contributors, maintainers, universities, startups, and technology organizations worldwide.",
   },
   {
     num: "03",
-    title: "TALENT",
-    desc: "Engage with the world's most talented maintainers.",
+    title: "CREATE LASTING IMPACT",
+    desc: "Your contribution helps keep participation free while enabling mentorship, contributor rewards, infrastructure, and community programs.",
   },
 ];
 
@@ -97,33 +97,38 @@ export default function FooterSection() {
               </Link>
             </div>
 
-            {/* Right: Why Join card */}
-            <div className="w-full bg-[#0c1a38] p-8 lg:p-9 rounded-[16px] text-white shadow-2xl">
-              <div className="flex items-center gap-3.5 mb-7">
-                <div className="w-8 h-8 rounded-full border-2 border-[#F2811D] text-[#F2811D] font-extrabold flex items-center justify-center text-sm shrink-0">
-                  ?
-                </div>
-                <h3 className="text-[20px] font-extrabold text-white tracking-tight">
-                  Why Organizations Join
-                </h3>
-              </div>
-
-              <div className="space-y-7">
-                {whyItems.map((item) => (
-                  <div key={item.num} className="flex gap-4">
-                    <div className="flex-none w-7 h-7 bg-[#F2811D] text-white text-xs font-extrabold rounded-[5px] flex items-center justify-center mt-0.5">
-                      {item.num}
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="text-xs font-extrabold tracking-[0.1em] text-[#F2811D] uppercase mb-1.5">
-                        {item.title}
-                      </h4>
-                      <p className="text-[13.5px] text-slate-300 leading-relaxed max-w-[320px]">
-                        {item.desc}
-                      </p>
-                    </div>
+            {/* Right: Why Support Open Source Connect? card with offset shadow */}
+            <div className="relative w-full">
+              {/* Soft light cream offset shadow block */}
+              <div className="absolute top-3 left-3 w-full h-full bg-[#FEF3C7] rounded-[2px] z-0" />
+              {/* Dark navy card */}
+              <div className="relative z-10 w-full bg-[#0D1527] p-8 sm:p-9 lg:p-10 rounded-[2px] text-white">
+                <div className="flex items-center gap-3.5 mb-8">
+                  <div className="w-8 h-8 bg-white text-[#0D1527] font-bold text-lg flex items-center justify-center rounded-[2px] shrink-0">
+                    ?
                   </div>
-                ))}
+                  <h3 className="text-[22px] sm:text-[24px] font-bold text-white tracking-tight">
+                    Why Support Open Source Connect?
+                  </h3>
+                </div>
+
+                <div className="space-y-7">
+                  {whyItems.map((item) => (
+                    <div key={item.num} className="flex gap-4">
+                      <div className="flex-none w-7 h-7 bg-[#F59E0B] text-white text-xs font-bold rounded-[2px] flex items-center justify-center mt-0.5">
+                        {item.num}
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="text-sm font-bold tracking-[0.04em] text-[#F59E0B] uppercase mb-1.5">
+                          {item.title}
+                        </h4>
+                        <p className="text-[13.5px] text-slate-300 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
           </div>
@@ -138,33 +143,36 @@ export default function FooterSection() {
               VIEW MEMBERSHIP TIERS
             </Link>
 
-            {/* Rounded Dark Navy Why Organizations Join Card */}
-            <div className="w-full bg-[#0d1e42] p-6 sm:p-7 rounded-[16px] text-white shadow-2xl">
-              <div className="flex items-center gap-3 mb-6">
-                <div className="w-7 h-7 rounded-full border-2 border-[#F2811D] text-[#F2811D] font-extrabold flex items-center justify-center text-xs shrink-0">
-                  ?
-                </div>
-                <h3 className="text-lg font-extrabold text-white tracking-tight">
-                  Why Organizations Join
-                </h3>
-              </div>
-
-              <div className="space-y-6">
-                {whyItems.map((item) => (
-                  <div key={item.num} className="flex gap-3.5">
-                    <div className="flex-none w-6 h-6 bg-[#F2811D] text-white text-[11px] font-extrabold rounded-[5px] flex items-center justify-center mt-0.5">
-                      {item.num}
-                    </div>
-                    <div className="min-w-0">
-                      <h4 className="text-xs font-extrabold tracking-[0.1em] text-[#F2811D] uppercase mb-1">
-                        {item.title}
-                      </h4>
-                      <p className="text-xs text-slate-300 leading-relaxed">
-                        {item.desc}
-                      </p>
-                    </div>
+            {/* Dark Navy Why Support Card with cream offset shadow */}
+            <div className="relative w-full">
+              <div className="absolute top-2.5 left-2.5 w-full h-full bg-[#FEF3C7] rounded-[2px] z-0" />
+              <div className="relative z-10 w-full bg-[#0D1527] p-6 sm:p-7 rounded-[2px] text-white">
+                <div className="flex items-center gap-3 mb-6">
+                  <div className="w-7 h-7 bg-white text-[#0D1527] font-bold text-base flex items-center justify-center rounded-[2px] shrink-0">
+                    ?
                   </div>
-                ))}
+                  <h3 className="text-lg font-bold text-white tracking-tight">
+                    Why Support Open Source Connect?
+                  </h3>
+                </div>
+
+                <div className="space-y-6">
+                  {whyItems.map((item) => (
+                    <div key={item.num} className="flex gap-3.5">
+                      <div className="flex-none w-6 h-6 bg-[#F59E0B] text-white text-[11px] font-bold rounded-[2px] flex items-center justify-center mt-0.5">
+                        {item.num}
+                      </div>
+                      <div className="min-w-0">
+                        <h4 className="text-xs font-bold tracking-[0.04em] text-[#F59E0B] uppercase mb-1">
+                          {item.title}
+                        </h4>
+                        <p className="text-xs text-slate-300 leading-relaxed">
+                          {item.desc}
+                        </p>
+                      </div>
+                    </div>
+                  ))}
+                </div>
               </div>
             </div>
 
