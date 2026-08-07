@@ -18,7 +18,7 @@ const personColors: Record<
     bulletColor: "bg-[#2563EB]",
     photo: "/spotlight/sarah_chen.jpg",
   },
-  "Marcus Johnson": {
+  "Rahul Sharma": {
     badge: "bg-[#10B981]",
     pillBg: "bg-[#ECFDF5]",
     pillText: "text-[#059669]",
@@ -53,13 +53,13 @@ const spotlightCards = [
     ],
   },
   {
-    name: "Marcus Johnson",
-    role: "Principal Engineer",
-    org: "Open Source Labs",
-    specialty: "Distributed Systems & Security",
+    name: "Rahul Sharma",
+    role: "Software Engineer",
+    org: "Meta",
+    specialty: "Distributed Systems",
     highlights: [
-      "Keynote Speaker at OSS Summit 2026",
-      "Maintainer of 10+ major projects",
+      "Open source maintainer",
+      "Speaker at developer conferences",
     ],
   },
   {
