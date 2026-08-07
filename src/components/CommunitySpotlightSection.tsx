@@ -181,9 +181,8 @@ export default function CommunitySpotlightSection() {
             </h2>
             <div className="hidden lg:block absolute bottom-0 left-0 w-[68px] h-[4px] bg-[#F59E0B]" />
           </div>
-          <p className="max-w-4xl text-xs sm:text-sm lg:text-base text-gray-500 font-medium leading-relaxed mt-2 lg:mt-4">
-            Celebrating the builders, maintainers, researchers, and leaders
-            driving meaningful innovation.
+          <p className="max-w-[780px] text-xs sm:text-sm lg:text-base text-gray-500 font-medium leading-relaxed mt-2 lg:mt-4">
+            Celebrating the builders, maintainers, researchers, and leaders driving meaningful innovation across the Open Source Connect ecosystem. Our community represents diverse expertise across emerging technologies and real-world industry challenges.
           </p>
         </div>
 
