@@ -40,9 +40,7 @@ export default function HeroSection() {
 
             {/* Subheading Description */}
             <p className="text-base sm:text-xl lg:text-[20px] xl:text-[21px] text-slate-600 font-medium max-w-[660px] leading-relaxed mb-8 sm:mb-10">
-              Open Source Connect (OSC) provides governance, financial stewardship,
-              and collaborative infrastructure to ensure long-term sustainability of
-              high-impact open-source technologies worldwide.
+              Open Source Connect (OSC) provides community infrastructure, operational support, educational programs, and collaboration opportunities to help open source projects, contributors, and organizations grow sustainably.
             </p>
 
             {/* Mobile CoreFocusCard */}
