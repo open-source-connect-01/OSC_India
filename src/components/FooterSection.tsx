@@ -194,7 +194,7 @@ export default function FooterSection() {
               </h3>
 
               <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed mb-6 max-w-[280px] relative z-10">
-                Join us for our annual gathering of maintainers, contributors, and industry leaders. March 15-17, 2026 in San Francisco.
+                Join us for our annual gathering of maintainers, contributors, and industry leaders. September 1-30, 2026 in San Francisco.
               </p>
 
               <div className="space-y-2 text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.1em] mb-7 relative z-10">
@@ -205,7 +205,7 @@ export default function FooterSection() {
                     <line x1="8" y1="2" x2="8" y2="6" />
                     <line x1="3" y1="10" x2="21" y2="10" />
                   </svg>
-                  <span>MARCH 15-17, 2026</span>
+                  <span>September 1-30, 2026</span>
                 </div>
                 <div className="flex items-center gap-2">
                   <svg width="14" height="14" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2.2" strokeLinecap="round" strokeLinejoin="round" className="shrink-0 text-slate-400">
@@ -251,7 +251,7 @@ export default function FooterSection() {
                     <line x1="8" y1="2" x2="8" y2="6" />
                     <line x1="3" y1="10" x2="21" y2="10" />
                   </svg>
-                  March 15-17, 2026
+                  September 1-30, 2026
                 </span>
                 <span className="flex items-center gap-2">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0">
