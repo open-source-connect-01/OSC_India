@@ -70,7 +70,7 @@ export default function FooterSection() {
                 Your support helps us provide free learning opportunities, reward contributors, organize world-class events, and make open source accessible to everyone.
               </p>
 
-              <div className="flex gap-12 mt-8">
+              <div className="flex gap-12 mt-12 lg:mt-16">
                 <div className="pl-4 border-l-[3px] border-accent-orange">
                   <div className="text-[28px] font-extrabold text-navy-deep leading-none">
                     180+
@@ -91,7 +91,7 @@ export default function FooterSection() {
 
               <Link
                 href="#"
-                className="inline-flex items-center justify-center mt-8 h-[50px] px-7 bg-navy-deep text-white text-[12.5px] font-bold tracking-[0.5px] uppercase hover:bg-navy transition-all duration-200"
+                className="inline-flex items-center justify-center mt-12 lg:mt-16 h-[50px] px-7 bg-navy-deep text-white text-[12.5px] font-bold tracking-[0.5px] uppercase hover:bg-navy transition-all duration-200"
               >
                 SUPPORT THE COMMUNITY
               </Link>
