@@ -60,7 +60,7 @@ export default function CoreFocusSection() {
                 className={`absolute -top-14 -right-14 w-[180px] h-[180px] rounded-full ${card.blobColor} pointer-events-none z-0`}
               />
               <div className="relative z-10">
-                <h3 className="text-[18px] sm:text-[19.5px] lg:text-[20px] font-black text-[#0B1428] mb-3.5 leading-snug pr-8">
+                <h3 className="text-[17.5px] sm:text-[18.5px] lg:text-[19px] font-bold text-[#0B1428] mb-3 leading-snug pr-8">
                   {card.title}
                 </h3>
                 <p className="text-[14px] sm:text-[15px] text-slate-500 font-medium leading-relaxed">
