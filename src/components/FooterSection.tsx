@@ -241,7 +241,7 @@ export default function FooterSection() {
                 Open Source Connect India 2026
               </h2>
               <p className="text-[15px] text-[#A5B4FC] leading-relaxed max-w-[620px] mb-4">
-                Join us for our annual gathering of maintainers, contributors, and industry leaders. September 1-31, 2026 in San Francisco.
+                Join us for our annual gathering of maintainers, contributors, and industry leaders. September 1-30, 2026 in San Francisco.
               </p>
               <div className="flex gap-6 text-[13px] text-[#A5B4FC]">
                 <span className="flex items-center gap-2">
