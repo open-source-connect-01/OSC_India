@@ -23,7 +23,9 @@ export default function BecomeCommunityLeaderSection() {
           {/* Action Buttons */}
           <div className="flex flex-col sm:flex-row items-center justify-center gap-4">
             <Link
-              href="#"
+              href="https://docs.google.com/forms/d/e/1FAIpQLSeKiFy7Kln9sqewJzBpD71EzQC31nleg4lybqyEBoOSwWdX3A/viewform?usp=header"
+              target="_blank"
+              rel="noopener noreferrer"
               className="inline-flex items-center justify-center h-[46px] px-8 bg-[#0B0F1A] text-white text-[11px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] shadow-sm hover:bg-slate-800 transition-colors w-full sm:w-auto"
             >
               BECOME A SPEAKER
