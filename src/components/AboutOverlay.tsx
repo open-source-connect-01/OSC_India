@@ -1,7 +1,6 @@
 "use client";
 
 import { useState } from "react";
-import { useRouter } from "next/navigation";
 import Link from "next/link";
 import Image from "next/image";
 import ResearchLeadershipSection from "./ResearchLeadershipSection";
@@ -105,7 +104,6 @@ function SpeakerIcon() {
 }
 
 export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
-  const router = useRouter();
   const [subview, setSubview] = useState<SubView>("main");
   const [selectedProfile, setSelectedProfile] = useState<ProfileData | null>(null);
   const [prevIsOpen, setPrevIsOpen] = useState(isOpen);
@@ -220,9 +218,10 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                         </div>
 
                         {/* Mentors & Speakers */}
-                        <div
+                        <Link
+                          href="/speakers-and-mentors"
                           className="group cursor-pointer flex items-start gap-4"
-                          onClick={() => { onClose(); router.push("/speakers-and-mentors"); }}
+                          onClick={onClose}
                         >
                           <SpeakerIcon />
                           <div>
@@ -234,7 +233,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                               community.
                             </p>
                           </div>
-                        </div>
+                        </Link>
                       </div>
                     </div>
                   </div>
