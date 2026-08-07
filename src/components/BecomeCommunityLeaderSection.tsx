@@ -30,10 +30,10 @@ export default function BecomeCommunityLeaderSection() {
             </Link>
 
             <Link
-              href="/events"
+              href="/mentors&speakers"
               className="inline-flex items-center justify-center h-[46px] px-8 bg-white text-[#0B0F1A] border border-slate-300 text-[11px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] hover:bg-slate-50 transition-colors w-full sm:w-auto"
             >
-              VIEW ALL SPEKERS
+              VIEW ALL SPEAKERS
             </Link>
           </div>
         </div>
