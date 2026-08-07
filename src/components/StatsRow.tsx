@@ -35,7 +35,7 @@ const stats = [
 
 const missionCards = [
   {
-    iconColor: "bg-accent-orange",
+    iconColor: "bg-[#F59E0B]",
     title: "SUSTAINABLE OPEN ECOSYSTEMS",
     desc: "We support projects beyond initial contributions by providing mentorship, community engagement frameworks, and long-term visibility.",
   },
@@ -45,7 +45,7 @@ const missionCards = [
     desc: "We encourage ethical contribution practices, clear documentation standards, and respect for intellectual ownership.",
   },
   {
-    iconColor: "bg-accent-teal",
+    iconColor: "bg-[#16A34A]",
     title: "TRANSPARENT GOVERNANCE",
     desc: "Openness is at the core of everything we do. Decision-making processes, community guidelines, and leadership structures are clearly defined and accessible.",
   },
@@ -54,19 +54,19 @@ const missionCards = [
 export function StatsNumbersRow({ className = "" }: { className?: string }) {
   return (
     <section className={`w-full ${className}`}>
-      <div className="max-w-[1360px] mx-auto px-6 sm:px-8 lg:px-12 py-8 sm:py-10 lg:py-12">
-        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-12">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-10 pt-6 sm:pt-8 pb-8 sm:pb-12">
+        <div className="grid grid-cols-2 lg:grid-cols-4 gap-6 sm:gap-8 lg:gap-10">
           {stats.map((stat) => (
             <div key={stat.label} className="text-center">
-              <div className="text-[40px] sm:text-[50px] lg:text-[62px] xl:text-[70px] font-extrabold text-[#0B0F1A] leading-none mb-1.5">
+              <div className="text-[36px] sm:text-[44px] lg:text-[50px] font-extrabold text-[#0B0F1A] leading-none mb-1.5">
                 <AnimatedCounter value={stat.numericValue} suffix={stat.suffix} />
               </div>
               <div
-                className={`text-[13.5px] sm:text-[14.5px] lg:text-[15.5px] font-extrabold tracking-[0.1em] uppercase mb-0.5 ${stat.labelColor}`}
+                className={`text-[12px] sm:text-[13px] font-extrabold tracking-[0.12em] uppercase mb-0.5 ${stat.labelColor}`}
               >
                 {stat.label}
               </div>
-              <div className="text-[13.5px] sm:text-[14.5px] lg:text-[15.5px] text-gray-500 font-medium">
+              <div className="text-[12px] sm:text-[13px] text-[#64748B] font-medium">
                 {stat.sublabel}
               </div>
             </div>
@@ -79,43 +79,26 @@ export function StatsNumbersRow({ className = "" }: { className?: string }) {
 
 export function OurMissionSection() {
   return (
-    <section className="w-full bg-white border-t border-gray-100">
-      <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-14 lg:py-20">
+    <section className="w-full bg-white border-t border-gray-100 py-14 lg:py-20">
+      <div className="max-w-[1240px] mx-auto px-6 sm:px-8 lg:px-12">
         {/* Heading */}
-        <div className="mb-8 lg:mb-12">
-          {/* Mobile Title */}
-          <div className="sm:hidden mb-4">
-            <h2 className="text-[28px] font-extrabold text-[#0B0F1A] tracking-tight">
-              OurMission
-            </h2>
-            <div className="w-[50px] h-[3.5px] bg-[#F59E0B] mt-1" />
-          </div>
-
-          {/* Desktop Title */}
-          <div className="hidden sm:block mb-5">
-            <h2 className="text-[32px] lg:text-[42px] font-extrabold text-[#0B0F1A] leading-tight">
+        <div className="mb-10 lg:mb-12">
+          <div className="mb-6">
+            <h2 className="text-[32px] sm:text-[38px] lg:text-[42px] font-black text-[#0B1428] leading-tight tracking-tight">
               Our Mission
             </h2>
-            <div className="w-[60px] h-[4px] bg-accent-orange mt-2" />
+            {/* Orange bar under "Our" */}
+            <div className="w-[60px] h-[4px] bg-[#F59E0B] mt-2.5" />
           </div>
 
-          {/* Mobile Paragraph */}
-          <p className="sm:hidden text-sm leading-relaxed text-slate-600 font-medium max-w-[480px]">
-            Open Source Connect exists to strengthen the open-source ecosystem
-            by bringing together developers, students, startups, and
-            organizations to collaborate openly and build solutions that create
-            real-world impact.
-          </p>
-
-          {/* Desktop Paragraphs */}
-          <div className="hidden sm:block space-y-4">
-            <p className="max-w-[720px] text-base lg:text-[17px] leading-relaxed text-slate-600 font-medium">
-              We are a community of communities, bringing together developers,
-              organizations, and innovators from around the globe to share
-              knowledge, collaborate openly, and build solutions having
+          <div className="space-y-4 max-w-[840px]">
+            <p className="text-base sm:text-lg lg:text-[17px] leading-relaxed text-slate-500 font-medium">
+              Open Source Connect exists to strengthen the open-source ecosystem
+              by bringing together developers, students, startups, and
+              organizations to collaborate openly and build solutions that create
               real-world impact.
             </p>
-            <p className="max-w-[720px] text-base lg:text-[17px] leading-relaxed text-slate-600 font-medium">
+            <p className="text-base sm:text-lg lg:text-[17px] leading-relaxed text-slate-500 font-medium">
               We are building a structured, transparent, and community-driven
               platform where innovation is supported, contributors are respected,
               and projects are nurtured from idea to long-term sustainability.
@@ -128,18 +111,19 @@ export function OurMissionSection() {
           {missionCards.map((card) => (
             <div
               key={card.title}
-              className="bg-white border border-gray-200 p-7 lg:p-8"
+              className="bg-white border border-gray-200/90 p-7 lg:p-8 rounded-[2px]"
             >
-              <div className="relative w-7 h-7 mb-5">
-                {/* Hard offset shadow block */}
-                <div className="absolute top-1 left-1 w-7 h-7 bg-[#E2E8F0] rounded-[2px] z-0" />
+              {/* Colored box with bottom-right offset shadow */}
+              <div className="relative w-7 h-7 mb-6">
+                {/* Hard offset shadow block peeking out at bottom-right */}
+                <div className="absolute top-1.5 left-1.5 w-full h-full bg-[#E2E8F0] rounded-[2px] z-0" />
                 {/* Solid color square badge */}
-                <div className={`relative z-10 w-7 h-7 rounded-[2px] ${card.iconColor}`} />
+                <div className={`relative z-10 w-full h-full rounded-[2px] ${card.iconColor}`} />
               </div>
-              <h3 className="text-[14px] lg:text-[15px] font-bold tracking-[0.04em] text-[#0B0F1A] uppercase mb-3">
+              <h3 className="text-[14px] lg:text-[15px] font-black tracking-[0.03em] text-[#0B1428] uppercase mb-3">
                 {card.title}
               </h3>
-              <p className="text-[14px] lg:text-[14.5px] text-slate-600 leading-relaxed">
+              <p className="text-[13.5px] lg:text-[14.5px] text-slate-500 leading-relaxed font-medium">
                 {card.desc}
               </p>
             </div>

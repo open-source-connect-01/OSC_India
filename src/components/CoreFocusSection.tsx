@@ -1,78 +1,76 @@
+"use client";
+
 const focusCards = [
   {
-    blobColor: "bg-blue-300/40",
-    title: "Sustainable Open Source Ecosystems",
-    desc: "Building resilient foundations for projects to thrive long-term, ensuring stability and continuous evolution.",
+    blobColor: "bg-[#E3F2FD]", // Soft Ice Blue
+    title: "Sustainable Open Source Infrastructure",
+    desc: "Establishing strong governance, clear standards, and long-term stewardship to ensure project stability and scalable growth.",
   },
   {
-    blobColor: "bg-green-300/40",
-    title: "From Builders to Maintainers",
-    desc: "Empowering developers to transition from casual contributors to project leaders and maintainers.",
+    blobColor: "bg-[#E8F5E9]", // Soft Mint Green
+    title: "Leadership and Maintainer Development",
+    desc: "Supporting contributors in evolving into maintainers and ecosystem leaders through structured mentorship and technical excellence.",
   },
   {
-    blobColor: "bg-yellow-300/40",
-    title: "Open Source with Impact",
-    desc: "Focusing on projects that solve real-world problems and drive tangible social and economic change.",
+    blobColor: "bg-[#FFF8E1]", // Soft Yellow
+    title: "Open Innovation with Impact",
+    desc: "Supporting projects that address practical industry and societal challenges across emerging technologies.",
   },
   {
-    blobColor: "bg-purple-300/40",
-    title: "Global Collaboration, Local Leadership",
-    desc: "Connecting global expertise while fostering strong local communities to drive adoption and innovation.",
+    blobColor: "bg-[#F3E5F5]", // Soft Lavender
+    title: "Global Collaboration and Regional Chapters",
+    desc: "Connecting international expertise with strong local communities to accelerate adoption and innovation.",
   },
   {
-    blobColor: "bg-pink-300/40",
-    title: "Responsible Open Innovation",
-    desc: "Promoting ethical practices, security, and inclusive governance in all open source endeavors.",
+    blobColor: "bg-[#FCE4EC]", // Soft Rose Pink
+    title: "Responsible and Secure Innovation",
+    desc: "Promoting ethical development, cybersecurity best practices, and transparent community governance.",
   },
   {
-    blobColor: "bg-orange-300/40",
-    title: "Responsible Open Innovation",
-    desc: "Promoting ethical practices, security, and inclusive governance in all open source endeavors.",
+    blobColor: "bg-[#FFEBEE]", // Soft Coral/Peach
+    title: "Industry and Academic Partnerships",
+    desc: "Bridging open source communities with enterprises, startups, and universities to accelerate research, adoption, and deployment.",
   },
 ];
 
 export default function CoreFocusSection() {
   return (
-    <>
-      {/* ===== OUR CORE FOCUS ===== */}
-      <section className="w-full bg-white">
-        <div className="max-w-[1240px] mx-auto pl-6 lg:pl-8 pr-12 lg:pr-14 py-16 lg:py-20">
-          {/* Heading */}
-          <div className="mb-10">
-            <h2 className="text-[32px] lg:text-[40px] font-extrabold text-navy-deep leading-tight">
-              Our Core Focus
-            </h2>
-            <div className="w-[60px] h-[4px] bg-accent-teal mt-2 mb-5" />
-            <p className="max-w-[600px] text-base text-slate-600 font-medium leading-relaxed">
-              Driving the future of open innovation through five strategic pillars.
-            </p>
-          </div>
+    <section className="w-full bg-white border-t border-gray-100 py-16 lg:py-20">
+      <div className="max-w-[1280px] mx-auto px-6 sm:px-8 lg:px-12">
+        {/* Heading */}
+        <div className="mb-10 lg:mb-12">
+          <h2 className="text-[32px] sm:text-[38px] lg:text-[42px] font-black text-[#0B1428] leading-tight tracking-tight">
+            Our Core Focus
+          </h2>
+          <div className="w-[60px] h-[4px] bg-[#14B8A6] mt-2.5 mb-5" />
+          <p className="max-w-[620px] text-base sm:text-lg text-slate-500 font-medium leading-relaxed">
+            Driving the future of open innovation through six strategic pillars.
+          </p>
+        </div>
 
-          {/* 3×2 Grid of focus cards */}
-          <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5">
-            {focusCards.map((card, i) => (
+        {/* 3×2 Grid of focus cards */}
+        <div className="grid sm:grid-cols-2 lg:grid-cols-3 gap-5 sm:gap-6">
+          {focusCards.map((card, i) => (
+            <div
+              key={i}
+              className="relative bg-white border border-[#E2E8F0] rounded-[2px] p-6 sm:p-7 overflow-hidden flex flex-col justify-between h-full min-h-[175px] sm:min-h-[190px] shadow-[0_1px_3px_rgba(0,0,0,0.02)] hover:border-slate-300 transition-colors"
+            >
+              {/* Distinct soft pastel corner quarter-circle arc */}
               <div
-                key={i}
-                className="relative bg-white border border-gray-200 pt-3 pb-5 pl-5 pr-5 overflow-hidden"
-              >
-                {/* Large decorative blob in top-right corner, cropped at card edge */}
-                <div
-                  className={`absolute -top-8 -right-8 w-[100px] h-[100px] rounded-full ${card.blobColor}`}
-                  style={{ borderRadius: "40% 60% 30% 70% / 50% 40% 60% 50%" }}
-                />
-                <h3 className="text-[15px] font-bold text-navy-deep mt-3 mb-2 leading-snug relative z-10">
+                className={`absolute -top-12 -right-10 w-[130px] h-[130px] rounded-full ${card.blobColor} pointer-events-none z-0`}
+              />
+              <div className="relative z-10">
+                <h3 className="text-[16px] sm:text-[17px] font-bold text-[#0B1428] mb-2.5 leading-snug pr-6">
                   {card.title}
                 </h3>
-                <p className="text-[13.5px] text-slate-600 leading-relaxed relative z-10">
+                <p className="text-[13px] sm:text-[13.5px] text-slate-500 font-medium leading-relaxed">
                   {card.desc}
                 </p>
               </div>
-            ))}
-          </div>
+            </div>
+          ))}
         </div>
-      </section>
-
-
-    </>
+      </div>
+    </section>
   );
 }
