@@ -11,21 +11,21 @@ const personColors: Record<
     photo: string;
   }
 > = {
-  "Dr. Sarah Chen": {
+  "Jennifer Wilson": {
     badge: "bg-[#2563EB]",
     pillBg: "bg-[#EFF6FF]",
     pillText: "text-[#2563EB]",
     bulletColor: "bg-[#2563EB]",
     photo: "/spotlight/sarah_chen.jpg",
   },
-  "Marcus Johnson": {
+  "Rahul Sharma": {
     badge: "bg-[#10B981]",
     pillBg: "bg-[#ECFDF5]",
     pillText: "text-[#059669]",
     bulletColor: "bg-[#10B981]",
     photo: "/spotlight/marcus_johnson.jpg",
   },
-  "Elena Rodriguez": {
+  "Sophia Martinez": {
     badge: "bg-[#F59E0B]",
     pillBg: "bg-[#FFFBEB]",
     pillText: "text-[#D97706]",
@@ -41,45 +41,53 @@ const personColors: Record<
   },
 };
 
+const defaultPersonColors = {
+  badge: "bg-[#2563EB]",
+  pillBg: "bg-[#EFF6FF]",
+  pillText: "text-[#2563EB]",
+  bulletColor: "bg-[#2563EB]",
+  photo: "/spotlight/sarah_chen.jpg",
+};
+
 const spotlightCards = [
   {
-    name: "Dr. Sarah Chen",
-    role: "Chief Technology Officer",
-    org: "CloudNative Foundation",
-    specialty: "Cloud Architecture & DevOps",
+    name: "Jennifer Wilson",
+    role: "Senior Engineering Manager",
+    org: "Atlassian",
+    specialty: "Developer Experience",
     highlights: [
-      "Keynote Speaker at OSS Summit 2026",
-      "Maintainer of 10+ major projects",
+      "Creator of internal developer platforms",
+      "Community mentor and conference speaker",
     ],
   },
   {
-    name: "Marcus Johnson",
-    role: "Principal Engineer",
-    org: "Open Source Labs",
-    specialty: "Distributed Systems & Security",
+    name: "Rahul Sharma",
+    role: "Software Engineer",
+    org: "Meta",
+    specialty: "Distributed Systems",
     highlights: [
-      "Keynote Speaker at OSS Summit 2026",
-      "Maintainer of 10+ major projects",
+      "Open source maintainer",
+      "Speaker at developer conferences",
     ],
   },
   {
-    name: "Elena Rodriguez",
-    role: "VP of Engineering",
-    org: "TechVentures Inc",
-    specialty: "AI/ML & Open Innovation",
+    name: "Sophia Martinez",
+    role: "Engineering Manager",
+    org: "AWS",
+    specialty: "Serverless & DevOps",
     highlights: [
-      "Keynote Speaker at OSS Summit 2026",
-      "Maintainer of 10+ major projects",
+      "Leads cloud architecture workshops globally",
+      "Open source contributor and technical mentor",
     ],
   },
   {
-    name: "James Park",
-    role: "Lead Developer Advocate",
-    org: "Global Tech Alliance",
-    specialty: "Developer Relations & Community",
+    name: "Aarav Mehta",
+    role: "Senior Staff Engineer",
+    org: "Google",
+    specialty: "Cloud Infrastructure & Kubernetes",
     highlights: [
-      "Keynote Speaker at OSS Summit 2026",
-      "Maintainer of 10+ major projects",
+      "CNCF Ambassador and open source contributor",
+      "Speaker on Cloud Native and Platform Engineering",
     ],
   },
 ];
@@ -225,7 +233,7 @@ export default function CommunitySpotlightSection() {
         {/* Mobile Cards View (Matching Mobile Screenshot) */}
         <div className="sm:hidden space-y-4 mt-6">
           {spotlightCards.map((person) => {
-            const colors = personColors[person.name];
+            const colors = personColors[person.name] ?? defaultPersonColors;
             return (
               <div
                 key={person.name}
@@ -283,7 +291,7 @@ export default function CommunitySpotlightSection() {
         {/* Desktop Cards Grid */}
         <div className="hidden sm:grid grid-cols-1 md:grid-cols-2 gap-6 lg:gap-8 mt-10">
           {spotlightCards.map((person) => {
-            const colors = personColors[person.name];
+            const colors = personColors[person.name] ?? defaultPersonColors;
             return (
               <div
                 key={person.name}

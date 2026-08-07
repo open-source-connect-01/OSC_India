@@ -13,7 +13,7 @@ export default function HeroSection() {
             <div className="inline-flex items-center gap-2.5 border border-blue-200/90 bg-blue-50/50 rounded-full px-4 py-1.5 mb-6 sm:mb-7">
               <span className="w-2 h-2 rounded-full bg-[#2563EB] shrink-0" />
               <span className="text-[10px] sm:text-[11.5px] lg:text-[12px] font-extrabold tracking-[0.14em] text-[#2563EB] uppercase">
-                GOVERNANCE UPDATE: CHARTER V2.4 APPROVED
+                OPEN SOURCE FOR EVERYONE
               </span>
             </div>
 
@@ -40,9 +40,7 @@ export default function HeroSection() {
 
             {/* Subheading Description */}
             <p className="text-base sm:text-xl lg:text-[20px] xl:text-[21px] text-slate-600 font-medium max-w-[660px] leading-relaxed mb-8 sm:mb-10">
-              Open Source Connect (OSC) provides governance, financial stewardship,
-              and collaborative infrastructure to ensure long-term sustainability of
-              high-impact open-source technologies worldwide.
+              Open Source Connect (OSC) provides community infrastructure, operational support, educational programs, and collaboration opportunities to help open source projects, contributors, and organizations grow sustainably.
             </p>
 
             {/* Mobile CoreFocusCard */}

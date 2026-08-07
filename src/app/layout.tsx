@@ -19,7 +19,7 @@ const playfair = Playfair_Display({
 export const metadata: Metadata = {
   title: "Open Source Connect | Connecting The World Through Open Source",
   description:
-    "Open Source Connect (OSC) provides governance, financial stewardship, and collaborative infrastructure to ensure long-term sustainability of high-impact open-source technologies worldwide.",
+    "Open Source Connect (OSC) provides community infrastructure, operational support, educational programs, and collaboration opportunities to help open source projects, contributors, and organizations grow sustainably.",
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
