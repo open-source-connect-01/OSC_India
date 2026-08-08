@@ -194,7 +194,7 @@ export default function FooterSection() {
               </h3>
 
               <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed mb-6 max-w-[280px] relative z-10">
-                Join thousands of students, contributors, maintainers, and industry professionals building the future of open source.
+                Join us for our annual gathering of maintainers, contributors, and industry leaders. September 1-31, 2026 in San Francisco.
               </p>
 
               <div className="space-y-2 text-[10px] font-extrabold text-slate-400 uppercase tracking-[0.1em] mb-7 relative z-10">
@@ -241,8 +241,8 @@ export default function FooterSection() {
                 Open Source Connect India 2026
               </h2>
               <p className="text-[15px] text-[#A5B4FC] leading-relaxed max-w-[620px] mb-4">
-                  Join thousands of students, contributors, maintainers, and industry professionals building the future of open source.
-                </p>
+                Join us for our annual gathering of maintainers, contributors, and industry leaders. September 1-31, 2026 in San Francisco.
+              </p>
               <div className="flex gap-6 text-[13px] text-[#A5B4FC]">
                 <span className="flex items-center gap-2">
                   <svg width="16" height="16" viewBox="0 0 24 24" fill="none" stroke="currentColor" strokeWidth="2" className="shrink-0">
