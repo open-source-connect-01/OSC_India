@@ -298,3 +298,6 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
     </>
   );
 }
+
+
+

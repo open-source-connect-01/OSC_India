@@ -17,9 +17,49 @@ const playfair = Playfair_Display({
 });
 
 export const metadata: Metadata = {
-  title: "Open Source Connect | Connecting The World Through Open Source",
+  metadataBase: new URL(
+    process.env.NEXT_PUBLIC_SITE_URL || "https://opensourceconnect.in"
+  ),
+  title: {
+    default: "Open Source Connect | Connecting The World Through Open Source",
+    template: "%s | Open Source Connect",
+  },
   description:
     "Open Source Connect (OSC) provides community infrastructure, operational support, educational programs, and collaboration opportunities to help open source projects, contributors, and organizations grow sustainably.",
+  keywords: [
+    "Open Source",
+    "OSC",
+    "Open Source India",
+    "Open Source Community",
+    "Software Collaboration",
+    "Tech Community",
+    "Open Source Infrastructure",
+  ],
+  authors: [{ name: "Open Source Connect Team" }],
+  openGraph: {
+    title: "Open Source Connect | Connecting The World Through Open Source",
+    description:
+      "Open Source Connect (OSC) provides community infrastructure, operational support, educational programs, and collaboration opportunities to help open source projects, contributors, and organizations grow sustainably.",
+    url: "https://opensourceconnect.in",
+    siteName: "Open Source Connect (OSC)",
+    images: [
+      {
+        url: "/og-image.png",
+        width: 1200,
+        height: 630,
+        alt: "Open Source Connect - Connecting The World Through Open Source",
+      },
+    ],
+    locale: "en_US",
+    type: "website",
+  },
+  twitter: {
+    card: "summary_large_image",
+    title: "Open Source Connect | Connecting The World Through Open Source",
+    description:
+      "Open Source Connect (OSC) provides community infrastructure, operational support, educational programs, and collaboration opportunities to help open source projects, contributors, and organizations grow sustainably.",
+    images: ["/og-image.png"],
+  },
   icons: {
     icon: [
       { url: "/favicon.ico", sizes: "any" },
