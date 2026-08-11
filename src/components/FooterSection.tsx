@@ -283,7 +283,7 @@ export default function FooterSection({ hideTopSections = false }: FooterSection
       )}
 
       {/* ===== FOOTER ===== */}
-      <footer className="w-full bg-[#0B132B] text-gray-400">
+      <footer className="w-full bg-[#0B132B] text-gray-400 border-t-[3px] border-[#F59E0B]">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8 pt-12 sm:pt-14 pb-8">
           {/* Desktop Footer Grid */}
           <div className="hidden lg:grid grid-cols-4 gap-10 pb-10">

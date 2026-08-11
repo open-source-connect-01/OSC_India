@@ -320,16 +320,16 @@ export default function AboutOscPage() {
         </section>
 
         {/* ===== KEY STATS BAR ===== */}
-        <section className="w-full bg-[#090F1E] text-white py-10 sm:py-12 lg:py-14">
+        <section className="w-full bg-[#080E1E] text-white pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 lg:pb-28">
           <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
             {/* Exact 4-column bordered grid with thin vertical dividers */}
             <div className="border border-[#1E293B]/70 rounded-[2px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-[#1E293B]/70 bg-[#090F1E]">
               {statsItems.map((item) => (
                 <div
                   key={item.label}
-                  className="py-8 sm:py-9 lg:py-10 px-6 text-center flex flex-col items-center justify-center"
+                  className="py-10 sm:py-12 lg:py-14 px-6 text-center flex flex-col items-center justify-center"
                 >
-                  <div className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight text-white mb-2 leading-none">
+                  <div className="text-3xl sm:text-4xl lg:text-[46px] font-extrabold tracking-tight text-white mb-2 leading-none">
                     {item.stat}
                   </div>
                   <div className={`text-[10.5px] sm:text-[11px] font-extrabold tracking-[0.2em] uppercase ${item.tagColor} mb-1`}>
@@ -343,6 +343,9 @@ export default function AboutOscPage() {
             </div>
           </div>
         </section>
+
+        {/* ===== WHITE GAP BAND ===== */}
+        <div className="w-full bg-white h-20 sm:h-28 lg:h-36" />
       </main>
 
       {/* Footer */}
