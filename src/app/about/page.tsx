@@ -300,7 +300,11 @@ export default function AboutOscPage() {
                   }`}
                 >
                   {/* Year */}
-                  <div className="w-28 shrink-0 text-3xl sm:text-4xl font-extrabold text-[#2563EB] tracking-tight">
+                  <div
+                    className={`w-28 shrink-0 text-3xl sm:text-4xl font-extrabold tracking-tight ${
+                      item.year === "2026" ? "text-[#F2811D]" : "text-[#2563EB]"
+                    }`}
+                  >
                     {item.year}
                   </div>
 
