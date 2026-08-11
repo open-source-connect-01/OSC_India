@@ -167,7 +167,11 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
 
                       <div className="space-y-7">
                         {/* About the OSC */}
-                        <div className="group cursor-pointer flex items-start gap-4">
+                        <Link
+                          href="/about"
+                          className="group cursor-pointer flex items-start gap-4"
+                          onClick={onClose}
+                        >
                           <BuildingIcon />
                           <div>
                             <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
@@ -178,7 +182,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                               stronger open source ecosystem.
                             </p>
                           </div>
-                        </div>
+                        </Link>
 
                         {/* Meet the team */}
                         <div className="group cursor-pointer flex items-start gap-4">
