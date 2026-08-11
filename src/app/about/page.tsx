@@ -346,7 +346,7 @@ export default function AboutOscPage() {
       </main>
 
       {/* Footer */}
-      <FooterSection />
+      <FooterSection hideTopSections={true} />
     </div>
   );
 }

@@ -51,10 +51,16 @@ const footerLinks = [
   },
 ];
 
-export default function FooterSection() {
+interface FooterSectionProps {
+  hideTopSections?: boolean;
+}
+
+export default function FooterSection({ hideTopSections = false }: FooterSectionProps) {
   return (
     <>
-      {/* ===== MEMBERSHIP HERO ===== */}
+      {!hideTopSections && (
+        <>
+          {/* ===== MEMBERSHIP HERO ===== */}
       <section className="w-full bg-white">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-12 sm:py-16 lg:py-24">
           {/* Desktop Layout */}
@@ -273,6 +279,8 @@ export default function FooterSection() {
           </div>
         </div>
       </section>
+        </>
+      )}
 
       {/* ===== FOOTER ===== */}
       <footer className="w-full bg-[#0B132B] text-gray-400">
