@@ -383,8 +383,8 @@ export default function ResearchLeadershipSection({
                     className="h-8 w-auto object-contain brightness-0 invert mb-4"
                   />
                   <p className="text-[12px] text-slate-400 leading-relaxed max-w-[240px] mb-4">
-                    Providing the institutional framework for collaborative
-                    innovation and technical meritocracy.
+                    Bringing developers, communities, and organizations
+                    together to shape the future through open source.cc
                   </p>
                   {/* Social icons */}
                   <div className="flex items-center gap-3">
