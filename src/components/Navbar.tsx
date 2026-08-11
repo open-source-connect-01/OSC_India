@@ -27,9 +27,9 @@ const mobileAccordionData = [
     label: "ABOUT",
     subLinks: [
       { name: "About the OSC", key: "about" as ActiveOverlay },
-      { name: "Advisory Board", key: "about" as ActiveOverlay },
       { name: "Meet the team", key: "about" as ActiveOverlay },
-      { name: "Mentors & Speakers", key: "about" as ActiveOverlay },
+      { name: "Speakers & Mentors", key: "about" as ActiveOverlay },
+      { name: "Partners", key: "about" as ActiveOverlay },
     ],
   },
   {
