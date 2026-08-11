@@ -320,28 +320,26 @@ export default function AboutOscPage() {
         </section>
 
         {/* ===== KEY STATS BAR ===== */}
-        <section className="w-full bg-[#080E1E] text-white py-16 sm:py-20 lg:py-24">
+        <section className="w-full bg-[#090F1E] text-white py-10 sm:py-12 lg:py-14">
           <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
-            {/* Single outer outlined container matching exact screenshot */}
-            <div className="border border-slate-700/50 rounded-[2px] bg-[#0D162B] p-8 sm:p-12 lg:p-14">
-              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 text-center">
-                {statsItems.map((item) => (
-                  <div
-                    key={item.label}
-                    className="flex flex-col items-center justify-center"
-                  >
-                    <div className="text-4xl sm:text-5xl lg:text-[48px] font-extrabold tracking-tight text-white mb-2.5 leading-none">
-                      {item.stat}
-                    </div>
-                    <div className={`text-[11px] font-extrabold tracking-[0.2em] uppercase ${item.tagColor} mb-1`}>
-                      {item.label}
-                    </div>
-                    <div className="text-[12px] text-[#94A3B8] font-normal whitespace-nowrap">
-                      {item.sublabel}
-                    </div>
+            {/* Exact 4-column bordered grid with thin vertical dividers */}
+            <div className="border border-[#1E293B]/70 rounded-[2px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-[#1E293B]/70 bg-[#090F1E]">
+              {statsItems.map((item) => (
+                <div
+                  key={item.label}
+                  className="py-8 sm:py-9 lg:py-10 px-6 text-center flex flex-col items-center justify-center"
+                >
+                  <div className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight text-white mb-2 leading-none">
+                    {item.stat}
                   </div>
-                ))}
-              </div>
+                  <div className={`text-[10.5px] sm:text-[11px] font-extrabold tracking-[0.2em] uppercase ${item.tagColor} mb-1`}>
+                    {item.label}
+                  </div>
+                  <div className="text-[11.5px] text-[#94A3B8] font-normal whitespace-nowrap">
+                    {item.sublabel}
+                  </div>
+                </div>
+              ))}
             </div>
           </div>
         </section>
