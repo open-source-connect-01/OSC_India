@@ -163,8 +163,6 @@ export default function AboutOscPage() {
       <main className="flex-1">
         {/* ===== HERO BANNER ===== */}
         <section className="w-full bg-gradient-to-r from-[#091535] via-[#10286B] to-[#1E3A8A] text-white py-16 sm:py-20 lg:py-24 relative overflow-hidden">
-          {/* Subtle decorative grid background */}
-          <div className="absolute inset-0 bg-[radial-gradient(#3B82F6_1px,transparent_1px)] [background-size:24px_24px] opacity-15 pointer-events-none" />
 
           <div className="max-w-[1240px] mx-auto px-6 lg:px-8 relative z-10">
             {/* Breadcrumb */}
