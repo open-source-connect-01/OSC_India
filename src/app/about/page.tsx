@@ -183,7 +183,7 @@ export default function AboutOscPage() {
             </h1>
 
             {/* Subtitle */}
-            <p className="text-base sm:text-lg lg:text-[19px] text-slate-200 font-normal max-w-[720px] leading-relaxed">
+            <p className="text-base sm:text-lg lg:text-[19px] text-slate-300/85 font-normal max-w-[720px] leading-relaxed">
               We are a nonprofit foundation building the institutional infrastructure
               that empowers open source communities to thrive globally.
             </p>
