@@ -89,29 +89,25 @@ const statsItems = [
     stat: "400+",
     label: "PROJECTS",
     sublabel: "Hosted & Supported",
-    color: "text-white",
-    tagColor: "text-blue-400",
+    tagColor: "text-[#2563EB]",
   },
   {
     stat: "15K+",
     label: "CONTRIBUTORS",
     sublabel: "Active Developers",
-    color: "text-white",
-    tagColor: "text-emerald-400",
+    tagColor: "text-[#10B981]",
   },
   {
     stat: "300+",
     label: "MEMBERS",
     sublabel: "Global Organizations",
-    color: "text-white",
-    tagColor: "text-amber-400",
+    tagColor: "text-[#F97316]",
   },
   {
     stat: "20+",
     label: "COLLABORATIONS",
     sublabel: "Strategic Partnerships",
-    color: "text-white",
-    tagColor: "text-purple-400",
+    tagColor: "text-[#A855F7]",
   },
 ];
 
@@ -324,21 +320,21 @@ export default function AboutOscPage() {
         </section>
 
         {/* ===== KEY STATS BAR ===== */}
-        <section className="w-full bg-[#0B132B] text-white py-14 sm:py-16">
+        <section className="w-full bg-[#0B132B] text-white py-16 sm:py-20">
           <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
-            <div className="grid grid-cols-2 md:grid-cols-4 gap-6 sm:gap-8">
+            <div className="border border-[#1E293B] rounded-[2px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-[#1E293B] overflow-hidden bg-[#0F1935]/40">
               {statsItems.map((item) => (
                 <div
                   key={item.label}
-                  className="bg-[#131F42]/80 border border-slate-800/80 p-6 sm:p-7 rounded-[4px] text-center flex flex-col items-center justify-center"
+                  className="py-12 sm:py-14 px-6 text-center flex flex-col items-center justify-center hover:bg-[#132247]/30 transition-colors"
                 >
-                  <div className="text-3xl sm:text-4xl lg:text-[44px] font-extrabold tracking-tight text-white mb-2 leading-none">
+                  <div className="text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight text-white mb-3.5 leading-none">
                     {item.stat}
                   </div>
-                  <div className={`text-[10.5px] sm:text-[11px] font-bold tracking-[0.16em] uppercase ${item.tagColor} mb-1`}>
+                  <div className={`text-[11px] font-extrabold tracking-[0.18em] uppercase ${item.tagColor} mb-1.5`}>
                     {item.label}
                   </div>
-                  <div className="text-[11px] text-slate-400 font-medium">
+                  <div className="text-[12px] text-slate-400 font-medium whitespace-nowrap">
                     {item.sublabel}
                   </div>
                 </div>
