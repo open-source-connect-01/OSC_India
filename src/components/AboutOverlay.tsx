@@ -82,7 +82,7 @@ function BadgeIcon() {
   );
 }
 
-function SpeakerIcon() {
+function PartnersIcon() {
   return (
     <svg
       width="22"
@@ -97,8 +97,8 @@ function SpeakerIcon() {
     >
       <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
       <circle cx="9" cy="7" r="4" />
-      <path d="M22 21v-2a4 4 0 0 0-3-3.87" />
-      <path d="M16 3.13a4 4 0 0 1 0 7.75" />
+      <path d="M19 11a4 4 0 0 0 0-6" />
+      <path d="M22 13a8 8 0 0 0 0-10" />
     </svg>
   );
 }
@@ -174,22 +174,22 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                               About the OSC
                             </h4>
                             <p className="text-xs text-gray-500 mt-1 leading-snug">
-                              Our mission, vision, and core values driving open
-                              source excellence.
+                              Our mission, vision, and values shaping a
+                              stronger open source ecosystem.
                             </p>
                           </div>
                         </div>
 
-                        {/* Advisory Board */}
+                        {/* Meet the team */}
                         <div className="group cursor-pointer flex items-start gap-4">
                           <SlidersIcon />
                           <div>
                             <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                              Advisory Board
+                              Meet the team
                             </h4>
                             <p className="text-xs text-gray-500 mt-1 leading-snug">
-                              Meet the industry leaders shaping our strategic
-                              direction.
+                              Meet the people building programs,
+                              communities, and opportunities at OSC.
                             </p>
                           </div>
                         </div>
@@ -203,37 +203,37 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                       </h3>
 
                       <div className="space-y-7">
-                        {/* Meet the Team */}
-                        <div className="group cursor-pointer flex items-start gap-4">
-                          <BadgeIcon />
-                          <div>
-                            <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                              Meet the Team
-                            </h4>
-                            <p className="text-xs text-gray-500 mt-1 leading-snug">
-                              The dedicated individuals working behind the
-                              scenes.
-                            </p>
-                          </div>
-                        </div>
-
-                        {/* Mentors & Speakers */}
+                        {/* Speakers & Mentors */}
                         <Link
                           href="/speakers-and-mentors"
                           className="group cursor-pointer flex items-start gap-4"
                           onClick={onClose}
                         >
-                          <SpeakerIcon />
+                          <BadgeIcon />
                           <div>
                             <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                              Mentors &amp; Speakers
+                              Speakers &amp; Mentors
                             </h4>
                             <p className="text-xs text-gray-500 mt-1 leading-snug">
-                              Expert contributors sharing knowledge with the
-                              community.
+                              Industry leaders sharing knowledge, experience,
+                              and insights with our community.
                             </p>
                           </div>
                         </Link>
+
+                        {/* Partners */}
+                        <div className="group cursor-pointer flex items-start gap-4">
+                          <PartnersIcon />
+                          <div>
+                            <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
+                              Partners
+                            </h4>
+                            <p className="text-xs text-gray-500 mt-1 leading-snug">
+                              Organizations and communities working
+                              with us to strengthen open source.
+                            </p>
+                          </div>
+                        </div>
                       </div>
                     </div>
                   </div>
