@@ -320,25 +320,28 @@ export default function AboutOscPage() {
         </section>
 
         {/* ===== KEY STATS BAR ===== */}
-        <section className="w-full bg-[#0B132B] text-white py-16 sm:py-20">
+        <section className="w-full bg-[#080E1E] text-white py-16 sm:py-20 lg:py-24">
           <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
-            <div className="border border-[#1E293B] rounded-[2px] grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 divide-y sm:divide-y-0 lg:divide-x divide-[#1E293B] overflow-hidden bg-[#0F1935]/40">
-              {statsItems.map((item) => (
-                <div
-                  key={item.label}
-                  className="py-12 sm:py-14 px-6 text-center flex flex-col items-center justify-center hover:bg-[#132247]/30 transition-colors"
-                >
-                  <div className="text-4xl sm:text-5xl lg:text-[52px] font-extrabold tracking-tight text-white mb-3.5 leading-none">
-                    {item.stat}
+            {/* Single outer outlined container matching exact screenshot */}
+            <div className="border border-slate-700/50 rounded-[2px] bg-[#0D162B] p-8 sm:p-12 lg:p-14">
+              <div className="grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-4 gap-8 lg:gap-6 text-center">
+                {statsItems.map((item) => (
+                  <div
+                    key={item.label}
+                    className="flex flex-col items-center justify-center"
+                  >
+                    <div className="text-4xl sm:text-5xl lg:text-[48px] font-extrabold tracking-tight text-white mb-2.5 leading-none">
+                      {item.stat}
+                    </div>
+                    <div className={`text-[11px] font-extrabold tracking-[0.2em] uppercase ${item.tagColor} mb-1`}>
+                      {item.label}
+                    </div>
+                    <div className="text-[12px] text-[#94A3B8] font-normal whitespace-nowrap">
+                      {item.sublabel}
+                    </div>
                   </div>
-                  <div className={`text-[11px] font-extrabold tracking-[0.18em] uppercase ${item.tagColor} mb-1.5`}>
-                    {item.label}
-                  </div>
-                  <div className="text-[12px] text-slate-400 font-medium whitespace-nowrap">
-                    {item.sublabel}
-                  </div>
-                </div>
-              ))}
+                ))}
+              </div>
             </div>
           </div>
         </section>
