@@ -45,7 +45,7 @@ export default function SpeakersAndMentorsPage() {
         />
       </main>
 
-      <FooterSection />
+      <FooterSection hideTopSections={true} />
 
       {/* Profile Modal */}
       <ProfileModal
