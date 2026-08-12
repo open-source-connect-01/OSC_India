@@ -1,6 +1,6 @@
 "use client";
 
-import { useState, useEffect } from "react";
+import { useState, useEffect, useCallback } from "react";
 import Link from "next/link";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
@@ -28,30 +28,40 @@ export default function PrivacyPolicyPage() {
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [activeSection, setActiveSection] = useState<string>("introduction");
 
+  const updateActiveSection = useCallback(() => {
+    const scrollPosition = window.scrollY + 160;
+    let currentId = contentsList[0].id;
+    for (let i = 0; i < contentsList.length; i++) {
+      const el = document.getElementById(contentsList[i].id);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if (scrollPosition >= top) {
+          currentId = contentsList[i].id;
+        }
+      }
+    }
+    setActiveSection(currentId);
+  }, []);
+
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
 
-    const observer = new IntersectionObserver(
-      (entries) => {
-        entries.forEach((entry) => {
-          if (entry.isIntersecting) {
-            setActiveSection(entry.target.id);
-          }
+    let running = false;
+    const onScroll = () => {
+      if (!running) {
+        window.requestAnimationFrame(() => {
+          updateActiveSection();
+          running = false;
         });
-      },
-      {
-        rootMargin: "-15% 0px -55% 0px",
-        threshold: 0,
+        running = true;
       }
-    );
+    };
 
-    contentsList.forEach((item) => {
-      const el = document.getElementById(item.id);
-      if (el) observer.observe(el);
-    });
+    window.addEventListener("scroll", onScroll, { passive: true });
+    updateActiveSection();
 
-    return () => observer.disconnect();
-  }, []);
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [updateActiveSection]);
 
   const handleNavClick = (label: ActiveOverlay) => {
     if (label && label !== "events") {
@@ -144,20 +154,26 @@ export default function PrivacyPolicyPage() {
                 <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-4">
                   CONTENTS
                 </h3>
-                <nav className="border-l border-gray-200 pl-4 space-y-3.5 text-xs">
-                  {contentsList.map((item) => (
-                    <button
-                      key={item.id}
-                      onClick={() => scrollToSection(item.id)}
-                      className={`block text-left w-full transition-all duration-200 ${
-                        activeSection === item.id
-                          ? "text-[#2563EB] font-bold -ml-[17px] border-l-2 border-[#2563EB] pl-[15px]"
-                          : "text-gray-500 hover:text-gray-900 font-normal"
-                      }`}
-                    >
-                      {item.label}
-                    </button>
-                  ))}
+                <nav className="relative border-l border-gray-200 pl-4 space-y-3.5 text-xs">
+                  {contentsList.map((item) => {
+                    const isActive = activeSection === item.id;
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className={`relative block text-left w-full transition-colors duration-200 py-0.5 ${
+                          isActive
+                            ? "text-[#2563EB] font-bold"
+                            : "text-gray-500 hover:text-gray-900 font-medium"
+                        }`}
+                      >
+                        {isActive && (
+                          <span className="absolute -left-[17px] top-0 bottom-0 w-[2.5px] bg-[#2563EB] rounded-r-xs" />
+                        )}
+                        {item.label}
+                      </button>
+                    );
+                  })}
                 </nav>
               </aside>
 
