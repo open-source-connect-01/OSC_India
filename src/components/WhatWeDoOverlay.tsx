@@ -170,10 +170,10 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
                 </div>
               </div>
 
-              {/* --- Column 2: ADVANCED RESEARCH --- */}
+              {/* --- Column 2: RESEARCH & LEARNING --- */}
               <div className="pt-8 md:pt-0 md:pl-10 lg:pl-14">
                 <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
-                  ADVANCED RESEARCH
+                  RESEARCH &amp; LEARNING
                 </h3>
 
                 <div className="space-y-7">

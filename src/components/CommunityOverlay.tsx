@@ -96,9 +96,9 @@ export default function CommunityOverlay({ isOpen, onClose }: CommunityOverlayPr
       >
         <div className="w-full bg-white border-t border-gray-100">
           <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-10 lg:py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 gap-8 lg:gap-16">
+            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100 gap-y-8 md:gap-y-0">
               {/* --- Column 1: COMMUNITY ENGAGEMENT --- */}
-              <div>
+              <div className="md:pr-10 lg:pr-14">
                 <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
                   COMMUNITY ENGAGEMENT
                 </h3>
@@ -133,7 +133,7 @@ export default function CommunityOverlay({ isOpen, onClose }: CommunityOverlayPr
               </div>
 
               {/* --- Column 2: GOVERNANCE --- */}
-              <div>
+              <div className="pt-8 md:pt-0 md:pl-10 lg:pl-14">
                 <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
                   GOVERNANCE
                 </h3>
