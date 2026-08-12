@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 interface EventsOverlayProps {
   isOpen: boolean;
@@ -129,80 +130,83 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
         style={{ top: "64px", maxHeight: "calc(100vh - 64px)" }}
       >
         <div className="w-full bg-white border-t border-gray-100">
-          <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-10 lg:py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100 gap-y-8 md:gap-y-0">
-              {/* --- Column 1: BROWSE EVENTS --- */}
+          <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-12 lg:py-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100 gap-y-8 md:gap-y-0 min-h-[280px]">
+              {/* --- Column 1: FLAGSHIP EVENTS --- */}
               <div className="md:pr-10 lg:pr-14">
-                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
-                  BROWSE EVENTS
+                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-7">
+                  FLAGSHIP EVENTS
                 </h3>
 
-                <div className="space-y-7">
-                  {/* Upcoming Events */}
-                  <div className="group cursor-pointer flex items-center gap-4">
+                <div className="space-y-8">
+                  {/* Open Source Connect India */}
+                  <Link
+                    href="/events"
+                    onClick={onClose}
+                    className="group cursor-pointer flex items-start gap-4 block"
+                  >
                     <CalendarIcon />
-                    <div className="flex items-center gap-3">
-                      <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                        Upcoming Events
-                      </h4>
-                      <span className="inline-flex items-center px-2.5 py-0.5 rounded-full bg-[#EFF6FF] text-[10px] font-bold text-[#2563EB] uppercase tracking-wider">
-                        12 NEW
-                      </span>
+                    <div>
+                      <div className="flex items-center gap-2">
+                        <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
+                          Open Source Connect India
+                        </h4>
+                        <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 shrink-0" />
+                      </div>
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[340px]">
+                        A nationwide open source initiative bringing together students, developers, contributors, and industry leaders.
+                      </p>
                     </div>
-                  </div>
+                  </Link>
 
-                  {/* Ongoing Now */}
-                  <div className="group cursor-pointer flex items-center gap-4">
+                  {/* Open Source Connect Global */}
+                  <Link
+                    href="/events"
+                    onClick={onClose}
+                    className="group cursor-pointer flex items-start gap-4 block"
+                  >
                     <LiveSignalIcon />
-                    <div className="flex items-center gap-3">
-                      <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                        Ongoing Now
-                      </h4>
-                      <span className="w-2.5 h-2.5 rounded-full bg-emerald-500 animate-pulse" />
-                    </div>
-                  </div>
-
-                  {/* Past Events */}
-                  <div className="group cursor-pointer flex items-center gap-4">
-                    <HistoryClockIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                        Past Events
+                        Open Source Connect Global
                       </h4>
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[340px]">
+                        A global community initiative connecting contributors, maintainers, developers, and technology communities.
+                      </p>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
 
-              {/* --- Column 2: SPECIAL PROGRAMS --- */}
+              {/* --- Column 2: EVENT EXPERIENCES --- */}
               <div className="pt-8 md:pt-0 md:pl-10 lg:pl-14">
-                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
-                  SPECIAL PROGRAMS
+                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-7">
+                  EVENT EXPERIENCES
                 </h3>
 
-                <div className="space-y-7">
-                  {/* Global Hackathons */}
+                <div className="space-y-8">
+                  {/* Hackathons */}
                   <div className="group cursor-pointer flex items-start gap-4">
                     <HackathonCodeIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                        Global Hackathons
+                        Hackathons
                       </h4>
-                      <p className="text-xs text-gray-500 mt-1 leading-snug">
-                        Compete with top developers and build the future of open source.
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[340px]">
+                        Build innovative solutions, collaborate with developers, and compete in hands-on challenges.
                       </p>
                     </div>
                   </div>
 
-                  {/* Event Gallery */}
+                  {/* Workshops & Tech Talks */}
                   <div className="group cursor-pointer flex items-start gap-4">
                     <EventGalleryIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                        Event Gallery
+                        Workshops &amp; Tech Talks
                       </h4>
-                      <p className="text-xs text-gray-500 mt-1 leading-snug">
-                        Explore highlights, keynote recordings, and session photography.
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[340px]">
+                        Learn from engineers, founders, researchers, and industry experts through practical sessions.
                       </p>
                     </div>
                   </div>
@@ -223,7 +227,7 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
                 onClick={onClose}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-accent-blue hover:underline"
               >
-                <span>View Full Calendar</span>
+                <span>Event Gallery</span>
                 <svg
                   width="14"
                   height="14"

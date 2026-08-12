@@ -153,8 +153,8 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                       About OSC Foundation
                     </h3>
                     <p className="text-xs text-gray-500 leading-relaxed mt-1.5 max-w-[340px]">
-                      Learn more about our mission to democratize open source
-                      education and impact lives globally.
+                      Learn about our mission, values, and
+                      commitment to making open source more accessible.
                     </p>
                   </div>
 

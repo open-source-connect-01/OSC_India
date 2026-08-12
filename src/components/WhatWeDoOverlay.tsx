@@ -1,6 +1,7 @@
 "use client";
 
 import Link from "next/link";
+import Image from "next/image";
 
 interface WhatWeDoOverlayProps {
   isOpen: boolean;
@@ -129,15 +130,15 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
         style={{ top: "64px", maxHeight: "calc(100vh - 64px)" }}
       >
         <div className="w-full bg-white border-t border-gray-100">
-          <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-10 lg:py-12">
-            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100 gap-y-8 md:gap-y-0">
+          <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-12 lg:py-14">
+            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100 gap-y-8 md:gap-y-0 min-h-[280px]">
               {/* --- Column 1: CORE INITIATIVES --- */}
               <div className="md:pr-10 lg:pr-14">
-                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
+                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-7">
                   CORE INITIATIVES
                 </h3>
 
-                <div className="space-y-7">
+                <div className="space-y-8">
                   {/* Open Source Programs */}
                   <div className="group cursor-pointer flex items-center gap-4">
                     <CodeBracketsIcon />
@@ -170,13 +171,13 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
                 </div>
               </div>
 
-              {/* --- Column 2: ADVANCED RESEARCH --- */}
+              {/* --- Column 2: RESEARCH & LEARNING --- */}
               <div className="pt-8 md:pt-0 md:pl-10 lg:pl-14">
-                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-6">
-                  ADVANCED RESEARCH
+                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-7">
+                  RESEARCH &amp; LEARNING
                 </h3>
 
-                <div className="space-y-7">
+                <div className="space-y-8">
                   {/* AI & Research Initiatives */}
                   <div className="group cursor-pointer flex items-start gap-4">
                     <CpuIcon />
@@ -184,7 +185,7 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
                         AI &amp; Research Initiatives
                       </h4>
-                      <p className="text-xs text-gray-500 mt-1 leading-snug">
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[340px]">
                         Cutting-edge research in artificial intelligence and machine learning.
                       </p>
                     </div>
@@ -197,7 +198,7 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
                         Workshops &amp; Webinars
                       </h4>
-                      <p className="text-xs text-gray-500 mt-1 leading-snug">
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[340px]">
                         Interactive learning sessions led by industry experts and researchers.
                       </p>
                     </div>

@@ -48,24 +48,29 @@ function getAvatarColor(name: string): string {
 export default function ProfileModal({ profile, onClose }: ProfileModalProps) {
   // Lock body scroll when modal is open
   useEffect(() => {
-    if (profile) {
-      const scrollY = window.scrollY;
-      document.body.style.position = "fixed";
-      document.body.style.top = `-${scrollY}px`;
-      document.body.style.left = "0";
-      document.body.style.right = "0";
-      document.body.style.overflow = "hidden";
-      document.body.style.width = "100%";
-    } else {
-      const scrollY = parseInt(document.body.style.top || "0") * -1;
+    if (!profile) return;
+
+    const scrollY = window.scrollY;
+    document.body.style.position = "fixed";
+    document.body.style.top = `-${scrollY}px`;
+    document.body.style.left = "0";
+    document.body.style.right = "0";
+    document.body.style.overflow = "hidden";
+    document.body.style.width = "100%";
+
+    return () => {
+      const top = document.body.style.top;
+      const savedScrollY = parseInt(top || "0") * -1;
       document.body.style.position = "";
       document.body.style.top = "";
       document.body.style.left = "";
       document.body.style.right = "";
       document.body.style.overflow = "";
       document.body.style.width = "";
-      window.scrollTo(0, scrollY || 0);
-    }
+      if (savedScrollY) {
+        window.scrollTo(0, savedScrollY);
+      }
+    };
   }, [profile]);
 
   // Close on Escape key

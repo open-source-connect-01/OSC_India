@@ -16,10 +16,11 @@ const playfair = Playfair_Display({
   display: "swap",
 });
 
+const SITE_URL =
+  process.env.NEXT_PUBLIC_SITE_URL || "https://www.osconnect.org";
+
 export const metadata: Metadata = {
-  metadataBase: new URL(
-    process.env.NEXT_PUBLIC_SITE_URL || "https://opensourceconnect.in"
-  ),
+  metadataBase: new URL(SITE_URL),
   title: {
     default: "Open Source Connect | Connecting The World Through Open Source",
     template: "%s | Open Source Connect",
@@ -40,14 +41,15 @@ export const metadata: Metadata = {
     title: "Open Source Connect | Connecting The World Through Open Source",
     description:
       "Open Source Connect (OSC) provides community infrastructure, operational support, educational programs, and collaboration opportunities to help open source projects, contributors, and organizations grow sustainably.",
-    url: "https://opensourceconnect.in",
+    url: SITE_URL,
     siteName: "Open Source Connect (OSC)",
     images: [
       {
-        url: "/og-image.png",
-        width: 1200,
-        height: 630,
+        url: `${SITE_URL}/og-image.png`,
+        width: 1024,
+        height: 537,
         alt: "Open Source Connect - Connecting The World Through Open Source",
+        type: "image/png",
       },
     ],
     locale: "en_US",
@@ -55,10 +57,19 @@ export const metadata: Metadata = {
   },
   twitter: {
     card: "summary_large_image",
+    site: "@osconnect1",
+    creator: "@osconnect1",
     title: "Open Source Connect | Connecting The World Through Open Source",
     description:
       "Open Source Connect (OSC) provides community infrastructure, operational support, educational programs, and collaboration opportunities to help open source projects, contributors, and organizations grow sustainably.",
-    images: ["/og-image.png"],
+    images: [
+      {
+        url: `${SITE_URL}/og-image.png`,
+        width: 1024,
+        height: 537,
+        alt: "Open Source Connect - Connecting The World Through Open Source",
+      },
+    ],
   },
   icons: {
     icon: [

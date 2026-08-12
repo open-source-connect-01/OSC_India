@@ -1,6 +1,6 @@
 "use client";
 
-import { useState } from "react";
+import { useState, useEffect } from "react";
 import { useRouter } from "next/navigation";
 import Navbar from "@/components/Navbar";
 import ResearchLeadershipSection from "@/components/ResearchLeadershipSection";
@@ -13,6 +13,10 @@ export default function SpeakersAndMentorsPage() {
   const router = useRouter();
   const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
   const [selectedProfile, setSelectedProfile] = useState<ProfileData | null>(null);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+  }, []);
 
   const handleNavClick = (label: ActiveOverlay) => {
     setIsMobileMenuOpen(false);
@@ -41,7 +45,7 @@ export default function SpeakersAndMentorsPage() {
         />
       </main>
 
-      <FooterSection />
+      <FooterSection hideTopSections={true} />
 
       {/* Profile Modal */}
       <ProfileModal

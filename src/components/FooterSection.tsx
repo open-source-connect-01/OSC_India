@@ -83,18 +83,18 @@ export default function FooterSection({
                   <div className="flex gap-12 mt-12 lg:mt-16">
                     <div className="pl-4 border-l-[3px] border-accent-orange">
                       <div className="text-[28px] font-extrabold text-navy-deep leading-none">
-                        180+
+                        100K+
                       </div>
                       <div className="mt-1.5 text-[11px] font-bold tracking-[0.6px] text-gray-400 uppercase whitespace-nowrap">
-                        Global Members
+                        PEOPLE REACHED
                       </div>
                     </div>
                     <div className="pl-4 border-l-[3px] border-accent-blue">
                       <div className="text-[28px] font-extrabold text-navy-deep leading-none">
-                        24
+                        300+
                       </div>
                       <div className="mt-1.5 text-[11px] font-bold tracking-[0.6px] text-gray-400 uppercase whitespace-nowrap">
-                        Strategic Partners
+                        PROJECTS & INITIATIVES
                       </div>
                     </div>
                   </div>
@@ -198,7 +198,7 @@ export default function FooterSection({
                   <h3 className="text-[26px] sm:text-[28px] font-extrabold text-white mb-3 leading-[1.15] tracking-tight relative z-10">
                     Open Source
                     <br />
-                    Summit 2026
+                    Connect India 2026
                   </h3>
 
                   <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed mb-6 max-w-[280px] relative z-10">
@@ -666,7 +666,7 @@ export default function FooterSection({
             </div>
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               <Link
-                href="#"
+                href="/privacy-policy"
                 className="hover:text-slate-300 transition-colors whitespace-nowrap"
               >
                 PRIVACY POLICY
