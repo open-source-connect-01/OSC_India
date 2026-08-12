@@ -204,10 +204,7 @@ export default function ResearchLeadershipSection({
               Community Experts
             </h1>
             <p className="max-w-3xl text-sm sm:text-base text-gray-500 leading-relaxed mt-3">
-              Meet the industry experts and community leaders driving open
-              source research and innovation forward. Our leadership team brings
-              decades of experience in decentralized systems and collaborative
-              development.
+              Meet our speakers and mentors from leading technology companies who share their experience through technical talks, workshops, mentoring, and career guidance.
             </p>
           </div>
 
