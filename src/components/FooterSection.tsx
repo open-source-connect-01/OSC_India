@@ -198,7 +198,7 @@ export default function FooterSection({
                   <h3 className="text-[26px] sm:text-[28px] font-extrabold text-white mb-3 leading-[1.15] tracking-tight relative z-10">
                     Open Source
                     <br />
-                    Summit 2026
+                    Connect India 2026
                   </h3>
 
                   <p className="text-xs sm:text-[13px] text-slate-300 leading-relaxed mb-6 max-w-[280px] relative z-10">
