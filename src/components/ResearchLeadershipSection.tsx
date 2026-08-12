@@ -39,7 +39,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Developer Advocate at Snowflake",
     org: "Snowflake",
     badge: "Keynote Speaker",
-    photo: "/leaders/kamesh_sampath_v2.jpg",
+    photo: "/leaders/kamesh_sampath_v3.png",
     bioParagraphs: [
       "Kamesh Sampath is a Developer Advocate at Snowflake, specializing in cloud-native applications, Kubernetes, and developer ecosystem tooling.",
       "He is a frequent international speaker and author with extensive experience empowering developers and maintainers across the global open-source community.",
