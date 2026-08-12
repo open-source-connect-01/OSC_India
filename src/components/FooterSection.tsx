@@ -83,10 +83,10 @@ export default function FooterSection({
                   <div className="flex gap-12 mt-12 lg:mt-16">
                     <div className="pl-4 border-l-[3px] border-accent-orange">
                       <div className="text-[28px] font-extrabold text-navy-deep leading-none">
-                        180+
+                        100K+
                       </div>
                       <div className="mt-1.5 text-[11px] font-bold tracking-[0.6px] text-gray-400 uppercase whitespace-nowrap">
-                        Global Members
+                        PEOPLE REACHED
                       </div>
                     </div>
                     <div className="pl-4 border-l-[3px] border-accent-blue">
