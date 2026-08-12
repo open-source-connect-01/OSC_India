@@ -141,7 +141,9 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
                 <div className="space-y-8">
                   {/* Open Source Connect India */}
                   <Link
-                    href="/events"
+                    href="https://luma.com/3u22sml7"
+                    target="_blank"
+                    rel="noopener noreferrer"
                     onClick={onClose}
                     className="group cursor-pointer flex items-start gap-4 block"
                   >
