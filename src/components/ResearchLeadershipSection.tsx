@@ -385,7 +385,7 @@ export default function ResearchLeadershipSection({
                   />
                   <p className="text-[12px] text-slate-400 leading-relaxed max-w-[240px] mb-4">
                     Bringing developers, communities, and organizations
-                    together to shape the future through open source.cc
+                    together to shape the future through open source.
                   </p>
                   {/* Social icons */}
                   <div className="flex items-center gap-3">
