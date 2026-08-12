@@ -195,13 +195,13 @@ export default function ResearchLeadershipSection({
 
   return (
     <>
-      {/* ===== RESEARCH LEADERSHIP ===== */}
+      {/* ===== Community Experts ===== */}
       <section id="research-leadership" className="w-full bg-white py-12 lg:py-16">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
           {/* Page Header */}
           <div className="mb-8">
             <h1 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#0B0F1A] tracking-tight">
-              Research Leadership
+              Community Experts
             </h1>
             <p className="max-w-3xl text-sm sm:text-base text-gray-500 leading-relaxed mt-3">
               Meet the industry experts and community leaders driving open
