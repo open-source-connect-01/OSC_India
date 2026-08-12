@@ -65,7 +65,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Founder at Yara Agency",
     org: "Yara Agency",
     badge: "Keynote Speaker",
-    photo: "/leaders/olena_yara_v2.jpg",
+    photo: "/leaders/olena_yara_v3.png",
     bioParagraphs: [
       "Olena Yara is the Founder of Yara Agency, a creative technology and strategic brand agency driving digital innovation for tech organizations.",
       "She leads cross-disciplinary initiatives bridging design, marketing, and developer relations to amplify high-impact open-source initiatives globally.",
