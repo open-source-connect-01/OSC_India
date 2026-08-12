@@ -666,7 +666,7 @@ export default function FooterSection({
             </div>
             <div className="flex flex-wrap gap-x-5 gap-y-2">
               <Link
-                href="#"
+                href="/privacy-policy"
                 className="hover:text-slate-300 transition-colors whitespace-nowrap"
               >
                 PRIVACY POLICY
