@@ -136,7 +136,7 @@ export default function ProfileModal({ profile, onClose }: ProfileModalProps) {
                   src={profile.photo}
                   alt={profile.name}
                   fill
-                  className="object-cover object-top scale-[1.05]"
+                  className="object-cover object-center"
                 />
               ) : (
                 <div

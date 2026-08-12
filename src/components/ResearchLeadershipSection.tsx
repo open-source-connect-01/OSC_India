@@ -13,7 +13,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Founder & CEO | Managing Partner",
     org: "OSC Foundation",
     badge: "Keynote Speaker",
-    photo: "/leaders/sebastiano_fuccio.jpg",
+    photo: "/leaders/sebastiano_fuccio_v3.png",
     bioParagraphs: [
       "Sebastiano Fuccio is a founder, CEO, and managing partner with extensive leadership experience across technology, open-source strategy, and business growth.",
       "His work focuses on driving strategic innovation, supporting global open-source ecosystems, and building high-impact partnerships between technology teams and industry leaders.",
@@ -252,25 +252,26 @@ export default function ResearchLeadershipSection({
                       tags: member.tags,
                     })
                   }
-                  className="relative group overflow-hidden bg-[#0A1835] text-left cursor-pointer border-0 outline-none ring-0 transition-all duration-200"
+                  className="flex flex-col group overflow-hidden bg-[#0A1835] text-left cursor-pointer border-0 outline-none ring-0 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  {/* Photo container */}
-                  <div className="relative aspect-[3/3.6] w-full bg-[#0A1835] overflow-hidden">
+                  {/* Full Photo container */}
+                  <div className="relative aspect-[4/4.8] w-full bg-[#E2E8F0] overflow-hidden">
                     <Image
                       src={member.photo}
                       alt={member.name}
                       fill
                       className="object-cover object-top"
                     />
-                    {/* Overlaid dark caption bar */}
-                    <div className="absolute bottom-0 inset-x-0 bg-[#0A1835] px-4 py-3 flex flex-col justify-center">
-                      <span className="text-[13px] font-bold text-white tracking-wide uppercase leading-tight truncate">
-                        {member.name}
-                      </span>
-                      <span className="text-[10.5px] font-medium text-[#94A3B8] uppercase tracking-[0.02em] mt-1 leading-snug truncate">
-                        {member.cardRole}
-                      </span>
-                    </div>
+                  </div>
+
+                  {/* Blue Caption Section below photo */}
+                  <div className="bg-[#0A1835] px-4 py-3.5 flex flex-col justify-center w-full">
+                    <span className="text-[13.5px] font-bold text-white tracking-wide uppercase leading-tight truncate">
+                      {member.name}
+                    </span>
+                    <span className="text-[10.5px] font-medium text-[#94A3B8] uppercase tracking-[0.02em] mt-1 leading-snug truncate">
+                      {member.cardRole}
+                    </span>
                   </div>
                 </button>
               ))}
