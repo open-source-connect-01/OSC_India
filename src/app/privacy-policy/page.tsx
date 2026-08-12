@@ -31,19 +31,26 @@ export default function PrivacyPolicyPage() {
   useEffect(() => {
     window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
 
-    const handleScroll = () => {
-      const scrollPosition = window.scrollY + 140;
-      for (let i = contentsList.length - 1; i >= 0; i--) {
-        const section = document.getElementById(contentsList[i].id);
-        if (section && section.offsetTop <= scrollPosition) {
-          setActiveSection(contentsList[i].id);
-          break;
-        }
+    const observer = new IntersectionObserver(
+      (entries) => {
+        entries.forEach((entry) => {
+          if (entry.isIntersecting) {
+            setActiveSection(entry.target.id);
+          }
+        });
+      },
+      {
+        rootMargin: "-15% 0px -55% 0px",
+        threshold: 0,
       }
-    };
+    );
 
-    window.addEventListener("scroll", handleScroll);
-    return () => window.removeEventListener("scroll", handleScroll);
+    contentsList.forEach((item) => {
+      const el = document.getElementById(item.id);
+      if (el) observer.observe(el);
+    });
+
+    return () => observer.disconnect();
   }, []);
 
   const handleNavClick = (label: ActiveOverlay) => {
