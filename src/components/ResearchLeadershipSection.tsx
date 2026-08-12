@@ -13,7 +13,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Founder & CEO | Managing Partner",
     org: "OSC Foundation",
     badge: "Keynote Speaker",
-    photo: "/leaders/sebastiano_fuccio.jpg",
+    photo: "/leaders/sebastiano_fuccio_v3.png",
     bioParagraphs: [
       "Sebastiano Fuccio is a founder, CEO, and managing partner with extensive leadership experience across technology, open-source strategy, and business growth.",
       "His work focuses on driving strategic innovation, supporting global open-source ecosystems, and building high-impact partnerships between technology teams and industry leaders.",
@@ -26,7 +26,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Software Engineer & Podcaster",
     org: "OSC Foundation",
     badge: "Keynote Speaker",
-    photo: "/leaders/chikahiro_tokoro.jpg",
+    photo: "/leaders/chikahiro_tokoro_v3.png",
     bioParagraphs: [
       "Chikahiro Tokoro is a software engineer and popular technology podcaster focused on developer education, open-source software architecture, and global tech culture.",
       "He engages with thousands of software engineers worldwide through technical sessions, podcasts, and open-source contribution workshops.",
@@ -39,7 +39,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Developer Advocate at Snowflake",
     org: "Snowflake",
     badge: "Keynote Speaker",
-    photo: "/leaders/kamesh_sampath.jpg",
+    photo: "/leaders/kamesh_sampath_v3.png",
     bioParagraphs: [
       "Kamesh Sampath is a Developer Advocate at Snowflake, specializing in cloud-native applications, Kubernetes, and developer ecosystem tooling.",
       "He is a frequent international speaker and author with extensive experience empowering developers and maintainers across the global open-source community.",
@@ -52,7 +52,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "AI/ML Consultant",
     org: "OSC Foundation",
     badge: "Keynote Speaker",
-    photo: "/leaders/dishant_gandhi.jpg",
+    photo: "/leaders/dishant_gandhi_v3.png",
     bioParagraphs: [
       "Dishant Gandhi is an AI/ML Consultant specializing in machine learning systems, applied artificial intelligence, and open-source ML workflows.",
       "He works with technology organizations and research teams to architect scalable AI models, streamline MLOps pipelines, and advocate for transparent AI development.",
@@ -65,7 +65,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Founder at Yara Agency",
     org: "Yara Agency",
     badge: "Keynote Speaker",
-    photo: "/leaders/olena_yara.jpg",
+    photo: "/leaders/olena_yara_v3.png",
     bioParagraphs: [
       "Olena Yara is the Founder of Yara Agency, a creative technology and strategic brand agency driving digital innovation for tech organizations.",
       "She leads cross-disciplinary initiatives bridging design, marketing, and developer relations to amplify high-impact open-source initiatives globally.",
@@ -195,19 +195,16 @@ export default function ResearchLeadershipSection({
 
   return (
     <>
-      {/* ===== RESEARCH LEADERSHIP ===== */}
+      {/* ===== Community Experts ===== */}
       <section id="research-leadership" className="w-full bg-white py-12 lg:py-16">
         <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
           {/* Page Header */}
           <div className="mb-8">
             <h1 className="text-3xl sm:text-4xl lg:text-[40px] font-extrabold text-[#0B0F1A] tracking-tight">
-              Research Leadership
+              Community Experts
             </h1>
             <p className="max-w-3xl text-sm sm:text-base text-gray-500 leading-relaxed mt-3">
-              Meet the industry experts and community leaders driving open
-              source research and innovation forward. Our leadership team brings
-              decades of experience in decentralized systems and collaborative
-              development.
+              Meet our speakers and mentors from leading technology companies who share their experience through technical talks, workshops, mentoring, and career guidance.
             </p>
           </div>
 
@@ -252,25 +249,26 @@ export default function ResearchLeadershipSection({
                       tags: member.tags,
                     })
                   }
-                  className="relative group overflow-hidden bg-[#0A1835] text-left cursor-pointer border-0 outline-none ring-0 transition-all duration-200"
+                  className="flex flex-col group overflow-hidden bg-[#0A1835] text-left cursor-pointer border-0 outline-none ring-0 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
                 >
-                  {/* Photo container */}
-                  <div className="relative aspect-[3/3.6] w-full bg-[#0A1835] overflow-hidden">
+                  {/* Full Photo container */}
+                  <div className="relative aspect-[4/4.8] w-full bg-[#E2E8F0] overflow-hidden">
                     <Image
                       src={member.photo}
                       alt={member.name}
                       fill
                       className="object-cover object-top"
                     />
-                    {/* Overlaid dark caption bar */}
-                    <div className="absolute bottom-0 inset-x-0 bg-[#0A1835] px-4 py-3 flex flex-col justify-center">
-                      <span className="text-[13px] font-bold text-white tracking-wide uppercase leading-tight truncate">
-                        {member.name}
-                      </span>
-                      <span className="text-[10.5px] font-medium text-[#94A3B8] uppercase tracking-[0.02em] mt-1 leading-snug truncate">
-                        {member.cardRole}
-                      </span>
-                    </div>
+                  </div>
+
+                  {/* Blue Caption Section below photo */}
+                  <div className="bg-[#0A1835] px-4 py-3.5 flex flex-col justify-center w-full">
+                    <span className="text-[13.5px] font-bold text-white tracking-wide uppercase leading-tight truncate">
+                      {member.name}
+                    </span>
+                    <span className="text-[10.5px] font-medium text-[#94A3B8] uppercase tracking-[0.02em] mt-1 leading-snug truncate">
+                      {member.cardRole}
+                    </span>
                   </div>
                 </button>
               ))}
@@ -384,7 +382,7 @@ export default function ResearchLeadershipSection({
                   />
                   <p className="text-[12px] text-slate-400 leading-relaxed max-w-[240px] mb-4">
                     Bringing developers, communities, and organizations
-                    together to shape the future through open source.cc
+                    together to shape the future through open source.
                   </p>
                   {/* Social icons */}
                   <div className="flex items-center gap-3">

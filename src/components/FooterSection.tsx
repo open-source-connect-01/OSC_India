@@ -350,7 +350,7 @@ export default function FooterSection({
               />
               <p className="text-[13px] leading-relaxed text-slate-400 max-w-[220px] mb-5">
                 Bringing developers, communities, and organizations together to
-                shape the future through open source.cc
+                shape the future through open source.
               </p>
               <div className="flex items-center gap-3.5 text-slate-400">
                 <a
@@ -488,7 +488,7 @@ export default function FooterSection({
             <div>
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Bringing developers, communities, and organizations
-                together to shape the future through open source.cc
+                together to shape the future through open source.
               </p>
               <div className="flex items-center gap-3.5 text-slate-400">
                 <a
