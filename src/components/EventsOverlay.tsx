@@ -188,7 +188,13 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
 
                 <div className="space-y-8">
                   {/* Hackathons */}
-                  <div className="group cursor-pointer flex items-start gap-4">
+                  <Link
+                    href="https://ai-builders-hackathon-2026.devpost.com/"
+                    target="_blank"
+                    rel="noopener noreferrer"
+                    onClick={onClose}
+                    className="group cursor-pointer flex items-start gap-4 block"
+                  >
                     <HackathonCodeIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
@@ -198,7 +204,7 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
                         Build innovative solutions, collaborate with developers, and compete in hands-on challenges.
                       </p>
                     </div>
-                  </div>
+                  </Link>
 
                   {/* Workshops & Tech Talks */}
                   <div className="group cursor-pointer flex items-start gap-4">
