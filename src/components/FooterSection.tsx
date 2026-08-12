@@ -91,10 +91,10 @@ export default function FooterSection({
                     </div>
                     <div className="pl-4 border-l-[3px] border-accent-blue">
                       <div className="text-[28px] font-extrabold text-navy-deep leading-none">
-                        24
+                        300+
                       </div>
                       <div className="mt-1.5 text-[11px] font-bold tracking-[0.6px] text-gray-400 uppercase whitespace-nowrap">
-                        Strategic Partners
+                        PROJECTS & INITIATIVES
                       </div>
                     </div>
                   </div>
