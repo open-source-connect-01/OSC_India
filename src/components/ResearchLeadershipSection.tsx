@@ -26,7 +26,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Software Engineer & Podcaster",
     org: "OSC Foundation",
     badge: "Keynote Speaker",
-    photo: "/leaders/chikahiro_tokoro.jpg",
+    photo: "/leaders/chikahiro_tokoro_v2.jpg",
     bioParagraphs: [
       "Chikahiro Tokoro is a software engineer and popular technology podcaster focused on developer education, open-source software architecture, and global tech culture.",
       "He engages with thousands of software engineers worldwide through technical sessions, podcasts, and open-source contribution workshops.",
@@ -39,7 +39,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Developer Advocate at Snowflake",
     org: "Snowflake",
     badge: "Keynote Speaker",
-    photo: "/leaders/kamesh_sampath.jpg",
+    photo: "/leaders/kamesh_sampath_v2.jpg",
     bioParagraphs: [
       "Kamesh Sampath is a Developer Advocate at Snowflake, specializing in cloud-native applications, Kubernetes, and developer ecosystem tooling.",
       "He is a frequent international speaker and author with extensive experience empowering developers and maintainers across the global open-source community.",
@@ -52,7 +52,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "AI/ML Consultant",
     org: "OSC Foundation",
     badge: "Keynote Speaker",
-    photo: "/leaders/dishant_gandhi.jpg",
+    photo: "/leaders/dishant_gandhi_v3.png",
     bioParagraphs: [
       "Dishant Gandhi is an AI/ML Consultant specializing in machine learning systems, applied artificial intelligence, and open-source ML workflows.",
       "He works with technology organizations and research teams to architect scalable AI models, streamline MLOps pipelines, and advocate for transparent AI development.",
@@ -65,7 +65,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Founder at Yara Agency",
     org: "Yara Agency",
     badge: "Keynote Speaker",
-    photo: "/leaders/olena_yara.jpg",
+    photo: "/leaders/olena_yara_v2.jpg",
     bioParagraphs: [
       "Olena Yara is the Founder of Yara Agency, a creative technology and strategic brand agency driving digital innovation for tech organizations.",
       "She leads cross-disciplinary initiatives bridging design, marketing, and developer relations to amplify high-impact open-source initiatives globally.",
