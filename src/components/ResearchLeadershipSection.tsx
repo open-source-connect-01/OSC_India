@@ -26,7 +26,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Software Engineer & Podcaster",
     org: "OSC Foundation",
     badge: "Keynote Speaker",
-    photo: "/leaders/chikahiro_tokoro_v2.jpg",
+    photo: "/leaders/chikahiro_tokoro_v3.png",
     bioParagraphs: [
       "Chikahiro Tokoro is a software engineer and popular technology podcaster focused on developer education, open-source software architecture, and global tech culture.",
       "He engages with thousands of software engineers worldwide through technical sessions, podcasts, and open-source contribution workshops.",
