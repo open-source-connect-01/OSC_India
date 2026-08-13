@@ -486,6 +486,13 @@ export default function FooterSection({
           {/* Mobile Footer Layout (Matching Mobile Screenshot 2) */}
           <div className="lg:hidden space-y-6 pb-6">
             <div>
+              <Image
+                src="/logo.png"
+                alt="Open Source Connect"
+                width={150}
+                height={38}
+                className="h-8 w-auto object-contain brightness-0 invert mb-4"
+              />
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Bringing developers, communities, and organizations
                 together to shape the future through open source.
