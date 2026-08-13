@@ -40,7 +40,7 @@ const eventItems = [
 
 export default function ConnectContributeGrowSection() {
   return (
-    <section id="connect-contribute-grow" className="w-full bg-white">
+    <section id="connect-contribute-grow" className="w-full bg-white scroll-mt-20">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8 pb-16 lg:pb-20">
         {/* Heading */}
         <div className="mb-10">

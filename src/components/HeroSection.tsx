@@ -57,10 +57,10 @@ export default function HeroSection() {
                 GET INVOLVED
               </Link>
               <Link
-                href="#"
+                href="#connect-contribute-grow"
                 className="inline-flex items-center justify-center h-[54px] sm:h-[60px] px-10 bg-white text-[#0A1B3D] border border-slate-300 text-[12px] sm:text-[13px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] hover:bg-slate-50 transition-colors w-full sm:w-auto text-center"
               >
-                EXPLORE OUR PROGRAMS
+                PARTNER WITH US
               </Link>
             </div>
           </div>
