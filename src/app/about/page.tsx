@@ -216,13 +216,10 @@ export default function AboutOscPage() {
                   Our Vision
                 </h2>
                 <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed mb-4">
-                  A world where open source innovation is universally accessible —
-                  where every developer, student, and organization can contribute to
-                  and benefit from shared technology.
+                  A world where open source is accessible to everyone, where developers, students, startups, and organizations can learn, contribute, collaborate, and build technology that creates meaningful impact.
                 </p>
                 <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed">
-                  We envision communities free from proprietary lock-in, empowered by
-                  transparent governance and collaborative excellence.
+                  We envision an open ecosystem where communities thrive through shared knowledge, transparent collaboration, and sustainable opportunities for contributors and projects.
                 </p>
               </div>
             </div>
