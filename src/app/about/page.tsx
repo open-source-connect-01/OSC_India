@@ -199,13 +199,10 @@ export default function AboutOscPage() {
                   Our Mission
                 </h2>
                 <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed mb-4">
-                  Open Source Connect (OSC) provides governance, financial
-                  stewardship, and collaborative infrastructure to ensure the long-term
-                  sustainability of high-impact open source technologies worldwide.
+                  Open Source Connect exists to strengthen the open source ecosystem by bringing together developers, students, startups, and organizations to collaborate openly and build solutions that create real-world impact. 
                 </p>
                 <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed">
-                  We believe open source is the foundation of a thriving digital society
-                  — and we exist to give it the institutional support it deserves.
+                  We are building a structured, transparent, and community-driven platform where innovation is supported, contributors are respected, and projects are nurtured from idea to long-term sustainability.
                 </p>
               </div>
 
