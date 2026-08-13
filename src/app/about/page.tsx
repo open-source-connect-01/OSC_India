@@ -16,43 +16,43 @@ const coreValues = [
     num: "01",
     borderColor: "border-l-[#2563EB]",
     numColor: "text-blue-200/90",
-    title: "Transparency",
-    desc: "Every decision, every dollar, every governance action is open to public scrutiny. We hold ourselves to the highest standard of openness.",
+    title: "Openness",
+    desc: "We communicate clearly and openly, making decisions, opportunities, and community processes accessible to the people we serve.",
   },
   {
     num: "02",
     borderColor: "border-l-[#F97316]",
     numColor: "text-orange-200/90",
-    title: "Meritocracy",
-    desc: "Contributions are judged on their technical merit and community value — not on who you know or where you work.",
+    title: "Merit",
+    desc: "We recognize contributions based on quality, effort, and impact, regardless of background, title, organization, or experience.",
   },
   {
     num: "03",
     borderColor: "border-l-[#10B981]",
     numColor: "text-emerald-200/90",
-    title: "Inclusivity",
-    desc: "We actively work to remove barriers to participation. Open source must be accessible to everyone, everywhere, regardless of background.",
+    title: "Inclusion",
+    desc: "We work to create an open source environment where people from different backgrounds, skills, and communities can participate and grow.",
   },
   {
     num: "04",
     borderColor: "border-l-[#8B5CF6]",
     numColor: "text-purple-200/90",
     title: "Sustainability",
-    desc: "We build for the long term. Our governance models, funding structures, and community practices are designed to outlast any individual.",
+    desc: "We build for the long term, creating programs, communities, and practices designed to deliver lasting value beyond individual initiatives.",
   },
   {
     num: "05",
     borderColor: "border-l-[#F59E0B]",
     numColor: "text-amber-200/90",
     title: "Collaboration",
-    desc: "The best solutions emerge when brilliant minds work together across organizational and geographic boundaries.",
+    desc: "We believe the strongest ideas emerge when developers, communities, organizations, and leaders work together across boundaries.",
   },
   {
     num: "06",
     borderColor: "border-l-[#334155]",
     numColor: "text-slate-300",
     title: "Technical Excellence",
-    desc: "We uphold rigorous standards for software quality, security, and architectural integrity across all hosted projects.",
+    desc: "We encourage high standards in software, security, learning, and contribution while continuously improving the quality of our ecosystem.",
   },
 ];
 
@@ -174,14 +174,13 @@ export default function AboutOscPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
               About the{" "}
               <span className="font-serif italic font-normal text-[#F59E0B]">
-                OSC Foundation
+                Open Source Connect
               </span>
             </h1>
 
             {/* Subtitle */}
             <p className="text-base sm:text-lg lg:text-[19px] text-slate-300/85 font-normal max-w-[720px] leading-relaxed">
-              We are a nonprofit foundation building the institutional infrastructure
-              that empowers open source communities to thrive globally.
+              We connect developers, communities, and organizations through open source programs, collaboration, and opportunities to build meaningful impact.
             </p>
           </div>
         </section>
@@ -200,13 +199,10 @@ export default function AboutOscPage() {
                   Our Mission
                 </h2>
                 <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed mb-4">
-                  Open Source Connect (OSC) provides governance, financial
-                  stewardship, and collaborative infrastructure to ensure the long-term
-                  sustainability of high-impact open source technologies worldwide.
+                  Open Source Connect exists to strengthen the open source ecosystem by bringing together developers, students, startups, and organizations to collaborate openly and build solutions that create real-world impact. 
                 </p>
                 <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed">
-                  We believe open source is the foundation of a thriving digital society
-                  — and we exist to give it the institutional support it deserves.
+                  We are building a structured, transparent, and community-driven platform where innovation is supported, contributors are respected, and projects are nurtured from idea to long-term sustainability.
                 </p>
               </div>
 
@@ -220,13 +216,10 @@ export default function AboutOscPage() {
                   Our Vision
                 </h2>
                 <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed mb-4">
-                  A world where open source innovation is universally accessible —
-                  where every developer, student, and organization can contribute to
-                  and benefit from shared technology.
+                  A world where open source is accessible to everyone, where developers, students, startups, and organizations can learn, contribute, collaborate, and build technology that creates meaningful impact.
                 </p>
                 <p className="text-gray-600 text-[15px] sm:text-base leading-relaxed">
-                  We envision communities free from proprietary lock-in, empowered by
-                  transparent governance and collaborative excellence.
+                  We envision an open ecosystem where communities thrive through shared knowledge, transparent collaboration, and sustainable opportunities for contributors and projects.
                 </p>
               </div>
             </div>
@@ -270,54 +263,6 @@ export default function AboutOscPage() {
           </div>
         </section>
 
-        {/* ===== FOUNDATION HISTORY ===== */}
-        <section className="w-full bg-white py-16 lg:py-24 border-b border-gray-100">
-          <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
-            {/* Header */}
-            <div className="mb-14">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#2563EB] uppercase tracking-[0.2em] mb-3">
-                <span className="w-2 h-2 bg-[#2563EB] inline-block rounded-xs" />
-                OUR JOURNEY
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0B0F1A] tracking-tight">
-                Foundation History
-              </h2>
-            </div>
-
-            {/* Timeline */}
-            <div className="space-y-10 sm:space-y-12">
-              {historyTimeline.map((item, idx) => (
-                <div
-                  key={item.year}
-                  className={`flex flex-col sm:flex-row items-start gap-6 sm:gap-12 pb-10 sm:pb-12 ${
-                    idx !== historyTimeline.length - 1
-                      ? "border-b border-gray-100"
-                      : ""
-                  }`}
-                >
-                  {/* Year */}
-                  <div
-                    className={`w-28 shrink-0 text-3xl sm:text-4xl font-extrabold tracking-tight ${
-                      item.year === "2026" ? "text-[#F2811D]" : "text-[#2563EB]"
-                    }`}
-                  >
-                    {item.year}
-                  </div>
-
-                  {/* Title & Content */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg sm:text-xl font-bold text-[#0B0F1A] mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-[840px]">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ===== KEY STATS BAR ===== */}
         <section className="w-full bg-[#080E1E] text-white pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 lg:pb-28">

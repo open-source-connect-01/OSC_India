@@ -97,12 +97,12 @@ export default function ConnectContributeGrowSection() {
             </ul>
 
             <Link
-              href="https://ko-fi.com/opensourceconnect"
+              href="https://luma.com/3u22sml7"
               target="_blank"
               rel="noopener noreferrer"
               className="inline-flex items-center justify-center h-[46px] px-6 bg-navy-deep text-white text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-navy transition-all duration-200 mt-8 self-start relative z-10"
             >
-              SUPPORT THE COMMUNITY
+              BECOME A CONTRIBUTOR
             </Link>
           </div>
 

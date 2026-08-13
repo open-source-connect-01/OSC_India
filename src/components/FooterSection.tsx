@@ -100,7 +100,7 @@ export default function FooterSection({
                   </div>
 
                   <Link
-                    href="#"
+                    href="https://ko-fi.com/opensourceconnect"
                     className="inline-flex items-center justify-center mt-12 lg:mt-16 h-[50px] px-7 bg-navy-deep text-white text-[12.5px] font-bold tracking-[0.5px] uppercase hover:bg-navy transition-all duration-200"
                   >
                     SUPPORT THE COMMUNITY
@@ -147,7 +147,7 @@ export default function FooterSection({
               <div className="lg:hidden space-y-6">
                 {/* VIEW MEMBERSHIP TIERS Full Width Top Button */}
                 <Link
-                  href="#"
+                  href="https://ko-fi.com/opensourceconnect"
                   className="w-full bg-[#0A1B3D] text-white text-xs font-extrabold tracking-[0.16em] uppercase py-4 rounded-[4px] shadow-sm flex items-center justify-center text-center block mb-6 hover:bg-[#122752] transition-colors"
                 >
                   SUPPORT THE COMMUNITY
@@ -486,6 +486,13 @@ export default function FooterSection({
           {/* Mobile Footer Layout (Matching Mobile Screenshot 2) */}
           <div className="lg:hidden space-y-6 pb-6">
             <div>
+              <Image
+                src="/logo.png"
+                alt="Open Source Connect"
+                width={150}
+                height={38}
+                className="h-8 w-auto object-contain brightness-0 invert mb-4"
+              />
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Bringing developers, communities, and organizations
                 together to shape the future through open source.
