@@ -142,9 +142,9 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
                   {/* --- Column 1: Image + About OSC Foundation --- */}
                   <div className="md:col-span-5 lg:col-span-4">
-                    <div className="relative mb-6 pr-3.5 pb-3.5">
+                    <div className="relative mb-6 pr-1 pb-1">
                       {/* Solid periwinkle offset shadow block - exact same width & height as image, positioned bottom-right */}
-                      <div className="absolute top-3.5 left-3.5 w-full h-full bg-[#B4C6EE] z-0" />
+                      <div className="absolute top-1 left-1 w-full h-full bg-[#B4C6EE] z-0" />
                       {/* Image container with sharp 90-degree corners and subtle bottom-right drop shadow */}
                       <div className="relative z-10 shadow-[4px_6px_20px_rgba(0,0,0,0.25)] bg-white">
                         <Image
