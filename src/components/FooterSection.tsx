@@ -100,7 +100,7 @@ export default function FooterSection({
                   </div>
 
                   <Link
-                    href="#"
+                    href="https://ko-fi.com/opensourceconnect"
                     className="inline-flex items-center justify-center mt-12 lg:mt-16 h-[50px] px-7 bg-navy-deep text-white text-[12.5px] font-bold tracking-[0.5px] uppercase hover:bg-navy transition-all duration-200"
                   >
                     SUPPORT THE COMMUNITY
@@ -147,7 +147,7 @@ export default function FooterSection({
               <div className="lg:hidden space-y-6">
                 {/* VIEW MEMBERSHIP TIERS Full Width Top Button */}
                 <Link
-                  href="#"
+                  href="https://ko-fi.com/opensourceconnect"
                   className="w-full bg-[#0A1B3D] text-white text-xs font-extrabold tracking-[0.16em] uppercase py-4 rounded-[4px] shadow-sm flex items-center justify-center text-center block mb-6 hover:bg-[#122752] transition-colors"
                 >
                   SUPPORT THE COMMUNITY
