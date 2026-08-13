@@ -174,7 +174,7 @@ export default function AboutOscPage() {
             <h1 className="text-4xl sm:text-5xl lg:text-6xl font-extrabold tracking-tight mb-6 leading-[1.1]">
               About the{" "}
               <span className="font-serif italic font-normal text-[#F59E0B]">
-                OSC Foundation
+                Open Source Connect
               </span>
             </h1>
 
