@@ -263,54 +263,6 @@ export default function AboutOscPage() {
           </div>
         </section>
 
-        {/* ===== FOUNDATION HISTORY ===== */}
-        <section className="w-full bg-white py-16 lg:py-24 border-b border-gray-100">
-          <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
-            {/* Header */}
-            <div className="mb-14">
-              <div className="flex items-center gap-2 text-xs font-bold text-[#2563EB] uppercase tracking-[0.2em] mb-3">
-                <span className="w-2 h-2 bg-[#2563EB] inline-block rounded-xs" />
-                OUR JOURNEY
-              </div>
-              <h2 className="text-3xl sm:text-4xl lg:text-[42px] font-extrabold text-[#0B0F1A] tracking-tight">
-                Foundation History
-              </h2>
-            </div>
-
-            {/* Timeline */}
-            <div className="space-y-10 sm:space-y-12">
-              {historyTimeline.map((item, idx) => (
-                <div
-                  key={item.year}
-                  className={`flex flex-col sm:flex-row items-start gap-6 sm:gap-12 pb-10 sm:pb-12 ${
-                    idx !== historyTimeline.length - 1
-                      ? "border-b border-gray-100"
-                      : ""
-                  }`}
-                >
-                  {/* Year */}
-                  <div
-                    className={`w-28 shrink-0 text-3xl sm:text-4xl font-extrabold tracking-tight ${
-                      item.year === "2026" ? "text-[#F2811D]" : "text-[#2563EB]"
-                    }`}
-                  >
-                    {item.year}
-                  </div>
-
-                  {/* Title & Content */}
-                  <div className="flex-1 min-w-0">
-                    <h3 className="text-lg sm:text-xl font-bold text-[#0B0F1A] mb-2">
-                      {item.title}
-                    </h3>
-                    <p className="text-xs sm:text-sm text-gray-500 leading-relaxed max-w-[840px]">
-                      {item.desc}
-                    </p>
-                  </div>
-                </div>
-              ))}
-            </div>
-          </div>
-        </section>
 
         {/* ===== KEY STATS BAR ===== */}
         <section className="w-full bg-[#080E1E] text-white pt-16 sm:pt-20 lg:pt-24 pb-20 sm:pb-24 lg:pb-28">
