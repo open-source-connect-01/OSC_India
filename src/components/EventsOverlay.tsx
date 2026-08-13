@@ -163,7 +163,8 @@ export default function EventsOverlay({ isOpen, onClose }: EventsOverlayProps) {
 
                   {/* Open Source Connect Global */}
                   <Link
-                    href="/events"
+                    href="https://luma.com/vyb4bntj"
+                    target="_blank"
                     onClick={onClose}
                     className="group cursor-pointer flex items-start gap-4 block"
                   >

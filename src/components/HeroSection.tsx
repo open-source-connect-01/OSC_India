@@ -51,7 +51,7 @@ export default function HeroSection() {
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
               <Link
-                href="#"
+                href="#connect-contribute-grow"
                 className="inline-flex items-center justify-center h-[54px] sm:h-[60px] px-10 bg-[#0A1B3D] text-white text-[12px] sm:text-[13px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] shadow-sm hover:bg-[#122752] transition-colors w-full sm:w-auto text-center"
               >
                 GET INVOLVED
