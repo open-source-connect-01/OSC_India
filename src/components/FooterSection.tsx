@@ -101,6 +101,7 @@ export default function FooterSection({
 
                   <Link
                     href="https://ko-fi.com/opensourceconnect"
+                    target="_blank"
                     className="inline-flex items-center justify-center mt-12 lg:mt-16 h-[50px] px-7 bg-navy-deep text-white text-[12.5px] font-bold tracking-[0.5px] uppercase hover:bg-navy transition-all duration-200"
                   >
                     SUPPORT THE COMMUNITY

@@ -40,7 +40,7 @@ const eventItems = [
 
 export default function ConnectContributeGrowSection() {
   return (
-    <section className="w-full bg-white">
+    <section id="connect-contribute-grow" className="w-full bg-white scroll-mt-20">
       <div className="max-w-[1240px] mx-auto px-6 lg:px-8 pb-16 lg:pb-20">
         {/* Heading */}
         <div className="mb-10">
@@ -147,12 +147,13 @@ export default function ConnectContributeGrowSection() {
               ))}
             </ul>
 
-            <Link
-              href="#"
+            <a
+              href="mailto:hello@osconnect.org"
+              target="_blank"
               className="inline-flex items-center justify-center h-[46px] px-6 bg-white text-navy-deep border-2 border-navy-deep text-[11px] font-bold tracking-[0.1em] uppercase hover:bg-navy-deep hover:text-white transition-all duration-200 mt-8 self-start relative z-10"
             >
               Partner With Us
-            </Link>
+            </a>
           </div>
         </div>
       </div>

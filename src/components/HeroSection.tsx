@@ -1,8 +1,20 @@
 "use client";
 
-import Link from "next/link";
-
 export default function HeroSection() {
+  const handleScrollToSection = (e: React.MouseEvent<HTMLAnchorElement>, id: string) => {
+    e.preventDefault();
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 80;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth",
+      });
+      window.history.pushState(null, "", `#${id}`);
+    }
+  };
+
   return (
     <section className="relative w-full flex-1 flex flex-col justify-center py-8 sm:py-10 lg:py-12">
       <div className="max-w-[1360px] w-full mx-auto px-6 sm:px-8 lg:px-12">
@@ -50,18 +62,20 @@ export default function HeroSection() {
 
             {/* Action Buttons */}
             <div className="flex flex-col sm:flex-row gap-4">
-              <Link
-                href="#"
+              <a
+                href="#connect-contribute-grow"
+                onClick={(e) => handleScrollToSection(e, "connect-contribute-grow")}
                 className="inline-flex items-center justify-center h-[54px] sm:h-[60px] px-10 bg-[#0A1B3D] text-white text-[12px] sm:text-[13px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] shadow-sm hover:bg-[#122752] transition-colors w-full sm:w-auto text-center"
               >
                 GET INVOLVED
-              </Link>
-              <Link
-                href="#"
+              </a>
+              <a
+                href="#connect-contribute-grow"
+                onClick={(e) => handleScrollToSection(e, "connect-contribute-grow")}
                 className="inline-flex items-center justify-center h-[54px] sm:h-[60px] px-10 bg-white text-[#0A1B3D] border border-slate-300 text-[12px] sm:text-[13px] font-extrabold tracking-[0.14em] uppercase rounded-[2px] hover:bg-slate-50 transition-colors w-full sm:w-auto text-center"
               >
-                EXPLORE OUR PROGRAMS
-              </Link>
+                PARTNER WITH US
+              </a>
             </div>
           </div>
 
