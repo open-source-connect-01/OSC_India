@@ -16,8 +16,8 @@ const coreValues = [
     num: "01",
     borderColor: "border-l-[#2563EB]",
     numColor: "text-blue-200/90",
-    title: "Transparency",
-    desc: "Every decision, every dollar, every governance action is open to public scrutiny. We hold ourselves to the highest standard of openness.",
+    title: "Openness",
+    desc: "We communicate clearly and openly, making decisions, opportunities, and community processes accessible to the people we serve.",
   },
   {
     num: "02",
