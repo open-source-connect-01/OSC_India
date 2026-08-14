@@ -140,7 +140,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
             <div>
               <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-10 lg:py-12">
                 <div className="grid grid-cols-1 md:grid-cols-12 gap-8 lg:gap-12">
-                  {/* --- Column 1: Image + About OSC Foundation --- */}
+                  {/* --- Column 1: Image + About Open Source Connect --- */}
                   <div className="md:col-span-5 lg:col-span-4">
                     <div className="relative mb-6 pr-1 pb-1">
                       {/* Solid periwinkle offset shadow block - exact same width & height as image, positioned bottom-right */}
@@ -149,7 +149,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                       <div className="relative z-10 shadow-[4px_6px_20px_rgba(0,0,0,0.25)] bg-white">
                         <Image
                           src="/about_foundation_v2.png"
-                          alt="About OSC Foundation"
+                          alt="About Open Source Connect"
                           width={400}
                           height={250}
                           className="w-full aspect-[16/10] object-cover rounded-none block"
@@ -157,7 +157,7 @@ export default function AboutOverlay({ isOpen, onClose }: AboutOverlayProps) {
                       </div>
                     </div>
                     <h3 className="text-[17px] font-extrabold text-[#0B0F1A] tracking-tight">
-                      About OSC Foundation
+                      About Open Source Connect
                     </h3>
                     <p className="text-xs text-gray-500 leading-relaxed mt-1.5 max-w-[340px]">
                       Learn about our mission, values, and
