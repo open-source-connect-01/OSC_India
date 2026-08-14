@@ -45,11 +45,12 @@ export const metadata: Metadata = {
     siteName: "Open Source Connect (OSC)",
     images: [
       {
-        url: `${SITE_URL}/og-image.png`,
+        url: `${SITE_URL}/og-image.jpg`,
+        secureUrl: `${SITE_URL}/og-image.jpg`,
         width: 1024,
         height: 537,
         alt: "Open Source Connect - Connecting The World Through Open Source",
-        type: "image/png",
+        type: "image/jpeg",
       },
     ],
     locale: "en_US",
@@ -64,7 +65,7 @@ export const metadata: Metadata = {
       "Open Source Connect (OSC) provides community infrastructure, operational support, educational programs, and collaboration opportunities to help open source projects, contributors, and organizations grow sustainably.",
     images: [
       {
-        url: `${SITE_URL}/og-image.png`,
+        url: `${SITE_URL}/og-image.jpg`,
         width: 1024,
         height: 537,
         alt: "Open Source Connect - Connecting The World Through Open Source",
