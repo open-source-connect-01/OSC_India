@@ -1,0 +1,483 @@
+"use client";
+
+import { useState, useEffect, useCallback } from "react";
+import Link from "next/link";
+import { useRouter } from "next/navigation";
+import Navbar from "@/components/Navbar";
+import FooterSection from "@/components/FooterSection";
+import AboutOverlay from "@/components/AboutOverlay";
+import WhatWeDoOverlay from "@/components/WhatWeDoOverlay";
+import CommunityOverlay from "@/components/CommunityOverlay";
+import EventsOverlay from "@/components/EventsOverlay";
+import type { ActiveOverlay } from "@/components/Navbar";
+
+const contentsList = [
+  { id: "our-pledge", label: "Our Pledge" },
+  { id: "our-standards", label: "Our Standards" },
+  { id: "scope", label: "Scope & Application" },
+  { id: "enforcement-responsibilities", label: "Enforcement Responsibilities" },
+  { id: "reporting-guidelines", label: "Reporting Guidelines" },
+  { id: "enforcement-guidelines", label: "Enforcement Guidelines" },
+  { id: "attribution-governance", label: "Attribution & Governance" },
+];
+
+export default function CodeOfConductPage() {
+  const router = useRouter();
+  const [activeOverlay, setActiveOverlay] = useState<ActiveOverlay | null>(null);
+  const [isMobileMenuOpen, setIsMobileMenuOpen] = useState(false);
+  const [activeSection, setActiveSection] = useState<string>("our-pledge");
+
+  const updateActiveSection = useCallback(() => {
+    const scrollPosition = window.scrollY + 160;
+    let currentId = contentsList[0].id;
+    for (let i = 0; i < contentsList.length; i++) {
+      const el = document.getElementById(contentsList[i].id);
+      if (el) {
+        const top = el.getBoundingClientRect().top + window.scrollY;
+        if (scrollPosition >= top) {
+          currentId = contentsList[i].id;
+        }
+      }
+    }
+    setActiveSection(currentId);
+  }, []);
+
+  useEffect(() => {
+    window.scrollTo({ top: 0, left: 0, behavior: "instant" as ScrollBehavior });
+
+    let running = false;
+    const onScroll = () => {
+      if (!running) {
+        window.requestAnimationFrame(() => {
+          updateActiveSection();
+          running = false;
+        });
+        running = true;
+      }
+    };
+
+    window.addEventListener("scroll", onScroll, { passive: true });
+    updateActiveSection();
+
+    return () => window.removeEventListener("scroll", onScroll);
+  }, [updateActiveSection]);
+
+  const handleNavClick = (label: ActiveOverlay) => {
+    if (label && label !== "events") {
+      router.push("/?nav=" + label);
+    } else {
+      setActiveOverlay((prev) => (prev === label ? null : label));
+    }
+    setIsMobileMenuOpen(false);
+  };
+
+  const handleCloseOverlay = () => {
+    setActiveOverlay(null);
+  };
+
+  const scrollToSection = (id: string) => {
+    setActiveSection(id);
+    const element = document.getElementById(id);
+    if (element) {
+      const offset = 110;
+      const elementPosition = element.getBoundingClientRect().top + window.scrollY;
+      window.scrollTo({
+        top: elementPosition - offset,
+        behavior: "smooth",
+      });
+    }
+  };
+
+  return (
+    <div className="flex flex-col min-h-screen bg-white font-sans antialiased text-[#1E293B]">
+      {/* Header / Navbar */}
+      <header className="sticky top-0 z-50 bg-white shadow-xs border-b border-gray-100">
+        <Navbar
+          activeOverlay={activeOverlay}
+          onNavClick={handleNavClick}
+          onMobileNavClick={handleNavClick}
+          isMobileMenuOpen={isMobileMenuOpen}
+          onMobileMenuToggle={() => setIsMobileMenuOpen((prev) => !prev)}
+        />
+      </header>
+
+      {/* Navigation Overlays */}
+      <AboutOverlay
+        isOpen={activeOverlay === "about"}
+        onClose={handleCloseOverlay}
+      />
+      <WhatWeDoOverlay
+        isOpen={activeOverlay === "whatwedo"}
+        onClose={handleCloseOverlay}
+      />
+      <CommunityOverlay
+        isOpen={activeOverlay === "resources"}
+        onClose={handleCloseOverlay}
+      />
+      <EventsOverlay
+        isOpen={activeOverlay === "events"}
+        onClose={handleCloseOverlay}
+      />
+
+      <main className="flex-1">
+        {/* ===== HERO BANNER ===== */}
+        <section className="w-full bg-gradient-to-r from-[#0C1738] via-[#142B67] to-[#1C398E] text-white py-14 sm:py-16 lg:py-20 relative overflow-hidden">
+          <div className="max-w-[1240px] mx-auto px-6 lg:px-8 relative z-10">
+            {/* Breadcrumb */}
+            <div className="flex items-center gap-2 text-[11px] font-bold tracking-[0.2em] text-slate-300/80 uppercase mb-4">
+              <Link href="/" className="hover:text-white transition-colors">
+                HOME
+              </Link>
+              <span className="text-slate-400">/</span>
+              <span className="text-slate-200">CODE OF CONDUCT</span>
+            </div>
+
+            {/* Main Title */}
+            <h1 className="text-4xl sm:text-5xl lg:text-[54px] font-extrabold tracking-tight mb-3 leading-[1.1] text-white">
+              Code of Conduct
+            </h1>
+
+            {/* Subtitle / Last updated */}
+            <p className="text-sm sm:text-[15px] text-slate-300 font-normal max-w-[700px]">
+              Our commitment to fostering an open, welcoming, diverse, and harassment-free community for all contributors and participants.
+            </p>
+          </div>
+        </section>
+
+        {/* ===== MAIN CONTENT SECTION ===== */}
+        <section className="w-full bg-white py-14 sm:py-18 lg:py-22">
+          <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
+            <div className="grid grid-cols-1 lg:grid-cols-12 gap-10 lg:gap-16 items-start">
+              {/* --- LEFT SIDEBAR: CONTENTS --- */}
+              <aside className="lg:col-span-3 sticky top-28 hidden lg:block">
+                <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-4">
+                  CONTENTS
+                </h3>
+                <nav className="relative border-l border-gray-200 pl-4 space-y-3.5 text-xs">
+                  {contentsList.map((item) => {
+                    const isActive = activeSection === item.id;
+                    return (
+                      <button
+                        key={item.id}
+                        onClick={() => scrollToSection(item.id)}
+                        className={`relative block text-left w-full transition-colors duration-200 py-0.5 ${
+                          isActive
+                            ? "text-[#2563EB] font-bold"
+                            : "text-gray-500 hover:text-gray-900 font-medium"
+                        }`}
+                      >
+                        {isActive && (
+                          <span className="absolute -left-[17px] top-0 bottom-0 w-[2.5px] bg-[#2563EB] rounded-r-xs" />
+                        )}
+                        {item.label}
+                      </button>
+                    );
+                  })}
+                </nav>
+
+                {/* Quick Incident Contact Box */}
+                <div className="mt-8 p-4 bg-[#F8FAFC] border border-gray-100 rounded-lg">
+                  <div className="flex items-center gap-2 mb-2">
+                    <svg
+                      width="16"
+                      height="16"
+                      viewBox="0 0 24 24"
+                      fill="none"
+                      stroke="#2563EB"
+                      strokeWidth="2"
+                      strokeLinecap="round"
+                      strokeLinejoin="round"
+                    >
+                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
+                    </svg>
+                    <span className="text-[11px] font-bold tracking-wider text-[#0B0F1A] uppercase">
+                      Need Support?
+                    </span>
+                  </div>
+                  <p className="text-[11px] text-gray-500 leading-relaxed mb-3">
+                    If you experience or witness an issue, please reach out to our team immediately.
+                  </p>
+                  <a
+                    href="mailto:conduct@osconnect.org"
+                    className="inline-block text-[11px] font-bold text-[#2563EB] hover:underline"
+                  >
+                    conduct@osconnect.org &rarr;
+                  </a>
+                </div>
+              </aside>
+
+              {/* --- RIGHT COLUMN: CODE OF CONDUCT DETAILS --- */}
+              <div className="lg:col-span-9 space-y-12 sm:space-y-14">
+                {/* Section 1: Our Pledge */}
+                <div id="our-pledge" className="scroll-mt-28">
+                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
+                    Our Pledge
+                  </h2>
+                  <div className="space-y-4 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
+                    <p>
+                      We, as members, contributors, and leaders of the Open Source Connect (OSC) community, pledge to make participation in our community a harassment-free experience for everyone, regardless of age, body size, visible or invisible disability, ethnicity, sex characteristics, gender identity and expression, level of experience, education, socio-economic status, nationality, personal appearance, race, caste, religion, or sexual identity and orientation.
+                    </p>
+                    <p>
+                      We pledge to act and interact in ways that contribute to an open, welcoming, diverse, inclusive, and healthy community where curiosity and collaborative learning are encouraged.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Section 2: Our Standards */}
+                <div id="our-standards" className="scroll-mt-28">
+                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
+                    Our Standards
+                  </h2>
+                  <div className="space-y-6 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
+                    {/* Positive Behavior Box */}
+                    <div className="p-5 sm:p-6 bg-emerald-50/60 border border-emerald-100 rounded-lg">
+                      <h3 className="text-base font-bold text-emerald-900 mb-3 flex items-center gap-2">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="text-emerald-600 shrink-0"
+                        >
+                          <polyline points="20 6 9 17 4 12" />
+                        </svg>
+                        Examples of behavior that contributes to a positive environment:
+                      </h3>
+                      <ul className="list-disc list-inside space-y-2 text-emerald-800/90 text-sm">
+                        <li>Demonstrating empathy and kindness toward other community members</li>
+                        <li>Being respectful of differing viewpoints and experiences</li>
+                        <li>Giving and gracefully accepting constructive feedback</li>
+                        <li>Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience</li>
+                        <li>Focusing on what is best not just for us as individuals, but for the overall community</li>
+                        <li>Encouraging newcomers and fostering inclusive mentorship</li>
+                      </ul>
+                    </div>
+
+                    {/* Unacceptable Behavior Box */}
+                    <div className="p-5 sm:p-6 bg-rose-50/60 border border-rose-100 rounded-lg">
+                      <h3 className="text-base font-bold text-rose-900 mb-3 flex items-center gap-2">
+                        <svg
+                          width="18"
+                          height="18"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2.5"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                          className="text-rose-600 shrink-0"
+                        >
+                          <circle cx="12" cy="12" r="10" />
+                          <line x1="15" y1="9" x2="9" y2="15" />
+                          <line x1="9" y1="9" x2="15" y2="15" />
+                        </svg>
+                        Examples of unacceptable behavior:
+                      </h3>
+                      <ul className="list-disc list-inside space-y-2 text-rose-800/90 text-sm">
+                        <li>The use of sexualized language or imagery, and unwelcome sexual attention or advances</li>
+                        <li>Trolling, insulting or derogatory comments, and personal or political attacks</li>
+                        <li>Public or private harassment, stalking, or intimidation</li>
+                        <li>Publishing others&apos; private information, such as a physical or email address, without their explicit permission (doxxing)</li>
+                        <li>Disruptive behavior in events, chat channels, webinars, or community meetups</li>
+                        <li>Other conduct which could reasonably be considered inappropriate in a professional open source setting</li>
+                      </ul>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Section 3: Scope & Application */}
+                <div id="scope" className="scroll-mt-28">
+                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
+                    Scope &amp; Application
+                  </h2>
+                  <div className="space-y-4 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
+                    <p>
+                      This Code of Conduct applies within all community spaces, including but not limited to:
+                    </p>
+                    <ul className="list-disc list-inside space-y-2 pl-2">
+                      <li>Official Open Source Connect (OSC) repositories, issue trackers, and pull requests</li>
+                      <li>Communication channels including Discord, Slack, forums, email lists, and social media</li>
+                      <li>In-person and virtual events such as hackathons, summits, workshops, and meetups</li>
+                      <li>Any public space when an individual is representing the community or its members</li>
+                    </ul>
+                    <p>
+                      Representation of our community may be further defined and clarified by project maintainers and event organizers.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Section 4: Enforcement Responsibilities */}
+                <div id="enforcement-responsibilities" className="scroll-mt-28">
+                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
+                    Enforcement Responsibilities
+                  </h2>
+                  <div className="space-y-4 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
+                    <p>
+                      Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
+                    </p>
+                    <p>
+                      Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned with this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Section 5: Reporting Guidelines */}
+                <div id="reporting-guidelines" className="scroll-mt-28">
+                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
+                    Reporting Guidelines
+                  </h2>
+                  <div className="space-y-4 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
+                    <p>
+                      Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leadership responsible for enforcement at:
+                    </p>
+
+                    {/* Contact Callout Banner */}
+                    <div className="p-5 bg-blue-50/70 border border-blue-100 rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                      <div>
+                        <h4 className="font-bold text-[#0B0F1A] text-sm mb-1">
+                          OSC Conduct &amp; Safety Team
+                        </h4>
+                        <p className="text-xs text-gray-600">
+                          All reports are treated confidentially and reviewed promptly.
+                        </p>
+                      </div>
+                      <a
+                        href="mailto:conduct@osconnect.org"
+                        className="inline-flex items-center gap-2 px-4 py-2 bg-[#0A1B3D] text-white text-xs font-bold rounded hover:bg-[#122752] transition-colors"
+                      >
+                        <svg
+                          width="14"
+                          height="14"
+                          viewBox="0 0 24 24"
+                          fill="none"
+                          stroke="currentColor"
+                          strokeWidth="2"
+                          strokeLinecap="round"
+                          strokeLinejoin="round"
+                        >
+                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
+                          <polyline points="22,6 12,13 2,6" />
+                        </svg>
+                        <span>conduct@osconnect.org</span>
+                      </a>
+                    </div>
+
+                    <p>
+                      All complaints will be reviewed and investigated promptly and fairly. The leadership team is obligated to respect the privacy and security of the reporter of any incident.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Section 6: Enforcement Guidelines */}
+                <div id="enforcement-guidelines" className="scroll-mt-28">
+                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
+                    Enforcement Guidelines
+                  </h2>
+                  <div className="space-y-6 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
+                    <p>
+                      Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
+                    </p>
+
+                    <div className="space-y-4">
+                      {/* Step 1 */}
+                      <div className="p-4 border border-gray-100 rounded-lg hover:border-gray-200 transition-colors">
+                        <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wider block mb-1">
+                          1. Correction
+                        </span>
+                        <h4 className="font-bold text-[#0B0F1A] text-sm mb-1.5">
+                          Community Impact: Inappropriate language or unprofessional behavior.
+                        </h4>
+                        <p className="text-xs text-gray-600 leading-relaxed">
+                          <strong>Consequence:</strong> A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
+                        </p>
+                      </div>
+
+                      {/* Step 2 */}
+                      <div className="p-4 border border-gray-100 rounded-lg hover:border-gray-200 transition-colors">
+                        <span className="text-[11px] font-bold text-amber-600 uppercase tracking-wider block mb-1">
+                          2. Warning
+                        </span>
+                        <h4 className="font-bold text-[#0B0F1A] text-sm mb-1.5">
+                          Community Impact: A violation through a single incident or series of actions.
+                        </h4>
+                        <p className="text-xs text-gray-600 leading-relaxed">
+                          <strong>Consequence:</strong> A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time.
+                        </p>
+                      </div>
+
+                      {/* Step 3 */}
+                      <div className="p-4 border border-gray-100 rounded-lg hover:border-gray-200 transition-colors">
+                        <span className="text-[11px] font-bold text-orange-600 uppercase tracking-wider block mb-1">
+                          3. Temporary Ban
+                        </span>
+                        <h4 className="font-bold text-[#0B0F1A] text-sm mb-1.5">
+                          Community Impact: A serious violation of community standards, including sustained inappropriate behavior.
+                        </h4>
+                        <p className="text-xs text-gray-600 leading-relaxed">
+                          <strong>Consequence:</strong> A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved is permitted.
+                        </p>
+                      </div>
+
+                      {/* Step 4 */}
+                      <div className="p-4 border border-gray-100 rounded-lg hover:border-gray-200 transition-colors">
+                        <span className="text-[11px] font-bold text-red-600 uppercase tracking-wider block mb-1">
+                          4. Permanent Ban
+                        </span>
+                        <h4 className="font-bold text-[#0B0F1A] text-sm mb-1.5">
+                          Community Impact: Demonstrating a pattern of violation of community standards, harassment of an individual, or aggression toward groups.
+                        </h4>
+                        <p className="text-xs text-gray-600 leading-relaxed">
+                          <strong>Consequence:</strong> A permanent ban from any sort of public interaction within the Open Source Connect community, repositories, events, and platforms.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Section 7: Attribution & Governance */}
+                <div id="attribution-governance" className="scroll-mt-28">
+                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
+                    Attribution &amp; Governance
+                  </h2>
+                  <div className="space-y-4 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
+                    <p>
+                      This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at{" "}
+                      <a
+                        href="https://www.contributor-covenant.org/version/2/1/code_of_conduct.html"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#2563EB] hover:underline"
+                      >
+                        contributor-covenant.org
+                      </a>
+                      .
+                    </p>
+                    <p>
+                      Community Impact Guidelines were inspired by Mozilla&apos;s code of conduct enforcement ladder. For answers to common questions about this code of conduct, see the FAQ at{" "}
+                      <a
+                        href="https://www.contributor-covenant.org/faq"
+                        target="_blank"
+                        rel="noopener noreferrer"
+                        className="text-[#2563EB] hover:underline"
+                      >
+                        contributor-covenant.org/faq
+                      </a>
+                      .
+                    </p>
+                  </div>
+                </div>
+              </div>
+            </div>
+          </div>
+        </section>
+      </main>
+
+      {/* Footer */}
+      <FooterSection />
+    </div>
+  );
+}

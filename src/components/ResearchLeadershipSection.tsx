@@ -470,13 +470,13 @@ export default function ResearchLeadershipSection({
                   
                 </div>
                 <div className="flex items-center gap-4 text-slate-400">
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link href="/privacy-policy" className="hover:text-white transition-colors">
                     Privacy Policy
                   </Link>
                   <Link href="#" className="hover:text-white transition-colors">
                     Terms of Use
                   </Link>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link href="/code-of-conduct" className="hover:text-white transition-colors">
                     Code of Conduct
                   </Link>
                 </div>
