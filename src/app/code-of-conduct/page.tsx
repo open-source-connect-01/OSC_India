@@ -175,33 +175,19 @@ export default function CodeOfConductPage() {
                   })}
                 </nav>
 
-                {/* Quick Incident Contact Box */}
-                <div className="mt-8 p-4 bg-[#F8FAFC] border border-gray-100 rounded-lg">
-                  <div className="flex items-center gap-2 mb-2">
-                    <svg
-                      width="16"
-                      height="16"
-                      viewBox="0 0 24 24"
-                      fill="none"
-                      stroke="#2563EB"
-                      strokeWidth="2"
-                      strokeLinecap="round"
-                      strokeLinejoin="round"
-                    >
-                      <path d="M12 22s8-4 8-10V5l-8-3-8 3v7c0 6 8 10 8 10z" />
-                    </svg>
-                    <span className="text-[11px] font-bold tracking-wider text-[#0B0F1A] uppercase">
-                      Need Support?
-                    </span>
-                  </div>
-                  <p className="text-[11px] text-gray-500 leading-relaxed mb-3">
-                    If you experience or witness an issue, please reach out to our team immediately.
+                {/* Report a Violation Box */}
+                <div className="mt-8 p-5 sm:p-6 bg-[#FEF6D8] border border-[#F59E0B] rounded-[2px]">
+                  <h4 className="text-[15px] font-bold text-[#854D0E] mb-2.5">
+                    Report a Violation
+                  </h4>
+                  <p className="text-[13px] text-[#78350F] leading-relaxed mb-4">
+                    All reports are handled with confidentiality and care.
                   </p>
                   <a
-                    href="mailto:conduct@osconnect.org"
-                    className="inline-block text-[11px] font-bold text-[#2563EB] hover:underline"
+                    href="mailto:conduct@oscfoundation.org"
+                    className="block text-[13px] font-bold text-[#854D0E] hover:underline"
                   >
-                    conduct@osconnect.org &rarr;
+                    conduct@oscfoundation.org
                   </a>
                 </div>
               </aside>
@@ -225,65 +211,79 @@ export default function CodeOfConductPage() {
 
                 {/* Section 2: Our Standards */}
                 <div id="our-standards" className="scroll-mt-28">
-                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
+                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-6 pb-2.5 border-b border-gray-100">
                     Our Standards
                   </h2>
-                  <div className="space-y-6 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
-                    {/* Positive Behavior Box */}
-                    <div className="p-5 sm:p-6 bg-emerald-50/60 border border-emerald-100 rounded-lg">
-                      <h3 className="text-base font-bold text-emerald-900 mb-3 flex items-center gap-2">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="text-emerald-600 shrink-0"
-                        >
-                          <polyline points="20 6 9 17 4 12" />
-                        </svg>
-                        Examples of behavior that contributes to a positive environment:
-                      </h3>
-                      <ul className="list-disc list-inside space-y-2 text-emerald-800/90 text-sm">
-                        <li>Demonstrating empathy and kindness toward other community members</li>
-                        <li>Being respectful of differing viewpoints and experiences</li>
-                        <li>Giving and gracefully accepting constructive feedback</li>
-                        <li>Accepting responsibility and apologizing to those affected by our mistakes, and learning from the experience</li>
-                        <li>Focusing on what is best not just for us as individuals, but for the overall community</li>
-                        <li>Encouraging newcomers and fostering inclusive mentorship</li>
+                  <div className="space-y-6">
+                    {/* Positive Behaviors Box */}
+                    <div className="p-6 sm:p-8 bg-[#F0FAF5] border border-[#86EFAC]/50 rounded-[2px]">
+                      <div className="flex items-center gap-2.5 mb-5">
+                        <span className="w-2 h-2 bg-[#16A34A] inline-block shrink-0" />
+                        <h3 className="text-xs font-extrabold text-[#15803D] uppercase tracking-[0.14em]">
+                          POSITIVE BEHAVIORS
+                        </h3>
+                      </div>
+                      <ul className="space-y-3.5 text-[14px] sm:text-[14.5px] text-[#166534] leading-[1.6]">
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#16A34A] inline-block shrink-0 mt-2" />
+                          <span>Demonstrating empathy and kindness toward other people</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#16A34A] inline-block shrink-0 mt-2" />
+                          <span>Being respectful of differing opinions, viewpoints, and experiences</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#16A34A] inline-block shrink-0 mt-2" />
+                          <span>Giving and gracefully accepting constructive feedback</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#16A34A] inline-block shrink-0 mt-2" />
+                          <span>Accepting responsibility and apologizing to those affected by our mistakes</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#16A34A] inline-block shrink-0 mt-2" />
+                          <span>Focusing on what is best not just for us as individuals, but for the overall community</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#16A34A] inline-block shrink-0 mt-2" />
+                          <span>Using welcoming and inclusive language</span>
+                        </li>
                       </ul>
                     </div>
 
-                    {/* Unacceptable Behavior Box */}
-                    <div className="p-5 sm:p-6 bg-rose-50/60 border border-rose-100 rounded-lg">
-                      <h3 className="text-base font-bold text-rose-900 mb-3 flex items-center gap-2">
-                        <svg
-                          width="18"
-                          height="18"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2.5"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
-                          className="text-rose-600 shrink-0"
-                        >
-                          <circle cx="12" cy="12" r="10" />
-                          <line x1="15" y1="9" x2="9" y2="15" />
-                          <line x1="9" y1="9" x2="15" y2="15" />
-                        </svg>
-                        Examples of unacceptable behavior:
-                      </h3>
-                      <ul className="list-disc list-inside space-y-2 text-rose-800/90 text-sm">
-                        <li>The use of sexualized language or imagery, and unwelcome sexual attention or advances</li>
-                        <li>Trolling, insulting or derogatory comments, and personal or political attacks</li>
-                        <li>Public or private harassment, stalking, or intimidation</li>
-                        <li>Publishing others&apos; private information, such as a physical or email address, without their explicit permission (doxxing)</li>
-                        <li>Disruptive behavior in events, chat channels, webinars, or community meetups</li>
-                        <li>Other conduct which could reasonably be considered inappropriate in a professional open source setting</li>
+                    {/* Unacceptable Behaviors Box */}
+                    <div className="p-6 sm:p-8 bg-[#FEF2F2] border border-[#FECACA]/70 rounded-[2px]">
+                      <div className="flex items-center gap-2.5 mb-5">
+                        <span className="w-2 h-2 bg-[#DC2626] inline-block shrink-0" />
+                        <h3 className="text-xs font-extrabold text-[#DC2626] uppercase tracking-[0.14em]">
+                          UNACCEPTABLE BEHAVIORS
+                        </h3>
+                      </div>
+                      <ul className="space-y-3.5 text-[14px] sm:text-[14.5px] text-[#991B1B] leading-[1.6]">
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#DC2626] inline-block shrink-0 mt-2" />
+                          <span>The use of sexualized language or imagery, and sexual attention or advances of any kind</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#DC2626] inline-block shrink-0 mt-2" />
+                          <span>Trolling, insulting or derogatory comments, and personal or political attacks</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#DC2626] inline-block shrink-0 mt-2" />
+                          <span>Public or private harassment of any community member</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#DC2626] inline-block shrink-0 mt-2" />
+                          <span>Publishing others&apos; private information without their explicit permission</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#DC2626] inline-block shrink-0 mt-2" />
+                          <span>Sustained disruption of community discussions, events, or meetings</span>
+                        </li>
+                        <li className="flex items-start gap-3">
+                          <span className="w-1.5 h-1.5 bg-[#DC2626] inline-block shrink-0 mt-2" />
+                          <span>Other conduct which could reasonably be considered inappropriate in a professional setting</span>
+                        </li>
                       </ul>
                     </div>
                   </div>
@@ -346,7 +346,7 @@ export default function CodeOfConductPage() {
                         </p>
                       </div>
                       <a
-                        href="mailto:conduct@osconnect.org"
+                        href="mailto:conduct@oscfoundation.org"
                         className="inline-flex items-center gap-2 px-4 py-2 bg-[#0A1B3D] text-white text-xs font-bold rounded hover:bg-[#122752] transition-colors"
                       >
                         <svg
@@ -362,7 +362,7 @@ export default function CodeOfConductPage() {
                           <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
                           <polyline points="22,6 12,13 2,6" />
                         </svg>
-                        <span>conduct@osconnect.org</span>
+                        <span>conduct@oscfoundation.org</span>
                       </a>
                     </div>
 
