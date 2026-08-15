@@ -180,7 +180,6 @@ export default function ResearchLeadershipSection({
   hideFooter?: boolean;
 }) {
   const [activeTab, setActiveTab] = useState<"speakers" | "mentors">("speakers");
-  const [email, setEmail] = useState("");
   const [mentorNotifyEmail, setMentorNotifyEmail] = useState("");
   const [isMentorNotified, setIsMentorNotified] = useState(false);
   const [internalProfile, setInternalProfile] = useState<ProfileData | null>(null);
@@ -360,37 +359,6 @@ export default function ResearchLeadershipSection({
               </div>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* ===== STAY CONNECTED NEWSLETTER ===== */}
-      <section className="w-full bg-white pb-16 lg:pb-20">
-        <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
-          <div className="w-full bg-[#0F172A] rounded-sm p-8 lg:p-12 text-white">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
-              <div className="flex-1">
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
-                  Stay Connected
-                </h2>
-                <p className="text-sm text-slate-300 max-w-md leading-relaxed">
-                  Subscribe to our newsletter for the latest research updates and
-                  community news.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-[#1E293B] border border-slate-700 text-white placeholder-slate-400 text-sm px-4 py-3 rounded-sm sm:w-[280px] outline-none focus:border-blue-500 transition-colors"
-                />
-                <button className="bg-[#2563EB] text-white font-extrabold text-xs tracking-wider uppercase px-8 py-3 rounded-sm hover:bg-blue-600 transition-colors whitespace-nowrap">
-                  SUBSCRIBE
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
