@@ -23,14 +23,21 @@ function BuildingIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
     >
-      <rect x="4" y="2" width="8" height="20" rx="1" />
-      <rect x="12" y="8" width="8" height="14" rx="1" />
-      <path d="M8 6h.01M8 10h.01M8 14h.01M8 18h.01M16 12h.01M16 16h.01" />
+      {/* Left Tower */}
+      <rect x="3" y="3" width="8" height="18" />
+      <line x1="3" y1="7.5" x2="11" y2="7.5" />
+      <line x1="3" y1="12" x2="11" y2="12" />
+      <line x1="3" y1="16.5" x2="11" y2="16.5" />
+
+      {/* Right Tower */}
+      <path d="M11 8h10v13H11" />
+      <line x1="14.5" y1="12" x2="17.5" y2="12" />
+      <line x1="14.5" y1="16.5" x2="17.5" y2="16.5" />
     </svg>
   );
 }
