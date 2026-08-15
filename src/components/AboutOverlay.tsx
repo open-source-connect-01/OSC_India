@@ -84,15 +84,25 @@ function BadgeIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
     >
-      <path d="M16 2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" />
-      <circle cx="12" cy="10" r="3" />
-      <path d="M7 19c0-2.5 2.2-4.5 5-4.5s5 2 5 4.5" />
-      <line x1="10" y1="5" x2="14" y2="5" />
+      {/* Top Clip / Tab */}
+      <path d="M9 7V3.5C9 2.67 9.67 2 10.5 2h3c.83 0 1.5.67 1.5 1.5V7" />
+      <line x1="12" y1="3.5" x2="12" y2="4.5" strokeWidth="1.8" />
+
+      {/* Main ID Badge Outline */}
+      <rect x="2" y="7" width="20" height="15" rx="2" />
+
+      {/* Profile Avatar (Left) */}
+      <circle cx="8" cy="12.5" r="1.8" fill="#2563EB" stroke="none" />
+      <path d="M5.2 18.5c0-1.6 1.25-2.7 2.8-2.7s2.8 1.1 2.8 2.7Z" fill="#2563EB" stroke="none" />
+
+      {/* Text / Info Lines (Right) */}
+      <line x1="14" y1="12.5" x2="18.5" y2="12.5" />
+      <line x1="14" y1="16.5" x2="18.5" y2="16.5" />
     </svg>
   );
 }
@@ -105,15 +115,19 @@ function PartnersIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.4"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
     >
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M19 11a4 4 0 0 0 0-6" />
-      <path d="M22 13a8 8 0 0 0 0-10" />
+      {/* Head */}
+      <circle cx="8.5" cy="8.5" r="3.5" />
+      {/* Shoulders */}
+      <path d="M2 20.5c0-3.5 2.9-6 6.5-6s6.5 2.5 6.5 6" />
+      {/* Inner Signal Wave */}
+      <path d="M16 6a5 5 0 0 1 0 7" />
+      {/* Outer Signal Wave */}
+      <path d="M19.5 2.5a9.5 9.5 0 0 1 0 14" />
     </svg>
   );
 }
