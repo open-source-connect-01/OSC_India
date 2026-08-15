@@ -14,8 +14,8 @@ import type { ActiveOverlay } from "@/components/Navbar";
 const contentsList = [
   { id: "our-pledge", label: "Our Pledge" },
   { id: "our-standards", label: "Our Standards" },
-  { id: "scope", label: "Scope & Application" },
   { id: "enforcement-responsibilities", label: "Enforcement Responsibilities" },
+  { id: "scope", label: "Scope" },
   { id: "reporting-guidelines", label: "Reporting Guidelines" },
   { id: "enforcement-guidelines", label: "Enforcement Guidelines" },
   { id: "attribution-governance", label: "Attribution & Governance" },
@@ -289,28 +289,7 @@ export default function CodeOfConductPage() {
                   </div>
                 </div>
 
-                {/* Section 3: Scope & Application */}
-                <div id="scope" className="scroll-mt-28">
-                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
-                    Scope &amp; Application
-                  </h2>
-                  <div className="space-y-4 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
-                    <p>
-                      This Code of Conduct applies within all community spaces, including but not limited to:
-                    </p>
-                    <ul className="list-disc list-inside space-y-2 pl-2">
-                      <li>Official Open Source Connect (OSC) repositories, issue trackers, and pull requests</li>
-                      <li>Communication channels including Discord, Slack, forums, email lists, and social media</li>
-                      <li>In-person and virtual events such as hackathons, summits, workshops, and meetups</li>
-                      <li>Any public space when an individual is representing the community or its members</li>
-                    </ul>
-                    <p>
-                      Representation of our community may be further defined and clarified by project maintainers and event organizers.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Section 4: Enforcement Responsibilities */}
+                {/* Section 3: Enforcement Responsibilities */}
                 <div id="enforcement-responsibilities" className="scroll-mt-28">
                   <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
                     Enforcement Responsibilities
@@ -320,7 +299,22 @@ export default function CodeOfConductPage() {
                       Community leaders are responsible for clarifying and enforcing our standards of acceptable behavior and will take appropriate and fair corrective action in response to any behavior that they deem inappropriate, threatening, offensive, or harmful.
                     </p>
                     <p>
-                      Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned with this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+                      Community leaders have the right and responsibility to remove, edit, or reject comments, commits, code, wiki edits, issues, and other contributions that are not aligned to this Code of Conduct, and will communicate reasons for moderation decisions when appropriate.
+                    </p>
+                  </div>
+                </div>
+
+                {/* Section 4: Scope */}
+                <div id="scope" className="scroll-mt-28">
+                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
+                    Scope
+                  </h2>
+                  <div className="space-y-4 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
+                    <p>
+                      This Code of Conduct applies within all community spaces — including GitHub repositories, mailing lists, Slack channels, forums, and in-person events — and also applies when an individual is officially representing the community in public spaces.
+                    </p>
+                    <p>
+                      Examples of representing our community include using an official e-mail address, posting via an official social media account, or acting as an appointed representative at an online or offline event.
                     </p>
                   </div>
                 </div>
