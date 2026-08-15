@@ -16,9 +16,8 @@ const contentsList = [
   { id: "our-standards", label: "Our Standards" },
   { id: "enforcement-responsibilities", label: "Enforcement Responsibilities" },
   { id: "scope", label: "Scope" },
-  { id: "reporting-guidelines", label: "Reporting Guidelines" },
-  { id: "enforcement-guidelines", label: "Enforcement Guidelines" },
-  { id: "attribution-governance", label: "Attribution & Governance" },
+  { id: "enforcement", label: "Enforcement" },
+  { id: "attribution", label: "Attribution" },
 ];
 
 export default function CodeOfConductPage() {
@@ -319,149 +318,118 @@ export default function CodeOfConductPage() {
                   </div>
                 </div>
 
-                {/* Section 5: Reporting Guidelines */}
-                <div id="reporting-guidelines" className="scroll-mt-28">
+                {/* Section 5: Enforcement */}
+                <div id="enforcement" className="scroll-mt-28">
                   <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
-                    Reporting Guidelines
+                    Enforcement
                   </h2>
-                  <div className="space-y-4 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
-                    <p>
-                      Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leadership responsible for enforcement at:
-                    </p>
+                  
+                  <p className="text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75] mb-6">
+                    Instances of abusive, harassing, or otherwise unacceptable behavior may be reported to the community leaders responsible for enforcement at{" "}
+                    <a
+                      href="mailto:conduct@oscfoundation.org"
+                      className="font-bold text-[#2563EB] hover:underline"
+                    >
+                      conduct@oscfoundation.org
+                    </a>
+                    . All complaints will be reviewed and investigated promptly and fairly.
+                  </p>
 
-                    {/* Contact Callout Banner */}
-                    <div className="p-5 bg-blue-50/70 border border-blue-100 rounded-lg flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4">
+                  <div className="space-y-4">
+                    {/* Card 1: Correction */}
+                    <div className="p-5 sm:p-6 bg-[#FEFCE8] rounded-[2px] flex items-start gap-4 sm:gap-5">
+                      <div className="w-8 h-8 rounded-[2px] bg-[#F59E0B] flex items-center justify-center text-white font-bold text-sm shrink-0">
+                        1
+                      </div>
                       <div>
-                        <h4 className="font-bold text-[#0B0F1A] text-sm mb-1">
-                          OSC Conduct &amp; Safety Team
+                        <h4 className="text-[15px] font-bold text-[#D97706] mb-1.5">
+                          Correction
                         </h4>
-                        <p className="text-xs text-gray-600">
-                          All reports are treated confidentially and reviewed promptly.
+                        <p className="text-[13.5px] text-[#4B5563] leading-relaxed">
+                          A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate.
                         </p>
                       </div>
-                      <a
-                        href="mailto:conduct@oscfoundation.org"
-                        className="inline-flex items-center gap-2 px-4 py-2 bg-[#0A1B3D] text-white text-xs font-bold rounded hover:bg-[#122752] transition-colors"
-                      >
-                        <svg
-                          width="14"
-                          height="14"
-                          viewBox="0 0 24 24"
-                          fill="none"
-                          stroke="currentColor"
-                          strokeWidth="2"
-                          strokeLinecap="round"
-                          strokeLinejoin="round"
+                    </div>
+
+                    {/* Card 2: Warning */}
+                    <div className="p-5 sm:p-6 bg-[#FFF7ED] rounded-[2px] flex items-start gap-4 sm:gap-5">
+                      <div className="w-8 h-8 rounded-[2px] bg-[#EA580C] flex items-center justify-center text-white font-bold text-sm shrink-0">
+                        2
+                      </div>
+                      <div>
+                        <h4 className="text-[15px] font-bold text-[#EA580C] mb-1.5">
+                          Warning
+                        </h4>
+                        <p className="text-[13.5px] text-[#4B5563] leading-relaxed">
+                          A warning with consequences for continued behavior. No interaction with the people involved for a specified period of time, including unsolicited interaction with those enforcing the Code of Conduct.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Card 3: Temporary Ban */}
+                    <div className="p-5 sm:p-6 bg-[#FEF2F2] rounded-[2px] flex items-start gap-4 sm:gap-5">
+                      <div className="w-8 h-8 rounded-[2px] bg-[#DC2626] flex items-center justify-center text-white font-bold text-sm shrink-0">
+                        3
+                      </div>
+                      <div>
+                        <h4 className="text-[15px] font-bold text-[#DC2626] mb-1.5">
+                          Temporary Ban
+                        </h4>
+                        <p className="text-[13.5px] text-[#4B5563] leading-relaxed">
+                          A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved is allowed during this period.
+                        </p>
+                      </div>
+                    </div>
+
+                    {/* Card 4: Permanent Ban */}
+                    <div className="p-5 sm:p-6 bg-[#F5F3FF] rounded-[2px] flex items-start gap-4 sm:gap-5">
+                      <div className="w-8 h-8 rounded-[2px] bg-[#7C3AED] flex items-center justify-center text-white font-bold text-sm shrink-0">
+                        4
+                      </div>
+                      <div>
+                        <h4 className="text-[15px] font-bold text-[#7C3AED] mb-1.5">
+                          Permanent Ban
+                        </h4>
+                        <p className="text-[13.5px] text-[#4B5563] leading-relaxed">
+                          A permanent ban from any sort of public interaction within the community for individuals who demonstrate a pattern of violation, harassment, or aggression toward individuals or groups.
+                        </p>
+                      </div>
+                    </div>
+                  </div>
+                </div>
+
+                {/* Section 6: Attribution */}
+                <div id="attribution" className="scroll-mt-28">
+                  <div className="p-6 sm:p-8 bg-[#F8FAFC] border border-gray-100 rounded-[2px]">
+                    <h3 className="text-xl sm:text-[22px] font-bold text-[#0B0F1A] tracking-tight mb-4">
+                      Attribution
+                    </h3>
+                    <div className="space-y-2.5 text-[13.5px] sm:text-[14px] text-[#64748B] leading-relaxed">
+                      <p>
+                        This Code of Conduct is adapted from the{" "}
+                        <a
+                          href="https://www.contributor-covenant.org/version/2/1/code_of_conduct.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="font-bold text-[#2563EB] hover:underline"
                         >
-                          <path d="M4 4h16c1.1 0 2 .9 2 2v12c0 1.1-.9 2-2 2H4c-1.1 0-2-.9-2-2V6c0-1.1.9-2 2-2z" />
-                          <polyline points="22,6 12,13 2,6" />
-                        </svg>
-                        <span>conduct@oscfoundation.org</span>
-                      </a>
+                          Contributor Covenant
+                        </a>
+                        , version 2.1, available at{" "}
+                        <a
+                          href="https://www.contributor-covenant.org/version/2/1/code_of_conduct.html"
+                          target="_blank"
+                          rel="noopener noreferrer"
+                          className="hover:underline"
+                        >
+                          contributor-covenant.org
+                        </a>
+                        .
+                      </p>
+                      <p>
+                        Community Impact Guidelines were inspired by Mozilla&apos;s code of conduct enforcement ladder.
+                      </p>
                     </div>
-
-                    <p>
-                      All complaints will be reviewed and investigated promptly and fairly. The leadership team is obligated to respect the privacy and security of the reporter of any incident.
-                    </p>
-                  </div>
-                </div>
-
-                {/* Section 6: Enforcement Guidelines */}
-                <div id="enforcement-guidelines" className="scroll-mt-28">
-                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
-                    Enforcement Guidelines
-                  </h2>
-                  <div className="space-y-6 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
-                    <p>
-                      Community leaders will follow these Community Impact Guidelines in determining the consequences for any action they deem in violation of this Code of Conduct:
-                    </p>
-
-                    <div className="space-y-4">
-                      {/* Step 1 */}
-                      <div className="p-4 border border-gray-100 rounded-lg hover:border-gray-200 transition-colors">
-                        <span className="text-[11px] font-bold text-blue-600 uppercase tracking-wider block mb-1">
-                          1. Correction
-                        </span>
-                        <h4 className="font-bold text-[#0B0F1A] text-sm mb-1.5">
-                          Community Impact: Inappropriate language or unprofessional behavior.
-                        </h4>
-                        <p className="text-xs text-gray-600 leading-relaxed">
-                          <strong>Consequence:</strong> A private, written warning from community leaders, providing clarity around the nature of the violation and an explanation of why the behavior was inappropriate. A public apology may be requested.
-                        </p>
-                      </div>
-
-                      {/* Step 2 */}
-                      <div className="p-4 border border-gray-100 rounded-lg hover:border-gray-200 transition-colors">
-                        <span className="text-[11px] font-bold text-amber-600 uppercase tracking-wider block mb-1">
-                          2. Warning
-                        </span>
-                        <h4 className="font-bold text-[#0B0F1A] text-sm mb-1.5">
-                          Community Impact: A violation through a single incident or series of actions.
-                        </h4>
-                        <p className="text-xs text-gray-600 leading-relaxed">
-                          <strong>Consequence:</strong> A warning with consequences for continued behavior. No interaction with the people involved, including unsolicited interaction with those enforcing the Code of Conduct, for a specified period of time.
-                        </p>
-                      </div>
-
-                      {/* Step 3 */}
-                      <div className="p-4 border border-gray-100 rounded-lg hover:border-gray-200 transition-colors">
-                        <span className="text-[11px] font-bold text-orange-600 uppercase tracking-wider block mb-1">
-                          3. Temporary Ban
-                        </span>
-                        <h4 className="font-bold text-[#0B0F1A] text-sm mb-1.5">
-                          Community Impact: A serious violation of community standards, including sustained inappropriate behavior.
-                        </h4>
-                        <p className="text-xs text-gray-600 leading-relaxed">
-                          <strong>Consequence:</strong> A temporary ban from any sort of interaction or public communication with the community for a specified period of time. No public or private interaction with the people involved is permitted.
-                        </p>
-                      </div>
-
-                      {/* Step 4 */}
-                      <div className="p-4 border border-gray-100 rounded-lg hover:border-gray-200 transition-colors">
-                        <span className="text-[11px] font-bold text-red-600 uppercase tracking-wider block mb-1">
-                          4. Permanent Ban
-                        </span>
-                        <h4 className="font-bold text-[#0B0F1A] text-sm mb-1.5">
-                          Community Impact: Demonstrating a pattern of violation of community standards, harassment of an individual, or aggression toward groups.
-                        </h4>
-                        <p className="text-xs text-gray-600 leading-relaxed">
-                          <strong>Consequence:</strong> A permanent ban from any sort of public interaction within the Open Source Connect community, repositories, events, and platforms.
-                        </p>
-                      </div>
-                    </div>
-                  </div>
-                </div>
-
-                {/* Section 7: Attribution & Governance */}
-                <div id="attribution-governance" className="scroll-mt-28">
-                  <h2 className="text-2xl sm:text-[28px] font-bold text-[#0B0F1A] tracking-tight mb-4 pb-2.5 border-b border-gray-100">
-                    Attribution &amp; Governance
-                  </h2>
-                  <div className="space-y-4 text-[14.5px] sm:text-[15px] text-[#475569] leading-[1.75]">
-                    <p>
-                      This Code of Conduct is adapted from the Contributor Covenant, version 2.1, available at{" "}
-                      <a
-                        href="https://www.contributor-covenant.org/version/2/1/code_of_conduct.html"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#2563EB] hover:underline"
-                      >
-                        contributor-covenant.org
-                      </a>
-                      .
-                    </p>
-                    <p>
-                      Community Impact Guidelines were inspired by Mozilla&apos;s code of conduct enforcement ladder. For answers to common questions about this code of conduct, see the FAQ at{" "}
-                      <a
-                        href="https://www.contributor-covenant.org/faq"
-                        target="_blank"
-                        rel="noopener noreferrer"
-                        className="text-[#2563EB] hover:underline"
-                      >
-                        contributor-covenant.org/faq
-                      </a>
-                      .
-                    </p>
                   </div>
                 </div>
               </div>
@@ -471,7 +439,7 @@ export default function CodeOfConductPage() {
       </main>
 
       {/* Footer */}
-      <FooterSection />
+      <FooterSection hideTopSections={true} />
     </div>
   );
 }
