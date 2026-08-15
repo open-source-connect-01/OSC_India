@@ -686,7 +686,7 @@ export default function FooterSection({
                 TERMS OF USE
               </Link>
               <Link
-                href="#"
+                href="/code-of-conduct"
                 className="hover:text-slate-300 transition-colors whitespace-nowrap"
               >
                 CODE OF CONDUCT

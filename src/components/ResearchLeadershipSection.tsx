@@ -180,7 +180,8 @@ export default function ResearchLeadershipSection({
   hideFooter?: boolean;
 }) {
   const [activeTab, setActiveTab] = useState<"speakers" | "mentors">("speakers");
-  const [email, setEmail] = useState("");
+  const [mentorNotifyEmail, setMentorNotifyEmail] = useState("");
+  const [isMentorNotified, setIsMentorNotified] = useState(false);
   const [internalProfile, setInternalProfile] = useState<ProfileData | null>(null);
 
   // Use external state (from AboutOverlay) if provided, otherwise internal
@@ -274,93 +275,90 @@ export default function ResearchLeadershipSection({
               ))}
             </div>
           ) : (
-            <div className="max-w-[880px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
-              {mentorMembers.map((mentor) => (
-                <button
-                  key={mentor.name}
-                  onClick={() =>
-                    onProfileSelect({
-                      name: mentor.name,
-                      role: mentor.role,
-                      org: mentor.org,
-                      badge: mentor.badge,
-                      photo: mentor.photo,
-                      bioParagraphs: mentor.bioParagraphs,
-                      tags: mentor.tags,
-                    })
+            /* ===== COMING SOON / UNDER DEVELOPMENT STATE FOR MENTORS ===== */
+            <div className="max-w-[720px] mx-auto py-12 sm:py-16 text-center flex flex-col items-center">
+              {/* Top Badge: UNDER DEVELOPMENT */}
+              <div className="inline-flex items-center gap-2 px-4 py-1.5 border border-gray-200 bg-white rounded-[2px] shadow-xs mb-8">
+                <span className="w-2 h-2 rounded-full bg-[#EA580C] shrink-0" />
+                <span className="text-[11px] font-bold tracking-[0.18em] text-[#C2410C] uppercase">
+                  UNDER DEVELOPMENT
+                </span>
+              </div>
+
+              {/* Headline: Coming Soon */}
+              <h2 className="text-5xl sm:text-6xl lg:text-[72px] font-extrabold tracking-tight leading-[1.05] text-[#0B132B] mb-5">
+                Coming <span className="font-serif italic font-normal text-[#274887]">Soon</span>
+              </h2>
+
+              {/* Subtitle */}
+              <p className="text-[15px] sm:text-base text-slate-600 font-normal max-w-[540px] leading-relaxed mb-8">
+                We are working hard to bring you something extraordinary. This page is currently being built and will be available shortly.
+              </p>
+
+              {/* Email Notify Form */}
+              <form
+                onSubmit={(e) => {
+                  e.preventDefault();
+                  if (mentorNotifyEmail.trim()) {
+                    setIsMentorNotified(true);
+                    setMentorNotifyEmail("");
                   }
-                  className="rounded-none overflow-hidden bg-white border border-slate-200/90 shadow-xs flex flex-col aspect-[3/3.8] transition-all duration-200 hover:shadow-md cursor-pointer text-left w-full border-0 outline-none ring-0 group"
+                }}
+                className="w-full max-w-[480px] mb-6"
+              >
+                <div className="flex flex-col sm:flex-row items-stretch border border-gray-200 rounded-[2px] overflow-hidden bg-white shadow-xs focus-within:border-accent-blue transition-colors">
+                  <input
+                    type="email"
+                    placeholder="Enter your email address"
+                    value={mentorNotifyEmail}
+                    onChange={(e) => setMentorNotifyEmail(e.target.value)}
+                    required
+                    className="flex-1 px-4 py-3.5 text-xs sm:text-sm text-slate-800 placeholder-gray-400 bg-slate-50/50 sm:bg-white outline-none"
+                  />
+                  <button
+                    type="submit"
+                    className="px-7 py-3.5 bg-[#0B132B] hover:bg-[#15234A] text-white text-xs font-extrabold tracking-[0.14em] uppercase transition-colors shrink-0 whitespace-nowrap cursor-pointer"
+                  >
+                    NOTIFY ME
+                  </button>
+                </div>
+                {isMentorNotified && (
+                  <p className="text-xs text-emerald-600 font-semibold mt-2">
+                    Thank you! We&apos;ll notify you when mentor profiles go live.
+                  </p>
+                )}
+              </form>
+
+              {/* Back to Home Link */}
+              <Link
+                href="/"
+                className="inline-flex items-center gap-1.5 text-xs font-bold text-[#2563EB] hover:underline mb-8"
+              >
+                <svg
+                  width="14"
+                  height="14"
+                  viewBox="0 0 24 24"
+                  fill="none"
+                  stroke="currentColor"
+                  strokeWidth="2.5"
+                  strokeLinecap="round"
+                  strokeLinejoin="round"
                 >
-                  {/* Top Dark Navy Header */}
-                  <div className="bg-[#18254A] px-4 py-3.5 flex items-center justify-between shrink-0">
-                    {/* Left: Avatar Badge */}
-                    <div className="w-10 h-10 rounded-full bg-white flex items-center justify-center shadow-xs overflow-hidden">
-                      <svg width="24" height="24" viewBox="0 0 24 24" fill="none">
-                        <circle cx="12" cy="7" r="3.5" fill="#B45309" />
-                        <path d="M6 18c0-3.3 2.7-6 6-6s6 2.7 6 6" fill="#BFDBFE" />
-                        <path d="M5 11c0-1.1.9-2 2-2h1v4H7a2 2 0 0 1-2-2zM16 9h1a2 2 0 0 1 2 2v0a2 2 0 0 1-2 2h-1V9z" fill="#1E293B" />
-                        <path d="M17 12c0 2-1 3-3 3" stroke="#1E293B" strokeWidth="1.5" strokeLinecap="round" />
-                      </svg>
-                    </div>
-                    {/* Right: Dash accent line */}
-                    <div className="w-6 h-[3px] bg-slate-400/50 rounded-full" />
-                  </div>
+                  <polyline points="15 18 9 12 15 6" />
+                </svg>
+                <span>Back to Home</span>
+              </Link>
 
-                  {/* Middle Blank White Body with Mentor Name */}
-                  <div className="flex-1 bg-white p-4 flex flex-col justify-end">
-                    <span className="text-[12.5px] font-bold text-slate-800 tracking-wide uppercase leading-tight truncate group-hover:text-accent-blue transition-colors">
-                      {mentor.name}
-                    </span>
-                    <span className="text-[10px] font-semibold text-slate-500 uppercase tracking-[0.02em] mt-0.5 leading-snug truncate">
-                      {mentor.slotTitle}
-                    </span>
-                  </div>
-
-                  {/* Bottom Bar with Paperclip & Arrow Icons */}
-                  <div className="border-t border-slate-200/80 px-4 py-3 bg-white flex items-center justify-between shrink-0 text-slate-400">
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <path d="M21.44 11.05l-9.19 9.19a6 6 0 0 1-8.49-8.49l9.19-9.19a4 4 0 0 1 5.66 5.66l-9.2 9.19a2 2 0 0 1-2.83-2.83l8.49-8.48" />
-                    </svg>
-                    <svg width="18" height="18" viewBox="0 0 24 24" fill="none" stroke="#94A3B8" strokeWidth="2" strokeLinecap="round" strokeLinejoin="round">
-                      <polyline points="9 10 4 15 9 20" />
-                      <path d="M20 4v7a4 4 0 0 1-4 4H4" />
-                    </svg>
-                  </div>
-                </button>
-              ))}
+              {/* 5 Color Palette Swatches */}
+              <div className="flex items-center justify-center gap-2">
+                <span className="w-3 h-3 rounded-[2px] bg-[#B3C5EA]" />
+                <span className="w-3 h-3 rounded-[2px] bg-[#FDBA74]" />
+                <span className="w-3 h-3 rounded-[2px] bg-[#FDE047]" />
+                <span className="w-3 h-3 rounded-[2px] bg-[#4ADE80]" />
+                <span className="w-3 h-3 rounded-[2px] bg-[#A855F7]" />
+              </div>
             </div>
           )}
-        </div>
-      </section>
-
-      {/* ===== STAY CONNECTED NEWSLETTER ===== */}
-      <section className="w-full bg-white pb-16 lg:pb-20">
-        <div className="max-w-[1240px] mx-auto px-6 lg:px-8">
-          <div className="w-full bg-[#0F172A] rounded-sm p-8 lg:p-12 text-white">
-            <div className="flex flex-col lg:flex-row lg:items-center lg:justify-between gap-6 lg:gap-10">
-              <div className="flex-1">
-                <h2 className="text-2xl sm:text-3xl font-extrabold text-white tracking-tight mb-2">
-                  Stay Connected
-                </h2>
-                <p className="text-sm text-slate-300 max-w-md leading-relaxed">
-                  Subscribe to our newsletter for the latest research updates and
-                  community news.
-                </p>
-              </div>
-              <div className="flex flex-col sm:flex-row gap-3 w-full sm:w-auto shrink-0">
-                <input
-                  type="email"
-                  placeholder="Enter your email"
-                  value={email}
-                  onChange={(e) => setEmail(e.target.value)}
-                  className="bg-[#1E293B] border border-slate-700 text-white placeholder-slate-400 text-sm px-4 py-3 rounded-sm sm:w-[280px] outline-none focus:border-blue-500 transition-colors"
-                />
-                <button className="bg-[#2563EB] text-white font-extrabold text-xs tracking-wider uppercase px-8 py-3 rounded-sm hover:bg-blue-600 transition-colors whitespace-nowrap">
-                  SUBSCRIBE
-                </button>
-              </div>
-            </div>
-          </div>
         </div>
       </section>
 
@@ -470,13 +468,13 @@ export default function ResearchLeadershipSection({
                   
                 </div>
                 <div className="flex items-center gap-4 text-slate-400">
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link href="/privacy-policy" className="hover:text-white transition-colors">
                     Privacy Policy
                   </Link>
                   <Link href="#" className="hover:text-white transition-colors">
                     Terms of Use
                   </Link>
-                  <Link href="#" className="hover:text-white transition-colors">
+                  <Link href="/code-of-conduct" className="hover:text-white transition-colors">
                     Code of Conduct
                   </Link>
                 </div>

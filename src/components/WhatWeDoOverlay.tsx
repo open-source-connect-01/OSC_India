@@ -1,7 +1,6 @@
 "use client";
 
 import Link from "next/link";
-import Image from "next/image";
 
 interface WhatWeDoOverlayProps {
   isOpen: boolean;
@@ -9,7 +8,7 @@ interface WhatWeDoOverlayProps {
 }
 
 // Custom SVG Icons matching exact What We Do dropdown screenshot
-function CodeBracketsIcon() {
+function OpenCollaborationIcon() {
   return (
     <svg
       width="22"
@@ -17,7 +16,7 @@ function CodeBracketsIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
@@ -28,7 +27,7 @@ function CodeBracketsIcon() {
   );
 }
 
-function HackathonTerminalIcon() {
+function OpenHardwareRoboticsIcon() {
   return (
     <svg
       width="22"
@@ -36,21 +35,19 @@ function HackathonTerminalIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
     >
-      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-      <line x1="8" y1="21" x2="16" y2="21" />
-      <line x1="12" y1="17" x2="12" y2="21" />
-      <polyline points="7 8 10 11 7 14" />
-      <line x1="13" y1="14" x2="17" y2="14" />
+      <rect x="2" y="4" width="20" height="16" rx="2" />
+      <polyline points="6 9 9 12 6 15" />
+      <line x1="11" y1="15" x2="16" y2="15" />
     </svg>
   );
 }
 
-function RocketIcon() {
+function AIResearchIcon() {
   return (
     <svg
       width="22"
@@ -58,28 +55,7 @@ function RocketIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
-      strokeLinecap="round"
-      strokeLinejoin="round"
-      className="shrink-0 mt-0.5"
-    >
-      <path d="M4.5 16.5c-1.5 1.26-2 5-2 5s3.74-.5 5-2c.71-.84.7-2.13-.09-2.91a2.18 2.18 0 0 0-2.91-.09z" />
-      <path d="m12 15-3-3a22 22 0 0 1 2-3.95A12.88 12.88 0 0 1 22 2c0 2.72-.78 7.5-6 11a22.35 22.35 0 0 1-4 2z" />
-      <path d="M9 12H4s.55-3.03 2-4c1.62-1.08 5 0 5 0" />
-      <path d="M12 15v5s3.03-.55 4-2c1.08-1.62 0-5 0-5" />
-    </svg>
-  );
-}
-
-function CpuIcon() {
-  return (
-    <svg
-      width="22"
-      height="22"
-      viewBox="0 0 24 24"
-      fill="none"
-      stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
@@ -91,7 +67,7 @@ function CpuIcon() {
   );
 }
 
-function VideoPlayIcon() {
+function FrontierTechnologyIcon() {
   return (
     <svg
       width="22"
@@ -99,15 +75,14 @@ function VideoPlayIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
     >
-      <rect x="2" y="3" width="20" height="14" rx="2" ry="2" />
-      <polygon points="10 8 16 11 10 14 10 8" />
-      <line x1="12" y1="17" x2="12" y2="21" />
-      <line x1="8" y1="21" x2="16" y2="21" />
+      <path d="M5 5V3a1 1 0 0 1 1-1h15a1 1 0 0 1 1 1v15a1 1 0 0 1-1 1h-2" />
+      <rect x="2" y="6" width="16" height="16" rx="2" />
+      <polygon points="8 10 13 14 8 18" fill="#2563EB" />
     </svg>
   );
 }
@@ -131,7 +106,7 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
       >
         <div className="w-full bg-white border-t border-gray-100">
           <div className="max-w-[1240px] mx-auto px-6 lg:px-8 py-12 lg:py-14">
-            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100 gap-y-8 md:gap-y-0 min-h-[280px]">
+            <div className="grid grid-cols-1 md:grid-cols-2 divide-y md:divide-y-0 md:divide-x divide-gray-100 gap-y-8 md:gap-y-0 min-h-[240px]">
               {/* --- Column 1: CORE INITIATIVES --- */}
               <div className="md:pr-10 lg:pr-14">
                 <h3 className="text-[11px] font-bold tracking-[0.2em] text-gray-400 uppercase mb-7">
@@ -139,33 +114,29 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
                 </h3>
 
                 <div className="space-y-8">
-                  {/* Open Source Programs */}
-                  <div className="group cursor-pointer flex items-center gap-4">
-                    <CodeBracketsIcon />
+                  {/* Open Collaboration */}
+                  <div className="group cursor-pointer flex items-start gap-4">
+                    <OpenCollaborationIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                        Open Source Programs
+                        Open Collaboration
                       </h4>
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[380px]">
+                        Supporting developers and communities to share, explore, and build through open source.
+                      </p>
                     </div>
                   </div>
 
-                  {/* Hackathons */}
-                  <div className="group cursor-pointer flex items-center gap-4">
-                    <HackathonTerminalIcon />
+                  {/* Open Hardware & Robotics */}
+                  <div className="group cursor-pointer flex items-start gap-4">
+                    <OpenHardwareRoboticsIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                        Hackathons
+                        Open Hardware &amp; Robotics
                       </h4>
-                    </div>
-                  </div>
-
-                  {/* Startup Collaboration */}
-                  <div className="group cursor-pointer flex items-center gap-4">
-                    <RocketIcon />
-                    <div>
-                      <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                        Startup Collaboration
-                      </h4>
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[380px]">
+                        Supporting collaborative innovation in robotics, embedded systems, IoT, and accessible open hardware.
+                      </p>
                     </div>
                   </div>
                 </div>
@@ -180,26 +151,26 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
                 <div className="space-y-8">
                   {/* AI & Research Initiatives */}
                   <div className="group cursor-pointer flex items-start gap-4">
-                    <CpuIcon />
+                    <AIResearchIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
                         AI &amp; Research Initiatives
                       </h4>
-                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[340px]">
-                        Cutting-edge research in artificial intelligence and machine learning.
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[380px]">
+                        Advancing open research in artificial intelligence, machine learning, and emerging intelligent systems.
                       </p>
                     </div>
                   </div>
 
-                  {/* Workshops & Webinars */}
+                  {/* Frontier Technology */}
                   <div className="group cursor-pointer flex items-start gap-4">
-                    <VideoPlayIcon />
+                    <FrontierTechnologyIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
-                        Workshops &amp; Webinars
+                        Frontier Technology
                       </h4>
-                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[340px]">
-                        Interactive learning sessions led by industry experts and researchers.
+                      <p className="text-xs text-gray-500 mt-1 leading-relaxed max-w-[380px]">
+                        Exploring emerging technologies where open collaboration can accelerate research and experimentation.
                       </p>
                     </div>
                   </div>
@@ -216,7 +187,8 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
               </span>
 
               <Link
-                href="#"
+                href="/about"
+                onClick={onClose}
                 className="inline-flex items-center gap-1.5 text-xs font-bold text-accent-blue hover:underline"
               >
                 <span>View All Programs</span>
