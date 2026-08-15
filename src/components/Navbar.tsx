@@ -36,8 +36,10 @@ const mobileAccordionData = [
     key: "whatwedo" as ActiveOverlay,
     label: "WHAT WE DO",
     subLinks: [
-      { name: "Projects", key: "whatwedo" as ActiveOverlay },
-      { name: "Technical Standards", key: "whatwedo" as ActiveOverlay },
+      { name: "Open Collaboration", key: "whatwedo" as ActiveOverlay },
+      { name: "Open Hardware & Robotics", key: "whatwedo" as ActiveOverlay },
+      { name: "AI & Research Initiatives", key: "whatwedo" as ActiveOverlay },
+      { name: "Frontier Technology", key: "whatwedo" as ActiveOverlay },
     ],
   },
   {
