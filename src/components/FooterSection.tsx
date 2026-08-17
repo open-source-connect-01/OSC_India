@@ -35,7 +35,7 @@ const footerLinks = [
     heading: "PROGRAMS",
     links: [
       { label: "Open Source Connect India", href: "https://luma.com/3u22sml7?tk=k1DFsQ" },
-      { label: "Open Source Connect Global", href: "#" },
+      { label: "Open Source Connect Global", href: "https://luma.com/vyb4bntj?tk=gLmY56" },
       { label: "Hackathons", href: "https://ai-builders-hackathon-2026.devpost.com/" },
       { label: "Workshops & Tech Talks", href: "#" },
     ],
