@@ -48,16 +48,16 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Dishant Gandhi",
-    cardRole: "AI/ML CONSULTANT",
-    role: "AI/ML Consultant",
-    org: "OSC Foundation",
+    cardRole: "AI/ML CONSULTANT & PUBLIC SPEAKER",
+    role: "AI/ML Consultant & Public Speaker",
+    org: "Ruffalo Noel Levitz",
     badge: "Keynote Speaker",
     photo: "/leaders/dishant_gandhi_v3.png",
     bioParagraphs: [
-      "Dishant Gandhi is an AI/ML Consultant specializing in machine learning systems, applied artificial intelligence, and open-source ML workflows.",
-      "He works with technology organizations and research teams to architect scalable AI models, streamline MLOps pipelines, and advocate for transparent AI development.",
+      "Dishant Gandhi is an AI/ML Consultant with over 6 years of experience specializing in Generative AI, Conversational AI, and Large Language Models. He has built scalable chatbots, RAG pipelines, web applications, and AI powered widgets using technologies such as LangChain, Streamlit, and Kubernetes.",
+      "With 25+ speaking sessions at global conferences, Dishant is known for simplifying complex AI concepts, driving innovation, and mentoring aspiring technologists to build impactful AI solutions.",
     ],
-    tags: ["Artificial Intelligence", "Machine Learning", "MLOps"],
+    tags: ["Generative AI", "LLMs", "Conversational AI", "RAG Pipelines"],
   },
   {
     name: "Olena Yara",
