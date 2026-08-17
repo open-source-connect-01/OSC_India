@@ -7,7 +7,6 @@ import Navbar from "@/components/Navbar";
 import FooterSection from "@/components/FooterSection";
 import AboutOverlay from "@/components/AboutOverlay";
 import WhatWeDoOverlay from "@/components/WhatWeDoOverlay";
-import CommunityOverlay from "@/components/CommunityOverlay";
 import EventsOverlay from "@/components/EventsOverlay";
 import type { ActiveOverlay } from "@/components/Navbar";
 
@@ -107,10 +106,6 @@ export default function CodeOfConductPage() {
       />
       <WhatWeDoOverlay
         isOpen={activeOverlay === "whatwedo"}
-        onClose={handleCloseOverlay}
-      />
-      <CommunityOverlay
-        isOpen={activeOverlay === "resources"}
         onClose={handleCloseOverlay}
       />
       <EventsOverlay
