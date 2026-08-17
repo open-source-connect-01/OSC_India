@@ -74,16 +74,16 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Nithin S.S",
-    cardRole: "OPEN STANDARDS LIAISON",
-    role: "Open Standards Liaison",
-    org: "OSC Foundation",
+    cardRole: "FOUNDER & LEADERSHIP STRATEGIST",
+    role: "Founder & Leadership Strategist",
+    org: "Synapse QA",
     badge: "Keynote Speaker",
     photo: "/leaders/nithin_ss.jpg",
     bioParagraphs: [
-      "Nithin S.S serves as the Open Standards Liaison at the OSC Foundation, bridging technical communities with global standards frameworks.",
-      "He advocates for open protocols, interoperable architectures, and transparent developer standards across open-source ecosystems.",
+      "Nithin is a Software Engineering leader with over a decade of experience in Quality Engineering and team building. He is Head of QA at Lodgify and founder of Synapse QA, a community focused on accessible quality learning across Southeast Asia.",
+      "He is also an international speaker, consultant, author of the Now to Next newsletter, and career coach who has guided over 200 professionals in their career growth.",
     ],
-    tags: ["Open Standards", "Interoperability", "Open Protocols"],
+    tags: ["Software Engineering", "Quality Engineering", "Leadership Strategy", "Career Coaching"],
   },
   {
     name: "JAMES WILSON",
