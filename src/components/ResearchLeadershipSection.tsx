@@ -99,17 +99,17 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     tags: ["Revenue Growth", "Go-to-Market Strategy", "Strategic Partnerships", "Ecosystem Development"],
   },
   {
-    name: "AMARA OKAFOR",
-    cardRole: "STRATEGIC PARTNERSHIPS",
-    role: "Distributed Systems Architect",
-    org: "OSC Foundation",
+    name: "Kateryna Tertiienko",
+    cardRole: "TECHNICAL LEAD",
+    role: "Technical Lead",
+    org: "Infonetica",
     badge: "Keynote Speaker",
-    photo: "/leaders/kevin_schmidt.jpg",
+    photo: "/leaders/elena_rodriguez.jpg",
     bioParagraphs: [
-      "Kevin Schmidt is a Distributed Systems Architect specializing in cloud-native platforms, high-throughput pipelines, and distributed consensus protocols.",
-      "He actively contributes to major open-source infrastructure projects and mentors engineering teams worldwide on building scalable decentralized applications.",
+      "Kateryna Tertiienko is a technology leader and self-learner with around 20 years of experience across software engineering, diverse products, and engineering cultures in Ukraine, South Africa, and the UK.",
+      "Her work focuses on technology leadership, software engineering, and building effective teams, with experience across multiple programming languages and frameworks.",
     ],
-    tags: ["Distributed Systems", "Cloud Infrastructure", "Kubernetes"],
+    tags: ["Technology Leadership", "Software Engineering", "Team Building", "Engineering Culture"],
   },
 ];
 
