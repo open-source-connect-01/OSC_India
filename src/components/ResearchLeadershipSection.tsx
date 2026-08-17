@@ -405,39 +405,45 @@ export default function ResearchLeadershipSection({
                   </div>
                 </div>
 
-                {/* OUR WORK */}
+                {/* ORGANIZATION */}
                 <div>
                   <h3 className="text-white text-[11px] font-extrabold tracking-[0.15em] uppercase mb-4">
-                    OUR WORK
+                    ORGANIZATION
                   </h3>
                   <ul className="space-y-2.5 text-[12px]">
-                    {["Hosted Projects", "Project Lifecycle", "Technical Standards", "Working Groups"].map(
-                      (item) => (
-                        <li key={item}>
-                          <Link href="#" className="hover:text-white transition-colors">
-                            {item}
-                          </Link>
-                        </li>
-                      )
-                    )}
+                    {[
+                      { label: "About OSC", href: "/about" },
+                      { label: "Meet the Team", href: "/about" },
+                      { label: "Speakers & Mentors", href: "/speakers-and-mentors" },
+                      { label: "Partners", href: "/about" },
+                    ].map((item) => (
+                      <li key={item.label}>
+                        <Link href={item.href} className="hover:text-white transition-colors">
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
-                {/* COMPLIANCE */}
+                {/* PROGRAMS */}
                 <div>
                   <h3 className="text-white text-[11px] font-extrabold tracking-[0.15em] uppercase mb-4">
-                    COMPLIANCE
+                    PROGRAMS
                   </h3>
                   <ul className="space-y-2.5 text-[12px]">
-                    {["Trademark Policy", "Antitrust Policy", "Governance Bylaws", "Transparency Report"].map(
-                      (item) => (
-                        <li key={item}>
-                          <Link href="#" className="hover:text-white transition-colors">
-                            {item}
-                          </Link>
-                        </li>
-                      )
-                    )}
+                    {[
+                      { label: "Open Source Connect India", href: "/events" },
+                      { label: "Open Source Connect Global", href: "#" },
+                      { label: "Hackathons", href: "#" },
+                      { label: "Workshops & Tech Talks", href: "#" },
+                    ].map((item) => (
+                      <li key={item.label}>
+                        <Link href={item.href} className="hover:text-white transition-colors">
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
 
@@ -447,15 +453,18 @@ export default function ResearchLeadershipSection({
                     SUPPORT
                   </h3>
                   <ul className="space-y-2.5 text-[12px]">
-                    {["Membership", "Donations", "Mentorship", "Legal Support"].map(
-                      (item) => (
-                        <li key={item}>
-                          <Link href="#" className="hover:text-white transition-colors">
-                            {item}
-                          </Link>
-                        </li>
-                      )
-                    )}
+                    {[
+                      { label: "Donate", href: "https://ko-fi.com/opensourceconnect" },
+                      { label: "Join the Community", href: "https://discord.gg/umEXASsAev" },
+                      { label: "Newsletter", href: "#" },
+                      { label: "Contact Us", href: "mailto:conduct@oscfoundation.org" },
+                    ].map((item) => (
+                      <li key={item.label}>
+                        <Link href={item.href} className="hover:text-white transition-colors">
+                          {item.label}
+                        </Link>
+                      </li>
+                    ))}
                   </ul>
                 </div>
               </div>
