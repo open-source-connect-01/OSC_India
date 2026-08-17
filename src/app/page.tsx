@@ -13,7 +13,6 @@ import ConnectContributeGrowSection from "@/components/ConnectContributeGrowSect
 import FooterSection from "@/components/FooterSection";
 import AboutOverlay from "@/components/AboutOverlay";
 import WhatWeDoOverlay from "@/components/WhatWeDoOverlay";
-import CommunityOverlay from "@/components/CommunityOverlay";
 import EventsOverlay from "@/components/EventsOverlay";
 
 function HomeContent() {
@@ -112,7 +111,6 @@ function HomeContent() {
       {/* Overlays */}
       <AboutOverlay isOpen={activeOverlay === "about"} onClose={handleCloseOverlay} />
       <WhatWeDoOverlay isOpen={activeOverlay === "whatwedo"} onClose={handleCloseOverlay} />
-      <CommunityOverlay isOpen={activeOverlay === "resources"} onClose={handleCloseOverlay} />
       <EventsOverlay isOpen={activeOverlay === "events"} onClose={handleCloseOverlay} />
     </div>
   );
