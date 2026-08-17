@@ -61,16 +61,16 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Olena Yara",
-    cardRole: "FOUNDER AT YARA AGENCY",
-    role: "Founder at Yara Agency",
+    cardRole: "FOUNDER & MARKETING EXPERT",
+    role: "Founder & Marketing Expert",
     org: "Yara Agency",
     badge: "Keynote Speaker",
     photo: "/leaders/olena_yara_v3.png",
     bioParagraphs: [
-      "Olena Yara is the Founder of Yara Agency, a creative technology and strategic brand agency driving digital innovation for tech organizations.",
-      "She leads cross-disciplinary initiatives bridging design, marketing, and developer relations to amplify high-impact open-source initiatives globally.",
+      "Olena Yara is a marketing expert and founder of Yara Agency, working at the intersection of digital art, technology, and global communities.",
+      "Her work focuses on marketing, curation, and strategic partnerships, helping artists, institutions, and companies amplify their work while connecting creativity, technology, and community through storytelling and collaboration.",
     ],
-    tags: ["Brand Strategy", "Technology Agency", "Digital Innovation"],
+    tags: ["Marketing Strategy", "Digital Art", "Strategic Partnerships", "Storytelling"],
   },
   {
     name: "Nithin S.S",
