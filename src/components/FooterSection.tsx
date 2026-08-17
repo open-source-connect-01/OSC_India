@@ -26,7 +26,7 @@ const footerLinks = [
     heading: "ORGANIZATION",
     links: [
       { label: "About OSC", href: "/about" },
-      { label: "Meet the Team", href: "/about" },
+      { label: "Meet the Team", href: "" },
       { label: "Speakers & Mentors", href: "/speakers-and-mentors" },
       { label: "Partners", href: "/about" },
     ],
@@ -34,7 +34,7 @@ const footerLinks = [
   {
     heading: "PROGRAMS",
     links: [
-      { label: "Open Source Connect India", href: "/events" },
+      { label: "Open Source Connect India", href: "https://luma.com/3u22sml7?tk=k1DFsQ" },
       { label: "Open Source Connect Global", href: "#" },
       { label: "Hackathons", href: "https://ai-builders-hackathon-2026.devpost.com/" },
       { label: "Workshops & Tech Talks", href: "#" },
