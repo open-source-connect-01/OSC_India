@@ -435,11 +435,16 @@ export default function ResearchLeadershipSection({
                     {[
                       { label: "Open Source Connect India", href: "/events" },
                       { label: "Open Source Connect Global", href: "#" },
-                      { label: "Hackathons", href: "#" },
+                      { label: "Hackathons", href: "https://ai-builders-hackathon-2026.devpost.com/" },
                       { label: "Workshops & Tech Talks", href: "#" },
                     ].map((item) => (
                       <li key={item.label}>
-                        <Link href={item.href} className="hover:text-white transition-colors">
+                        <Link
+                          href={item.href}
+                          target={item.href.startsWith("http") ? "_blank" : undefined}
+                          rel={item.href.startsWith("http") ? "noopener noreferrer" : undefined}
+                          className="hover:text-white transition-colors"
+                        >
                           {item.label}
                         </Link>
                       </li>
