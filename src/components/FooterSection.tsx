@@ -23,30 +23,30 @@ const whyItems = [
 
 const footerLinks = [
   {
-    heading: "OUR WORK",
+    heading: "ORGANIZATION",
     links: [
-      { label: "Hosted Projects", href: "#" },
-      { label: "Project Lifecycle", href: "#" },
-      { label: "Technical Standards", href: "#" },
-      { label: "Working Groups", href: "#" },
+      { label: "About OSC", href: "/about" },
+      { label: "Meet the Team", href: "#" },
+      { label: "Speakers & Mentors", href: "/speakers-and-mentors" },
+      { label: "Partners", href: "/about" },
     ],
   },
   {
-    heading: "COMPLIANCE",
+    heading: "PROGRAMS",
     links: [
-      { label: "Trademark Policy", href: "#" },
-      { label: "Antitrust Policy", href: "#" },
-      { label: "Governance Bylaws", href: "#" },
-      { label: "Transparency Report", href: "#" },
+      { label: "Open Source Connect India", href: "https://luma.com/3u22sml7?tk=k1DFsQ" },
+      { label: "Open Source Connect Global", href: "https://luma.com/vyb4bntj?tk=gLmY56" },
+      { label: "Hackathons", href: "https://ai-builders-hackathon-2026.devpost.com/" },
+      { label: "Workshops & Tech Talks", href: "#" },
     ],
   },
   {
     heading: "SUPPORT",
     links: [
-      { label: "Membership", href: "#" },
-      { label: "Donations", href: "#" },
-      { label: "Mentorship", href: "#" },
-      { label: "Legal Support", href: "#" },
+      { label: "Donate", href: "https://ko-fi.com/opensourceconnect" },
+      { label: "Join the Community", href: "https://discord.gg/umEXASsAev" },
+      { label: "Newsletter", href: "#" },
+      { label: "Contact Us", href: "mailto:conduct@oscfoundation.org" },
     ],
   },
 ];
@@ -347,7 +347,7 @@ export default function FooterSection({
                 alt="Open Source Connect"
                 width={150}
                 height={38}
-                className="h-8 w-auto object-contain brightness-0 invert mb-4"
+                className="h-8 w-auto object-contain brightness-0 invert mb-4 -ml-1.5"
               />
               <p className="text-[13px] leading-relaxed text-slate-400 max-w-[220px] mb-5">
                 Bringing developers, communities, and organizations together to
@@ -474,6 +474,8 @@ export default function FooterSection({
                     <a
                       key={link.label}
                       href={link.href}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="block text-[13.5px] text-slate-400 hover:text-white transition-colors duration-200"
                     >
                       {link.label}
@@ -492,7 +494,7 @@ export default function FooterSection({
                 alt="Open Source Connect"
                 width={150}
                 height={38}
-                className="h-8 w-auto object-contain brightness-0 invert mb-4"
+                className="h-8 w-auto object-contain brightness-0 invert mb-4 -ml-1.5"
               />
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Bringing developers, communities, and organizations
@@ -609,17 +611,19 @@ export default function FooterSection({
             </div>
 
             <div className="border-t border-slate-800/80 pt-6">
-              {/* 2-Column Grid for OUR WORK & COMPLIANCE */}
+              {/* 2-Column Grid for ORGANIZATION & PROGRAMS */}
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div>
                   <h5 className="text-[#F2811D] text-[11px] font-extrabold tracking-wider uppercase mb-3">
-                    OUR WORK
+                    {footerLinks[0].heading}
                   </h5>
                   <div className="space-y-2.5">
                     {footerLinks[0].links.map((link) => (
                       <Link
                         key={link.label}
                         href={link.href}
+                        target={link.href.startsWith("http") ? "_blank" : undefined}
+                        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="block text-xs text-slate-300 hover:text-white"
                       >
                         {link.label}
@@ -630,13 +634,15 @@ export default function FooterSection({
 
                 <div>
                   <h5 className="text-[#F2811D] text-[11px] font-extrabold tracking-wider uppercase mb-3">
-                    COMPLIANCE
+                    {footerLinks[1].heading}
                   </h5>
                   <div className="space-y-2.5">
                     {footerLinks[1].links.map((link) => (
                       <Link
                         key={link.label}
                         href={link.href}
+                        target={link.href.startsWith("http") ? "_blank" : undefined}
+                        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="block text-xs text-slate-300 hover:text-white"
                       >
                         {link.label}
@@ -649,13 +655,15 @@ export default function FooterSection({
               {/* SUPPORT Column Below */}
               <div>
                 <h5 className="text-[#F2811D] text-[11px] font-extrabold tracking-wider uppercase mb-3">
-                  SUPPORT
+                  {footerLinks[2].heading}
                 </h5>
                 <div className="space-y-2.5">
                   {footerLinks[2].links.map((link) => (
                     <Link
                       key={link.label}
                       href={link.href}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="block text-xs text-slate-300 hover:text-white"
                     >
                       {link.label}
