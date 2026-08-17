@@ -347,7 +347,7 @@ export default function FooterSection({
                 alt="Open Source Connect"
                 width={150}
                 height={38}
-                className="h-8 w-auto object-contain brightness-0 invert mb-4"
+                className="h-8 w-auto object-contain brightness-0 invert mb-4 -ml-1.5"
               />
               <p className="text-[13px] leading-relaxed text-slate-400 max-w-[220px] mb-5">
                 Bringing developers, communities, and organizations together to
@@ -492,7 +492,7 @@ export default function FooterSection({
                 alt="Open Source Connect"
                 width={150}
                 height={38}
-                className="h-8 w-auto object-contain brightness-0 invert mb-4"
+                className="h-8 w-auto object-contain brightness-0 invert mb-4 -ml-1.5"
               />
               <p className="text-xs text-slate-300 leading-relaxed mb-4">
                 Bringing developers, communities, and organizations

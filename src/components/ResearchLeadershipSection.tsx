@@ -376,7 +376,7 @@ export default function ResearchLeadershipSection({
                     alt="Open Source Connect"
                     width={160}
                     height={40}
-                    className="h-8 w-auto object-contain brightness-0 invert mb-4"
+                    className="h-8 w-auto object-contain brightness-0 invert mb-4 -ml-1.5"
                   />
                   <p className="text-[12px] text-slate-400 leading-relaxed max-w-[240px] mb-4">
                     Bringing developers, communities, and organizations
