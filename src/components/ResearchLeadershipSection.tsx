@@ -86,8 +86,8 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     tags: ["Open Standards", "Interoperability", "Open Protocols"],
   },
   {
-    name: "Dr. Sophia Rossi",
-    cardRole: "HEAD OF OPEN HARDWARE & ROBOTICS",
+    name: "JAMES WILSON",
+    cardRole: "CLOUD INFRASTRUCTURE LEAD",
     role: "Head of Open Hardware & Robotics",
     org: "OSC Foundation",
     badge: "Keynote Speaker",
