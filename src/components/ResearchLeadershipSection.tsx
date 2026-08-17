@@ -104,7 +104,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     role: "Technical Lead",
     org: "Infonetica",
     badge: "Keynote Speaker",
-    photo: "/leaders/elena_rodriguez.jpg",
+    photo: "/leaders/kateryna_tertiienko.png",
     bioParagraphs: [
       "Kateryna Tertiienko is a technology leader and self-learner with around 20 years of experience across software engineering, diverse products, and engineering cultures in Ukraine, South Africa, and the UK.",
       "Her work focuses on technology leadership, software engineering, and building effective teams, with experience across multiple programming languages and frameworks.",
