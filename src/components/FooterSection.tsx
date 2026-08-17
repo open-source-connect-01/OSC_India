@@ -36,7 +36,7 @@ const footerLinks = [
     links: [
       { label: "Open Source Connect India", href: "/events" },
       { label: "Open Source Connect Global", href: "#" },
-      { label: "Hackathons", href: "#" },
+      { label: "Hackathons", href: "https://ai-builders-hackathon-2026.devpost.com/" },
       { label: "Workshops & Tech Talks", href: "#" },
     ],
   },
@@ -474,6 +474,8 @@ export default function FooterSection({
                     <a
                       key={link.label}
                       href={link.href}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="block text-[13.5px] text-slate-400 hover:text-white transition-colors duration-200"
                     >
                       {link.label}
@@ -609,7 +611,7 @@ export default function FooterSection({
             </div>
 
             <div className="border-t border-slate-800/80 pt-6">
-              {/* 2-Column Grid for OUR WORK & COMPLIANCE */}
+              {/* 2-Column Grid for ORGANIZATION & PROGRAMS */}
               <div className="grid grid-cols-2 gap-6 mb-6">
                 <div>
                   <h5 className="text-[#F2811D] text-[11px] font-extrabold tracking-wider uppercase mb-3">
@@ -620,6 +622,8 @@ export default function FooterSection({
                       <Link
                         key={link.label}
                         href={link.href}
+                        target={link.href.startsWith("http") ? "_blank" : undefined}
+                        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="block text-xs text-slate-300 hover:text-white"
                       >
                         {link.label}
@@ -637,6 +641,8 @@ export default function FooterSection({
                       <Link
                         key={link.label}
                         href={link.href}
+                        target={link.href.startsWith("http") ? "_blank" : undefined}
+                        rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                         className="block text-xs text-slate-300 hover:text-white"
                       >
                         {link.label}
@@ -649,13 +655,15 @@ export default function FooterSection({
               {/* SUPPORT Column Below */}
               <div>
                 <h5 className="text-[#F2811D] text-[11px] font-extrabold tracking-wider uppercase mb-3">
-                  SUPPORT
+                  {footerLinks[2].heading}
                 </h5>
                 <div className="space-y-2.5">
                   {footerLinks[2].links.map((link) => (
                     <Link
                       key={link.label}
                       href={link.href}
+                      target={link.href.startsWith("http") ? "_blank" : undefined}
+                      rel={link.href.startsWith("http") ? "noopener noreferrer" : undefined}
                       className="block text-xs text-slate-300 hover:text-white"
                     >
                       {link.label}
