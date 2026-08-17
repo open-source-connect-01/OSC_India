@@ -23,15 +23,15 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   {
     name: "Chikahiro Tokoro",
     cardRole: "SOFTWARE ENGINEER, PODCASTER",
-    role: "Software Engineer & Podcaster",
-    org: "OSC Foundation",
+    role: "Software Engineer, Podcaster",
+    org: "OSS Developer / Public Speaker",
     badge: "Keynote Speaker",
     photo: "/leaders/chikahiro_tokoro_v3.png",
     bioParagraphs: [
-      "Chikahiro Tokoro is a software engineer and popular technology podcaster focused on developer education, open-source software architecture, and global tech culture.",
-      "He engages with thousands of software engineers worldwide through technical sessions, podcasts, and open-source contribution workshops.",
+      "Chikahiro Tokoro is a software engineer, podcaster, and public speaker with over 15 years of experience building and scaling impactful products across successful startups in Japan and Germany.",
+      "His work focuses on software engineering, product development, open source, and sharing practical insights on software design while connecting global communities through his podcast and speaking engagements.",
     ],
-    tags: ["Software Engineering", "Podcasting", "Developer Advocacy"],
+    tags: ["Software Engineering", "Product Development", "Open Source", "Public Speaker"],
   },
   {
     name: "Kamesh Sampath",
