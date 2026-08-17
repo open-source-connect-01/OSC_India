@@ -85,6 +85,32 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     ],
     tags: ["Open Standards", "Interoperability", "Open Protocols"],
   },
+  {
+    name: "Dr. Sophia Rossi",
+    cardRole: "HEAD OF OPEN HARDWARE & ROBOTICS",
+    role: "Head of Open Hardware & Robotics",
+    org: "OSC Foundation",
+    badge: "Keynote Speaker",
+    photo: "/leaders/sophia_rossi.jpg",
+    bioParagraphs: [
+      "Dr. Sophia Rossi leads open hardware, robotics, and embedded system initiatives at the OSC Foundation.",
+      "She works with global research institutions and developer communities to advance open silicon, modular robotics architecture, and collaborative hardware standards.",
+    ],
+    tags: ["Open Hardware", "Robotics", "Embedded Systems"],
+  },
+  {
+    name: "Kevin Schmidt",
+    cardRole: "DISTRIBUTED SYSTEMS ARCHITECT",
+    role: "Distributed Systems Architect",
+    org: "OSC Foundation",
+    badge: "Keynote Speaker",
+    photo: "/leaders/kevin_schmidt.jpg",
+    bioParagraphs: [
+      "Kevin Schmidt is a Distributed Systems Architect specializing in cloud-native platforms, high-throughput pipelines, and distributed consensus protocols.",
+      "He actively contributes to major open-source infrastructure projects and mentors engineering teams worldwide on building scalable decentralized applications.",
+    ],
+    tags: ["Distributed Systems", "Cloud Infrastructure", "Kubernetes"],
+  },
 ];
 
 export const mentorMembers: (ProfileData & { slotTitle: string })[] = [
@@ -233,9 +259,9 @@ export default function ResearchLeadershipSection({
             </button>
           </div>
 
-          {/* 3-Column Leadership Team Grid */}
+          {/* 4-Column Leadership Team Grid */}
           {activeTab === "speakers" ? (
-            <div className="max-w-[880px] mx-auto grid grid-cols-1 sm:grid-cols-2 lg:grid-cols-3 gap-5 lg:gap-6">
+            <div className="max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
               {teamMembers.map((member) => (
                 <button
                   key={member.name}
