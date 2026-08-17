@@ -110,10 +110,6 @@ export default function PrivacyPolicyPage() {
         isOpen={activeOverlay === "whatwedo"}
         onClose={handleCloseOverlay}
       />
-      <CommunityOverlay
-        isOpen={activeOverlay === "resources"}
-        onClose={handleCloseOverlay}
-      />
       <EventsOverlay
         isOpen={activeOverlay === "events"}
         onClose={handleCloseOverlay}
