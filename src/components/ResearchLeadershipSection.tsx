@@ -36,15 +36,15 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   {
     name: "Kamesh Sampath",
     cardRole: "DEVELOPER ADVOCATE AT SNOWFLAKE",
-    role: "Developer Advocate at Snowflake",
+    role: "Developer Advocate",
     org: "Snowflake",
     badge: "Keynote Speaker",
     photo: "/leaders/kamesh_sampath_v3.png",
     bioParagraphs: [
-      "Kamesh Sampath is a Developer Advocate at Snowflake, specializing in cloud-native applications, Kubernetes, and developer ecosystem tooling.",
-      "He is a frequent international speaker and author with extensive experience empowering developers and maintainers across the global open-source community.",
+      "Kamesh Sampath is a Developer Advocate at Snowflake, author, and long time open source contributor with over two decades of experience in enterprise software and developer communities.",
+      "His work focuses on cloud, data, and AI, helping developers turn complex technologies into real world solutions through advocacy, community building, storytelling, and knowledge sharing.",
     ],
-    tags: ["Developer Advocacy", "Cloud Native", "Kubernetes"],
+    tags: ["Developer Advocacy", "Cloud & Data", "AI", "Open Source"],
   },
   {
     name: "Dishant Gandhi",
