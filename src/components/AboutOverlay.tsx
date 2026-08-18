@@ -23,14 +23,21 @@ function BuildingIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
     >
-      <rect x="4" y="2" width="8" height="20" rx="1" />
-      <rect x="12" y="8" width="8" height="14" rx="1" />
-      <path d="M8 6h.01M8 10h.01M8 14h.01M8 18h.01M16 12h.01M16 16h.01" />
+      {/* Left Tower */}
+      <rect x="3" y="3" width="8" height="18" />
+      <line x1="3" y1="7.5" x2="11" y2="7.5" />
+      <line x1="3" y1="12" x2="11" y2="12" />
+      <line x1="3" y1="16.5" x2="11" y2="16.5" />
+
+      {/* Right Tower */}
+      <path d="M11 8h10v13H11" />
+      <line x1="14.5" y1="12" x2="17.5" y2="12" />
+      <line x1="14.5" y1="16.5" x2="17.5" y2="16.5" />
     </svg>
   );
 }
@@ -43,20 +50,28 @@ function SlidersIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.4"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
     >
-      <line x1="4" y1="21" x2="4" y2="14" />
-      <line x1="4" y1="10" x2="4" y2="3" />
-      <line x1="12" y1="21" x2="12" y2="12" />
-      <line x1="12" y1="8" x2="12" y2="3" />
-      <line x1="20" y1="21" x2="20" y2="16" />
-      <line x1="20" y1="12" x2="20" y2="3" />
-      <line x1="1" y1="14" x2="7" y2="14" />
-      <line x1="9" y1="8" x2="15" y2="8" />
-      <line x1="17" y1="16" x2="23" y2="16" />
+      {/* Slider 1 (Left) */}
+      <line x1="4.5" y1="2.5" x2="4.5" y2="6.5" />
+      <rect x="1.5" y="6.5" width="6" height="11" rx="1.5" />
+      <line x1="1.5" y1="12" x2="7.5" y2="12" />
+      <line x1="4.5" y1="17.5" x2="4.5" y2="21.5" />
+
+      {/* Slider 2 (Center) */}
+      <line x1="12" y1="2.5" x2="12" y2="6.5" />
+      <rect x="9" y="6.5" width="6" height="11" rx="1.5" />
+      <line x1="9" y1="12" x2="15" y2="12" />
+      <line x1="12" y1="17.5" x2="12" y2="21.5" />
+
+      {/* Slider 3 (Right) */}
+      <line x1="19.5" y1="2.5" x2="19.5" y2="6.5" />
+      <rect x="16.5" y="6.5" width="6" height="11" rx="1.5" />
+      <line x1="16.5" y1="12" x2="22.5" y2="12" />
+      <line x1="19.5" y1="17.5" x2="19.5" y2="21.5" />
     </svg>
   );
 }
@@ -69,15 +84,25 @@ function BadgeIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.2"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
     >
-      <path d="M16 2H8a2 2 0 0 0-2 2v16a2 2 0 0 0 2 2h8a2 2 0 0 0 2-2V4a2 2 0 0 0-2-2z" />
-      <circle cx="12" cy="10" r="3" />
-      <path d="M7 19c0-2.5 2.2-4.5 5-4.5s5 2 5 4.5" />
-      <line x1="10" y1="5" x2="14" y2="5" />
+      {/* Top Clip / Tab */}
+      <path d="M9 7V3.5C9 2.67 9.67 2 10.5 2h3c.83 0 1.5.67 1.5 1.5V7" />
+      <line x1="12" y1="3.5" x2="12" y2="4.5" strokeWidth="1.8" />
+
+      {/* Main ID Badge Outline */}
+      <rect x="2" y="7" width="20" height="15" rx="2" />
+
+      {/* Profile Avatar (Left) */}
+      <circle cx="8" cy="12.5" r="1.8" fill="#2563EB" stroke="none" />
+      <path d="M5.2 18.5c0-1.6 1.25-2.7 2.8-2.7s2.8 1.1 2.8 2.7Z" fill="#2563EB" stroke="none" />
+
+      {/* Text / Info Lines (Right) */}
+      <line x1="14" y1="12.5" x2="18.5" y2="12.5" />
+      <line x1="14" y1="16.5" x2="18.5" y2="16.5" />
     </svg>
   );
 }
@@ -90,15 +115,19 @@ function PartnersIcon() {
       viewBox="0 0 24 24"
       fill="none"
       stroke="#2563EB"
-      strokeWidth="2"
+      strokeWidth="2.4"
       strokeLinecap="round"
       strokeLinejoin="round"
       className="shrink-0 mt-0.5"
     >
-      <path d="M16 21v-2a4 4 0 0 0-4-4H6a4 4 0 0 0-4 4v2" />
-      <circle cx="9" cy="7" r="4" />
-      <path d="M19 11a4 4 0 0 0 0-6" />
-      <path d="M22 13a8 8 0 0 0 0-10" />
+      {/* Head */}
+      <circle cx="8.5" cy="8.5" r="3.5" />
+      {/* Shoulders */}
+      <path d="M2 20.5c0-3.5 2.9-6 6.5-6s6.5 2.5 6.5 6" />
+      {/* Inner Signal Wave */}
+      <path d="M16 6a5 5 0 0 1 0 7" />
+      {/* Outer Signal Wave */}
+      <path d="M19.5 2.5a9.5 9.5 0 0 1 0 14" />
     </svg>
   );
 }
