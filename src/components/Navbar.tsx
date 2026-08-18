@@ -27,7 +27,7 @@ const mobileAccordionData = [
     subLinks: [
       { name: "About the OSC", key: "about" as ActiveOverlay },
       { name: "Meet the team", key: "about" as ActiveOverlay },
-      { name: "Speakers & Mentors", key: "about" as ActiveOverlay },
+      { name: "Speakers & Mentors", key: "about" as ActiveOverlay, href: "/speakers-and-mentors" },
       { name: "Partners", key: "about" as ActiveOverlay },
     ],
   },
@@ -314,18 +314,29 @@ export default function Navbar({
                   {/* Sub-links */}
                   {isOpen && (
                     <div className="mt-3 pl-2 space-y-3">
-                      {cat.subLinks.map((sub) => (
-                        <button
-                          key={sub.name}
-                          onClick={() => {
-                            onMobileMenuToggle?.();
-                            onMobileNavClick?.(sub.key);
-                          }}
-                          className="block text-left text-xs font-medium text-gray-500 hover:text-accent-blue transition-colors py-1"
-                        >
-                          {sub.name}
-                        </button>
-                      ))}
+                      {cat.subLinks.map((sub) =>
+                        "href" in sub && sub.href ? (
+                          <Link
+                            key={sub.name}
+                            href={sub.href}
+                            onClick={() => onMobileMenuToggle?.()}
+                            className="block text-left text-xs font-medium text-gray-500 hover:text-accent-blue transition-colors py-1"
+                          >
+                            {sub.name}
+                          </Link>
+                        ) : (
+                          <button
+                            key={sub.name}
+                            onClick={() => {
+                              onMobileMenuToggle?.();
+                              onMobileNavClick?.(sub.key);
+                            }}
+                            className="block text-left text-xs font-medium text-gray-500 hover:text-accent-blue transition-colors py-1"
+                          >
+                            {sub.name}
+                          </button>
+                        )
+                      )}
                     </div>
                   )}
                 </div>
