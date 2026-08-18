@@ -115,7 +115,11 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
 
                 <div className="space-y-8">
                   {/* Open Collaboration */}
-                  <div className="group cursor-pointer flex items-start gap-4">
+                  <Link
+                    href="/open-collaboration"
+                    onClick={onClose}
+                    className="group cursor-pointer flex items-start gap-4"
+                  >
                     <OpenCollaborationIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
@@ -125,10 +129,14 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
                         Supporting developers and communities to share, explore, and build through open source.
                       </p>
                     </div>
-                  </div>
+                  </Link>
 
                   {/* Open Hardware & Robotics */}
-                  <div className="group cursor-pointer flex items-start gap-4">
+                  <Link
+                    href="/open-hardware-robotics"
+                    onClick={onClose}
+                    className="group cursor-pointer flex items-start gap-4"
+                  >
                     <OpenHardwareRoboticsIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
@@ -138,7 +146,7 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
                         Supporting collaborative innovation in robotics, embedded systems, IoT, and accessible open hardware.
                       </p>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
 
@@ -150,7 +158,11 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
 
                 <div className="space-y-8">
                   {/* AI & Research Initiatives */}
-                  <div className="group cursor-pointer flex items-start gap-4">
+                  <Link
+                    href="/ai-research-initiatives"
+                    onClick={onClose}
+                    className="group cursor-pointer flex items-start gap-4"
+                  >
                     <AIResearchIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
@@ -160,10 +172,14 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
                         Advancing open research in artificial intelligence, machine learning, and emerging intelligent systems.
                       </p>
                     </div>
-                  </div>
+                  </Link>
 
                   {/* Frontier Technology */}
-                  <div className="group cursor-pointer flex items-start gap-4">
+                  <Link
+                    href="/frontier-technology"
+                    onClick={onClose}
+                    className="group cursor-pointer flex items-start gap-4"
+                  >
                     <FrontierTechnologyIcon />
                     <div>
                       <h4 className="text-[15px] font-bold text-[#0B0F1A] group-hover:text-accent-blue transition-colors duration-200">
@@ -173,7 +189,7 @@ export default function WhatWeDoOverlay({ isOpen, onClose }: WhatWeDoOverlayProp
                         Exploring emerging technologies where open collaboration can accelerate research and experimentation.
                       </p>
                     </div>
-                  </div>
+                  </Link>
                 </div>
               </div>
             </div>

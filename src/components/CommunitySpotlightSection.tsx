@@ -11,33 +11,33 @@ const personColors: Record<
     photo: string;
   }
 > = {
-  "Jennifer Wilson": {
+  "Adrisha Biswas": {
     badge: "bg-[#2563EB]",
     pillBg: "bg-[#EFF6FF]",
     pillText: "text-[#2563EB]",
     bulletColor: "bg-[#2563EB]",
-    photo: "/spotlight/sarah_chen.jpg",
+    photo: "/spotlight/adrisha_biswas.jpg",
   },
   "Rahul Sharma": {
     badge: "bg-[#10B981]",
     pillBg: "bg-[#ECFDF5]",
     pillText: "text-[#059669]",
     bulletColor: "bg-[#10B981]",
-    photo: "/spotlight/marcus_johnson.jpg",
+    photo: "/spotlight/rahul_sharma.jpg",
   },
   "Sophia Martinez": {
     badge: "bg-[#F59E0B]",
     pillBg: "bg-[#FFFBEB]",
     pillText: "text-[#D97706]",
     bulletColor: "bg-[#F59E0B]",
-    photo: "/spotlight/elena_rodriguez.jpg",
+    photo: "/spotlight/sophia_martinez.jpg",
   },
-  "James Park": {
+  "Sania Khanna": {
     badge: "bg-[#8B5CF6]",
     pillBg: "bg-[#F5F3FF]",
     pillText: "text-[#7C3AED]",
     bulletColor: "bg-[#8B5CF6]",
-    photo: "/spotlight/james_park.jpg",
+    photo: "/spotlight/sania_khanna.jpg",
   },
 };
 
@@ -46,18 +46,18 @@ const defaultPersonColors = {
   pillBg: "bg-[#EFF6FF]",
   pillText: "text-[#2563EB]",
   bulletColor: "bg-[#2563EB]",
-  photo: "/spotlight/sarah_chen.jpg",
+  photo: "/spotlight/adrisha_biswas.jpg",
 };
 
 const spotlightCards = [
   {
-    name: "Jennifer Wilson",
-    role: "Senior Engineering Manager",
-    org: "Atlassian",
-    specialty: "Developer Experience",
+    name: "Adrisha Biswas",
+    role: "Team Manager",
+    org: "Open Source Connect",
+    specialty: "Community Building",
     highlights: [
-      "Creator of internal developer platforms",
-      "Community mentor and conference speaker",
+      "Building and scaling developer communities.",
+      "Connecting contributors, mentors, and industry leaders",
     ],
   },
   {
@@ -81,10 +81,10 @@ const spotlightCards = [
     ],
   },
   {
-    name: "Aarav Mehta",
-    role: "Senior Staff Engineer",
-    org: "Google",
-    specialty: "Cloud Infrastructure & Kubernetes",
+    name: "Sania Khanna",
+    role: "Content Creator",
+    org: "Open Source Connect",
+    specialty: "Graphic Design",
     highlights: [
       "CNCF Ambassador and open source contributor",
       "Speaker on Cloud Native and Platform Engineering",

@@ -46,7 +46,7 @@ const footerLinks = [
       { label: "Donate", href: "https://ko-fi.com/opensourceconnect" },
       { label: "Join the Community", href: "https://discord.gg/umEXASsAev" },
       { label: "Newsletter", href: "#" },
-      { label: "Contact Us", href: "mailto:conduct@oscfoundation.org" },
+      { label: "Contact Us", href: "mailto:hello@osconnect.org" },
     ],
   },
 ];
