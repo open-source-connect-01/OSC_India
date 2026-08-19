@@ -206,7 +206,7 @@ export default function CommunitySpotlightSection() {
             <GlobeIcon className="text-[#10B981]" />
             <div>
               <span className="text-3xl font-extrabold text-[#0B0F1A] tracking-tight">
-                <AnimatedCounter value={50} suffix="+" />
+                <AnimatedCounter value={15} suffix="+" />
               </span>
               <div className="text-[10px] font-bold tracking-wider text-gray-400 uppercase mt-0.5">
                 COUNTRIES
