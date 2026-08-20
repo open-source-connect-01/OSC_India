@@ -675,12 +675,11 @@ export default function FooterSection({
           </div>
 
           {/* Bottom Legal Bar */}
-          <div className="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row justify-between gap-4 text-[9.5px] sm:text-[11px] text-slate-500 tracking-[0.05em] uppercase">
+          <div className="border-t border-slate-800/80 pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[9.5px] sm:text-[11px] text-slate-500 tracking-[0.05em] uppercase text-center sm:text-left">
             <div>
               &copy; 2026 Open Source Connect Community. All rights reserved.
-              <br />
             </div>
-            <div className="flex flex-wrap gap-x-5 gap-y-2">
+            <div className="flex flex-wrap items-center justify-center sm:justify-end gap-x-5 gap-y-2">
               <Link
                 href="/privacy-policy"
                 className="hover:text-slate-300 transition-colors whitespace-nowrap"

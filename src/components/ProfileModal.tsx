@@ -1,7 +1,6 @@
 "use client";
 
 import { useEffect } from "react";
-import Link from "next/link";
 import Image from "next/image";
 
 export interface ProfileData {
@@ -168,7 +167,7 @@ export default function ProfileModal({ profile, onClose }: ProfileModalProps) {
         </div>
 
         {/* BIOGRAPHY Section */}
-        <div className="mb-8">
+        <div>
           <h3 className="text-[11px] font-extrabold tracking-[0.18em] text-[#94A3B8] uppercase mb-3">
             BIOGRAPHY
           </h3>
@@ -177,22 +176,6 @@ export default function ProfileModal({ profile, onClose }: ProfileModalProps) {
               <p key={i}>{para}</p>
             ))}
           </div>
-        </div>
-
-        {/* Action Buttons */}
-        <div className="flex flex-col sm:flex-row items-center justify-center gap-4 mt-8">
-          <Link
-            href="#"
-            className="w-full sm:w-auto inline-flex items-center justify-center h-[42px] px-8 bg-[#0F172A] text-white text-[12px] font-extrabold tracking-[0.06em] rounded-[3px] shadow-xs hover:bg-[#1E293B] transition-colors"
-          >
-            Book a Session
-          </Link>
-          <Link
-            href="#"
-            className="w-full sm:w-auto inline-flex items-center justify-center h-[42px] px-8 bg-white border border-[#0F172A] text-[#0F172A] text-[12px] font-extrabold tracking-[0.06em] rounded-[3px] hover:bg-slate-50 transition-colors"
-          >
-            View Research
-          </Link>
         </div>
       </div>
     </div>
