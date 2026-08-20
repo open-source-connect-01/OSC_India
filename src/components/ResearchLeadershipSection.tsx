@@ -440,13 +440,11 @@ export default function ResearchLeadershipSection({
               </div>
 
               {/* Bottom legal line */}
-              <div className="border-t border-[#1E293B] pt-6 flex flex-col sm:flex-row items-start sm:items-center justify-between gap-4 text-[10.5px] text-slate-500 font-medium">
+              <div className="border-t border-[#1E293B] pt-6 flex flex-col sm:flex-row items-center justify-between gap-4 text-[10.5px] text-slate-500 font-medium text-center sm:text-left">
                 <div>
                   &copy; 2026 Open Source Connect Community. All rights reserved.
-                  <br />
-                  
                 </div>
-                <div className="flex items-center gap-4 text-slate-400">
+                <div className="flex flex-wrap items-center justify-center sm:justify-end gap-4 text-slate-400">
                   <Link href="/privacy-policy" className="hover:text-white transition-colors">
                     Privacy Policy
                   </Link>
