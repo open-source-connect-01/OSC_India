@@ -6,9 +6,14 @@ import Link from "next/link";
 import ProfileModal from "./ProfileModal";
 import type { ProfileData } from "./ProfileModal";
 
-export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] = [
+export const teamMembers: (ProfileData & {
+  cardRole: string;
+  photo: string;
+  eventTag?: string;
+})[] = [
   {
     name: "Sebastiano Fuccio",
+    eventTag: "OSC GLOBAL 2026",
     cardRole: "Founder & CEO | Managing Partner",
     role: "Founder & CEO | Managing Partner",
     org: "AlpGuard",
@@ -22,6 +27,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Olena Yara",
+    eventTag: "OSC GLOBAL 2026",
     cardRole: "Founder & Marketing Expert",
     role: "Founder & Marketing Expert",
     org: "Yara Agency",
@@ -35,6 +41,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Chikahiro Tokoro",
+    eventTag: "OSC GLOBAL 2026",
     cardRole: "Software Engineer, Podcaster",
     role: "Software Engineer, Podcaster",
     org: "OSS Developer / Public Speaker",
@@ -48,6 +55,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Ekaterina Maevskaia",
+    eventTag: "OSC GLOBAL 2026",
     cardRole: "Revenue Growth Leader",
     role: "Revenue Growth Leader",
     org: "Snap Inc. & TikTok",
@@ -61,6 +69,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Kamesh Sampath",
+    eventTag: "OSCG 2026",
     cardRole: "Developer Advocate at Snowflake",
     role: "Developer Advocate",
     org: "Snowflake",
@@ -74,6 +83,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Kateryna Tertiienko",
+    eventTag: "OSCG 2026",
     cardRole: "Technical Lead",
     role: "Technical Lead",
     org: "Infonetica",
@@ -87,6 +97,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Dishant Gandhi",
+    eventTag: "OSCG 2026",
     cardRole: "AI/ML Consultant & Public Speaker",
     role: "AI/ML Consultant & Public Speaker",
     org: "Ruffalo Noel Levitz",
@@ -100,6 +111,7 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
   },
   {
     name: "Nithin S.S",
+    eventTag: "OSCG 2026",
     cardRole: "Founder & Leadership Strategist",
     role: "Founder & Leadership Strategist",
     org: "Synapse QA",
@@ -209,7 +221,15 @@ export default function ResearchLeadershipSection({
 
                   {/* Blue Caption Section below photo */}
                   <div className="bg-[#0A1835] px-4 py-3.5 flex flex-col justify-center w-full">
-                    <span className="text-[14px] font-bold text-white tracking-wide leading-tight truncate">
+                    {/* Event Tag */}
+                    <div className="flex items-center gap-1.5 mb-1.5">
+                      <span className="w-[2px] h-[10px] bg-[#2563EB] shrink-0" />
+                      <span className="text-[10px] font-bold text-[#60A5FA] tracking-[0.06em] uppercase leading-none truncate">
+                        {member.eventTag || "OSC GLOBAL 2026"}
+                      </span>
+                    </div>
+
+                    <span className="text-[14px] font-bold text-white tracking-normal leading-tight truncate">
                       {member.name}
                     </span>
                     <span className="text-[11px] font-medium text-[#94A3B8] tracking-normal mt-1 leading-snug truncate">
