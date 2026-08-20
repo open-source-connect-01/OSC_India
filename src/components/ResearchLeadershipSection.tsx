@@ -6,10 +6,15 @@ import Link from "next/link";
 import ProfileModal from "./ProfileModal";
 import type { ProfileData } from "./ProfileModal";
 
-export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] = [
+export const teamMembers: (ProfileData & {
+  cardRole: string;
+  photo: string;
+  eventTag?: string;
+})[] = [
   {
     name: "Sebastiano Fuccio",
-    cardRole: "FOUNDER & CEO | MANAGING PARTNER",
+    eventTag: "OSC GLOBAL 2026",
+    cardRole: "Founder & CEO | Managing Partner",
     role: "Founder & CEO | Managing Partner",
     org: "AlpGuard",
     badge: "Keynote Speaker",
@@ -21,60 +26,9 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     tags: ["AI Strategy", "Digital Transformation", "AI Governance"],
   },
   {
-    name: "Ekaterina Maevskaia",
-    cardRole: "REVENUE GROWTH LEADER",
-    role: "Revenue Growth Leader",
-    org: "Snap Inc. & TikTok",
-    badge: "Keynote Speaker",
-    photo: "/leaders/ekaterina_maevskaia.png",
-    bioParagraphs: [
-      "Ekaterina Mayevskaya is a distinguished revenue growth leader focused on scaling multimillion dollar advertising portfolios, driving end to end go to market strategies, and transforming regional ecosystems across CEE and EMEA. Her work combines commercial strategy, business growth, and ecosystem development to create sustainable impact across markets.",
-      "She engages with global technology networks through high impact commercial integrations, keynote presentations at conferences with 21,000+ attendees, and nonprofit community building. Her experience spans revenue growth, strategic partnerships, and building meaningful connections across the global technology ecosystem.",
-    ],
-    tags: ["Revenue Growth", "Go-to-Market Strategy", "Strategic Partnerships", "Ecosystem Development"],
-  },
-  {
-    name: "Chikahiro Tokoro",
-    cardRole: "SOFTWARE ENGINEER, PODCASTER",
-    role: "Software Engineer, Podcaster",
-    org: "OSS Developer / Public Speaker",
-    badge: "Keynote Speaker",
-    photo: "/leaders/chikahiro_tokoro_v3.png",
-    bioParagraphs: [
-      "Chikahiro Tokoro is a software engineer, podcaster, and public speaker with over 15 years of experience building and scaling impactful products across successful startups in Japan and Germany.",
-      "His work focuses on software engineering, product development, open source, and sharing practical insights on software design while connecting global communities through his podcast and speaking engagements.",
-    ],
-    tags: ["Software Engineering", "Product Development", "Open Source", "Public Speaker"],
-  },
-  {
-    name: "Kamesh Sampath",
-    cardRole: "DEVELOPER ADVOCATE AT SNOWFLAKE",
-    role: "Developer Advocate",
-    org: "Snowflake",
-    badge: "Keynote Speaker",
-    photo: "/leaders/kamesh_sampath_v3.png",
-    bioParagraphs: [
-      "Kamesh Sampath is a Developer Advocate at Snowflake, author, and long time open source contributor with over two decades of experience in enterprise software and developer communities.",
-      "His work focuses on cloud, data, and AI, helping developers turn complex technologies into real world solutions through advocacy, community building, storytelling, and knowledge sharing.",
-    ],
-    tags: ["Developer Advocacy", "Cloud & Data", "AI", "Open Source"],
-  },
-  {
-    name: "Dishant Gandhi",
-    cardRole: "AI/ML CONSULTANT & PUBLIC SPEAKER",
-    role: "AI/ML Consultant & Public Speaker",
-    org: "Ruffalo Noel Levitz",
-    badge: "Keynote Speaker",
-    photo: "/leaders/dishant_gandhi_v3.png",
-    bioParagraphs: [
-      "Dishant Gandhi is an AI/ML Consultant with over 6 years of experience specializing in Generative AI, Conversational AI, and Large Language Models. He has built scalable chatbots, RAG pipelines, web applications, and AI powered widgets using technologies such as LangChain, Streamlit, and Kubernetes.",
-      "With 25+ speaking sessions at global conferences, Dishant is known for simplifying complex AI concepts, driving innovation, and mentoring aspiring technologists to build impactful AI solutions.",
-    ],
-    tags: ["Generative AI", "LLMs", "Conversational AI", "RAG Pipelines"],
-  },
-  {
     name: "Olena Yara",
-    cardRole: "FOUNDER & MARKETING EXPERT",
+    eventTag: "OSC GLOBAL 2026",
+    cardRole: "Founder & Marketing Expert",
     role: "Founder & Marketing Expert",
     org: "Yara Agency",
     badge: "Keynote Speaker",
@@ -86,22 +40,51 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
     tags: ["Marketing Strategy", "Digital Art", "Strategic Partnerships", "Storytelling"],
   },
   {
-    name: "Nithin S.S",
-    cardRole: "FOUNDER & LEADERSHIP STRATEGIST",
-    role: "Founder & Leadership Strategist",
-    org: "Synapse QA",
+    name: "Chikahiro Tokoro",
+    eventTag: "OSC GLOBAL 2026",
+    cardRole: "Software Engineer, Podcaster",
+    role: "Software Engineer, Podcaster",
+    org: "OSS Developer / Public Speaker",
     badge: "Keynote Speaker",
-    photo: "/leaders/nithin_ss.jpg",
+    photo: "/leaders/chikahiro_tokoro_v3.png",
     bioParagraphs: [
-      "Nithin is a Software Engineering leader with over a decade of experience in Quality Engineering and team building. He is Head of QA at Lodgify and founder of Synapse QA, a community focused on accessible quality learning across Southeast Asia.",
-      "He is also an international speaker, consultant, author of the Now to Next newsletter, and career coach who has guided over 200 professionals in their career growth.",
+      "Chikahiro Tokoro is a software engineer, podcaster, and public speaker with over 15 years of experience building and scaling impactful products across successful startups in Japan and Germany.",
+      "His work focuses on software engineering, product development, open source, and sharing practical insights on software design while connecting global communities through his podcast and speaking engagements.",
     ],
-    tags: ["Software Engineering", "Quality Engineering", "Leadership Strategy", "Career Coaching"],
+    tags: ["Software Engineering", "Product Development", "Open Source", "Public Speaker"],
   },
-  
+  {
+    name: "Ekaterina Maevskaia",
+    eventTag: "OSC GLOBAL 2026",
+    cardRole: "Revenue Growth Leader",
+    role: "Revenue Growth Leader",
+    org: "Snap Inc. & TikTok",
+    badge: "Keynote Speaker",
+    photo: "/leaders/ekaterina_maevskaia.png",
+    bioParagraphs: [
+      "Ekaterina Mayevskaya is a distinguished revenue growth leader focused on scaling multimillion dollar advertising portfolios, driving end to end go to market strategies, and transforming regional ecosystems across CEE and EMEA. Her work combines commercial strategy, business growth, and ecosystem development to create sustainable impact across markets.",
+      "She engages with global technology networks through high impact commercial integrations, keynote presentations at conferences with 21,000+ attendees, and nonprofit community building. Her experience spans revenue growth, strategic partnerships, and building meaningful connections across the global technology ecosystem.",
+    ],
+    tags: ["Revenue Growth", "Go-to-Market Strategy", "Strategic Partnerships", "Ecosystem Development"],
+  },
+  {
+    name: "Kamesh Sampath",
+    eventTag: "OSCG 2026",
+    cardRole: "Developer Advocate at Snowflake",
+    role: "Developer Advocate",
+    org: "Snowflake",
+    badge: "Keynote Speaker",
+    photo: "/leaders/kamesh_sampath_v3.png",
+    bioParagraphs: [
+      "Kamesh Sampath is a Developer Advocate at Snowflake, author, and long time open source contributor with over two decades of experience in enterprise software and developer communities.",
+      "His work focuses on cloud, data, and AI, helping developers turn complex technologies into real world solutions through advocacy, community building, storytelling, and knowledge sharing.",
+    ],
+    tags: ["Developer Advocacy", "Cloud & Data", "AI", "Open Source"],
+  },
   {
     name: "Kateryna Tertiienko",
-    cardRole: "TECHNICAL LEAD",
+    eventTag: "OSCG 2026",
+    cardRole: "Technical Lead",
     role: "Technical Lead",
     org: "Infonetica",
     badge: "Keynote Speaker",
@@ -111,6 +94,34 @@ export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] 
       "Her work focuses on technology leadership, software engineering, and building effective teams, with experience across multiple programming languages and frameworks.",
     ],
     tags: ["Technology Leadership", "Software Engineering", "Team Building", "Engineering Culture"],
+  },
+  {
+    name: "Dishant Gandhi",
+    eventTag: "OSCG 2026",
+    cardRole: "AI/ML Consultant & Public Speaker",
+    role: "AI/ML Consultant & Public Speaker",
+    org: "Ruffalo Noel Levitz",
+    badge: "Keynote Speaker",
+    photo: "/leaders/dishant_gandhi_v3.png",
+    bioParagraphs: [
+      "Dishant Gandhi is an AI/ML Consultant with over 6 years of experience specializing in Generative AI, Conversational AI, and Large Language Models. He has built scalable chatbots, RAG pipelines, web applications, and AI powered widgets using technologies such as LangChain, Streamlit, and Kubernetes.",
+      "With 25+ speaking sessions at global conferences, Dishant is known for simplifying complex AI concepts, driving innovation, and mentoring aspiring technologists to build impactful AI solutions.",
+    ],
+    tags: ["Generative AI", "LLMs", "Conversational AI", "RAG Pipelines"],
+  },
+  {
+    name: "Nithin S.S",
+    eventTag: "OSCG 2026",
+    cardRole: "Founder & Leadership Strategist",
+    role: "Founder & Leadership Strategist",
+    org: "Synapse QA",
+    badge: "Keynote Speaker",
+    photo: "/leaders/nithin_ss.jpg",
+    bioParagraphs: [
+      "Nithin is a Software Engineering leader with over a decade of experience in Quality Engineering and team building. He is Head of QA at Lodgify and founder of Synapse QA, a community focused on accessible quality learning across Southeast Asia.",
+      "He is also an international speaker, consultant, author of the Now to Next newsletter, and career coach who has guided over 200 professionals in their career growth.",
+    ],
+    tags: ["Software Engineering", "Quality Engineering", "Leadership Strategy", "Career Coaching"],
   },
 ];
 
@@ -210,10 +221,18 @@ export default function ResearchLeadershipSection({
 
                   {/* Blue Caption Section below photo */}
                   <div className="bg-[#0A1835] px-4 py-3.5 flex flex-col justify-center w-full">
-                    <span className="text-[13.5px] font-bold text-white tracking-wide uppercase leading-tight truncate">
+                    {/* Event Tag */}
+                    <div className="flex items-center gap-1.5 mb-1.5">
+                      <span className="w-[2px] h-[10px] bg-[#2563EB] shrink-0 inline-block" />
+                      <span className="text-[10px] font-bold text-[#60A5FA] tracking-[0.06em] uppercase leading-none truncate">
+                        {member.eventTag || "OSC GLOBAL 2026"}
+                      </span>
+                    </div>
+
+                    <span className="text-[14px] font-bold text-white tracking-normal leading-tight truncate">
                       {member.name}
                     </span>
-                    <span className="text-[10.5px] font-medium text-[#94A3B8] uppercase tracking-[0.02em] mt-1 leading-snug truncate">
+                    <span className="text-[11px] font-medium text-[#94A3B8] tracking-normal mt-1 leading-snug truncate">
                       {member.cardRole}
                     </span>
                   </div>
