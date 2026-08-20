@@ -6,15 +6,10 @@ import Link from "next/link";
 import ProfileModal from "./ProfileModal";
 import type { ProfileData } from "./ProfileModal";
 
-export const teamMembers: (ProfileData & {
-  cardRole: string;
-  photo: string;
-  eventTag?: string;
-})[] = [
+export const teamMembers: (ProfileData & { cardRole: string; photo: string })[] = [
   {
     name: "Sebastiano Fuccio",
-    eventTag: "OSC GLOBAL 2026",
-    cardRole: "Founder & CEO | Managing Partner",
+    cardRole: "FOUNDER & CEO | MANAGING PARTNER",
     role: "Founder & CEO | Managing Partner",
     org: "AlpGuard",
     badge: "Keynote Speaker",
@@ -26,37 +21,8 @@ export const teamMembers: (ProfileData & {
     tags: ["AI Strategy", "Digital Transformation", "AI Governance"],
   },
   {
-    name: "Olena Yara",
-    eventTag: "OSC GLOBAL 2026",
-    cardRole: "Founder & Marketing Expert",
-    role: "Founder & Marketing Expert",
-    org: "Yara Agency",
-    badge: "Keynote Speaker",
-    photo: "/leaders/olena_yara_v3.png",
-    bioParagraphs: [
-      "Olena Yara is a marketing expert and founder of Yara Agency, working at the intersection of digital art, technology, and global communities.",
-      "Her work focuses on marketing, curation, and strategic partnerships, helping artists, institutions, and companies amplify their work while connecting creativity, technology, and community through storytelling and collaboration.",
-    ],
-    tags: ["Marketing Strategy", "Digital Art", "Strategic Partnerships", "Storytelling"],
-  },
-  {
-    name: "Chikahiro Tokoro",
-    eventTag: "OSC GLOBAL 2026",
-    cardRole: "Software Engineer, Podcaster",
-    role: "Software Engineer, Podcaster",
-    org: "OSS Developer / Public Speaker",
-    badge: "Keynote Speaker",
-    photo: "/leaders/chikahiro_tokoro_v3.png",
-    bioParagraphs: [
-      "Chikahiro Tokoro is a software engineer, podcaster, and public speaker with over 15 years of experience building and scaling impactful products across successful startups in Japan and Germany.",
-      "His work focuses on software engineering, product development, open source, and sharing practical insights on software design while connecting global communities through his podcast and speaking engagements.",
-    ],
-    tags: ["Software Engineering", "Product Development", "Open Source", "Public Speaker"],
-  },
-  {
     name: "Ekaterina Maevskaia",
-    eventTag: "OSC GLOBAL 2026",
-    cardRole: "Revenue Growth Leader",
+    cardRole: "REVENUE GROWTH LEADER",
     role: "Revenue Growth Leader",
     org: "Snap Inc. & TikTok",
     badge: "Keynote Speaker",
@@ -68,9 +34,21 @@ export const teamMembers: (ProfileData & {
     tags: ["Revenue Growth", "Go-to-Market Strategy", "Strategic Partnerships", "Ecosystem Development"],
   },
   {
+    name: "Chikahiro Tokoro",
+    cardRole: "SOFTWARE ENGINEER, PODCASTER",
+    role: "Software Engineer, Podcaster",
+    org: "OSS Developer / Public Speaker",
+    badge: "Keynote Speaker",
+    photo: "/leaders/chikahiro_tokoro_v3.png",
+    bioParagraphs: [
+      "Chikahiro Tokoro is a software engineer, podcaster, and public speaker with over 15 years of experience building and scaling impactful products across successful startups in Japan and Germany.",
+      "His work focuses on software engineering, product development, open source, and sharing practical insights on software design while connecting global communities through his podcast and speaking engagements.",
+    ],
+    tags: ["Software Engineering", "Product Development", "Open Source", "Public Speaker"],
+  },
+  {
     name: "Kamesh Sampath",
-    eventTag: "OSCG 2026",
-    cardRole: "Developer Advocate at Snowflake",
+    cardRole: "DEVELOPER ADVOCATE AT SNOWFLAKE",
     role: "Developer Advocate",
     org: "Snowflake",
     badge: "Keynote Speaker",
@@ -82,23 +60,8 @@ export const teamMembers: (ProfileData & {
     tags: ["Developer Advocacy", "Cloud & Data", "AI", "Open Source"],
   },
   {
-    name: "Kateryna Tertiienko",
-    eventTag: "OSCG 2026",
-    cardRole: "Technical Lead",
-    role: "Technical Lead",
-    org: "Infonetica",
-    badge: "Keynote Speaker",
-    photo: "/leaders/kateryna_tertiienko.png",
-    bioParagraphs: [
-      "Kateryna Tertiienko is a technology leader and self-learner with around 20 years of experience across software engineering, diverse products, and engineering cultures in Ukraine, South Africa, and the UK.",
-      "Her work focuses on technology leadership, software engineering, and building effective teams, with experience across multiple programming languages and frameworks.",
-    ],
-    tags: ["Technology Leadership", "Software Engineering", "Team Building", "Engineering Culture"],
-  },
-  {
     name: "Dishant Gandhi",
-    eventTag: "OSCG 2026",
-    cardRole: "AI/ML Consultant & Public Speaker",
+    cardRole: "AI/ML CONSULTANT & PUBLIC SPEAKER",
     role: "AI/ML Consultant & Public Speaker",
     org: "Ruffalo Noel Levitz",
     badge: "Keynote Speaker",
@@ -110,9 +73,21 @@ export const teamMembers: (ProfileData & {
     tags: ["Generative AI", "LLMs", "Conversational AI", "RAG Pipelines"],
   },
   {
+    name: "Olena Yara",
+    cardRole: "FOUNDER & MARKETING EXPERT",
+    role: "Founder & Marketing Expert",
+    org: "Yara Agency",
+    badge: "Keynote Speaker",
+    photo: "/leaders/olena_yara_v3.png",
+    bioParagraphs: [
+      "Olena Yara is a marketing expert and founder of Yara Agency, working at the intersection of digital art, technology, and global communities.",
+      "Her work focuses on marketing, curation, and strategic partnerships, helping artists, institutions, and companies amplify their work while connecting creativity, technology, and community through storytelling and collaboration.",
+    ],
+    tags: ["Marketing Strategy", "Digital Art", "Strategic Partnerships", "Storytelling"],
+  },
+  {
     name: "Nithin S.S",
-    eventTag: "OSCG 2026",
-    cardRole: "Founder & Leadership Strategist",
+    cardRole: "FOUNDER & LEADERSHIP STRATEGIST",
     role: "Founder & Leadership Strategist",
     org: "Synapse QA",
     badge: "Keynote Speaker",
@@ -122,6 +97,20 @@ export const teamMembers: (ProfileData & {
       "He is also an international speaker, consultant, author of the Now to Next newsletter, and career coach who has guided over 200 professionals in their career growth.",
     ],
     tags: ["Software Engineering", "Quality Engineering", "Leadership Strategy", "Career Coaching"],
+  },
+  
+  {
+    name: "Kateryna Tertiienko",
+    cardRole: "TECHNICAL LEAD",
+    role: "Technical Lead",
+    org: "Infonetica",
+    badge: "Keynote Speaker",
+    photo: "/leaders/kateryna_tertiienko.png",
+    bioParagraphs: [
+      "Kateryna Tertiienko is a technology leader and self-learner with around 20 years of experience across software engineering, diverse products, and engineering cultures in Ukraine, South Africa, and the UK.",
+      "Her work focuses on technology leadership, software engineering, and building effective teams, with experience across multiple programming languages and frameworks.",
+    ],
+    tags: ["Technology Leadership", "Software Engineering", "Team Building", "Engineering Culture"],
   },
 ];
 
@@ -221,18 +210,10 @@ export default function ResearchLeadershipSection({
 
                   {/* Blue Caption Section below photo */}
                   <div className="bg-[#0A1835] px-4 py-3.5 flex flex-col justify-center w-full">
-                    {/* Event Tag */}
-                    <div className="flex items-center gap-1.5 mb-1.5">
-                      <span className="w-[2px] h-[10px] bg-[#2563EB] shrink-0" />
-                      <span className="text-[10px] font-bold text-[#60A5FA] tracking-[0.06em] uppercase leading-none truncate">
-                        {member.eventTag || "OSC GLOBAL 2026"}
-                      </span>
-                    </div>
-
-                    <span className="text-[14px] font-bold text-white tracking-normal leading-tight truncate">
+                    <span className="text-[13.5px] font-bold text-white tracking-wide uppercase leading-tight truncate">
                       {member.name}
                     </span>
-                    <span className="text-[11px] font-medium text-[#94A3B8] tracking-normal mt-1 leading-snug truncate">
+                    <span className="text-[10.5px] font-medium text-[#94A3B8] uppercase tracking-[0.02em] mt-1 leading-snug truncate">
                       {member.cardRole}
                     </span>
                   </div>
