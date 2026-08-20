@@ -69,7 +69,7 @@ export const teamMembers: (ProfileData & {
   },
   {
     name: "Kamesh Sampath",
-    eventTag: "OSCG 2026",
+    eventTag: "OSC GLOBAL 2026",
     cardRole: "Developer Advocate at Snowflake",
     role: "Developer Advocate",
     org: "Snowflake",
@@ -83,7 +83,7 @@ export const teamMembers: (ProfileData & {
   },
   {
     name: "Kateryna Tertiienko",
-    eventTag: "OSCG 2026",
+    eventTag: "OSC GLOBAL 2026",
     cardRole: "Technical Lead",
     role: "Technical Lead",
     org: "Infonetica",
@@ -97,7 +97,7 @@ export const teamMembers: (ProfileData & {
   },
   {
     name: "Dishant Gandhi",
-    eventTag: "OSCG 2026",
+    eventTag: "OSC GLOBAL 2026",
     cardRole: "AI/ML Consultant & Public Speaker",
     role: "AI/ML Consultant & Public Speaker",
     org: "Ruffalo Noel Levitz",
@@ -111,7 +111,7 @@ export const teamMembers: (ProfileData & {
   },
   {
     name: "Nithin S.S",
-    eventTag: "OSCG 2026",
+    eventTag: "OSC GLOBAL 2026",
     cardRole: "Founder & Leadership Strategist",
     role: "Founder & Leadership Strategist",
     org: "Synapse QA",
