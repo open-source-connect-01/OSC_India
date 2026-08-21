@@ -10,10 +10,12 @@ export const teamMembers: (ProfileData & {
   cardRole: string;
   photo: string;
   eventTag?: string;
+  eventLink?: string;
 })[] = [
   {
     name: "Sebastiano Fuccio",
     eventTag: "OSC GLOBAL 2026",
+    eventLink: "https://oscg.osconnect.org/",
     cardRole: "Founder & CEO | Managing Partner",
     role: "Founder & CEO | Managing Partner",
     org: "AlpGuard",
@@ -28,6 +30,7 @@ export const teamMembers: (ProfileData & {
   {
     name: "Olena Yara",
     eventTag: "OSC GLOBAL 2026",
+    eventLink: "https://oscg.osconnect.org/",
     cardRole: "Founder & Marketing Expert",
     role: "Founder & Marketing Expert",
     org: "Yara Agency",
@@ -42,6 +45,7 @@ export const teamMembers: (ProfileData & {
   {
     name: "Chikahiro Tokoro",
     eventTag: "OSC GLOBAL 2026",
+    eventLink: "https://oscg.osconnect.org/",
     cardRole: "Software Engineer, Podcaster",
     role: "Software Engineer, Podcaster",
     org: "OSS Developer / Public Speaker",
@@ -56,6 +60,7 @@ export const teamMembers: (ProfileData & {
   {
     name: "Ekaterina Maevskaia",
     eventTag: "OSC GLOBAL 2026",
+    eventLink: "https://oscg.osconnect.org/",
     cardRole: "Revenue Growth Leader",
     role: "Revenue Growth Leader",
     org: "Snap Inc. & TikTok",
@@ -70,6 +75,7 @@ export const teamMembers: (ProfileData & {
   {
     name: "Kamesh Sampath",
     eventTag: "OSC GLOBAL 2026",
+    eventLink: "https://oscg.osconnect.org/",
     cardRole: "Developer Advocate at Snowflake",
     role: "Developer Advocate",
     org: "Snowflake",
@@ -84,6 +90,7 @@ export const teamMembers: (ProfileData & {
   {
     name: "Kateryna Tertiienko",
     eventTag: "OSC GLOBAL 2026",
+    eventLink: "https://oscg.osconnect.org/",
     cardRole: "Technical Lead",
     role: "Technical Lead",
     org: "Infonetica",
@@ -98,6 +105,7 @@ export const teamMembers: (ProfileData & {
   {
     name: "Dishant Gandhi",
     eventTag: "OSC GLOBAL 2026",
+    eventLink: "https://oscg.osconnect.org/",
     cardRole: "AI/ML Consultant & Public Speaker",
     role: "AI/ML Consultant & Public Speaker",
     org: "Ruffalo Noel Levitz",
@@ -112,6 +120,7 @@ export const teamMembers: (ProfileData & {
   {
     name: "Nithin S.S",
     eventTag: "OSC GLOBAL 2026",
+    eventLink: "https://oscg.osconnect.org/",
     cardRole: "Founder & Leadership Strategist",
     role: "Founder & Leadership Strategist",
     org: "Synapse QA",
@@ -194,7 +203,7 @@ export default function ResearchLeadershipSection({
           {activeTab === "speakers" ? (
             <div className="max-w-[1240px] mx-auto grid grid-cols-1 sm:grid-cols-2 md:grid-cols-4 gap-4 lg:gap-6">
               {teamMembers.map((member) => (
-                <button
+                <div
                   key={member.name}
                   onClick={() =>
                     onProfileSelect({
@@ -207,7 +216,23 @@ export default function ResearchLeadershipSection({
                       tags: member.tags,
                     })
                   }
-                  className="flex flex-col group overflow-hidden bg-[#0A1835] text-left cursor-pointer border-0 outline-none ring-0 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg"
+                  role="button"
+                  tabIndex={0}
+                  onKeyDown={(e) => {
+                    if (e.key === "Enter" || e.key === " ") {
+                      e.preventDefault();
+                      onProfileSelect({
+                        name: member.name,
+                        role: member.role,
+                        org: member.org,
+                        badge: member.badge,
+                        photo: member.photo,
+                        bioParagraphs: member.bioParagraphs,
+                        tags: member.tags,
+                      });
+                    }
+                  }}
+                  className="flex flex-col group overflow-hidden bg-[#0A1835] text-left cursor-pointer border-0 outline-none ring-0 transition-all duration-200 hover:-translate-y-1 hover:shadow-lg focus-visible:ring-2 focus-visible:ring-blue-500"
                 >
                   {/* Full Photo container */}
                   <div className="relative aspect-[4/4.8] w-full bg-[#E2E8F0] overflow-hidden">
@@ -222,12 +247,18 @@ export default function ResearchLeadershipSection({
                   {/* Blue Caption Section below photo */}
                   <div className="bg-[#0A1835] px-4 py-3.5 flex flex-col justify-center w-full">
                     {/* Event Tag */}
-                    <div className="flex items-center gap-1.5 mb-1.5">
-                      <span className="w-[2px] h-[10px] bg-[#2563EB] shrink-0 inline-block" />
-                      <span className="text-[10px] font-bold text-[#60A5FA] tracking-[0.06em] uppercase leading-none truncate">
+                    <a
+                      href={member.eventLink || "https://oscg.osconnect.org/"}
+                      target="_blank"
+                      rel="noopener noreferrer"
+                      onClick={(e) => e.stopPropagation()}
+                      className="group/tag inline-flex items-center gap-1.5 mb-1.5 w-fit z-10 cursor-pointer"
+                    >
+                      <span className="w-[2px] h-[10px] bg-[#2563EB] group-hover/tag:bg-[#60A5FA] shrink-0 inline-block transition-colors" />
+                      <span className="text-[10px] font-bold text-[#60A5FA] group-hover/tag:text-[#93C5FD] group-hover/tag:underline tracking-[0.06em] uppercase leading-none truncate transition-colors">
                         {member.eventTag || "OSC GLOBAL 2026"}
                       </span>
-                    </div>
+                    </a>
 
                     <span className="text-[14px] font-bold text-white tracking-normal leading-tight truncate">
                       {member.name}
@@ -236,7 +267,7 @@ export default function ResearchLeadershipSection({
                       {member.cardRole}
                     </span>
                   </div>
-                </button>
+                </div>
               ))}
             </div>
           ) : (
